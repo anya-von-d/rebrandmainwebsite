@@ -31,26 +31,26 @@ export default function Coursework() {
     <section
       id="coursework"
       ref={sectionRef}
-      className="bg-[#F0F0F2] py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="bg-[#E5F0E8] py-28 md:py-36 lg:py-44 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Title left, Box right */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
           {/* Left — Large title with parallax */}
           <motion.div style={{ y: titleY, opacity: contentOpacity }} className="lg:sticky lg:top-32">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#888899] mb-4">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
               Background
             </p>
             <ScrollHighlight
               className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-              colorFrom="#C8C8D0"
-              colorTo="#0A0A0A"
+              colorFrom="#A8C8B0"
+              colorTo="#0A1A10"
             >
               Foundations
               <br />
               &amp;&nbsp;Tools
             </ScrollHighlight>
-            <p className="font-sans text-base text-[#888899] mt-6 max-w-[360px] leading-relaxed">
+            <p className="font-sans text-base text-[#7A9A85] mt-6 max-w-[360px] leading-relaxed">
               Strong foundation in mathematics and computer science with
               hands-on experience building production-quality AI systems.
             </p>
@@ -58,15 +58,15 @@ export default function Coursework() {
 
           {/* Right — Coursework box, sticky so it stays stationary */}
           <div className="lg:sticky lg:top-32">
-            <div className="bg-white rounded-2xl border border-[#E0E0E8] p-6 md:p-8 lg:p-10">
-              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#888899] mb-4">
+            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10">
+              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
                 Selected Coursework
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
                 {coursework.map((course) => (
                   <div
                     key={course}
-                    className="text-[14px] text-[#555566] py-2.5 border-b border-[#F0F0F2] last:border-b-0 hover:text-[#0A0A0A] transition-colors cursor-default"
+                    className="text-[14px] text-[#4A6B55] py-2.5 border-b border-[#E5F0E8] last:border-b-0 hover:text-[#0A1A10] transition-colors cursor-default"
                   >
                     {course}
                   </div>

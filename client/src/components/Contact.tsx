@@ -32,14 +32,14 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#888899] mb-4"
+          className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#7A9A85] mb-4"
         >
           CONTACT
         </motion.p>
         <ScrollHighlight
           className="font-display italic text-3xl md:text-4xl lg:text-5xl mb-3"
-          colorFrom="#C8C8D0"
-          colorTo="#0A0A0A"
+          colorFrom="#A8C8B0"
+          colorTo="#0A1A10"
         >
           Get in touch
         </ScrollHighlight>
@@ -47,7 +47,7 @@ export default function Contact() {
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-[1px] bg-[#E0E0E8] origin-left mb-10"
+          className="h-[1px] bg-[#C8DCCE] origin-left mb-10"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 mt-8">
@@ -56,15 +56,15 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <p className="text-base text-[#555566] leading-relaxed mb-8">
+            <p className="text-base text-[#4A6B55] leading-relaxed mb-8">
               Have any questions? Reach out to me from this contact form and I will get back to you shortly.
             </p>
             <div className="space-y-4">
               <a
                 href="mailto:anya2025@stanford.edu"
-                className="flex items-center gap-3 text-sm text-[#555566] hover:text-[#0066FF] transition-colors group"
+                className="flex items-center gap-3 text-sm text-[#4A6B55] hover:text-[#00A86B] transition-colors group"
               >
-                <Mail size={16} className="text-[#888899] group-hover:text-[#0066FF] transition-colors" />
+                <Mail size={16} className="text-[#7A9A85] group-hover:text-[#00A86B] transition-colors" />
                 <span className="font-mono">anya2025@stanford.edu</span>
               </a>
             </div>
@@ -83,7 +83,7 @@ export default function Contact() {
               required
               value={formData.name}
               onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-              className="w-full px-4 py-3 bg-white border border-[#E0E0E8] rounded-lg text-sm text-[#0A0A0A] placeholder:text-[#888899] focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-colors"
+              className="w-full px-4 py-3 bg-[#F5FAF6] border border-[#C8DCCE] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#00A86B] focus:ring-1 focus:ring-[#00A86B] transition-colors"
             />
             <input
               type="email"
@@ -91,7 +91,7 @@ export default function Contact() {
               required
               value={formData.email}
               onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-              className="w-full px-4 py-3 bg-white border border-[#E0E0E8] rounded-lg text-sm text-[#0A0A0A] placeholder:text-[#888899] focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-colors"
+              className="w-full px-4 py-3 bg-[#F5FAF6] border border-[#C8DCCE] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#00A86B] focus:ring-1 focus:ring-[#00A86B] transition-colors"
             />
             <textarea
               placeholder="Message *"
@@ -99,12 +99,12 @@ export default function Contact() {
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-              className="w-full px-4 py-3 bg-white border border-[#E0E0E8] rounded-lg text-sm text-[#0A0A0A] placeholder:text-[#888899] focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-colors resize-none"
+              className="w-full px-4 py-3 bg-[#F5FAF6] border border-[#C8DCCE] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#00A86B] focus:ring-1 focus:ring-[#00A86B] transition-colors resize-none"
             />
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex items-center gap-2 bg-[#0066FF] hover:bg-[#0052CC] text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-colors disabled:opacity-60"
+              className="flex items-center gap-2 bg-[#00A86B] hover:bg-[#008F5A] text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-colors disabled:opacity-60"
             >
               <Send size={16} />
               {isSubmitting ? 'Sending...' : 'Send message'}

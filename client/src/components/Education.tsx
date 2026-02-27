@@ -38,25 +38,25 @@ export default function Education() {
             style={{ x: leftX, opacity: contentOpacity, rotate: leftRotate, scale: leftScale }}
             className="flex-1 text-right pr-4 lg:pr-8"
           >
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#888899] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-3">
               Master&apos;s Degree
             </p>
-            <h3 className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[#0A0A0A] leading-tight">
+            <h3 className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[#0A1A10] leading-tight">
               Computer
               <br />
               Science
             </h3>
-            <p className="font-sans text-base md:text-lg text-[#555566] mt-3">
+            <p className="font-sans text-base md:text-lg text-[#4A6B55] mt-3">
               Artificial Intelligence Track
             </p>
-            <p className="font-sans text-sm text-[#888899] mt-1">
+            <p className="font-sans text-sm text-[#7A9A85] mt-1">
               Stanford University
             </p>
-            <p className="font-mono text-xs text-[#888899] mt-2">
+            <p className="font-mono text-xs text-[#7A9A85] mt-2">
               Expected 2026
             </p>
-            <div className="inline-flex items-center gap-1.5 bg-[#0066FF10] text-[#0066FF] text-xs font-mono px-2.5 py-1 rounded-full mt-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-pulse" />
+            <div className="inline-flex items-center gap-1.5 bg-[#00A86B10] text-[#00A86B] text-xs font-mono px-2.5 py-1 rounded-full mt-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00A86B] animate-pulse" />
               In Progress
             </div>
           </motion.div>
@@ -73,7 +73,7 @@ export default function Education() {
             />
             <motion.div
               style={{ scaleY: dividerHeight }}
-              className="w-[1px] h-20 lg:h-28 bg-[#E0E0E8] origin-top"
+              className="w-[1px] h-20 lg:h-28 bg-[#C8DCCE] origin-top"
             />
             <img
               src={bsLogo}
@@ -87,16 +87,16 @@ export default function Education() {
             style={{ x: rightX, opacity: contentOpacity, rotate: rightRotate, scale: rightScale }}
             className="flex-1 text-left pl-4 lg:pl-8"
           >
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#888899] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-3">
               Bachelor&apos;s Degree
             </p>
-            <h3 className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[#0A0A0A] leading-tight">
+            <h3 className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[#0A1A10] leading-tight">
               Mathematics
             </h3>
-            <p className="font-sans text-sm text-[#888899] mt-3">
+            <p className="font-sans text-sm text-[#7A9A85] mt-3">
               Stanford University
             </p>
-            <p className="font-mono text-xs text-[#888899] mt-2">
+            <p className="font-mono text-xs text-[#7A9A85] mt-2">
               2021 – 2025
             </p>
           </motion.div>
@@ -114,30 +114,30 @@ export default function Education() {
               alt="Stanford Engineering"
               className="w-16 h-16 object-contain mx-auto mb-4"
             />
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#888899] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-3">
               Master&apos;s Degree
             </p>
-            <h3 className="font-display italic text-3xl text-[#0A0A0A] leading-tight">
+            <h3 className="font-display italic text-3xl text-[#0A1A10] leading-tight">
               Computer
               <br />
               Science
             </h3>
-            <p className="font-sans text-base text-[#555566] mt-3">
+            <p className="font-sans text-base text-[#4A6B55] mt-3">
               Artificial Intelligence Track
             </p>
-            <p className="font-sans text-sm text-[#888899] mt-1">
+            <p className="font-sans text-sm text-[#7A9A85] mt-1">
               Stanford University
             </p>
-            <p className="font-mono text-xs text-[#888899] mt-2">
+            <p className="font-mono text-xs text-[#7A9A85] mt-2">
               Expected 2026
             </p>
-            <div className="inline-flex items-center gap-1.5 bg-[#0066FF10] text-[#0066FF] text-xs font-mono px-2.5 py-1 rounded-full mt-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-pulse" />
+            <div className="inline-flex items-center gap-1.5 bg-[#00A86B10] text-[#00A86B] text-xs font-mono px-2.5 py-1 rounded-full mt-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00A86B] animate-pulse" />
               In Progress
             </div>
           </div>
 
-          <div className="w-12 h-[1px] bg-[#E0E0E8]" />
+          <div className="w-12 h-[1px] bg-[#C8DCCE]" />
 
           {/* BS degree */}
           <div>
@@ -146,16 +146,16 @@ export default function Education() {
               alt="Stanford University"
               className="w-16 h-16 object-contain mx-auto mb-4"
             />
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#888899] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-3">
               Bachelor&apos;s Degree
             </p>
-            <h3 className="font-display italic text-3xl text-[#0A0A0A] leading-tight">
+            <h3 className="font-display italic text-3xl text-[#0A1A10] leading-tight">
               Mathematics
             </h3>
-            <p className="font-sans text-sm text-[#888899] mt-3">
+            <p className="font-sans text-sm text-[#7A9A85] mt-3">
               Stanford University
             </p>
-            <p className="font-mono text-xs text-[#888899] mt-2">
+            <p className="font-mono text-xs text-[#7A9A85] mt-2">
               2021 – 2025
             </p>
           </div>

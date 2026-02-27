@@ -39,11 +39,11 @@ function BinaryRow({ delay, speed, maxLength, yPosition }: BinaryRowProps) {
 
   return (
     <div 
-      className="absolute whitespace-nowrap font-mono text-xs text-white/15 select-none pointer-events-none"
+      className="absolute whitespace-nowrap font-mono text-xs text-[#00D97E]/15 select-none pointer-events-none"
       style={{ top: `${yPosition}%` }}
     >
       {displayedBinary}
-      <span className="inline-block w-0.5 h-3 bg-white/25 ml-0.5 animate-pulse" />
+      <span className="inline-block w-0.5 h-3 bg-[#00A86B]/25 ml-0.5 animate-pulse" />
     </div>
   );
 }

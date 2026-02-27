@@ -95,7 +95,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-[#0A0A0F] relative overflow-hidden"
+      className="bg-[#0A120E] relative overflow-hidden"
     >
       <CodeWaterfall intensity="medium" />
 
@@ -105,19 +105,19 @@ export default function Experience() {
           {/* Left — Large sticky title */}
           <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center py-20 md:py-28">
             <p
-              className="font-mono uppercase tracking-[0.12em] text-[#8888A0] mb-4"
+              className="font-mono uppercase tracking-[0.12em] text-[#7A9A85] mb-4"
               style={{ fontSize: "10px" }}
             >
               Experience
             </p>
             <ScrollHighlight
               className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] mb-6"
-              colorFrom="#333344"
-              colorTo="#F0F0F5"
+              colorFrom="#2A4A35"
+              colorTo="#E8F5ED"
             >
               Experience
             </ScrollHighlight>
-            <p className="font-sans text-base text-[#8888A0] max-w-[360px] leading-relaxed">
+            <p className="font-sans text-base text-[#7A9A85] max-w-[360px] leading-relaxed">
               Research, engineering, and teaching across AI,
               machine learning, and mathematics at Stanford and Google.
             </p>
@@ -129,25 +129,25 @@ export default function Experience() {
               <div key={index}>
                 <button
                   onClick={() => toggleExpand(index)}
-                  className="w-full flex justify-between items-start border-b border-[#222233] py-5 text-left group"
+                  className="w-full flex justify-between items-start border-b border-[#1E3326] py-5 text-left group"
                 >
                   <div>
-                    <h3 className="font-sans font-semibold text-base text-[#F0F0F5]">
+                    <h3 className="font-sans font-semibold text-base text-[#E8F5ED]">
                       {exp.title}
                     </h3>
-                    <p className="font-sans text-sm text-[#8888A0] mt-0.5">
+                    <p className="font-sans text-sm text-[#7A9A85] mt-0.5">
                       {exp.org}
                     </p>
                   </div>
                   <div className="flex items-center gap-3 shrink-0 ml-4">
-                    <span className="font-mono text-xs text-[#8888A0] hidden sm:inline">
+                    <span className="font-mono text-xs text-[#7A9A85] hidden sm:inline">
                       {exp.period}
                     </span>
                     <motion.div
                       animate={{ rotate: expandedIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <ChevronDown className="w-4 h-4 text-[#8888A0]" />
+                      <ChevronDown className="w-4 h-4 text-[#7A9A85]" />
                     </motion.div>
                   </div>
                 </button>
@@ -160,17 +160,17 @@ export default function Experience() {
                       exit={{ clipPath: "inset(0 0 100% 0)" }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
-                      <p className="font-mono text-xs text-[#555566] mt-3 sm:hidden">
+                      <p className="font-mono text-xs text-[#4A6B55] mt-3 sm:hidden">
                         {exp.period}
                       </p>
-                      <p className="font-sans text-sm text-[#8888A0] leading-relaxed mt-3 mb-3">
+                      <p className="font-sans text-sm text-[#7A9A85] leading-relaxed mt-3 mb-3">
                         {exp.description}
                       </p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {exp.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs font-mono px-2.5 py-1 rounded-full border border-[#333344] text-[#8888A0]"
+                            className="text-xs font-mono px-2.5 py-1 rounded-full border border-[#2A4A35] text-[#7A9A85]"
                           >
                             {tag}
                           </span>

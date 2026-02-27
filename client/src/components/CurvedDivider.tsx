@@ -41,7 +41,7 @@ export default function CurvedDivider() {
       >
         <path
           d={path}
-          fill="#0A0A0F"
+          fill="#0A120E"
           style={{ transition: "d 0.05s linear" }}
         />
       </svg>

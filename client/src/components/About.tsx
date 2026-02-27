@@ -24,7 +24,7 @@ function ScrollWord({
   const t = Math.min(1, Math.max(0, (progress - wordStart) / (wordEnd - wordStart)));
 
   const opacity = 0.2 + t * 0.8;
-  const color = t >= 1 ? "#0A0A0A" : `rgb(${200 - t * 190}, ${200 - t * 190}, ${208 - t * 198})`;
+  const color = t >= 1 ? "#0A1A10" : `rgb(${200 - t * 190}, ${210 - t * 190}, ${200 - t * 185})`;
 
   return (
     <span
@@ -54,7 +54,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="bg-[#F0F0F2] py-32 md:py-44 lg:py-52"
+      className="bg-[#E5F0E8] py-32 md:py-44 lg:py-52"
       data-testid="section-about"
     >
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 lg:px-16">

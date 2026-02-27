@@ -89,9 +89,9 @@ export default function CodeBackground() {
       className="absolute inset-0 overflow-hidden pointer-events-none select-none"
     >
       <div className="absolute left-4 md:left-8 top-4 bottom-4 max-w-[45%] opacity-30 overflow-hidden">
-        <pre className="font-mono text-xs md:text-sm leading-relaxed whitespace-pre-wrap text-white/80">
+        <pre className="font-mono text-xs md:text-sm leading-relaxed whitespace-pre-wrap text-[#E8F5ED]/80">
           {codeText.substring(0, displayedChars)}
-          <span className="inline-block w-2 h-4 bg-white/50 animate-pulse ml-0.5" />
+          <span className="inline-block w-2 h-4 bg-[#00A86B]/50 animate-pulse ml-0.5" />
         </pre>
       </div>
     </div>

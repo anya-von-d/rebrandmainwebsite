@@ -51,7 +51,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="h-screen bg-[#0A0A0F] relative overflow-hidden"
+      className="h-screen bg-[#0A120E] relative overflow-hidden"
     >
       {/* Animated code typing background with cursor */}
       <CodeTyping />
@@ -69,11 +69,11 @@ export default function Hero() {
             className="whitespace-nowrap"
           >
             {/* First name — Syne, bold, structured */}
-            <h1 className="font-serif text-[12vw] md:text-[10vw] lg:text-[9vw] leading-[0.8] text-[#F0F0F5] uppercase tracking-tight font-extrabold">
+            <h1 className="font-serif text-[12vw] md:text-[10vw] lg:text-[9vw] leading-[0.8] text-[#E8F5ED] uppercase tracking-tight font-extrabold">
               Anya
             </h1>
             {/* Last name — Cormorant Garamond italic, elegant, French */}
-            <p className="font-display italic text-[7vw] md:text-[5.5vw] lg:text-[5vw] leading-[1] text-[#0066FF] -mt-[0.5vw] tracking-wide">
+            <p className="font-display italic text-[7vw] md:text-[5.5vw] lg:text-[5vw] leading-[1] text-[#00A86B] -mt-[0.5vw] tracking-wide">
               von Diessl
             </p>
           </motion.div>
@@ -93,7 +93,7 @@ export default function Hero() {
                   key={`${skill}-${i}`}
                   className="inline-flex items-center mx-4 md:mx-6"
                 >
-                  <span className="font-mono text-[10px] md:text-xs lg:text-sm text-[#0066FF] uppercase tracking-[0.2em]">
+                  <span className="font-mono text-[10px] md:text-xs lg:text-sm text-[#00A86B] uppercase tracking-[0.2em]">
                     {skill}
                   </span>
                 </span>
@@ -129,23 +129,23 @@ export default function Hero() {
           className="absolute left-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex w-[30%] lg:w-[34%] justify-center"
         >
           <div className="flex flex-col items-center text-center gap-1">
-            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#555566] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#4A6B55] mb-3">
               Role
             </p>
-            <p className="font-sans text-sm lg:text-base text-[#F0F0F5] font-semibold leading-relaxed">
+            <p className="font-sans text-sm lg:text-base text-[#E8F5ED] font-semibold leading-relaxed">
               AI Researcher
             </p>
-            <p className="font-sans text-sm lg:text-base text-[#8888A0] leading-relaxed">
+            <p className="font-sans text-sm lg:text-base text-[#7A9A85] leading-relaxed">
               &amp; Computer Scientist
             </p>
             <div className="mt-6">
-              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#555566] mb-3">
+              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#4A6B55] mb-3">
                 Education
               </p>
-              <p className="font-sans text-sm lg:text-base text-[#F0F0F5] font-semibold leading-relaxed">
+              <p className="font-sans text-sm lg:text-base text-[#E8F5ED] font-semibold leading-relaxed">
                 Stanford University
               </p>
-              <p className="font-sans text-sm lg:text-base text-[#8888A0] leading-relaxed">
+              <p className="font-sans text-sm lg:text-base text-[#7A9A85] leading-relaxed">
                 MS Computer Science
               </p>
             </div>
@@ -162,21 +162,21 @@ export default function Hero() {
           className="absolute right-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex w-[30%] lg:w-[34%] justify-center"
         >
           <div className="flex flex-col items-center text-center gap-1">
-            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#555566] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#4A6B55] mb-3">
               Connect
             </p>
             <a
               href="https://www.linkedin.com/in/anya-von-diessl/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-sm lg:text-base text-[#F0F0F5] font-semibold hover:text-[#0066FF] transition-colors flex items-center gap-1"
+              className="font-sans text-sm lg:text-base text-[#E8F5ED] font-semibold hover:text-[#00A86B] transition-colors flex items-center gap-1"
             >
               LinkedIn <ArrowUpRight size={13} />
             </a>
             <div className="mt-6">
               <button
                 onClick={scrollToContact}
-                className="bg-[#0066FF] hover:bg-[#0052CC] text-white px-5 py-2 rounded-lg font-medium text-sm transition-colors cursor-pointer"
+                className="bg-[#00A86B] hover:bg-[#008F5A] text-white px-5 py-2 rounded-lg font-medium text-sm transition-colors cursor-pointer"
               >
                 Contact Me
               </button>
@@ -192,32 +192,32 @@ export default function Hero() {
           className="absolute bottom-4 inset-x-0 z-40 flex md:hidden justify-between px-6"
         >
           <div className="text-left">
-            <p className="font-mono text-[9px] uppercase tracking-[0.1em] text-[#555566] mb-1">
+            <p className="font-mono text-[9px] uppercase tracking-[0.1em] text-[#4A6B55] mb-1">
               Role
             </p>
-            <p className="font-sans text-xs text-[#F0F0F5] font-semibold">
+            <p className="font-sans text-xs text-[#E8F5ED] font-semibold">
               AI Researcher
             </p>
-            <p className="font-sans text-[11px] text-[#8888A0]">
+            <p className="font-sans text-[11px] text-[#7A9A85]">
               &amp; Computer Scientist
             </p>
           </div>
           <div className="text-center">
             <button
               onClick={scrollToContact}
-              className="bg-[#0066FF] hover:bg-[#0052CC] text-white px-4 py-1.5 rounded-lg font-medium text-xs transition-colors"
+              className="bg-[#00A86B] hover:bg-[#008F5A] text-white px-4 py-1.5 rounded-lg font-medium text-xs transition-colors"
             >
               Contact
             </button>
           </div>
           <div className="text-right">
-            <p className="font-mono text-[9px] uppercase tracking-[0.1em] text-[#555566] mb-1">
+            <p className="font-mono text-[9px] uppercase tracking-[0.1em] text-[#4A6B55] mb-1">
               Education
             </p>
-            <p className="font-sans text-xs text-[#F0F0F5] font-semibold">
+            <p className="font-sans text-xs text-[#E8F5ED] font-semibold">
               Stanford
             </p>
-            <p className="font-sans text-[11px] text-[#8888A0]">
+            <p className="font-sans text-[11px] text-[#7A9A85]">
               MS Computer Science
             </p>
           </div>

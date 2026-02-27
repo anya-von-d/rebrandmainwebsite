@@ -73,8 +73,8 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-colors duration-300 ${
           isOverHero && !isMenuOpen
-            ? 'bg-[#0A0A0F] border-b border-[#1a1a2e]'
-            : 'bg-[#FAFAFA] border-b border-[#E0E0E8]'
+            ? 'bg-[#0A120E] border-b border-[#1a2e1e]'
+            : 'bg-[#F0F7F2] border-b border-[#C8DCCE]'
         }`}
       >
         <div className="w-full px-6 md:px-10 grid grid-cols-3 items-center">
@@ -91,7 +91,7 @@ export default function Navigation() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#F0F0F5]' : 'text-[#0A0A0A]'
+                isOverHero && !isMenuOpen ? 'text-[#E8F5ED]' : 'text-[#0A1A10]'
               }`}
             >
               avd
@@ -103,7 +103,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`relative w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#F0F0F5]' : 'text-[#0A0A0A]'
+                isOverHero && !isMenuOpen ? 'text-[#E8F5ED]' : 'text-[#0A1A10]'
               }`}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -136,7 +136,7 @@ export default function Navigation() {
 
         {/* Scroll progress bar */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0066FF] origin-left"
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00A86B] origin-left"
           style={{ scaleX: scrollYProgress }}
         />
       </nav>
@@ -149,7 +149,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#FAFAFA]"
+            className="fixed inset-0 z-40 bg-[#F0F7F2]"
           >
             {/* Menu content — centered navigation links */}
             <div className="flex flex-col items-center justify-center h-full pt-14">
@@ -174,8 +174,8 @@ export default function Navigation() {
                         onClick={(e) => handleNavClick(e, item.href)}
                         className={`block font-display italic text-5xl md:text-6xl lg:text-7xl py-2 transition-colors duration-200 ${
                           isActive
-                            ? 'text-[#0066FF]'
-                            : 'text-[#0A0A0A] hover:text-[#0066FF]'
+                            ? 'text-[#00A86B]'
+                            : 'text-[#0A1A10] hover:text-[#00A86B]'
                         }`}
                       >
                         {item.label}
@@ -192,10 +192,10 @@ export default function Navigation() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="absolute bottom-10 left-0 right-0 flex justify-between items-end px-6 md:px-10"
               >
-                <p className="font-mono text-[11px] text-[#888899] uppercase tracking-[0.06em]">
+                <p className="font-mono text-[11px] text-[#7A9A85] uppercase tracking-[0.06em]">
                   Anya von Diessl
                 </p>
-                <p className="font-mono text-[11px] text-[#888899] uppercase tracking-[0.06em]">
+                <p className="font-mono text-[11px] text-[#7A9A85] uppercase tracking-[0.06em]">
                   Stanford CS &middot; AI
                 </p>
               </motion.div>

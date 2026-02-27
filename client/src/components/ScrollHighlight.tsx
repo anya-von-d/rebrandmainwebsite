@@ -22,8 +22,8 @@ interface ScrollHighlightProps {
 export default function ScrollHighlight({
   children,
   className = "",
-  colorFrom = "#C8C8D0",
-  colorTo = "#0A0A0A",
+  colorFrom = "#A8C8B0",
+  colorTo = "#0A1A10",
 }: ScrollHighlightProps) {
   const ref = useRef<HTMLDivElement>(null);
 

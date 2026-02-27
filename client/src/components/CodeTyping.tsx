@@ -173,8 +173,8 @@ const BLOCK_POSITIONS = [
   { top: "65%", right: "1%", width: "40%" },
 ];
 
-const TEXT_COLOR = "#9999AA";
-const CURSOR_COLOR = "#CCCCDD";
+const TEXT_COLOR = "#7A9A85";
+const CURSOR_COLOR = "#A8C8B0";
 
 interface TerminalProps {
   lines: string[];
@@ -338,7 +338,7 @@ export default function CodeTyping() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 55% 50% at 50% 50%, rgba(10,10,15,0.92) 0%, rgba(10,10,15,0.6) 50%, rgba(10,10,15,0.1) 100%)",
+            "radial-gradient(ellipse 55% 50% at 50% 50%, rgba(10,18,14,0.92) 0%, rgba(10,18,14,0.6) 50%, rgba(10,18,14,0.1) 100%)",
         }}
       />
 
@@ -346,13 +346,13 @@ export default function CodeTyping() {
       <div
         className="absolute inset-x-0 top-0 h-20"
         style={{
-          background: "linear-gradient(to bottom, #0A0A0F 0%, transparent 100%)",
+          background: "linear-gradient(to bottom, #0A120E 0%, transparent 100%)",
         }}
       />
       <div
         className="absolute inset-x-0 bottom-0 h-20"
         style={{
-          background: "linear-gradient(to top, #0A0A0F 0%, transparent 100%)",
+          background: "linear-gradient(to top, #0A120E 0%, transparent 100%)",
         }}
       />
     </div>

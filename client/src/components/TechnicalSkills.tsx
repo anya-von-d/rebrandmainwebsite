@@ -23,10 +23,10 @@ interface SkillEdge {
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
-  language: "#0066FF",
-  framework: "#00D97E",
-  domain: "#FF6B35",
-  tool: "#8B5CF6",
+  language: "#00A86B",
+  framework: "#2ECC71",
+  domain: "#10B981",
+  tool: "#059669",
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -439,7 +439,7 @@ export default function TechnicalSkills() {
         // Node circle
         ctx.beginPath();
         ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
-        ctx.fillStyle = isDimmed ? "#1a1a24" : "#13131D";
+        ctx.fillStyle = isDimmed ? "#0E1F14" : "#0C1A12";
         ctx.fill();
         ctx.strokeStyle = isDimmed
           ? "rgba(200,200,210,0.1)"
@@ -460,7 +460,7 @@ export default function TechnicalSkills() {
         ctx.fillStyle = isDimmed
           ? "rgba(200,200,210,0.2)"
           : isHovered
-          ? "#F0F0F5"
+          ? "#E8F5ED"
           : isConnected
           ? "#D0D0DD"
           : "rgba(200,200,210,0.65)";
@@ -548,7 +548,7 @@ export default function TechnicalSkills() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0A0A0F] py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="bg-[#0A120E] py-28 md:py-36 lg:py-44 overflow-hidden"
     >
       {/* Header area — title right, paragraph left */}
       <motion.div
@@ -558,13 +558,13 @@ export default function TechnicalSkills() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           {/* Title — right-aligned */}
           <div className="md:order-2 md:text-right">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#555566] mb-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#4A6B55] mb-3">
               Technical
             </p>
             <ScrollHighlight
               className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]"
-              colorFrom="#333344"
-              colorTo="#F0F0F5"
+              colorFrom="#2A4A35"
+              colorTo="#E8F5ED"
             >
               Technical Skills
               <br />
@@ -573,7 +573,7 @@ export default function TechnicalSkills() {
           </div>
 
           {/* Paragraph — left */}
-          <p className="font-sans text-base md:text-lg text-[#8888A0] max-w-[440px] leading-relaxed md:order-1">
+          <p className="font-sans text-base md:text-lg text-[#7A9A85] max-w-[440px] leading-relaxed md:order-1">
             Proficient across the full stack of modern AI research and
             engineering, from low-level systems programming to high-level
             deep learning frameworks and statistical modeling.
@@ -588,7 +588,7 @@ export default function TechnicalSkills() {
                 className="w-2.5 h-2.5 rounded-full"
                 style={{ backgroundColor: CATEGORY_COLORS[key] }}
               />
-              <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#8888A0]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#7A9A85]">
                 {label}
               </span>
             </div>
@@ -614,7 +614,7 @@ export default function TechnicalSkills() {
 
           {/* Interaction hint */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-            <p className="font-mono text-[10px] text-[#555566] uppercase tracking-[0.1em]">
+            <p className="font-mono text-[10px] text-[#4A6B55] uppercase tracking-[0.1em]">
               Hover &amp; drag to explore
             </p>
           </div>
