@@ -30,8 +30,8 @@ export default function CurvedDivider() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full -mt-[6px]"
-      style={{ height: `${80 + curveY / 2}px`, backgroundColor: "#DBEEE3" }}
+      className="relative w-full -mt-3"
+      style={{ height: `${80 + curveY / 2 + 12}px`, backgroundColor: "#DBEEE3" }}
     >
       <svg
         viewBox="0 0 1440 230"
