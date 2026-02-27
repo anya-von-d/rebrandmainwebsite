@@ -74,7 +74,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={sectionRef}
-      className="bg-[#E5F0E8] py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="bg-[#E5F0E8] py-16 md:py-20 lg:py-24 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Title left, Box right */}

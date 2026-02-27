@@ -18,7 +18,7 @@ export default function VonyBanner() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0A120E] py-20 md:py-28 lg:py-36 overflow-hidden border-y border-[#1B4332]"
+      className="bg-[#0A120E] py-12 md:py-16 lg:py-20 overflow-hidden border-y border-[#1B4332]"
     >
       <div className="max-w-[1300px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex flex-col items-center text-center">

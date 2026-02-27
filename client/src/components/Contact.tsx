@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="bg-[var(--bg)] py-20 md:py-28 relative">
+    <section id="contact" ref={sectionRef} className="bg-[var(--bg)] py-16 md:py-20 relative">
       <CursorGlow />
       <div className="max-w-[900px] mx-auto px-6 md:px-12 relative z-10">
         <motion.p
