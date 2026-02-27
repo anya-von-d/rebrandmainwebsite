@@ -62,7 +62,7 @@ export default function Experience() {
           {/* Left — Large title with parallax */}
           <motion.div
             style={{ y: titleY, opacity: contentOpacity }}
-            className="lg:sticky lg:top-32"
+            className="lg:sticky lg:top-32 text-center lg:text-left"
           >
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
               Use Cases
@@ -78,14 +78,14 @@ export default function Experience() {
               <br />
               Situations
             </ScrollHighlight>
-            <p className="font-sans text-base text-[#4A6B55] mt-6 max-w-[360px] leading-relaxed">
+            <p className="font-sans text-base text-[#4A6B55] mt-6 max-w-[360px] leading-relaxed mx-auto lg:mx-0">
               Whether it's a small favour or a bigger expense, Vony makes
               lending between friends and family clear and simple.
             </p>
           </motion.div>
 
           {/* Right — Auto-scrolling use-case cards box */}
-          <div className="lg:sticky lg:top-32">
+          <div className="lg:sticky lg:top-32 max-w-[85%] mx-auto lg:max-w-none">
             <div className="bg-[#DBFFEB] rounded-2xl p-6 md:p-8 lg:p-10">
               <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-5">
                 Common Scenarios

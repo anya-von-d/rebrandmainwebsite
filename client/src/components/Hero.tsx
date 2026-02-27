@@ -446,9 +446,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-          className="absolute inset-x-0 bottom-[-5%] z-10 flex md:hidden justify-center pointer-events-none"
+          className="absolute inset-x-0 bottom-[-20%] z-10 flex md:hidden justify-center pointer-events-none"
         >
-          <PhoneOutline className="w-[50vw] max-w-[260px] h-auto opacity-70" />
+          <PhoneOutline className="w-[45vw] max-w-[240px] h-auto opacity-70" />
         </motion.div>
       </motion.div>
     </section>

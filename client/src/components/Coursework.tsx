@@ -204,8 +204,24 @@ export default function Features() {
         style={{ opacity: contentOpacity }}
         className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16 relative z-10"
       >
-        {/* Two-column layout: Carousel left, Title right */}
+        {/* Two-column layout: Carousel left, Title right (on mobile: title on top, carousel below) */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
+          {/* Section header — shown on top on mobile, hidden on lg (shown on right instead) */}
+          <div className="lg:hidden text-center mb-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#50C878]/60 mb-4">
+              Features
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl leading-[0.95] text-white font-extrabold tracking-tight">
+              Everything You Need
+              <br />
+              <span className="text-[#50C878]">to Lend with Confidence</span>
+            </h2>
+            <p className="font-sans text-base md:text-lg text-white/50 mt-6 max-w-[520px] mx-auto leading-relaxed">
+              Vony gives you the tools to create clear agreements, set fair terms,
+              and keep both sides informed every step of the way.
+            </p>
+          </div>
+
           {/* Left — Feature carousel */}
           <div>
             {/* Large display box */}
@@ -285,8 +301,8 @@ export default function Features() {
             </AnimatePresence>
           </div>
 
-          {/* Right — Section header */}
-          <div className="lg:sticky lg:top-32">
+          {/* Right — Section header (desktop only) */}
+          <div className="hidden lg:block lg:sticky lg:top-32">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#50C878]/60 mb-4">
               Features
             </p>

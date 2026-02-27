@@ -305,35 +305,54 @@ export default function Education() {
           </div>
         </div>
 
-        {/* Mobile: stacked */}
-        <div className="md:hidden flex flex-col gap-8">
-          <div className="flex flex-col gap-2">
-            {steps.map((step, index) => {
-              const isActive = activeIndex === index;
-              return (
-                <button
-                  key={step.label}
-                  onClick={() => handleStepClick(index)}
-                  className={`relative text-left py-4 px-4 rounded-xl transition-all duration-300 cursor-pointer group ${
-                    isActive ? "bg-[#0A1A10]/10" : "bg-transparent hover:bg-[#0A1A10]/5"
-                  }`}
+        {/* Mobile: steps + description side by side, image below */}
+        <div className="md:hidden flex flex-col gap-6">
+          {/* Top row: steps left, description right */}
+          <div className="grid grid-cols-[auto_1fr] gap-4 items-start">
+            <div className="flex flex-col gap-1">
+              {steps.map((step, index) => {
+                const isActive = activeIndex === index;
+                return (
+                  <button
+                    key={step.label}
+                    onClick={() => handleStepClick(index)}
+                    className={`relative text-left py-3 px-3 pr-4 rounded-lg transition-all duration-300 cursor-pointer group ${
+                      isActive ? "bg-[#0A1A10]/10" : "bg-transparent hover:bg-[#0A1A10]/5"
+                    }`}
+                  >
+                    <div className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full transition-all duration-300 ${
+                      isActive ? "bg-[#0A1A10]" : "bg-transparent"
+                    }`} />
+                    <div className="flex items-center gap-2">
+                      <span className={`font-mono text-[10px] transition-colors duration-300 ${
+                        isActive ? "text-[#0A1A10]" : "text-[#0A1A10]/50"
+                      }`}>{step.number}</span>
+                      <span className={`font-sans text-sm font-semibold transition-colors duration-300 whitespace-nowrap ${
+                        isActive ? "text-[#0A1A10]" : "text-[#0A1A10]/50"
+                      }`}>{step.label}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="font-sans text-sm text-[#0A1A10]/70 leading-relaxed"
                 >
-                  <div className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full transition-all duration-300 ${
-                    isActive ? "bg-[#0A1A10]" : "bg-transparent"
-                  }`} />
-                  <div className="flex items-center gap-3">
-                    <span className={`font-mono text-xs transition-colors duration-300 ${
-                      isActive ? "text-[#0A1A10]" : "text-[#0A1A10]/50"
-                    }`}>{step.number}</span>
-                    <span className={`font-sans text-base font-semibold transition-colors duration-300 ${
-                      isActive ? "text-[#0A1A10]" : "text-[#0A1A10]/50"
-                    }`}>{step.label}</span>
-                  </div>
-                </button>
-              );
-            })}
+                  {steps[activeIndex].description}
+                </motion.p>
+              </AnimatePresence>
+            </div>
           </div>
 
+          {/* Image below */}
           <div className="w-full bg-[#0A1A10]/10 rounded-2xl aspect-[4/3] flex items-center justify-center p-8">
             <AnimatePresence mode="wait">
               <motion.div
@@ -348,19 +367,6 @@ export default function Education() {
               </motion.div>
             </AnimatePresence>
           </div>
-
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={activeIndex}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="font-sans text-base text-[#0A1A10]/70 leading-relaxed px-2"
-            >
-              {steps[activeIndex].description}
-            </motion.p>
-          </AnimatePresence>
         </div>
       </motion.div>
     </section>
