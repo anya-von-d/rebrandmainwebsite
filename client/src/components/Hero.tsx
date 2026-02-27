@@ -91,21 +91,20 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="h-screen bg-[#36CE8E] relative overflow-hidden"
+      className="h-[92vh] bg-[#36CE8E] relative overflow-hidden"
     >
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
         className="relative z-10 h-full"
       >
-        {/* ── Two-column layout: headline left, image right ── */}
+        {/* ── Headline left ── */}
         <div className="absolute inset-0 flex items-center z-30">
-          <div className="w-full max-w-[1300px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Left — Headline + CTA */}
+          <div className="w-full max-w-[1300px] mx-auto px-6 md:px-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              className="text-center md:text-left"
+              className="text-center md:text-left md:max-w-[55%]"
             >
               <h1 className="font-serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#0A1A10] tracking-tight font-extrabold">
                 Lending Money to Friends{" "}
@@ -126,25 +125,25 @@ export default function Hero() {
                 </button>
               </motion.div>
             </motion.div>
-
-            {/* Right — Phone Outline */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-              className="hidden md:flex justify-center md:justify-end pointer-events-none"
-            >
-              <PhoneOutline className="w-[28vw] max-w-[280px] lg:w-[22vw] lg:max-w-[320px] xl:max-w-[360px] h-auto" />
-            </motion.div>
           </div>
         </div>
 
-        {/* ── Features marquee — bottom of screen ── */}
+        {/* ── Phone Outline — bigger, positioned to overflow bottom ── */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+          className="hidden md:block absolute right-[8%] lg:right-[12%] top-[22%] z-20 pointer-events-none"
+        >
+          <PhoneOutline className="w-[32vw] max-w-[380px] lg:w-[26vw] lg:max-w-[420px] xl:max-w-[460px] h-auto" />
+        </motion.div>
+
+        {/* ── Features marquee — moved up, behind the phone ── */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-[6%] md:bottom-[8%] left-0 right-0 z-20 pointer-events-none"
+          className="absolute bottom-[12%] md:bottom-[16%] left-0 right-0 z-10 pointer-events-none"
         >
           <div className="overflow-hidden">
             <div className="animate-marquee flex whitespace-nowrap">
@@ -167,9 +166,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-          className="absolute inset-x-0 bottom-[15%] z-10 flex md:hidden justify-center pointer-events-none"
+          className="absolute inset-x-0 bottom-[-5%] z-10 flex md:hidden justify-center pointer-events-none"
         >
-          <PhoneOutline className="w-[40vw] max-w-[200px] h-auto opacity-40" />
+          <PhoneOutline className="w-[50vw] max-w-[260px] h-auto opacity-40" />
         </motion.div>
       </motion.div>
     </section>
