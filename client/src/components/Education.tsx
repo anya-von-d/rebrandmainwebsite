@@ -144,7 +144,7 @@ export default function Education() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="bg-[#B0EBBF] py-20 md:py-28 lg:py-32 overflow-hidden relative"
+      className="bg-[#36CE8E] py-20 md:py-28 lg:py-32 overflow-hidden relative"
     >
       {/* Subtle dot grid background */}
       <div
@@ -161,14 +161,14 @@ export default function Education() {
         className="max-w-[1300px] mx-auto px-6 md:px-12 lg:px-16 relative z-10"
       >
         {/* Section header */}
-        <div className="mb-16 md:mb-20">
-          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
+        <div className="mb-16 md:mb-20 text-center">
+          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#0A1A10]/50 mb-4">
             How It Works
           </p>
           <ScrollHighlight
             className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]"
-            colorFrom="#98D8AA"
-            colorTo="#1B4332"
+            colorFrom="rgba(10,26,16,0.4)"
+            colorTo="#0A1A10"
           >
             How Vony Works for
             <br />
