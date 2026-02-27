@@ -181,7 +181,7 @@ export default function Features() {
     <section
       id="features"
       ref={sectionRef}
-      className="bg-[#1B4332] py-20 md:py-28 lg:py-32 overflow-hidden relative"
+      className="bg-[#1B4332] pt-8 md:pt-12 pb-20 md:pb-28 lg:pb-32 overflow-hidden relative"
     >
       {/* Scrolling banner */}
       <div className="overflow-hidden mb-12 md:mb-16">
