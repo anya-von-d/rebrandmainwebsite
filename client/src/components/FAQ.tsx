@@ -56,7 +56,7 @@ export default function FAQ() {
     <section
       id="faq"
       ref={sectionRef}
-      className="bg-[#DBEEE3] py-20 md:py-28 lg:py-32"
+      className="bg-[#DBEEE3] pt-8 md:pt-12 pb-20 md:pb-28 lg:pb-32"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-start">

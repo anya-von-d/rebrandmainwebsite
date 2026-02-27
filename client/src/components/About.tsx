@@ -23,7 +23,7 @@ function ScrollWord({
   const t = Math.min(1, Math.max(0, (progress - wordStart) / (wordEnd - wordStart)));
 
   const opacity = 0.2 + t * 0.8;
-  const color = t >= 1 ? "#0A1A10" : `rgb(${200 - t * 190}, ${200 - t * 190}, ${200 - t * 190})`;
+  const color = t >= 1 ? "#4A6B55" : `rgb(${200 - t * 126}, ${200 - t * 95}, ${200 - t * 115})`;
 
   return (
     <span
@@ -87,7 +87,7 @@ export default function About() {
           <span className="text-[#1B4332]">Designed for </span>
           <span className="text-[#0D9B76]">Everyday Lending</span>
         </h2>
-        <p className="font-sans text-lg md:text-xl lg:text-2xl leading-relaxed font-normal max-w-[700px] mx-auto">
+        <p className="font-sans text-base md:text-lg leading-relaxed font-normal max-w-[520px] mx-auto">
           {words.map((word, i) => (
             <ScrollWord
               key={`${word}-${i}`}

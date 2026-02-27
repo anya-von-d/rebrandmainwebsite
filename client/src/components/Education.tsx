@@ -144,7 +144,7 @@ export default function Education() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="bg-[#36CE8E] py-20 md:py-28 lg:py-32 overflow-hidden relative"
+      className="bg-[#36CE8E] pt-8 md:pt-12 pb-20 md:pb-28 lg:pb-32 overflow-hidden relative"
     >
       {/* Subtle dot grid background */}
       <div
