@@ -18,11 +18,11 @@ export default function VonyBanner() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0A120E] py-16 md:py-20 lg:py-24 overflow-hidden border-y border-[#1B4332]"
+      className="bg-[#E5F0E8] py-16 md:py-20 lg:py-24 overflow-hidden border-y border-[#C8DCCE]"
     >
       <div className="max-w-[1300px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex flex-col items-center text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-[#E8F5ED]">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-[#0A1A10]">
             Vony makes it easy to{" "}
             <span className="relative inline-block">
               <motion.span className="font-bold">
