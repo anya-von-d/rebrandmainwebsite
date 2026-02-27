@@ -30,7 +30,7 @@ export default function CurvedDivider() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full -mt-2"
+      className="relative w-full -mt-[6px]"
       style={{ height: `${80 + curveY / 2}px`, backgroundColor: "#DBEEE3" }}
     >
       <svg
