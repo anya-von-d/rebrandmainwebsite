@@ -398,7 +398,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-center md:text-left md:max-w-[55%]"
             >
-              <h1 className="italic text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] text-[#0A1A10] font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] text-[#0A1A10] font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                 Lending Money to Friends{" "}
                 <span className="text-[#83F384]">Made Simple</span>
               </h1>
