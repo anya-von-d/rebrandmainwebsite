@@ -38,10 +38,21 @@ export default function Coursework() {
       className="bg-[#E5F0E8] py-28 md:py-36 lg:py-44 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
-        {/* Two-column layout: Title left, Box right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
-          {/* Left — Large title with parallax */}
-          <motion.div style={{ y: titleY, opacity: contentOpacity }} className="lg:sticky lg:top-32">
+        {/* Two-column layout: Box left, Title right */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
+          {/* Left — Image box */}
+          <div className="lg:sticky lg:top-32 order-2 lg:order-1">
+            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10">
+              <div className="min-h-[360px] flex items-center justify-center">
+                <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
+                  Image coming soon
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right — Large title with parallax */}
+          <motion.div style={{ y: titleY, opacity: contentOpacity }} className="lg:sticky lg:top-32 order-1 lg:order-2">
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
               What You Get
             </p>
@@ -60,17 +71,6 @@ export default function Coursework() {
               Everything you need to lend and borrow with confidence. Vony gives you the tools to create clear agreements, set fair terms, and keep both sides informed every step of the way.
             </p>
           </motion.div>
-
-          {/* Right — Image box */}
-          <div className="lg:sticky lg:top-32">
-            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10">
-              <div className="min-h-[360px] flex items-center justify-center">
-                <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
-                  Image coming soon
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
