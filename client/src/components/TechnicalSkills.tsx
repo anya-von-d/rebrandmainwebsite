@@ -20,20 +20,20 @@ export default function TechnicalSkills() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0F1E15] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#C4D9CA] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Title left, Box right */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
           {/* Left — Title with parallax */}
           <motion.div style={{ y: titleY, opacity: contentOpacity }} className="lg:sticky lg:top-32">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#4A6B55] mb-4">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
               Stay Organised
             </p>
             <ScrollHighlight
               className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-              colorFrom="#1B4332"
-              colorTo="#50C878"
+              colorFrom="#98D8AA"
+              colorTo="#1B4332"
             >
               Keep Track
               <br />
@@ -41,16 +41,16 @@ export default function TechnicalSkills() {
               <br />
               Agreements
             </ScrollHighlight>
-            <p className="font-sans text-base text-[#98D8AA] mt-6 max-w-[360px] leading-relaxed">
+            <p className="font-sans text-base text-[#4A6B55] mt-6 max-w-[360px] leading-relaxed">
               Every loan you create is stored securely and accessible anytime. View outstanding balances, payment history, and contract details all in one place.
             </p>
           </motion.div>
 
           {/* Right — Image box */}
           <motion.div style={{ opacity: contentOpacity }} className="lg:sticky lg:top-32">
-            <div className="bg-[#142A1B] rounded-2xl border border-[#1B4332] p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
+            <div className="bg-[#E5F0E8] rounded-2xl border border-[#B0CCBA] p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
               <div className="min-h-[360px] flex items-center justify-center">
-                <p className="font-mono text-xs text-[#50C878] uppercase tracking-wider">
+                <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                   Image coming soon
                 </p>
               </div>

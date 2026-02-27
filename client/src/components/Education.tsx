@@ -79,7 +79,7 @@ export default function Education() {
     <section
       id="education"
       ref={sectionRef}
-      className="bg-[#0B1510] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#D0E4D5] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <motion.div
         style={{ opacity: contentOpacity }}
@@ -92,8 +92,8 @@ export default function Education() {
           </p>
           <ScrollHighlight
             className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]"
-            colorFrom="#1B4332"
-            colorTo="#98D8AA"
+            colorFrom="#98D8AA"
+            colorTo="#1B4332"
           >
             How Vony Works for
             <br />
@@ -114,8 +114,8 @@ export default function Education() {
                   onClick={() => handleStepClick(index)}
                   className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isActive
-                      ? "bg-[#102117]"
-                      : "bg-transparent hover:bg-[#102117]/50"
+                      ? "bg-[#E5F0E8]"
+                      : "bg-transparent hover:bg-[#B8D0BE]/50"
                   }`}
                 >
                   <div
@@ -128,14 +128,14 @@ export default function Education() {
                     <span
                       className="font-mono text-xs transition-colors duration-300"
                       style={{
-                        color: isActive ? accentColor : "#2A4A35",
+                        color: isActive ? accentColor : "#7A9A85",
                       }}
                     >
                       {step.number}
                     </span>
                     <span
                       className={`font-sans text-lg md:text-xl font-semibold transition-colors duration-300 ${
-                        isActive ? "text-[#E8F5ED]" : "text-[#7A9A85] group-hover:text-[#E8F5ED]"
+                        isActive ? "text-[#0A1A10]" : "text-[#7A9A85] group-hover:text-[#0A1A10]"
                       }`}
                     >
                       {step.label}
@@ -149,7 +149,7 @@ export default function Education() {
           {/* Center — Image box */}
           <div className="flex items-center justify-center">
             <div
-              className="w-[280px] xl:w-[320px] bg-[#102117] rounded-2xl border aspect-[3/4] flex items-center justify-center transition-colors duration-500"
+              className="w-[280px] xl:w-[320px] bg-[#E5F0E8] rounded-2xl border aspect-[3/4] flex items-center justify-center transition-colors duration-500"
               style={{ borderColor: stepColors[activeIndex] + "40" }}
             >
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
@@ -167,7 +167,7 @@ export default function Education() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="font-sans text-base lg:text-lg text-[#C8DCCE] leading-relaxed"
+                className="font-sans text-base lg:text-lg text-[#4A6B55] leading-relaxed"
               >
                 {steps[activeIndex].description}
               </motion.p>
@@ -187,26 +187,26 @@ export default function Education() {
                   onClick={() => handleStepClick(index)}
                   className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isActive
-                      ? "bg-[#102117]"
-                      : "bg-transparent hover:bg-[#102117]/50"
+                      ? "bg-[#E5F0E8]"
+                      : "bg-transparent hover:bg-[#B8D0BE]/50"
                   }`}
                 >
                   <div
                     className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300 ${
-                      isActive ? "bg-[#00A86B]" : "bg-transparent group-hover:bg-[#2A4A35]"
+                      isActive ? "bg-[#00A86B]" : "bg-transparent group-hover:bg-[#7A9A85]"
                     }`}
                   />
                   <div className="flex items-center gap-4">
                     <span
                       className={`font-mono text-xs transition-colors duration-300 ${
-                        isActive ? "text-[#00A86B]" : "text-[#2A4A35] group-hover:text-[#7A9A85]"
+                        isActive ? "text-[#00A86B]" : "text-[#7A9A85] group-hover:text-[#7A9A85]"
                       }`}
                     >
                       {step.number}
                     </span>
                     <span
                       className={`font-sans text-lg font-semibold transition-colors duration-300 ${
-                        isActive ? "text-[#E8F5ED]" : "text-[#7A9A85] group-hover:text-[#E8F5ED]"
+                        isActive ? "text-[#0A1A10]" : "text-[#7A9A85] group-hover:text-[#0A1A10]"
                       }`}
                     >
                       {step.label}
@@ -219,7 +219,7 @@ export default function Education() {
 
           {/* Right — Image box + description stacked */}
           <div className="flex flex-col items-center gap-8">
-            <div className="w-full bg-[#102117] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+            <div className="w-full bg-[#E5F0E8] rounded-2xl border border-[#B0CCBA] aspect-[4/3] flex items-center justify-center">
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
               </p>
@@ -232,7 +232,7 @@ export default function Education() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="font-sans text-base text-[#C8DCCE] leading-relaxed w-full"
+                className="font-sans text-base text-[#4A6B55] leading-relaxed w-full"
               >
                 {steps[activeIndex].description}
               </motion.p>
@@ -252,8 +252,8 @@ export default function Education() {
                   onClick={() => handleStepClick(index)}
                   className={`relative text-left py-4 px-4 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isActive
-                      ? "bg-[#102117]"
-                      : "bg-transparent hover:bg-[#102117]/50"
+                      ? "bg-[#E5F0E8]"
+                      : "bg-transparent hover:bg-[#B8D0BE]/50"
                   }`}
                 >
                   <div
@@ -264,14 +264,14 @@ export default function Education() {
                   <div className="flex items-center gap-3">
                     <span
                       className={`font-mono text-xs transition-colors duration-300 ${
-                        isActive ? "text-[#00A86B]" : "text-[#2A4A35]"
+                        isActive ? "text-[#00A86B]" : "text-[#7A9A85]"
                       }`}
                     >
                       {step.number}
                     </span>
                     <span
                       className={`font-sans text-base font-semibold transition-colors duration-300 ${
-                        isActive ? "text-[#E8F5ED]" : "text-[#7A9A85]"
+                        isActive ? "text-[#0A1A10]" : "text-[#7A9A85]"
                       }`}
                     >
                       {step.label}
@@ -283,7 +283,7 @@ export default function Education() {
           </div>
 
           {/* Image box */}
-          <div className="w-full bg-[#102117] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+          <div className="w-full bg-[#E5F0E8] rounded-2xl border border-[#B0CCBA] aspect-[4/3] flex items-center justify-center">
             <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
               Image coming soon
             </p>
@@ -297,7 +297,7 @@ export default function Education() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="font-sans text-base text-[#C8DCCE] leading-relaxed px-2"
+              className="font-sans text-base text-[#4A6B55] leading-relaxed px-2"
             >
               {steps[activeIndex].description}
             </motion.p>

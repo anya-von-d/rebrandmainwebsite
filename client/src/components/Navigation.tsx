@@ -73,7 +73,7 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-colors duration-300 ${
           isOverHero && !isMenuOpen
-            ? 'bg-[#0A120E] border-b border-[#1a2e1e]'
+            ? 'bg-[#D4E8D9] border-b border-[#B0CCBA]'
             : 'bg-[#F0F7F2] border-b border-[#C8DCCE]'
         }`}
       >
@@ -83,7 +83,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`relative w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#E8F5ED]' : 'text-[#0A1A10]'
+                isOverHero && !isMenuOpen ? 'text-[#0A1A10]' : 'text-[#0A1A10]'
               }`}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -123,7 +123,7 @@ export default function Navigation() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#E8F5ED]' : 'text-[#0A1A10]'
+                isOverHero && !isMenuOpen ? 'text-[#0A1A10]' : 'text-[#0A1A10]'
               }`}
             >
               Vony
@@ -135,7 +135,7 @@ export default function Navigation() {
             <button
               className={`font-sans text-sm font-medium transition-colors duration-300 cursor-pointer ${
                 isOverHero && !isMenuOpen
-                  ? 'text-[#C8DCCE] hover:text-[#E8F5ED]'
+                  ? 'text-[#4A6B55] hover:text-[#0A1A10]'
                   : 'text-[#4A6B55] hover:text-[#0A1A10]'
               }`}
             >

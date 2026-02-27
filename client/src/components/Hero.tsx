@@ -33,7 +33,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="h-screen bg-[#0A120E] relative overflow-hidden"
+      className="h-screen bg-[#D4E8D9] relative overflow-hidden"
     >
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
@@ -49,9 +49,9 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-center md:text-left"
             >
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#E8F5ED] uppercase tracking-tight font-extrabold">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#0A1A10] uppercase tracking-tight font-extrabold">
                 Lending Money to Friends{" "}
-                <span className="bg-gradient-to-r from-[#00A86B] via-[#50C878] to-[#0D9B76] bg-clip-text text-transparent">Made Simple</span>
+                <span className="bg-gradient-to-r from-[#00A86B] via-[#0D9B76] to-[#007A4D] bg-clip-text text-transparent">Made Simple</span>
               </h1>
 
               <motion.div
@@ -99,7 +99,7 @@ export default function Hero() {
                   key={`${feature}-${i}`}
                   className="inline-flex items-center mx-6 md:mx-10"
                 >
-                  <span className="font-mono text-[10px] md:text-xs lg:text-sm text-[#50C878] uppercase tracking-[0.2em]">
+                  <span className="font-mono text-[10px] md:text-xs lg:text-sm text-[#0D9B76] uppercase tracking-[0.2em]">
                     {feature}
                   </span>
                 </span>
