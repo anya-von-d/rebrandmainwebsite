@@ -73,7 +73,7 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-colors duration-300 ${
           isOverHero && !isMenuOpen
-            ? 'bg-[#D4E8D9] border-b border-[#B0CCBA]'
+            ? 'bg-[#B8EFCA] border-b border-[#7AD4A0]'
             : 'bg-[#F0F7F2] border-b border-[#C8DCCE]'
         }`}
       >

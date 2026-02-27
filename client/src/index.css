@@ -4,9 +4,9 @@
 
 :root {
   /* Background */
-  --bg: #F0F7F2;
-  --bg-dark: #B8D0BE;
-  --bg-subtle: #E5F0E8;
+  --bg: #E8FCF0;
+  --bg-dark: #8ED4A2;
+  --bg-subtle: #D0F5DC;
 
   /* Text */
   --text: #0A1A10;
@@ -21,7 +21,7 @@
   --accent-glow: #00A86B20;
 
   /* Borders */
-  --border: #C8DCCE;
+  --border: #7AD4A0;
 
   /* Code / CS aesthetic */
   --code-green: #00D97E;
@@ -58,7 +58,7 @@
 
 @layer base {
   * {
-    @apply border-[#C8DCCE];
+    @apply border-[#7AD4A0];
   }
 
   html {

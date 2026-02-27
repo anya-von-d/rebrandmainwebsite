@@ -58,7 +58,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="bg-[#E5F0E8] py-20 md:py-28 lg:py-32"
+      className="bg-[#D0F5DC] py-20 md:py-28 lg:py-32"
       data-testid="section-about"
     >
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 lg:px-16">

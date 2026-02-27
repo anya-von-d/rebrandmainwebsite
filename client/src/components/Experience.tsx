@@ -74,7 +74,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={sectionRef}
-      className="bg-[#C8DCCE] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#A8E6B8] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Title left, Box right */}
@@ -106,7 +106,7 @@ export default function Experience() {
 
           {/* Right — Scrolling use-case cards box */}
           <div className="lg:sticky lg:top-32">
-            <div className="bg-[#E5F0E8] rounded-2xl border border-[#B0CCBA] p-6 md:p-8 lg:p-10">
+            <div className="bg-[#D0F5DC] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10">
               <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-5">
                 Common Scenarios
               </p>
@@ -114,9 +114,9 @@ export default function Experience() {
               {/* Scrollable container with masked edges */}
               <div className="relative">
                 {/* Top fade mask */}
-                <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#E5F0E8] to-transparent z-10 pointer-events-none rounded-t-lg" />
+                <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#D0F5DC] to-transparent z-10 pointer-events-none rounded-t-lg" />
                 {/* Bottom fade mask */}
-                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#E5F0E8] to-transparent z-10 pointer-events-none rounded-b-lg" />
+                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#D0F5DC] to-transparent z-10 pointer-events-none rounded-b-lg" />
 
                 <div className="max-h-[420px] overflow-y-auto space-y-3 pr-2 scrollbar-thin py-2">
                   {useCases.map((useCase, index) => {
@@ -132,7 +132,7 @@ export default function Experience() {
                           delay: index * 0.05,
                           ease: "easeOut",
                         }}
-                        className="bg-[#C8DCCE] rounded-xl p-4 md:p-5 border border-[#B0CCBA] transition-colors group"
+                        className="bg-[#A8E6B8] rounded-xl p-4 md:p-5 border border-[#7AD4A0] transition-colors group"
                         style={{ ["--hover-color" as string]: hoverColor }}
                         whileHover={{ borderColor: hoverColor }}
                       >

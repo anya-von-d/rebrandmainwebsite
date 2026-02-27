@@ -20,7 +20,7 @@ export default function TechnicalSkills() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#C4D9CA] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#9EE0B0] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Title left, Box right */}
@@ -48,7 +48,7 @@ export default function TechnicalSkills() {
 
           {/* Right — Image box */}
           <motion.div style={{ opacity: contentOpacity }} className="lg:sticky lg:top-32">
-            <div className="bg-[#E5F0E8] rounded-2xl border border-[#B0CCBA] p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
+            <div className="bg-[#D0F5DC] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
               <div className="min-h-[360px] flex items-center justify-center">
                 <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                   Image coming soon
