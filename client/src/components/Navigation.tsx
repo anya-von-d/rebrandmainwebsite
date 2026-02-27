@@ -107,7 +107,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop center — Links + Logo grouped together */}
-          <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2 gap-8">
+          <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2 gap-10">
             <a
               href="#experience"
               onClick={(e) => handleNavClick(e, '#experience')}
@@ -173,7 +173,7 @@ export default function Navigation() {
           </div>
 
           {/* Right — Login + Get Started */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ml-auto">
             <button
               className="px-4 py-2 rounded-lg font-sans text-sm font-medium transition-colors cursor-pointer text-[#4A6B55] hover:text-[#0A1A10]"
             >
