@@ -23,12 +23,35 @@ const steps = [
   },
 ];
 
-const CYCLE_INTERVAL = 5000; // ms per step in auto-cycle
+const CYCLE_INTERVAL = 5000;
+
+/* ── Phone outline SVG ── */
+function PhoneMockup({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative mx-auto w-[220px] lg:w-[260px]">
+      {/* Phone frame */}
+      <div className="relative rounded-[36px] border-[3px] border-[#2A4A35] bg-[#0A120E] p-2 shadow-2xl shadow-[#00A86B]/5">
+        {/* Notch */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-[#0A120E] rounded-b-2xl z-20 border-x-[3px] border-b-[3px] border-[#2A4A35]" />
+
+        {/* Screen area */}
+        <div className="relative rounded-[28px] bg-[#0E1F14] overflow-hidden aspect-[9/19]">
+          {/* Screen content — placeholder for future app screenshots */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+            {children}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar indicator */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[100px] h-[4px] rounded-full bg-[#2A4A35]" />
+    </div>
+  );
+}
 
 export default function Education() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [userInteracted, setUserInteracted] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const resumeRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -43,7 +66,6 @@ export default function Education() {
     [0, 1, 1, 0]
   );
 
-  // Auto-cycle through steps
   const startCycle = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
@@ -59,15 +81,12 @@ export default function Education() {
     };
   }, [startCycle]);
 
-  // When user clicks, pause auto-cycle then resume after inactivity
   const handleStepClick = (index: number) => {
     setActiveIndex(index);
-    setUserInteracted(true);
     if (timerRef.current) clearInterval(timerRef.current);
     if (resumeRef.current) clearTimeout(resumeRef.current);
 
     resumeRef.current = setTimeout(() => {
-      setUserInteracted(false);
       startCycle();
     }, 10000);
   };
@@ -80,7 +99,7 @@ export default function Education() {
     >
       <motion.div
         style={{ opacity: contentOpacity }}
-        className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16"
+        className="max-w-[1300px] mx-auto px-6 md:px-12 lg:px-16"
       >
         {/* Section header */}
         <div className="mb-16 md:mb-20">
@@ -98,8 +117,8 @@ export default function Education() {
           </ScrollHighlight>
         </div>
 
-        {/* Two-column: steps left, description right */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-10 lg:gap-20 items-start">
+        {/* Desktop: three-column — steps | phone | description */}
+        <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-10 xl:gap-16 items-center">
           {/* Left — Step selectors */}
           <div className="flex flex-col gap-2">
             {steps.map((step, index) => {
@@ -114,13 +133,11 @@ export default function Education() {
                       : "bg-transparent hover:bg-[#0E1F14]/50"
                   }`}
                 >
-                  {/* Active indicator bar */}
                   <div
                     className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300 ${
                       isActive ? "bg-[#00A86B]" : "bg-transparent group-hover:bg-[#2A4A35]"
                     }`}
                   />
-
                   <div className="flex items-center gap-4">
                     <span
                       className={`font-mono text-xs transition-colors duration-300 ${
@@ -137,49 +154,42 @@ export default function Education() {
                       {step.label}
                     </span>
                   </div>
-
-                  {/* Progress bar for auto-cycle (only on active step) */}
-                  {isActive && !userInteracted && (
-                    <motion.div
-                      className="absolute bottom-0 left-5 right-5 h-[2px] bg-[#00A86B]/30 rounded-full overflow-hidden"
-                    >
-                      <motion.div
-                        className="h-full bg-[#00A86B]"
-                        initial={{ width: "0%" }}
-                        animate={{ width: "100%" }}
-                        transition={{
-                          duration: CYCLE_INTERVAL / 1000,
-                          ease: "linear",
-                        }}
-                        key={`progress-${activeIndex}`}
-                      />
-                    </motion.div>
-                  )}
                 </button>
               );
             })}
+          </div>
 
-            {/* Mobile: show description below on small screens */}
-            <div className="md:hidden mt-6">
+          {/* Center — Phone mockup */}
+          <div className="flex items-center justify-center">
+            <PhoneMockup>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="bg-[#0E1F14] rounded-xl p-6 border border-[#1E3326]"
+                  className="text-center"
                 >
-                  <p className="font-sans text-base text-[#C8DCCE] leading-relaxed">
-                    {steps[activeIndex].description}
+                  <div className="w-10 h-10 rounded-full bg-[#00A86B]/15 flex items-center justify-center mx-auto mb-3">
+                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
+                      {steps[activeIndex].number}
+                    </span>
+                  </div>
+                  <p className="font-sans text-xs text-[#7A9A85] uppercase tracking-wider mb-2">
+                    {steps[activeIndex].label}
+                  </p>
+                  <div className="w-8 h-[1px] bg-[#2A4A35] mx-auto mb-3" />
+                  <p className="font-sans text-[11px] text-[#4A6B55] leading-relaxed">
+                    Screen preview coming soon
                   </p>
                 </motion.div>
               </AnimatePresence>
-            </div>
+            </PhoneMockup>
           </div>
 
-          {/* Right — Description panel (desktop only) */}
-          <div className="hidden md:flex items-start pt-5">
+          {/* Right — Description panel */}
+          <div className="flex items-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -187,7 +197,7 @@ export default function Education() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="bg-[#0E1F14] rounded-2xl p-8 lg:p-10 border border-[#1E3326] w-full"
+                className="bg-[#0E1F14] rounded-2xl p-8 xl:p-10 border border-[#1E3326] w-full"
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-8 h-8 rounded-full bg-[#00A86B]/15 flex items-center justify-center">
@@ -199,12 +209,187 @@ export default function Education() {
                     {steps[activeIndex].label}
                   </h3>
                 </div>
-                <p className="font-sans text-base md:text-lg text-[#C8DCCE] leading-relaxed">
+                <p className="font-sans text-base lg:text-lg text-[#C8DCCE] leading-relaxed">
                   {steps[activeIndex].description}
                 </p>
               </motion.div>
             </AnimatePresence>
           </div>
+        </div>
+
+        {/* Tablet: two-column — steps left, phone + description right */}
+        <div className="hidden md:grid lg:hidden grid-cols-[1fr_1.3fr] gap-10 items-start">
+          {/* Left — Steps */}
+          <div className="flex flex-col gap-2">
+            {steps.map((step, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <button
+                  key={step.label}
+                  onClick={() => handleStepClick(index)}
+                  className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
+                    isActive
+                      ? "bg-[#0E1F14]"
+                      : "bg-transparent hover:bg-[#0E1F14]/50"
+                  }`}
+                >
+                  <div
+                    className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300 ${
+                      isActive ? "bg-[#00A86B]" : "bg-transparent group-hover:bg-[#2A4A35]"
+                    }`}
+                  />
+                  <div className="flex items-center gap-4">
+                    <span
+                      className={`font-mono text-xs transition-colors duration-300 ${
+                        isActive ? "text-[#00A86B]" : "text-[#2A4A35] group-hover:text-[#7A9A85]"
+                      }`}
+                    >
+                      {step.number}
+                    </span>
+                    <span
+                      className={`font-sans text-lg font-semibold transition-colors duration-300 ${
+                        isActive ? "text-[#E8F5ED]" : "text-[#7A9A85] group-hover:text-[#E8F5ED]"
+                      }`}
+                    >
+                      {step.label}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right — Phone + description stacked */}
+          <div className="flex flex-col items-center gap-8">
+            <PhoneMockup>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="text-center"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#00A86B]/15 flex items-center justify-center mx-auto mb-3">
+                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
+                      {steps[activeIndex].number}
+                    </span>
+                  </div>
+                  <p className="font-sans text-xs text-[#7A9A85] uppercase tracking-wider mb-2">
+                    {steps[activeIndex].label}
+                  </p>
+                  <div className="w-8 h-[1px] bg-[#2A4A35] mx-auto mb-3" />
+                  <p className="font-sans text-[11px] text-[#4A6B55] leading-relaxed">
+                    Screen preview coming soon
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </PhoneMockup>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-[#0E1F14] rounded-2xl p-8 border border-[#1E3326] w-full"
+              >
+                <p className="font-sans text-base text-[#C8DCCE] leading-relaxed">
+                  {steps[activeIndex].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* Mobile: stacked — steps, phone, description */}
+        <div className="md:hidden flex flex-col gap-8">
+          {/* Steps */}
+          <div className="flex flex-col gap-2">
+            {steps.map((step, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <button
+                  key={step.label}
+                  onClick={() => handleStepClick(index)}
+                  className={`relative text-left py-4 px-4 rounded-xl transition-all duration-300 cursor-pointer group ${
+                    isActive
+                      ? "bg-[#0E1F14]"
+                      : "bg-transparent hover:bg-[#0E1F14]/50"
+                  }`}
+                >
+                  <div
+                    className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full transition-all duration-300 ${
+                      isActive ? "bg-[#00A86B]" : "bg-transparent"
+                    }`}
+                  />
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`font-mono text-xs transition-colors duration-300 ${
+                        isActive ? "text-[#00A86B]" : "text-[#2A4A35]"
+                      }`}
+                    >
+                      {step.number}
+                    </span>
+                    <span
+                      className={`font-sans text-base font-semibold transition-colors duration-300 ${
+                        isActive ? "text-[#E8F5ED]" : "text-[#7A9A85]"
+                      }`}
+                    >
+                      {step.label}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Phone */}
+          <div className="flex justify-center">
+            <PhoneMockup>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="text-center"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#00A86B]/15 flex items-center justify-center mx-auto mb-3">
+                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
+                      {steps[activeIndex].number}
+                    </span>
+                  </div>
+                  <p className="font-sans text-xs text-[#7A9A85] uppercase tracking-wider mb-2">
+                    {steps[activeIndex].label}
+                  </p>
+                  <div className="w-8 h-[1px] bg-[#2A4A35] mx-auto mb-3" />
+                  <p className="font-sans text-[11px] text-[#4A6B55] leading-relaxed">
+                    Screen preview coming soon
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </PhoneMockup>
+          </div>
+
+          {/* Description */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="bg-[#0E1F14] rounded-xl p-6 border border-[#1E3326]"
+            >
+              <p className="font-sans text-base text-[#C8DCCE] leading-relaxed">
+                {steps[activeIndex].description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </motion.div>
     </section>
