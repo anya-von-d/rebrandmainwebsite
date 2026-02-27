@@ -70,20 +70,14 @@ export default function Navigation() {
     <>
       {/* Navigation bar — transparent over hero, glass elsewhere */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-all duration-500 ${
-          isOverHero && !isMenuOpen
-            ? 'bg-transparent'
-            : 'bg-[#DBEEE3]/95 backdrop-blur-md shadow-sm shadow-black/5'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center bg-white shadow-sm shadow-black/5"
       >
         <div className="w-full px-6 md:px-10 flex items-center justify-between">
           {/* Left — Hamburger button */}
           <div className="flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`relative w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-white' : 'text-[#0A1A10]'
-              }`}
+              className="relative w-8 h-8 flex items-center justify-center text-[#0A1A10]"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <AnimatePresence mode="wait">
@@ -121,9 +115,7 @@ export default function Navigation() {
                 setIsMenuOpen(false);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-white' : 'text-[#0A1A10]'
-              }`}
+              className="font-display italic text-2xl tracking-wide text-[#0A1A10]"
             >
               Vony
             </a>
@@ -132,11 +124,7 @@ export default function Navigation() {
           {/* Right — Get Started + Log In buttons */}
           <div className="flex items-center gap-3">
             <button
-              className={`font-sans text-sm font-medium transition-colors duration-300 cursor-pointer ${
-                isOverHero && !isMenuOpen
-                  ? 'text-white/80 hover:text-white'
-                  : 'text-[#4A6B55] hover:text-[#0A1A10]'
-              }`}
+              className="font-sans text-sm font-medium cursor-pointer text-[#4A6B55] hover:text-[#0A1A10] transition-colors"
             >
               Log In
             </button>
