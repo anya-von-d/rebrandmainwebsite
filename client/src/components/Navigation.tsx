@@ -73,8 +73,8 @@ export default function Navigation() {
         className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center bg-white shadow-sm shadow-black/5"
       >
         <div className="w-full px-6 md:px-10 flex items-center justify-between">
-          {/* Left — Hamburger button */}
-          <div className="flex items-center">
+          {/* Mobile — Hamburger button */}
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative w-8 h-8 flex items-center justify-center text-[#0A1A10]"
@@ -106,6 +106,28 @@ export default function Navigation() {
             </button>
           </div>
 
+          {/* Desktop left nav — Uses, How It Works */}
+          <div className="hidden md:flex items-center gap-6">
+            <a
+              href="#experience"
+              onClick={(e) => handleNavClick(e, '#experience')}
+              className={`font-sans text-sm font-medium transition-colors ${
+                activeSection === 'experience' ? 'text-[#0A1A10]' : 'text-[#4A6B55] hover:text-[#0A1A10]'
+              }`}
+            >
+              Uses
+            </a>
+            <a
+              href="#how-it-works"
+              onClick={(e) => handleNavClick(e, '#how-it-works')}
+              className={`font-sans text-sm font-medium transition-colors ${
+                activeSection === 'how-it-works' ? 'text-[#0A1A10]' : 'text-[#4A6B55] hover:text-[#0A1A10]'
+              }`}
+            >
+              How It Works
+            </a>
+          </div>
+
           {/* Center — Logo */}
           <div className="absolute left-1/2 -translate-x-1/2">
             <a
@@ -121,13 +143,35 @@ export default function Navigation() {
             </a>
           </div>
 
-          {/* Right — Get Started + Log In buttons */}
-          <div className="flex items-center gap-3">
-            <button
-              className="font-sans text-sm font-medium cursor-pointer text-[#4A6B55] hover:text-[#0A1A10] transition-colors"
+          {/* Desktop right nav — Features, FAQ + Get Started */}
+          <div className="hidden md:flex items-center gap-6">
+            <a
+              href="#features"
+              onClick={(e) => handleNavClick(e, '#features')}
+              className={`font-sans text-sm font-medium transition-colors ${
+                activeSection === 'features' ? 'text-[#0A1A10]' : 'text-[#4A6B55] hover:text-[#0A1A10]'
+              }`}
             >
-              Log In
+              Features
+            </a>
+            <a
+              href="#faq"
+              onClick={(e) => handleNavClick(e, '#faq')}
+              className={`font-sans text-sm font-medium transition-colors ${
+                activeSection === 'faq' ? 'text-[#0A1A10]' : 'text-[#4A6B55] hover:text-[#0A1A10]'
+              }`}
+            >
+              FAQ
+            </a>
+            <button
+              className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#0A1A10] hover:bg-[#0A1A10]/85 text-white shadow-md shadow-black/10"
+            >
+              Get Started
             </button>
+          </div>
+
+          {/* Mobile right — Get Started only */}
+          <div className="flex md:hidden items-center">
             <button
               className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#0A1A10] hover:bg-[#0A1A10]/85 text-white shadow-md shadow-black/10"
             >
