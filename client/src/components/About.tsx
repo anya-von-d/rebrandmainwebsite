@@ -59,7 +59,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="bg-[#DBEEE3] py-20 md:py-28 lg:py-32"
+      className="bg-[#DBEEE3] pt-8 md:pt-12 pb-20 md:pb-28 lg:pb-32"
       data-testid="section-about"
     >
       {/* Scrolling marquee */}
