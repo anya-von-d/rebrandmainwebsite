@@ -180,12 +180,12 @@ export default function Navigation() {
           {/* Right — Login + Get Started */}
           <div className="flex items-center gap-3 ml-auto">
             <button
-              className="px-4 py-2 rounded-lg font-sans text-sm font-medium transition-colors cursor-pointer text-[#4A6B55] hover:text-[#0A1A10]"
+              className="px-4 py-2 rounded-lg font-sans text-sm font-medium transition-colors cursor-pointer text-[#36CE8E] hover:text-[#2ab87a]"
             >
               Log In
             </button>
             <button
-              className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#0A1A10] hover:bg-[#0A1A10]/85 text-white shadow-md shadow-black/10"
+              className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#36CE8E] hover:bg-[#36CE8E]/85 text-[#0A1A10] shadow-md shadow-black/10"
             >
               Get Started
             </button>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import ScrollHighlight from "@/components/ScrollHighlight";
 
 const stepColors = ["#00A86B", "#50C878", "#0D9B76", "#00BF7A"];
+const cardBgColors = ["#D0ED6F", "#83F384", "#6EE8B5"];
 
 const steps = [
   {
@@ -144,7 +145,7 @@ export default function Education() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="bg-[#36CE8E] pt-8 md:pt-12 pb-20 md:pb-28 lg:pb-32 overflow-hidden relative"
+      className="bg-[#36CE8E] pt-8 md:pt-12 pb-14 md:pb-20 lg:pb-24 overflow-hidden relative"
     >
       {/* Subtle dot grid background */}
       <div
@@ -185,9 +186,8 @@ export default function Education() {
                 <button
                   key={step.label}
                   onClick={() => handleStepClick(index)}
-                  className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
-                    isActive ? "bg-[#0A1A10]/10" : "bg-transparent hover:bg-[#0A1A10]/5"
-                  }`}
+                  className="relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group"
+                  style={{ backgroundColor: isActive ? cardBgColors[index % cardBgColors.length] : "transparent" }}
                 >
                   <div
                     className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300"
@@ -255,9 +255,8 @@ export default function Education() {
                 <button
                   key={step.label}
                   onClick={() => handleStepClick(index)}
-                  className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
-                    isActive ? "bg-[#0A1A10]/10" : "bg-transparent hover:bg-[#0A1A10]/5"
-                  }`}
+                  className="relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group"
+                  style={{ backgroundColor: isActive ? cardBgColors[index % cardBgColors.length] : "transparent" }}
                 >
                   <div className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300 ${
                     isActive ? "bg-[#0A1A10]" : "bg-transparent group-hover:bg-[#0A1A10]/30"
@@ -316,9 +315,8 @@ export default function Education() {
                   <button
                     key={step.label}
                     onClick={() => handleStepClick(index)}
-                    className={`relative text-left py-3 px-3 pr-4 rounded-lg transition-all duration-300 cursor-pointer group ${
-                      isActive ? "bg-[#0A1A10]/10" : "bg-transparent hover:bg-[#0A1A10]/5"
-                    }`}
+                    className="relative text-left py-3 px-3 pr-4 rounded-lg transition-all duration-300 cursor-pointer group"
+                    style={{ backgroundColor: isActive ? cardBgColors[index % cardBgColors.length] : "transparent" }}
                   >
                     <div className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full transition-all duration-300 ${
                       isActive ? "bg-[#0A1A10]" : "bg-transparent"

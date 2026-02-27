@@ -14,6 +14,12 @@ export default function Footer() {
               Lending between friends, made simple. Create clear agreements,
               track repayments, and keep relationships strong.
             </p>
+            <a
+              href="#contact"
+              className="inline-block mt-5 px-5 py-2.5 rounded-lg bg-[#36CE8E] text-[#0A1A10] font-sans text-sm font-semibold hover:bg-[#36CE8E]/85 transition-colors cursor-pointer"
+            >
+              Contact Us
+            </a>
           </div>
 
           {/* Product & Company */}
