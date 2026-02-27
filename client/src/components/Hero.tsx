@@ -408,7 +408,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                className="mt-4 text-base md:text-lg text-[#0A1A10]/70 font-sans max-w-[480px] leading-relaxed md:mx-0 mx-auto"
+                className="mt-6 text-base md:text-lg text-[#0A1A10]/70 font-sans max-w-[480px] leading-relaxed md:mx-0 mx-auto"
               >
                 Create clear loan agreements, track repayments, and keep
                 friendships strong.
@@ -446,7 +446,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-[12%] md:bottom-[16%] left-0 right-0 z-10 pointer-events-none"
+          className="absolute bottom-[4%] md:bottom-[6%] left-0 right-0 z-10 pointer-events-none"
         >
           <div className="overflow-hidden">
             <div className="animate-marquee flex whitespace-nowrap">
