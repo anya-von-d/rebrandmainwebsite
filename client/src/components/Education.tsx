@@ -21,6 +21,12 @@ const steps = [
     description:
       "Repayments, balances, and history are clearly tracked so everyone knows what's been paid and what's still due.",
   },
+  {
+    label: "View Your Contracts",
+    number: "04",
+    description:
+      "Access all your active and completed loan agreements in one place. Review terms, payment history, and outstanding balances whenever you need to.",
+  },
 ];
 
 const CYCLE_INTERVAL = 5000;
