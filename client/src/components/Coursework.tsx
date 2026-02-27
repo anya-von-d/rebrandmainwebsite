@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
 const cardAccents = ["#00A86B", "#50C878", "#0D9B76"];
-const cardBgColors = ["#DBFFEB", "#83F384", "#6EE8B5"];
+const cardBgColors = ["#D0ED6F", "#83F384", "#6EE8B5"];
 
 const featureCards = [
   {

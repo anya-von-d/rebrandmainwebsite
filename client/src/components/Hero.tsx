@@ -107,7 +107,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-center md:text-left"
             >
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#0A1A10] uppercase tracking-tight font-extrabold">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#0A1A10] tracking-tight font-extrabold">
                 Lending Money to Friends{" "}
                 <span className="bg-gradient-to-r from-[#00A86B] via-[#0D9B76] to-[#007A4D] bg-clip-text text-transparent">Made Simple</span>
               </h1>
