@@ -32,8 +32,8 @@ export default function TechnicalSkills() {
             </p>
             <ScrollHighlight
               className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-              colorFrom="#2A4A35"
-              colorTo="#E8F5ED"
+              colorFrom="#1B4332"
+              colorTo="#50C878"
             >
               Keep Track
               <br />
@@ -41,16 +41,16 @@ export default function TechnicalSkills() {
               <br />
               Agreements
             </ScrollHighlight>
-            <p className="font-sans text-base text-[#7A9A85] mt-6 max-w-[360px] leading-relaxed">
+            <p className="font-sans text-base text-[#98D8AA] mt-6 max-w-[360px] leading-relaxed">
               Every loan you create is stored securely and accessible anytime. View outstanding balances, payment history, and contract details all in one place.
             </p>
           </motion.div>
 
           {/* Right — Image box */}
           <motion.div style={{ opacity: contentOpacity }} className="lg:sticky lg:top-32">
-            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] p-6 md:p-8 lg:p-10">
+            <div className="bg-[#0E1F14] rounded-2xl border border-[#1B4332] p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
               <div className="min-h-[360px] flex items-center justify-center">
-                <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
+                <p className="font-mono text-xs text-[#50C878] uppercase tracking-wider">
                   Image coming soon
                 </p>
               </div>

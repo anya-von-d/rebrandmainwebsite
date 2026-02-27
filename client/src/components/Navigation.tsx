@@ -142,7 +142,7 @@ export default function Navigation() {
               Log In
             </button>
             <button
-              className="bg-[#00A86B] hover:bg-[#008F5A] text-white px-4 py-1.5 rounded-lg font-sans text-sm font-semibold transition-colors cursor-pointer"
+              className="bg-gradient-to-r from-[#00A86B] to-[#0D9B76] hover:from-[#008F5A] hover:to-[#087A5C] text-white px-4 py-1.5 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer shadow-sm shadow-[#00A86B]/20"
             >
               Get Started
             </button>
@@ -151,8 +151,11 @@ export default function Navigation() {
 
         {/* Scroll progress bar */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00A86B] origin-left"
-          style={{ scaleX: scrollYProgress }}
+          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
+          style={{
+            scaleX: scrollYProgress,
+            background: "linear-gradient(to right, #00A86B, #50C878, #0D9B76)",
+          }}
         />
       </nav>
 

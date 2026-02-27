@@ -2,6 +2,8 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
+const stepColors = ["#00A86B", "#50C878", "#0D9B76", "#00BF7A"];
+
 const steps = [
   {
     label: "Create a Loan Offer",
@@ -90,8 +92,8 @@ export default function Education() {
           </p>
           <ScrollHighlight
             className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]"
-            colorFrom="#2A4A35"
-            colorTo="#E8F5ED"
+            colorFrom="#1B4332"
+            colorTo="#98D8AA"
           >
             How Vony Works for
             <br />
@@ -105,6 +107,7 @@ export default function Education() {
           <div className="flex flex-col gap-2">
             {steps.map((step, index) => {
               const isActive = activeIndex === index;
+              const accentColor = stepColors[index];
               return (
                 <button
                   key={step.label}
@@ -116,15 +119,17 @@ export default function Education() {
                   }`}
                 >
                   <div
-                    className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300 ${
-                      isActive ? "bg-[#00A86B]" : "bg-transparent group-hover:bg-[#2A4A35]"
-                    }`}
+                    className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300"
+                    style={{
+                      backgroundColor: isActive ? accentColor : "transparent",
+                    }}
                   />
                   <div className="flex items-center gap-4">
                     <span
-                      className={`font-mono text-xs transition-colors duration-300 ${
-                        isActive ? "text-[#00A86B]" : "text-[#2A4A35] group-hover:text-[#7A9A85]"
-                      }`}
+                      className="font-mono text-xs transition-colors duration-300"
+                      style={{
+                        color: isActive ? accentColor : "#2A4A35",
+                      }}
                     >
                       {step.number}
                     </span>
@@ -143,7 +148,10 @@ export default function Education() {
 
           {/* Center — Image box */}
           <div className="flex items-center justify-center">
-            <div className="w-[280px] xl:w-[320px] bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[3/4] flex items-center justify-center">
+            <div
+              className="w-[280px] xl:w-[320px] bg-[#0E1F14] rounded-2xl border aspect-[3/4] flex items-center justify-center transition-colors duration-500"
+              style={{ borderColor: stepColors[activeIndex] + "40" }}
+            >
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
               </p>

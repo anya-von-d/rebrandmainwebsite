@@ -51,7 +51,7 @@ export default function Hero() {
             >
               <h1 className="font-serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#E8F5ED] uppercase tracking-tight font-extrabold">
                 Lending Money to Friends{" "}
-                <span className="text-[#00A86B]">Made Simple</span>
+                <span className="bg-gradient-to-r from-[#00A86B] via-[#50C878] to-[#0D9B76] bg-clip-text text-transparent">Made Simple</span>
               </h1>
 
               <motion.div
@@ -62,7 +62,7 @@ export default function Hero() {
               >
                 <button
                   onClick={scrollToContact}
-                  className="bg-[#00A86B] hover:bg-[#008F5A] text-white px-8 py-3 rounded-lg font-semibold text-base transition-colors cursor-pointer"
+                  className="bg-gradient-to-r from-[#00A86B] to-[#0D9B76] hover:from-[#008F5A] hover:to-[#087A5C] text-white px-8 py-3 rounded-lg font-semibold text-base transition-all cursor-pointer shadow-lg shadow-[#00A86B]/20"
                 >
                   Get Started
                 </button>
@@ -99,7 +99,7 @@ export default function Hero() {
                   key={`${feature}-${i}`}
                   className="inline-flex items-center mx-6 md:mx-10"
                 >
-                  <span className="font-mono text-[10px] md:text-xs lg:text-sm text-[#00A86B] uppercase tracking-[0.2em]">
+                  <span className="font-mono text-[10px] md:text-xs lg:text-sm text-[#50C878] uppercase tracking-[0.2em]">
                     {feature}
                   </span>
                 </span>

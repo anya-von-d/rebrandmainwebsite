@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
+const hoverColors = ["#00A86B", "#50C878", "#0D9B76", "#00BF7A"];
+
 const useCases = [
   {
     title: "Split Dinner Bills",
@@ -87,8 +89,8 @@ export default function Experience() {
             </p>
             <ScrollHighlight
               className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-              colorFrom="#A8C8B0"
-              colorTo="#0A1A10"
+              colorFrom="#98D8AA"
+              colorTo="#1B4332"
             >
               Perfect for
               <br />
@@ -117,27 +119,36 @@ export default function Experience() {
                 <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#F5FAF6] to-transparent z-10 pointer-events-none rounded-b-lg" />
 
                 <div className="max-h-[420px] overflow-y-auto space-y-3 pr-2 scrollbar-thin py-2">
-                  {useCases.map((useCase, index) => (
-                    <motion.div
-                      key={useCase.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-20px" }}
-                      transition={{
-                        duration: 0.4,
-                        delay: index * 0.05,
-                        ease: "easeOut",
-                      }}
-                      className="bg-[#E5F0E8] rounded-xl p-4 md:p-5 border border-[#C8DCCE] hover:border-[#00A86B] transition-colors group"
-                    >
-                      <h3 className="font-sans font-semibold text-[15px] text-[#0A1A10] group-hover:text-[#00A86B] transition-colors">
-                        {useCase.title}
-                      </h3>
-                      <p className="font-sans text-sm text-[#4A6B55] mt-1 leading-relaxed">
-                        {useCase.description}
-                      </p>
-                    </motion.div>
-                  ))}
+                  {useCases.map((useCase, index) => {
+                    const hoverColor = hoverColors[index % hoverColors.length];
+                    return (
+                      <motion.div
+                        key={useCase.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-20px" }}
+                        transition={{
+                          duration: 0.4,
+                          delay: index * 0.05,
+                          ease: "easeOut",
+                        }}
+                        className="bg-[#E5F0E8] rounded-xl p-4 md:p-5 border border-[#C8DCCE] transition-colors group"
+                        style={{ ["--hover-color" as string]: hoverColor }}
+                        whileHover={{ borderColor: hoverColor }}
+                      >
+                        <h3
+                          className="font-sans font-semibold text-[15px] text-[#1B4332] transition-colors"
+                          style={{ ["--hover-color" as string]: hoverColor }}
+                        >
+                          <span className="group-hover:hidden">{useCase.title}</span>
+                          <span className="hidden group-hover:inline" style={{ color: hoverColor }}>{useCase.title}</span>
+                        </h3>
+                        <p className="font-sans text-sm text-[#4A6B55] mt-1 leading-relaxed">
+                          {useCase.description}
+                        </p>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

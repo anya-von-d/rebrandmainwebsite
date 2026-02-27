@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
+const cardAccents = ["#00A86B", "#50C878", "#0D9B76"];
+
 const featureCards = [
   {
     title: "Custom Payment Plans",
@@ -58,8 +60,8 @@ export default function Coursework() {
             </p>
             <ScrollHighlight
               className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-              colorFrom="#A8C8B0"
-              colorTo="#0A1A10"
+              colorFrom="#98D8AA"
+              colorTo="#1B4332"
             >
               Flexible
               <br />
@@ -86,9 +88,10 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`a-${index}`}
-              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
+              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
             >
-              <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
+              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
+              <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>
                 {card.title}
               </h4>
               <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
@@ -100,9 +103,10 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`b-${index}`}
-              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
+              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
             >
-              <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
+              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
+              <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>
                 {card.title}
               </h4>
               <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">

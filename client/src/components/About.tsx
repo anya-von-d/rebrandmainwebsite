@@ -24,7 +24,11 @@ function ScrollWord({
   const t = Math.min(1, Math.max(0, (progress - wordStart) / (wordEnd - wordStart)));
 
   const opacity = 0.2 + t * 0.8;
-  const color = t >= 1 ? "#0A1A10" : `rgb(${200 - t * 190}, ${210 - t * 190}, ${200 - t * 185})`;
+  // Cycle through greens based on word position: emerald → teal → forest → jade
+  const greenShades = ["#1B4332", "#0D9B76", "#0A1A10", "#00A86B"];
+  const shadeIndex = index % greenShades.length;
+  const targetColor = greenShades[shadeIndex];
+  const color = t >= 1 ? targetColor : `rgb(${200 - t * 190}, ${210 - t * 190}, ${200 - t * 185})`;
 
   return (
     <span
@@ -58,8 +62,9 @@ export default function About() {
       data-testid="section-about"
     >
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 lg:px-16">
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight text-[#0A1A10] mb-8 md:mb-12">
-          Designed for Everyday Lending
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight mb-8 md:mb-12">
+          <span className="text-[#1B4332]">Designed for </span>
+          <span className="text-[#0D9B76]">Everyday Lending</span>
         </h2>
         <p className="font-display text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-snug md:leading-snug lg:leading-snug font-normal italic">
           {words.map((word, i) => (
