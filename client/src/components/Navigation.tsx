@@ -78,8 +78,8 @@ export default function Navigation() {
         className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center bg-white shadow-sm shadow-black/5"
       >
         <div className="w-full px-6 md:px-10 flex items-center justify-between">
-          {/* Mobile — Hamburger button */}
-          <div className="flex md:hidden items-center">
+          {/* Hamburger button — always visible, far left */}
+          <div className="flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative w-8 h-8 flex items-center justify-center text-[#0A1A10]"
