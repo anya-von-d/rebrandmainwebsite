@@ -79,7 +79,7 @@ export default function Education() {
     <section
       id="education"
       ref={sectionRef}
-      className="bg-[#0A120E] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#0B1510] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <motion.div
         style={{ opacity: contentOpacity }}
@@ -114,8 +114,8 @@ export default function Education() {
                   onClick={() => handleStepClick(index)}
                   className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isActive
-                      ? "bg-[#0E1F14]"
-                      : "bg-transparent hover:bg-[#0E1F14]/50"
+                      ? "bg-[#102117]"
+                      : "bg-transparent hover:bg-[#102117]/50"
                   }`}
                 >
                   <div
@@ -149,7 +149,7 @@ export default function Education() {
           {/* Center — Image box */}
           <div className="flex items-center justify-center">
             <div
-              className="w-[280px] xl:w-[320px] bg-[#0E1F14] rounded-2xl border aspect-[3/4] flex items-center justify-center transition-colors duration-500"
+              className="w-[280px] xl:w-[320px] bg-[#102117] rounded-2xl border aspect-[3/4] flex items-center justify-center transition-colors duration-500"
               style={{ borderColor: stepColors[activeIndex] + "40" }}
             >
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
@@ -187,8 +187,8 @@ export default function Education() {
                   onClick={() => handleStepClick(index)}
                   className={`relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isActive
-                      ? "bg-[#0E1F14]"
-                      : "bg-transparent hover:bg-[#0E1F14]/50"
+                      ? "bg-[#102117]"
+                      : "bg-transparent hover:bg-[#102117]/50"
                   }`}
                 >
                   <div
@@ -219,7 +219,7 @@ export default function Education() {
 
           {/* Right — Image box + description stacked */}
           <div className="flex flex-col items-center gap-8">
-            <div className="w-full bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+            <div className="w-full bg-[#102117] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
               </p>
@@ -252,8 +252,8 @@ export default function Education() {
                   onClick={() => handleStepClick(index)}
                   className={`relative text-left py-4 px-4 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isActive
-                      ? "bg-[#0E1F14]"
-                      : "bg-transparent hover:bg-[#0E1F14]/50"
+                      ? "bg-[#102117]"
+                      : "bg-transparent hover:bg-[#102117]/50"
                   }`}
                 >
                   <div
@@ -283,7 +283,7 @@ export default function Education() {
           </div>
 
           {/* Image box */}
-          <div className="w-full bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+          <div className="w-full bg-[#102117] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
             <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
               Image coming soon
             </p>

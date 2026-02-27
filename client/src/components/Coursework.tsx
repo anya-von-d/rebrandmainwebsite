@@ -37,14 +37,14 @@ export default function Coursework() {
     <section
       id="coursework"
       ref={sectionRef}
-      className="bg-[#E5F0E8] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#DDE8E0] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Box left, Title right */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
           {/* Left — Image box */}
           <div className="lg:sticky lg:top-32 order-2 lg:order-1">
-            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10">
+            <div className="bg-[#EFF5F0] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10">
               <div className="min-h-[360px] flex items-center justify-center">
                 <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                   Image coming soon
@@ -79,16 +79,16 @@ export default function Coursework() {
       {/* Full-width marquee feature cards — outside the max-w container */}
       <div className="mt-12 overflow-hidden relative">
         {/* Left fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#DDE8E0] to-transparent z-10 pointer-events-none" />
         {/* Right fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#DDE8E0] to-transparent z-10 pointer-events-none" />
 
         <div className="flex animate-marquee w-max gap-4">
           {/* First set */}
           {featureCards.map((card, index) => (
             <div
               key={`a-${index}`}
-              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              className="bg-[#EFF5F0] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
               <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>
@@ -103,7 +103,7 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`b-${index}`}
-              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              className="bg-[#EFF5F0] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
               <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>

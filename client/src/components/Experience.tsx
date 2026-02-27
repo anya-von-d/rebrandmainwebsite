@@ -74,7 +74,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={sectionRef}
-      className="bg-[#0A120E] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#0D1A12] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Title left, Box right */}
@@ -132,7 +132,7 @@ export default function Experience() {
                           delay: index * 0.05,
                           ease: "easeOut",
                         }}
-                        className="bg-[#0A120E] rounded-xl p-4 md:p-5 border border-[#1B4332] transition-colors group"
+                        className="bg-[#0D1A12] rounded-xl p-4 md:p-5 border border-[#1B4332] transition-colors group"
                         style={{ ["--hover-color" as string]: hoverColor }}
                         whileHover={{ borderColor: hoverColor }}
                       >
