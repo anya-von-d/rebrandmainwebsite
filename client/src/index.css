@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Background */
+  --bg: #FAFAFA;
+  --bg-dark: #0A0A0F;
+  --bg-subtle: #F0F0F2;
+
+  /* Text */
+  --text: #0A0A0A;
+  --text-secondary: #555566;
+  --text-muted: #888899;
+  --text-on-dark: #F0F0F5;
+  --text-on-dark-muted: #8888A0;
+
+  /* Accent */
+  --accent: #0066FF;
+  --accent-hover: #0052CC;
+  --accent-glow: #0066FF20;
+
+  /* Borders */
+  --border: #E0E0E8;
+
+  /* Code / CS aesthetic */
+  --code-green: #00D97E;
+  --code-dim: #00D97E15;
+
+  /* shadcn compatibility tokens (HSL) */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 4%;
+  --primary: 220 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 5% 96%;
+  --secondary-foreground: 240 6% 10%;
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 4% 46%;
+  --accent: 240 5% 96%;
+  --accent-foreground: 240 6% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 6% 90%;
+  --input: 240 6% 90%;
+  --ring: 220 100% 50%;
+  --radius: 0.5rem;
+
+  /* Fonts */
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Syne', 'Inter', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-mono: 'IBM Plex Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  * {
+    @apply border-[#E0E0E8];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  ::selection {
+    background-color: var(--accent-glow);
+    color: var(--text);
+  }
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
