@@ -6,7 +6,6 @@ const features = [
     title: "Custom Payment Plans",
     description:
       "Set up flexible payment schedules that work for both parties. Weekly, bi-weekly, or monthly payments with customisable amounts.",
-    span: "col-span-1 md:col-span-1",
     svg: (
       <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
         {/* Calendar grid */}
@@ -27,37 +26,9 @@ const features = [
     ),
   },
   {
-    title: "Smart Interest Options",
-    description:
-      "Choose to lend with or without interest. Set fair rates or keep it simple with zero-interest lending between friends.",
-    span: "col-span-1 md:col-span-1",
-    svg: (
-      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
-        {/* Percentage gauge */}
-        <circle cx="50" cy="45" r="28" stroke="#83F384" strokeWidth="3" opacity="0.15" fill="none" />
-        <circle
-          cx="50"
-          cy="45"
-          r="28"
-          stroke="#83F384"
-          strokeWidth="3"
-          opacity="0.6"
-          fill="none"
-          strokeDasharray="132"
-          strokeDashoffset="44"
-          strokeLinecap="round"
-          transform="rotate(-90 50 45)"
-        />
-        <text x="50" y="43" textAnchor="middle" fill="white" fontSize="14" fontWeight="700" opacity="0.9">0%</text>
-        <text x="50" y="53" textAnchor="middle" fill="white" fontSize="7" opacity="0.4">interest</text>
-      </svg>
-    ),
-  },
-  {
     title: "Repayment Tracking",
     description:
       "Monitor every payment in real-time. See outstanding balances, payment history, and upcoming dues at a glance.",
-    span: "col-span-1 md:col-span-1",
     svg: (
       <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
         {/* Progress bars */}
@@ -73,26 +44,6 @@ const features = [
         <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.5" />
         <text x="10" y="56" fill="white" fontSize="7" opacity="0.5">Jake, 100%</text>
         <path d="M82 62 L85 65 L90 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
-      </svg>
-    ),
-  },
-  {
-    title: "Digital Contracts",
-    description:
-      "Every loan is backed by a clear, digital agreement. Both parties can view and reference terms anytime, no confusion, no disputes.",
-    span: "col-span-1 md:col-span-1",
-    svg: (
-      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
-        {/* Document with signature */}
-        <rect x="20" y="5" width="60" height="70" rx="6" stroke="#0D9B76" strokeWidth="1.5" fill="#0D9B76" opacity="0.08" />
-        <rect x="30" y="18" width="40" height="3" rx="1.5" fill="white" opacity="0.3" />
-        <rect x="30" y="26" width="30" height="3" rx="1.5" fill="white" opacity="0.2" />
-        <rect x="30" y="34" width="40" height="3" rx="1.5" fill="white" opacity="0.3" />
-        <rect x="30" y="42" width="25" height="3" rx="1.5" fill="white" opacity="0.2" />
-        <line x1="30" y1="55" x2="70" y2="55" stroke="white" strokeWidth="0.5" opacity="0.2" />
-        <path d="M32 58 Q38 48 42 56 Q46 64 52 52 Q56 44 60 54" stroke="#0D9B76" strokeWidth="1.5" fill="none" opacity="0.6" strokeLinecap="round" />
-        <circle cx="68" cy="64" r="6" fill="#0D9B76" opacity="0.3" />
-        <path d="M65 64 L67 66 L71 62" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -116,15 +67,6 @@ export default function Features() {
       ref={sectionRef}
       className="bg-[#1B4332] py-20 md:py-28 lg:py-32 overflow-hidden relative"
     >
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
       <motion.div
         style={{ opacity: contentOpacity }}
         className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16 relative z-10"
@@ -145,7 +87,7 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Bento grid */}
+        {/* Two feature boxes */}
         <div
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
@@ -160,7 +102,7 @@ export default function Features() {
                 delay: index * 0.12,
                 ease: "easeOut",
               }}
-              className={`${feature.span} bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-sm rounded-2xl p-6 md:p-8 transition-all duration-300 group border border-white/[0.06]`}
+              className="bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-sm rounded-2xl p-6 md:p-8 transition-all duration-300 group border border-white/[0.06]"
             >
               <div className="flex flex-col h-full">
                 {/* SVG illustration */}
