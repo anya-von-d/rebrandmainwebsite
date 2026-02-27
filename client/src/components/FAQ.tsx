@@ -81,29 +81,32 @@ export default function FAQ() {
             </ScrollHighlight>
           </motion.div>
 
-          {/* Right — Accordion */}
+          {/* Right — Accordion in box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:sticky lg:top-32"
           >
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqItems.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border-0 rounded-xl overflow-hidden"
-                  style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
-                >
-                  <AccordionTrigger className="px-6 py-5 text-left font-sans font-semibold text-[15px] text-[#0A1A10] hover:no-underline hover:text-[#0A1A10]/70 transition-colors">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-5 font-sans text-sm text-[#0A1A10]/70 leading-relaxed">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className="bg-[#DBFFEB] rounded-2xl p-6 md:p-8 lg:p-10">
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqItems.map((item, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="border-0 rounded-xl overflow-hidden"
+                    style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
+                  >
+                    <AccordionTrigger className="px-6 py-5 text-left font-sans font-semibold text-[15px] text-[#0A1A10] hover:no-underline hover:text-[#0A1A10]/70 transition-colors">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-5 font-sans text-sm text-[#0A1A10]/70 leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </motion.div>
         </div>
       </div>
