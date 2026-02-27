@@ -32,7 +32,7 @@ const faqItems = [
   {
     question: "How is Vony different from Venmo or PayPal?",
     answer:
-      "Unlike payment apps, Vony focuses on the agreement and tracking side of lending — not the money transfer. We help you set terms, create contracts, track repayments, and maintain accountability. Think of it as the paperwork for informal loans.",
+      "Unlike payment apps, Vony focuses on the agreement and tracking side of lending, not the money transfer. We help you set terms, create contracts, track repayments, and maintain accountability. Think of it as the paperwork for informal loans.",
   },
   {
     question: "Can I set interest on loans?",

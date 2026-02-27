@@ -24,7 +24,7 @@ const useCases = [
   },
   {
     title: "Emergencies",
-    description: "Be there when it matters — lend quickly with transparent terms.",
+    description: "Be there when it matters, lend quickly with transparent terms.",
   },
   {
     title: "Travel Expenses",

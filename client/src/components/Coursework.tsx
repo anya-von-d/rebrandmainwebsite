@@ -63,15 +63,15 @@ const features = [
         {/* Progress bars */}
         <rect x="10" y="20" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
         <rect x="10" y="20" width="60" height="8" rx="4" fill="#00A86B" opacity="0.5" />
-        <text x="10" y="16" fill="white" fontSize="7" opacity="0.5">Sarah — 75%</text>
+        <text x="10" y="16" fill="white" fontSize="7" opacity="0.5">Sarah, 75%</text>
 
         <rect x="10" y="40" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
         <rect x="10" y="40" width="32" height="8" rx="4" fill="#00A86B" opacity="0.5" />
-        <text x="10" y="36" fill="white" fontSize="7" opacity="0.5">Mike — 40%</text>
+        <text x="10" y="36" fill="white" fontSize="7" opacity="0.5">Mike, 40%</text>
 
         <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
         <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.5" />
-        <text x="10" y="56" fill="white" fontSize="7" opacity="0.5">Jake — 100%</text>
+        <text x="10" y="56" fill="white" fontSize="7" opacity="0.5">Jake, 100%</text>
         <path d="M82 62 L85 65 L90 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
       </svg>
     ),
@@ -79,7 +79,7 @@ const features = [
   {
     title: "Digital Contracts",
     description:
-      "Every loan is backed by a clear, digital agreement. Both parties can view and reference terms anytime — no confusion, no disputes.",
+      "Every loan is backed by a clear, digital agreement. Both parties can view and reference terms anytime, no confusion, no disputes.",
     span: "col-span-1 md:col-span-1",
     svg: (
       <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">

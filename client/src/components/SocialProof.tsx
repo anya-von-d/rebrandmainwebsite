@@ -11,7 +11,7 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "Vony made it so easy to lend my friend money for rent. No awkward conversations — just clear terms we both agreed to.",
+      "Vony made it so easy to lend my friend money for rent. No awkward conversations, just clear terms we both agreed to.",
     name: "Sarah K.",
     role: "Lender",
   },

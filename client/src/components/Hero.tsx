@@ -263,7 +263,7 @@ function PhoneOutline({ className }: { className?: string }) {
         fontSize="12"
         fontWeight="500"
       >
-        Mike — new loan
+        Mike, new loan
       </text>
       <text
         x="74"
