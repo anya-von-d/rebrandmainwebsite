@@ -1,6 +1,13 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
+const bannerItems = [
+  "Custom Payment Plans",
+  "Smart Interest Options",
+  "Repayment Tracking",
+  "Digital Contracts",
+];
+
 const features = [
   {
     title: "Custom Payment Plans",
@@ -67,6 +74,23 @@ export default function Features() {
       ref={sectionRef}
       className="bg-[#1B4332] py-20 md:py-28 lg:py-32 overflow-hidden relative"
     >
+      {/* Scrolling banner */}
+      <div className="overflow-hidden mb-12 md:mb-16">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {[...bannerItems, ...bannerItems].map((item, i) => (
+            <span
+              key={`${item}-${i}`}
+              className="inline-flex items-center mx-6 md:mx-10"
+            >
+              <span className="font-mono text-sm md:text-base text-white/30 uppercase tracking-[0.2em]">
+                {item}
+              </span>
+              <span className="ml-6 md:ml-10 text-white/15">&#x2022;</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       <motion.div
         style={{ opacity: contentOpacity }}
         className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16 relative z-10"
