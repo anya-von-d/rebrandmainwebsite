@@ -84,7 +84,7 @@ export default function Contact() {
               required
               value={formData.name}
               onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-              className="w-full px-4 py-3 bg-[#E8FCF0] border border-[#7AD4A0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors"
+              className="w-full px-4 py-3 bg-[#E8FCF0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors"
             />
             <input
               type="email"
@@ -92,7 +92,7 @@ export default function Contact() {
               required
               value={formData.email}
               onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-              className="w-full px-4 py-3 bg-[#E8FCF0] border border-[#7AD4A0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors"
+              className="w-full px-4 py-3 bg-[#E8FCF0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors"
             />
             <textarea
               placeholder="Message *"
@@ -100,7 +100,7 @@ export default function Contact() {
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-              className="w-full px-4 py-3 bg-[#E8FCF0] border border-[#7AD4A0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors resize-none"
+              className="w-full px-4 py-3 bg-[#E8FCF0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors resize-none"
             />
             <button
               type="submit"

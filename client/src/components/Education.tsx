@@ -149,8 +149,7 @@ export default function Education() {
           {/* Center — Image box */}
           <div className="flex items-center justify-center">
             <div
-              className="w-[280px] xl:w-[320px] bg-[#D0F5DC] rounded-2xl border aspect-[3/4] flex items-center justify-center transition-colors duration-500"
-              style={{ borderColor: stepColors[activeIndex] + "40" }}
+              className="w-[280px] xl:w-[320px] bg-[#D0F5DC] rounded-2xl aspect-[3/4] flex items-center justify-center transition-colors duration-500"
             >
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
@@ -219,7 +218,7 @@ export default function Education() {
 
           {/* Right — Image box + description stacked */}
           <div className="flex flex-col items-center gap-8">
-            <div className="w-full bg-[#D0F5DC] rounded-2xl border border-[#7AD4A0] aspect-[4/3] flex items-center justify-center">
+            <div className="w-full bg-[#D0F5DC] rounded-2xl aspect-[4/3] flex items-center justify-center">
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
               </p>
@@ -283,7 +282,7 @@ export default function Education() {
           </div>
 
           {/* Image box */}
-          <div className="w-full bg-[#D0F5DC] rounded-2xl border border-[#7AD4A0] aspect-[4/3] flex items-center justify-center">
+          <div className="w-full bg-[#D0F5DC] rounded-2xl aspect-[4/3] flex items-center justify-center">
             <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
               Image coming soon
             </p>

@@ -45,7 +45,7 @@ export default function Coursework() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
           {/* Left — Image box */}
           <div className="lg:sticky lg:top-32 order-2 lg:order-1">
-            <div className="bg-[#E0FAE8] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10">
+            <div className="bg-[#E0FAE8] rounded-2xl p-6 md:p-8 lg:p-10">
               <div className="min-h-[360px] flex items-center justify-center">
                 <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                   Image coming soon
@@ -89,7 +89,7 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`a-${index}`}
-              className="rounded-xl border border-[#7AD4A0] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              className="rounded-xl p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
               style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
@@ -105,7 +105,7 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`b-${index}`}
-              className="rounded-xl border border-[#7AD4A0] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              className="rounded-xl p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
               style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />

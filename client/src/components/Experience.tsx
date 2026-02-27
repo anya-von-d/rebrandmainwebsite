@@ -107,7 +107,7 @@ export default function Experience() {
 
           {/* Right — Scrolling use-case cards box */}
           <div className="lg:sticky lg:top-32">
-            <div className="bg-[#DBFFEB] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10">
+            <div className="bg-[#DBFFEB] rounded-2xl p-6 md:p-8 lg:p-10">
               <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-5">
                 Common Scenarios
               </p>
@@ -133,9 +133,9 @@ export default function Experience() {
                           delay: index * 0.05,
                           ease: "easeOut",
                         }}
-                        className="rounded-xl p-4 md:p-5 border border-[#7AD4A0] transition-colors group"
+                        className="rounded-xl p-4 md:p-5 transition-colors group"
                         style={{ ["--hover-color" as string]: hoverColor, backgroundColor: cardBgColors[index % cardBgColors.length] }}
-                        whileHover={{ borderColor: hoverColor }}
+                        whileHover={{ scale: 1.02 }}
                       >
                         <h3
                           className="font-sans font-semibold text-[15px] text-[#0A1A10] transition-colors"

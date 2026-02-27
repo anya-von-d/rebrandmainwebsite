@@ -58,7 +58,7 @@
 
 @layer base {
   * {
-    @apply border-[#7AD4A0];
+    @apply border-transparent;
   }
 
   html {

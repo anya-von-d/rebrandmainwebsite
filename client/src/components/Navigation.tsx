@@ -73,8 +73,8 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-colors duration-300 ${
           isOverHero && !isMenuOpen
-            ? 'bg-[#36CE8E] border-b border-[#2AB87A]'
-            : 'bg-[#F0F7F2] border-b border-[#C8DCCE]'
+            ? 'bg-[#DBEEE3]'
+            : 'bg-[#DBEEE3]'
         }`}
       >
         <div className="w-full px-6 md:px-10 flex items-center justify-between">
@@ -167,7 +167,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#F0F7F2]"
+            className="fixed inset-0 z-40 bg-[#DBEEE3]"
           >
             {/* Menu content — centered navigation links */}
             <div className="flex flex-col items-center justify-center h-full pt-14">

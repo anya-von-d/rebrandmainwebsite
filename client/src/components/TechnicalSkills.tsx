@@ -48,7 +48,7 @@ export default function TechnicalSkills() {
 
           {/* Right — Image box */}
           <motion.div style={{ opacity: contentOpacity }} className="lg:sticky lg:top-32">
-            <div className="bg-[#D0F5DC] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
+            <div className="bg-[#D0F5DC] rounded-2xl p-6 md:p-8 lg:p-10 shadow-lg shadow-[#00A86B]/5">
               <div className="min-h-[360px] flex items-center justify-center">
                 <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                   Image coming soon
