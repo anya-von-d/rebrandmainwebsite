@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
 const featureCards = [
@@ -20,13 +20,8 @@ const featureCards = [
   },
 ];
 
-const CYCLE_INTERVAL = 4000;
-
 export default function Coursework() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const resumeRef = useRef<NodeJS.Timeout | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -35,31 +30,6 @@ export default function Coursework() {
 
   const titleY = useTransform(scrollYProgress, [0, 1], [80, -40]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
-  const startCycle = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % featureCards.length);
-    }, CYCLE_INTERVAL);
-  }, []);
-
-  useEffect(() => {
-    startCycle();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if (resumeRef.current) clearTimeout(resumeRef.current);
-    };
-  }, [startCycle]);
-
-  const handleCardClick = (index: number) => {
-    setActiveIndex(index);
-    if (timerRef.current) clearInterval(timerRef.current);
-    if (resumeRef.current) clearTimeout(resumeRef.current);
-
-    resumeRef.current = setTimeout(() => {
-      startCycle();
-    }, 10000);
-  };
 
   return (
     <section
@@ -80,54 +50,63 @@ export default function Coursework() {
               colorFrom="#A8C8B0"
               colorTo="#0A1A10"
             >
-              Features
+              Flexible
+              <br />
+              Lending
+              <br />
+              Options
             </ScrollHighlight>
             <p className="font-sans text-base text-[#7A9A85] mt-6 max-w-[360px] leading-relaxed">
               Everything you need to lend and borrow with confidence. Vony gives you the tools to create clear agreements, set fair terms, and keep both sides informed every step of the way.
             </p>
           </motion.div>
 
-          {/* Right — Image box with cycling feature card on top */}
+          {/* Right — Image box with scrolling feature cards below */}
           <div className="lg:sticky lg:top-32">
-            {/* Cycling feature card — sits above the image box */}
-            <div className="mb-4">
-              <div className="flex gap-2 mb-3">
-                {featureCards.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleCardClick(index)}
-                    className={`h-[3px] rounded-full transition-all duration-300 cursor-pointer ${
-                      activeIndex === index
-                        ? "bg-[#00A86B] flex-[2]"
-                        : "bg-[#C8DCCE] flex-1 hover:bg-[#7A9A85]"
-                    }`}
-                  />
-                ))}
-              </div>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6"
-                >
-                  <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
-                    {featureCards[activeIndex].title}
-                  </h4>
-                  <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
-                    {featureCards[activeIndex].description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
             {/* Image placeholder box */}
             <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] aspect-[4/3] flex items-center justify-center">
               <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                 Image coming soon
               </p>
+            </div>
+
+            {/* Marquee feature cards — scrolling right to left */}
+            <div className="mt-4 overflow-hidden relative">
+              {/* Left fade */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
+              {/* Right fade */}
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
+
+              <div className="flex animate-marquee w-max gap-4">
+                {/* First set */}
+                {featureCards.map((card, index) => (
+                  <div
+                    key={`a-${index}`}
+                    className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
+                  >
+                    <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
+                      {card.title}
+                    </h4>
+                    <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {featureCards.map((card, index) => (
+                  <div
+                    key={`b-${index}`}
+                    className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
+                  >
+                    <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
+                      {card.title}
+                    </h4>
+                    <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
