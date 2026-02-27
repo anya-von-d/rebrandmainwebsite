@@ -24,7 +24,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="bg-[#DBEEE3] py-20 md:py-28 relative">
+    <section id="contact" ref={sectionRef} className="bg-[#36CE8E] py-20 md:py-28 relative">
       <div className="max-w-[700px] mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,21 +32,21 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#7A9A85] mb-4">
+          <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#0A1A10]/50 mb-4">
             Get Early Access
           </p>
           <ScrollHighlight
             className="font-serif text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight"
-            colorFrom="#98D8AA"
-            colorTo="#1B4332"
+            colorFrom="rgba(10,26,16,0.4)"
+            colorTo="#0A1A10"
           >
-            Be the First to Try Vony
+            Get Started with Vony
           </ScrollHighlight>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 font-sans text-base text-[#4A6B55] max-w-[440px] mx-auto leading-relaxed"
+            className="mt-4 font-sans text-base text-[#0A1A10]/70 max-w-[440px] mx-auto leading-relaxed"
           >
             Join the waitlist and we'll notify you as soon as Vony launches. No spam, just one email when we're ready.
           </motion.p>
@@ -65,7 +65,7 @@ export default function Contact() {
             required
             value={formData.name}
             onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-            className="w-full px-4 py-3 bg-[#C8E8D4] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:ring-2 focus:ring-[#00A86B]/30 transition-all"
+            className="w-full px-4 py-3 bg-[#0A1A10]/10 rounded-lg text-sm text-[#0A1A10] placeholder:text-[#0A1A10]/40 focus:outline-none focus:ring-2 focus:ring-[#0A1A10]/20 transition-all"
           />
           <input
             type="email"
@@ -73,7 +73,7 @@ export default function Contact() {
             required
             value={formData.email}
             onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-            className="w-full px-4 py-3 bg-[#C8E8D4] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:ring-2 focus:ring-[#00A86B]/30 transition-all"
+            className="w-full px-4 py-3 bg-[#0A1A10]/10 rounded-lg text-sm text-[#0A1A10] placeholder:text-[#0A1A10]/40 focus:outline-none focus:ring-2 focus:ring-[#0A1A10]/20 transition-all"
           />
           <button
             type="submit"
@@ -83,9 +83,6 @@ export default function Contact() {
             <Send size={16} />
             {isSubmitting ? 'Joining...' : 'Join Waitlist'}
           </button>
-          <p className="font-mono text-[10px] text-[#7A9A85] text-center tracking-wide">
-            Free forever &middot; No credit card required
-          </p>
         </motion.form>
       </div>
     </section>
