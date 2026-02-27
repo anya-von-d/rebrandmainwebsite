@@ -390,7 +390,7 @@ export default function Hero() {
         className="relative z-10 h-full"
       >
         {/* ── Headline left ── */}
-        <div className="absolute inset-0 flex items-center z-30">
+        <div className="absolute inset-0 flex items-center z-30 pt-14 md:pt-20">
           <div className="w-full max-w-[1300px] mx-auto px-6 md:px-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -426,23 +426,7 @@ export default function Hero() {
                 >
                   Get Started
                 </button>
-                <button
-                  onClick={() => scrollToSection("how-it-works")}
-                  className="bg-transparent border-2 border-[#0A1A10]/30 hover:border-[#0A1A10]/60 text-[#0A1A10] px-8 py-3 rounded-lg font-semibold text-base transition-all cursor-pointer"
-                >
-                  See How It Works
-                </button>
               </motion.div>
-
-              {/* Trust line */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="mt-4 font-mono text-[11px] text-[#0A1A10]/50 tracking-wide text-center md:text-left"
-              >
-                Free to use &middot; No hidden fees &middot; Bank-level security
-              </motion.p>
             </motion.div>
           </div>
         </div>

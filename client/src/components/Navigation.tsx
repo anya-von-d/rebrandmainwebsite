@@ -141,11 +141,7 @@ export default function Navigation() {
               Log In
             </button>
             <button
-              className={`px-4 py-1.5 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer ${
-                isOverHero && !isMenuOpen
-                  ? 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30'
-                  : 'bg-gradient-to-r from-[#00A86B] to-[#0D9B76] hover:from-[#008F5A] hover:to-[#087A5C] text-white shadow-sm shadow-[#00A86B]/20'
-              }`}
+              className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#0A1A10] hover:bg-[#0A1A10]/85 text-white shadow-md shadow-black/10"
             >
               Get Started
             </button>
