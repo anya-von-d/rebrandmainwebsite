@@ -1,15 +1,14 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import CursorGlow from '@/components/CursorGlow';
 import ScrollHighlight from '@/components/ScrollHighlight';
 
 export default function Contact() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '' });
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -17,101 +16,77 @@ export default function Contact() {
     setIsSubmitting(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '' });
     toast({
-      title: 'Message sent!',
-      description: "Thank you for reaching out. I'll get back to you shortly.",
+      title: "You're on the list!",
+      description: "We'll let you know as soon as Vony is ready.",
     });
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="bg-[var(--bg)] py-20 md:py-24 relative">
-      <CursorGlow />
-      <div className="max-w-[900px] mx-auto px-6 md:px-12 relative z-10">
-        <motion.p
+    <section id="contact" ref={sectionRef} className="bg-[#DBEEE3] py-20 md:py-28 relative">
+      <div className="max-w-[700px] mx-auto px-6 md:px-12 relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#7A9A85] mb-4"
+          className="text-center mb-10"
         >
-          CONTACT
-        </motion.p>
-        <ScrollHighlight
-          className="font-display italic text-3xl md:text-4xl lg:text-5xl mb-3"
-          colorFrom="#98D8AA"
-          colorTo="#1B4332"
+          <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#7A9A85] mb-4">
+            Get Early Access
+          </p>
+          <ScrollHighlight
+            className="font-serif text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight"
+            colorFrom="#98D8AA"
+            colorTo="#1B4332"
+          >
+            Be the First to Try Vony
+          </ScrollHighlight>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-4 font-sans text-base text-[#4A6B55] max-w-[440px] mx-auto leading-relaxed"
+          >
+            Join the waitlist and we'll notify you as soon as Vony launches. No spam, just one email when we're ready.
+          </motion.p>
+        </motion.div>
+
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="space-y-4 max-w-[480px] mx-auto"
         >
-          Get in touch
-        </ScrollHighlight>
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={isInView ? { scaleX: 1 } : {}}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-[1px] origin-left mb-10"
-          style={{ background: "linear-gradient(to right, #00A86B, #50C878, #0D9B76)" }}
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 mt-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
+          <input
+            type="text"
+            placeholder="Your name"
+            required
+            value={formData.name}
+            onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+            className="w-full px-4 py-3 bg-[#C8E8D4] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:ring-2 focus:ring-[#00A86B]/30 transition-all"
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            required
+            value={formData.email}
+            onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+            className="w-full px-4 py-3 bg-[#C8E8D4] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:ring-2 focus:ring-[#00A86B]/30 transition-all"
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full flex items-center justify-center gap-2 bg-[#0A1A10] hover:bg-[#0A1A10]/90 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all disabled:opacity-60 cursor-pointer"
           >
-            <p className="text-base text-[#4A6B55] leading-relaxed mb-8">
-              Have a question about Vony? We'd love to hear from you. Fill out the form and we'll get back to you shortly.
-            </p>
-            <div className="space-y-4">
-              <a
-                href="mailto:hello@vony.app"
-                className="flex items-center gap-3 text-sm text-[#4A6B55] hover:text-[#50C878] transition-colors group"
-              >
-                <Mail size={16} className="text-[#0D9B76] group-hover:text-[#50C878] transition-colors" />
-                <span className="font-mono">hello@vony.app</span>
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="space-y-5"
-          >
-            <input
-              type="text"
-              placeholder="Name *"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-              className="w-full px-4 py-3 bg-[#E8FCF0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors"
-            />
-            <input
-              type="email"
-              placeholder="Email *"
-              required
-              value={formData.email}
-              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-              className="w-full px-4 py-3 bg-[#E8FCF0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors"
-            />
-            <textarea
-              placeholder="Message *"
-              required
-              rows={5}
-              value={formData.message}
-              onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-              className="w-full px-4 py-3 bg-[#E8FCF0] rounded-lg text-sm text-[#0A1A10] placeholder:text-[#7A9A85] focus:outline-none focus:border-[#50C878] focus:ring-1 focus:ring-[#50C878] transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="flex items-center gap-2 bg-gradient-to-r from-[#00A86B] to-[#0D9B76] hover:from-[#008F5A] hover:to-[#087A5C] text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all disabled:opacity-60 shadow-sm shadow-[#00A86B]/20"
-            >
-              <Send size={16} />
-              {isSubmitting ? 'Sending...' : 'Send message'}
-            </button>
-          </motion.form>
-        </div>
+            <Send size={16} />
+            {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+          </button>
+          <p className="font-mono text-[10px] text-[#7A9A85] text-center tracking-wide">
+            Free forever &middot; No credit card required
+          </p>
+        </motion.form>
       </div>
     </section>
   );

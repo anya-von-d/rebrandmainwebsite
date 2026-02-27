@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Education', href: '#education' },
-  { label: 'Background', href: '#coursework' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Features', href: '#features' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -14,7 +14,6 @@ export default function Navigation() {
   const [isOverHero, setIsOverHero] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const heroEl = document.getElementById('hero');
@@ -28,7 +27,7 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
-    const sectionIds = ['about', 'experience', 'education', 'coursework', 'contact'];
+    const sectionIds = ['about', 'how-it-works', 'features', 'faq', 'contact'];
     const observers: IntersectionObserver[] = [];
     sectionIds.forEach(id => {
       const el = document.getElementById(id);
@@ -69,12 +68,12 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Navigation bar — solid rectangle, always visible */}
+      {/* Navigation bar — transparent over hero, glass elsewhere */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-colors duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center transition-all duration-500 ${
           isOverHero && !isMenuOpen
-            ? 'bg-[#DBEEE3]'
-            : 'bg-[#DBEEE3]'
+            ? 'bg-transparent'
+            : 'bg-[#DBEEE3]/95 backdrop-blur-md shadow-sm shadow-black/5'
         }`}
       >
         <div className="w-full px-6 md:px-10 flex items-center justify-between">
@@ -83,7 +82,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`relative w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#0A1A10]' : 'text-[#0A1A10]'
+                isOverHero && !isMenuOpen ? 'text-white' : 'text-[#0A1A10]'
               }`}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -123,7 +122,7 @@ export default function Navigation() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#0A1A10]' : 'text-[#0A1A10]'
+                isOverHero && !isMenuOpen ? 'text-white' : 'text-[#0A1A10]'
               }`}
             >
               Vony
@@ -135,28 +134,23 @@ export default function Navigation() {
             <button
               className={`font-sans text-sm font-medium transition-colors duration-300 cursor-pointer ${
                 isOverHero && !isMenuOpen
-                  ? 'text-[#4A6B55] hover:text-[#0A1A10]'
+                  ? 'text-white/80 hover:text-white'
                   : 'text-[#4A6B55] hover:text-[#0A1A10]'
               }`}
             >
               Log In
             </button>
             <button
-              className="bg-gradient-to-r from-[#00A86B] to-[#0D9B76] hover:from-[#008F5A] hover:to-[#087A5C] text-white px-4 py-1.5 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer shadow-sm shadow-[#00A86B]/20"
+              className={`px-4 py-1.5 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer ${
+                isOverHero && !isMenuOpen
+                  ? 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30'
+                  : 'bg-gradient-to-r from-[#00A86B] to-[#0D9B76] hover:from-[#008F5A] hover:to-[#087A5C] text-white shadow-sm shadow-[#00A86B]/20'
+              }`}
             >
               Get Started
             </button>
           </div>
         </div>
-
-        {/* Scroll progress bar */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
-          style={{
-            scaleX: scrollYProgress,
-            background: "linear-gradient(to right, #00A86B, #50C878, #0D9B76)",
-          }}
-        />
       </nav>
 
       {/* Full-screen overlay menu */}

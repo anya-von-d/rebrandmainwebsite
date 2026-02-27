@@ -1,124 +1,183 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import ScrollHighlight from "@/components/ScrollHighlight";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
-const cardAccents = ["#00A86B", "#50C878", "#0D9B76"];
-const cardBgColors = ["#D0ED6F", "#83F384", "#6EE8B5"];
-
-const featureCards = [
+const features = [
   {
     title: "Custom Payment Plans",
     description:
       "Set up flexible payment schedules that work for both parties. Weekly, bi-weekly, or monthly payments with customisable amounts.",
+    span: "col-span-1 md:col-span-1",
+    svg: (
+      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
+        {/* Calendar grid */}
+        <rect x="10" y="10" width="80" height="60" rx="6" stroke="#50C878" strokeWidth="1.5" fill="#50C878" opacity="0.08" />
+        <line x1="10" y1="24" x2="90" y2="24" stroke="#50C878" strokeWidth="1" opacity="0.2" />
+        {[0,1,2,3,4,5,6].map((i) => (
+          <rect key={i} x={16 + i * 10.5} y={30} width="7" height="7" rx="1.5" fill="#50C878" opacity={i < 3 ? 0.5 : 0.15} />
+        ))}
+        {[0,1,2,3,4,5,6].map((i) => (
+          <rect key={`b-${i}`} x={16 + i * 10.5} y={42} width="7" height="7" rx="1.5" fill="#50C878" opacity={i < 5 ? 0.5 : 0.15} />
+        ))}
+        {[0,1,2].map((i) => (
+          <rect key={`c-${i}`} x={16 + i * 10.5} y={54} width="7" height="7" rx="1.5" fill="#50C878" opacity={0.5} />
+        ))}
+        <circle cx="72" cy="57" r="8" fill="#50C878" opacity="0.3" />
+        <text x="72" y="60" textAnchor="middle" fill="white" fontSize="8" fontWeight="700">$</text>
+      </svg>
+    ),
   },
   {
-    title: "Interest Rate Options",
+    title: "Smart Interest Options",
     description:
-      "Choose to lend with or without interest. Set fair rates for both parties or keep it simple with zero-interest loans between friends.",
+      "Choose to lend with or without interest. Set fair rates or keep it simple with zero-interest lending between friends.",
+    span: "col-span-1 md:col-span-1",
+    svg: (
+      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
+        {/* Percentage gauge */}
+        <circle cx="50" cy="45" r="28" stroke="#83F384" strokeWidth="3" opacity="0.15" fill="none" />
+        <circle
+          cx="50"
+          cy="45"
+          r="28"
+          stroke="#83F384"
+          strokeWidth="3"
+          opacity="0.6"
+          fill="none"
+          strokeDasharray="132"
+          strokeDashoffset="44"
+          strokeLinecap="round"
+          transform="rotate(-90 50 45)"
+        />
+        <text x="50" y="43" textAnchor="middle" fill="white" fontSize="14" fontWeight="700" opacity="0.9">0%</text>
+        <text x="50" y="53" textAnchor="middle" fill="white" fontSize="7" opacity="0.4">interest</text>
+      </svg>
+    ),
   },
   {
-    title: "Repayment Periods",
+    title: "Repayment Tracking",
     description:
-      "Set realistic timeframes from days to years. Perfect for short-term emergency loans or longer-term financial assistance.",
+      "Monitor every payment in real-time. See outstanding balances, payment history, and upcoming dues at a glance.",
+    span: "col-span-1 md:col-span-1",
+    svg: (
+      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
+        {/* Progress bars */}
+        <rect x="10" y="20" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
+        <rect x="10" y="20" width="60" height="8" rx="4" fill="#00A86B" opacity="0.5" />
+        <text x="10" y="16" fill="white" fontSize="7" opacity="0.5">Sarah — 75%</text>
+
+        <rect x="10" y="40" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
+        <rect x="10" y="40" width="32" height="8" rx="4" fill="#00A86B" opacity="0.5" />
+        <text x="10" y="36" fill="white" fontSize="7" opacity="0.5">Mike — 40%</text>
+
+        <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
+        <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.5" />
+        <text x="10" y="56" fill="white" fontSize="7" opacity="0.5">Jake — 100%</text>
+        <path d="M82 62 L85 65 L90 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+      </svg>
+    ),
+  },
+  {
+    title: "Digital Contracts",
+    description:
+      "Every loan is backed by a clear, digital agreement. Both parties can view and reference terms anytime — no confusion, no disputes.",
+    span: "col-span-1 md:col-span-1",
+    svg: (
+      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
+        {/* Document with signature */}
+        <rect x="20" y="5" width="60" height="70" rx="6" stroke="#0D9B76" strokeWidth="1.5" fill="#0D9B76" opacity="0.08" />
+        <rect x="30" y="18" width="40" height="3" rx="1.5" fill="white" opacity="0.3" />
+        <rect x="30" y="26" width="30" height="3" rx="1.5" fill="white" opacity="0.2" />
+        <rect x="30" y="34" width="40" height="3" rx="1.5" fill="white" opacity="0.3" />
+        <rect x="30" y="42" width="25" height="3" rx="1.5" fill="white" opacity="0.2" />
+        <line x1="30" y1="55" x2="70" y2="55" stroke="white" strokeWidth="0.5" opacity="0.2" />
+        <path d="M32 58 Q38 48 42 56 Q46 64 52 52 Q56 44 60 54" stroke="#0D9B76" strokeWidth="1.5" fill="none" opacity="0.6" strokeLinecap="round" />
+        <circle cx="68" cy="64" r="6" fill="#0D9B76" opacity="0.3" />
+        <path d="M65 64 L67 66 L71 62" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
   },
 ];
 
-export default function Coursework() {
+export default function Features() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(gridRef, { once: true, margin: "-80px" });
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  const titleY = useTransform(scrollYProgress, [0, 1], [80, -40]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
 
   return (
     <section
-      id="coursework"
+      id="features"
       ref={sectionRef}
-      className="bg-[#C5F0D0] py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="bg-[#1B4332] py-20 md:py-28 lg:py-32 overflow-hidden relative"
     >
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
-        {/* Two-column layout: Box left, Title right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
-          {/* Left — Image box */}
-          <div className="lg:sticky lg:top-32 order-2 lg:order-1">
-            <div className="bg-[#E0FAE8] rounded-2xl p-6 md:p-8 lg:p-10">
-              <div className="min-h-[360px] flex items-center justify-center">
-                <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
-                  Image coming soon
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <motion.div
+        style={{ opacity: contentOpacity }}
+        className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16 relative z-10"
+      >
+        {/* Section header */}
+        <div className="mb-14 md:mb-18">
+          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#50C878]/60 mb-4">
+            Features
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] text-white font-extrabold tracking-tight">
+            Everything You Need
+            <br />
+            <span className="text-[#50C878]">to Lend with Confidence</span>
+          </h2>
+          <p className="font-sans text-base md:text-lg text-white/50 mt-6 max-w-[520px] leading-relaxed">
+            Vony gives you the tools to create clear agreements, set fair terms,
+            and keep both sides informed every step of the way.
+          </p>
+        </div>
+
+        {/* Bento grid */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.12,
+                ease: "easeOut",
+              }}
+              className={`${feature.span} bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-sm rounded-2xl p-6 md:p-8 transition-all duration-300 group border border-white/[0.06]`}
+            >
+              <div className="flex flex-col h-full">
+                {/* SVG illustration */}
+                <div className="mb-5 h-20 flex items-center">
+                  {feature.svg}
+                </div>
+                <h3 className="font-sans font-semibold text-lg md:text-xl text-white mb-2 group-hover:text-[#83F384] transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="font-sans text-sm text-white/50 leading-relaxed">
+                  {feature.description}
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Right — Large title with parallax */}
-          <motion.div style={{ y: titleY, opacity: contentOpacity }} className="lg:sticky lg:top-32 order-1 lg:order-2">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
-              What You Get
-            </p>
-            <ScrollHighlight
-              className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-              colorFrom="#98D8AA"
-              colorTo="#1B4332"
-            >
-              Flexible
-              <br />
-              Lending
-              <br />
-              Options
-            </ScrollHighlight>
-            <p className="font-sans text-base text-[#7A9A85] mt-6 max-w-[360px] leading-relaxed">
-              Everything you need to lend and borrow with confidence. Vony gives you the tools to create clear agreements, set fair terms, and keep both sides informed every step of the way.
-            </p>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Full-width marquee feature cards — outside the max-w container */}
-      <div className="mt-12 overflow-hidden relative">
-        {/* Left fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#C5F0D0] to-transparent z-10 pointer-events-none" />
-        {/* Right fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#C5F0D0] to-transparent z-10 pointer-events-none" />
-
-        <div className="flex animate-marquee w-max gap-4">
-          {/* First set */}
-          {featureCards.map((card, index) => (
-            <div
-              key={`a-${index}`}
-              className="rounded-xl p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
-              style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
-              <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>
-                {card.title}
-              </h4>
-              <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
-                {card.description}
-              </p>
-            </div>
-          ))}
-          {/* Duplicate set for seamless loop */}
-          {featureCards.map((card, index) => (
-            <div
-              key={`b-${index}`}
-              className="rounded-xl p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
-              style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
-              <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>
-                {card.title}
-              </h4>
-              <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
-                {card.description}
-              </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
