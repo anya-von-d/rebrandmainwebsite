@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 const paragraph =
-  "I'm a Stanford CS master's student working on mathematically grounded machine learning and computational decision systems. I build models and production infrastructure that operationalize statistical, probabilistic, and optimization theory into reliable software that runs in real-world environments, particularly for problems involving uncertainty, data, and decision-making.";
+  "From small favours to larger loans, Vony helps you formalise, track, and manage lending between friends and family with ease.";
 
 const words = paragraph.split(" ");
 
@@ -58,6 +58,9 @@ export default function About() {
       data-testid="section-about"
     >
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 lg:px-16">
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight text-[#0A1A10] mb-8 md:mb-12">
+          Designed for Everyday Lending
+        </h2>
         <p className="font-display text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-snug md:leading-snug lg:leading-snug font-normal italic">
           {words.map((word, i) => (
             <ScrollWord
