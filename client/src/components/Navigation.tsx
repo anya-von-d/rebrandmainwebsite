@@ -107,7 +107,7 @@ export default function Navigation() {
           </div>
 
           {/* Center — Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2">
+          <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/3">
             <a
               href="#hero"
               onClick={(e) => {
@@ -115,7 +115,7 @@ export default function Navigation() {
                 setIsMenuOpen(false);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="font-display italic text-2xl tracking-wide text-[#0A1A10]"
+              className="font-display italic text-2xl tracking-wide text-[#C2FFDC] bg-[#83F384] px-5 py-2 rounded-xl shadow-md shadow-[#83F384]/30"
             >
               Vony
             </a>
