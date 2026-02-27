@@ -100,7 +100,7 @@ export default function Features() {
           <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#50C878]/60 mb-4">
             Features
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] text-white font-extrabold tracking-tight">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95] text-white font-extrabold tracking-tight">
             Everything You Need
             <br />
             <span className="text-[#50C878]">to Lend with Confidence</span>

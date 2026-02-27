@@ -68,7 +68,7 @@ export default function Experience() {
               Use Cases
             </p>
             <ScrollHighlight
-              className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]"
               colorFrom="#98D8AA"
               colorTo="#1B4332"
             >

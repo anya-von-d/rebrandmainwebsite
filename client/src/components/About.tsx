@@ -56,7 +56,7 @@ export default function About() {
       data-testid="section-about"
     >
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 lg:px-16 text-center">
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-8 md:mb-12">
+        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight mb-8 md:mb-12">
           <span className="text-[#1B4332]">Designed for </span>
           <span className="text-[#0D9B76]">Everyday Lending</span>
         </h2>

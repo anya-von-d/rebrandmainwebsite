@@ -166,7 +166,7 @@ export default function Education() {
             How It Works
           </p>
           <ScrollHighlight
-            className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]"
+            className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95]"
             colorFrom="rgba(10,26,16,0.4)"
             colorTo="#0A1A10"
           >

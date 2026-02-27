@@ -71,7 +71,7 @@ export default function FAQ() {
               FAQ
             </p>
             <ScrollHighlight
-              className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[0.95]"
+              className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
               colorFrom="#98D8AA"
               colorTo="#1B4332"
             >
