@@ -98,7 +98,7 @@ export default function About() {
           <span className="text-[#1B4332]">Designed for </span>
           <span className="text-[#0D9B76]">Everyday Lending</span>
         </h2>
-        <p className="font-display text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-snug md:leading-snug lg:leading-snug font-normal italic">
+        <p className="font-serif text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-snug md:leading-snug lg:leading-snug font-normal italic">
           {words.map((word, i) => (
             <ScrollWord
               key={`${word}-${i}`}
