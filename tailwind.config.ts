@@ -68,12 +68,17 @@ export default {
           "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0%)" },
         },
+        "marquee-vertical": {
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(-50%)" },
+        },
       },
       animation: {
         "float": "float 6s ease-in-out infinite",
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
         "marquee": "marquee 30s linear infinite",
         "marquee-reverse": "marquee-reverse 35s linear infinite",
+        "marquee-vertical": "marquee-vertical 20s linear infinite",
       },
     },
   },

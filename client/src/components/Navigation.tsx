@@ -77,29 +77,9 @@ export default function Navigation() {
             : 'bg-[#F0F7F2] border-b border-[#C8DCCE]'
         }`}
       >
-        <div className="w-full px-6 md:px-10 grid grid-cols-3 items-center">
-          {/* Left — empty spacer for symmetry */}
-          <div />
-
-          {/* Center — Logo */}
-          <div className="flex justify-center">
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsMenuOpen(false);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-[#E8F5ED]' : 'text-[#0A1A10]'
-              }`}
-            >
-              avd
-            </a>
-          </div>
-
-          {/* Right — Hamburger button */}
-          <div className="flex justify-end">
+        <div className="w-full px-6 md:px-10 flex items-center justify-between">
+          {/* Left — Hamburger button */}
+          <div className="flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`relative w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
@@ -130,6 +110,41 @@ export default function Navigation() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </button>
+          </div>
+
+          {/* Center — Logo */}
+          <div className="absolute left-1/2 -translate-x-1/2">
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
+                isOverHero && !isMenuOpen ? 'text-[#E8F5ED]' : 'text-[#0A1A10]'
+              }`}
+            >
+              Vony
+            </a>
+          </div>
+
+          {/* Right — Get Started + Log In buttons */}
+          <div className="flex items-center gap-3">
+            <button
+              className={`font-sans text-sm font-medium transition-colors duration-300 cursor-pointer ${
+                isOverHero && !isMenuOpen
+                  ? 'text-[#C8DCCE] hover:text-[#E8F5ED]'
+                  : 'text-[#4A6B55] hover:text-[#0A1A10]'
+              }`}
+            >
+              Log In
+            </button>
+            <button
+              className="bg-[#00A86B] hover:bg-[#008F5A] text-white px-4 py-1.5 rounded-lg font-sans text-sm font-semibold transition-colors cursor-pointer"
+            >
+              Get Started
             </button>
           </div>
         </div>
@@ -190,13 +205,10 @@ export default function Navigation() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="absolute bottom-10 left-0 right-0 flex justify-between items-end px-6 md:px-10"
+                className="absolute bottom-10 left-0 right-0 flex justify-center px-6 md:px-10"
               >
                 <p className="font-mono text-[11px] text-[#7A9A85] uppercase tracking-[0.06em]">
-                  Anya von Diessl
-                </p>
-                <p className="font-mono text-[11px] text-[#7A9A85] uppercase tracking-[0.06em]">
-                  Stanford CS &middot; AI
+                  Vony &middot; Lending Made Simple
                 </p>
               </motion.div>
             </div>

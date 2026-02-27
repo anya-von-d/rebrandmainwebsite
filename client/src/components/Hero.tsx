@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import CodeTyping from "@/components/CodeTyping";
 import profileImage from "@assets/Screenshot_2026-01-08_at_10.44.47_AM_1767898127121.png";
 
 const features = [
@@ -36,9 +35,6 @@ export default function Hero() {
       ref={sectionRef}
       className="h-screen bg-[#0A120E] relative overflow-hidden"
     >
-      {/* Animated code typing background with cursor */}
-      <CodeTyping />
-
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
         className="relative z-10 h-full"
