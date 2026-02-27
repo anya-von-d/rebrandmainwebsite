@@ -7,52 +7,28 @@ const cardBgColors = ["#D0ED6F", "#83F384", "#6EE8B5"];
 
 const useCases = [
   {
-    title: "Split Dinner Bills",
-    description: "Easily divide restaurant tabs and track who owes what.",
+    title: "Split Bills",
+    description: "Easily divide restaurant tabs, utilities, and shared costs between friends.",
   },
   {
     title: "Help with Rent",
     description: "Cover a friend's rent and set up a clear repayment plan.",
   },
   {
-    title: "Urgent Car Repairs",
+    title: "Car Repairs",
     description: "Lend for unexpected breakdowns without the awkwardness.",
-  },
-  {
-    title: "Concert Tickets",
-    description: "Front the cost for group tickets and get paid back on time.",
-  },
-  {
-    title: "Moving Costs",
-    description: "Help a mate with deposits and moving expenses stress-free.",
-  },
-  {
-    title: "Textbooks & Tuition",
-    description: "Support a friend through study costs with flexible terms.",
-  },
-  {
-    title: "Travel Expenses",
-    description: "Split holiday costs and track shared travel spending.",
   },
   {
     title: "Medical Bills",
     description: "Help cover unexpected medical expenses with a clear agreement.",
   },
   {
-    title: "Pet Emergencies",
-    description: "Lend for vet bills and set up easy instalments.",
+    title: "Emergencies",
+    description: "Be there when it matters — lend quickly with transparent terms.",
   },
   {
-    title: "Birthday Gifts",
-    description: "Pool money for group presents and keep everyone accountable.",
-  },
-  {
-    title: "Grocery Runs",
-    description: "Track shared household shopping costs effortlessly.",
-  },
-  {
-    title: "Utility Bills",
-    description: "Split electricity, internet, and water between housemates.",
+    title: "Travel Expenses",
+    description: "Split holiday costs and track shared travel spending.",
   },
 ];
 
@@ -70,6 +46,9 @@ export default function Experience() {
     [0, 0.2, 0.8, 1],
     [0, 1, 1, 0]
   );
+
+  // Duplicate for seamless vertical loop
+  const marqueeCards = [...useCases, ...useCases];
 
   return (
     <section
@@ -105,41 +84,31 @@ export default function Experience() {
             </p>
           </motion.div>
 
-          {/* Right — Scrolling use-case cards box */}
+          {/* Right — Auto-scrolling use-case cards box */}
           <div className="lg:sticky lg:top-32">
             <div className="bg-[#DBFFEB] rounded-2xl p-6 md:p-8 lg:p-10">
               <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-5">
                 Common Scenarios
               </p>
 
-              {/* Scrollable container with masked edges */}
-              <div className="relative">
+              {/* Auto-scrolling container with masked edges */}
+              <div className="relative overflow-hidden max-h-[380px]">
                 {/* Top fade mask */}
-                <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#DBFFEB] to-transparent z-10 pointer-events-none rounded-t-lg" />
+                <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#DBFFEB] to-transparent z-10 pointer-events-none" />
                 {/* Bottom fade mask */}
-                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#DBFFEB] to-transparent z-10 pointer-events-none rounded-b-lg" />
+                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#DBFFEB] to-transparent z-10 pointer-events-none" />
 
-                <div className="max-h-[420px] overflow-y-auto space-y-3 pr-2 scrollbar-thin py-2">
-                  {useCases.map((useCase, index) => {
+                <div className="animate-marquee-vertical flex flex-col gap-3 py-2">
+                  {marqueeCards.map((useCase, index) => {
                     const hoverColor = hoverColors[index % hoverColors.length];
                     return (
-                      <motion.div
-                        key={useCase.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-20px" }}
-                        transition={{
-                          duration: 0.4,
-                          delay: index * 0.05,
-                          ease: "easeOut",
-                        }}
-                        className="rounded-xl p-4 md:p-5 transition-colors group"
-                        style={{ ["--hover-color" as string]: hoverColor, backgroundColor: cardBgColors[index % cardBgColors.length] }}
-                        whileHover={{ scale: 1.02 }}
+                      <div
+                        key={`${useCase.title}-${index}`}
+                        className="rounded-xl p-4 md:p-5 transition-colors group flex-shrink-0"
+                        style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
                       >
                         <h3
                           className="font-sans font-semibold text-[15px] text-[#0A1A10] transition-colors"
-                          style={{ ["--hover-color" as string]: hoverColor }}
                         >
                           <span className="group-hover:hidden">{useCase.title}</span>
                           <span className="hidden group-hover:inline" style={{ color: hoverColor }}>{useCase.title}</span>
@@ -147,7 +116,7 @@ export default function Experience() {
                         <p className="font-sans text-sm text-[#4A6B55] mt-1 leading-relaxed">
                           {useCase.description}
                         </p>
-                      </motion.div>
+                      </div>
                     );
                   })}
                 </div>
