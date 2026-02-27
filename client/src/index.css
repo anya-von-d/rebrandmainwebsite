@@ -51,8 +51,8 @@
 
   /* Fonts */
   --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Syne', 'Inter', system-ui, sans-serif;
-  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-serif: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Times New Roman', 'Georgia', serif;
   --font-mono: 'IBM Plex Mono', 'Fira Code', monospace;
 }
 
