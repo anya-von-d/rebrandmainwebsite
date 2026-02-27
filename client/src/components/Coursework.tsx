@@ -61,54 +61,55 @@ export default function Coursework() {
             </p>
           </motion.div>
 
-          {/* Right — Image box with scrolling feature cards below */}
+          {/* Right — Image box */}
           <div className="lg:sticky lg:top-32">
-            {/* Image placeholder box — matches Experience section box size */}
-            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10 min-h-[420px] flex items-center justify-center">
-              <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
-                Image coming soon
-              </p>
-            </div>
-
-            {/* Marquee feature cards — scrolling right to left */}
-            <div className="mt-4 overflow-hidden relative">
-              {/* Left fade */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
-              {/* Right fade */}
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
-
-              <div className="flex animate-marquee w-max gap-4">
-                {/* First set */}
-                {featureCards.map((card, index) => (
-                  <div
-                    key={`a-${index}`}
-                    className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
-                  >
-                    <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
-                      {card.title}
-                    </h4>
-                    <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {featureCards.map((card, index) => (
-                  <div
-                    key={`b-${index}`}
-                    className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
-                  >
-                    <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
-                      {card.title}
-                    </h4>
-                    <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
-                ))}
+            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10">
+              <div className="min-h-[360px] flex items-center justify-center">
+                <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
+                  Image coming soon
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Full-width marquee feature cards — outside the max-w container */}
+      <div className="mt-12 overflow-hidden relative">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#E5F0E8] to-transparent z-10 pointer-events-none" />
+
+        <div className="flex animate-marquee w-max gap-4">
+          {/* First set */}
+          {featureCards.map((card, index) => (
+            <div
+              key={`a-${index}`}
+              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
+            >
+              <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
+                {card.title}
+              </h4>
+              <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
+                {card.description}
+              </p>
+            </div>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {featureCards.map((card, index) => (
+            <div
+              key={`b-${index}`}
+              className="bg-[#F5FAF6] rounded-xl border border-[#C8DCCE] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0"
+            >
+              <h4 className="font-sans font-semibold text-[15px] text-[#0A1A10] mb-2">
+                {card.title}
+              </h4>
+              <p className="font-sans text-sm text-[#4A6B55] leading-relaxed">
+                {card.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
