@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
 const cardAccents = ["#00A86B", "#50C878", "#0D9B76"];
+const cardBgColors = ["#DBFFEB", "#83F384", "#6EE8B5"];
 
 const featureCards = [
   {
@@ -88,7 +89,8 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`a-${index}`}
-              className="bg-[#E0FAE8] rounded-xl border border-[#7AD4A0] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              className="rounded-xl border border-[#7AD4A0] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
               <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>
@@ -103,7 +105,8 @@ export default function Coursework() {
           {featureCards.map((card, index) => (
             <div
               key={`b-${index}`}
-              className="bg-[#E0FAE8] rounded-xl border border-[#7AD4A0] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              className="rounded-xl border border-[#7AD4A0] p-5 md:p-6 w-[280px] md:w-[320px] flex-shrink-0 relative overflow-hidden"
+              style={{ backgroundColor: cardBgColors[index % cardBgColors.length] }}
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: cardAccents[index % cardAccents.length] }} />
               <h4 className="font-sans font-semibold text-[15px] mb-2" style={{ color: cardAccents[index % cardAccents.length] }}>

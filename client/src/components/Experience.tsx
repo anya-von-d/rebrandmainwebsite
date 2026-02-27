@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollHighlight from "@/components/ScrollHighlight";
 
 const hoverColors = ["#00A86B", "#50C878", "#0D9B76", "#00BF7A"];
+const cardBgColors = ["#DBFFEB", "#83F384", "#6EE8B5"];
 
 const useCases = [
   {
@@ -106,7 +107,7 @@ export default function Experience() {
 
           {/* Right — Scrolling use-case cards box */}
           <div className="lg:sticky lg:top-32">
-            <div className="bg-[#D0F5DC] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10">
+            <div className="bg-[#DBFFEB] rounded-2xl border border-[#7AD4A0] p-6 md:p-8 lg:p-10">
               <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-5">
                 Common Scenarios
               </p>
@@ -114,9 +115,9 @@ export default function Experience() {
               {/* Scrollable container with masked edges */}
               <div className="relative">
                 {/* Top fade mask */}
-                <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#D0F5DC] to-transparent z-10 pointer-events-none rounded-t-lg" />
+                <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#DBFFEB] to-transparent z-10 pointer-events-none rounded-t-lg" />
                 {/* Bottom fade mask */}
-                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#D0F5DC] to-transparent z-10 pointer-events-none rounded-b-lg" />
+                <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#DBFFEB] to-transparent z-10 pointer-events-none rounded-b-lg" />
 
                 <div className="max-h-[420px] overflow-y-auto space-y-3 pr-2 scrollbar-thin py-2">
                   {useCases.map((useCase, index) => {
@@ -132,8 +133,8 @@ export default function Experience() {
                           delay: index * 0.05,
                           ease: "easeOut",
                         }}
-                        className="bg-[#A8E6B8] rounded-xl p-4 md:p-5 border border-[#7AD4A0] transition-colors group"
-                        style={{ ["--hover-color" as string]: hoverColor }}
+                        className="rounded-xl p-4 md:p-5 border border-[#7AD4A0] transition-colors group"
+                        style={{ ["--hover-color" as string]: hoverColor, backgroundColor: cardBgColors[index % cardBgColors.length] }}
                         whileHover={{ borderColor: hoverColor }}
                       >
                         <h3

@@ -31,7 +31,7 @@ export default function CurvedDivider() {
     <div
       ref={containerRef}
       className="relative w-full -mt-1"
-      style={{ height: `${80 + curveY / 2}px` }}
+      style={{ height: `${80 + curveY / 2}px`, backgroundColor: "#DBEEE3" }}
     >
       <svg
         viewBox="0 0 1440 230"
@@ -41,7 +41,7 @@ export default function CurvedDivider() {
       >
         <path
           d={path}
-          fill="#B8EFCA"
+          fill="#36CE8E"
           style={{ transition: "d 0.05s linear" }}
         />
       </svg>
