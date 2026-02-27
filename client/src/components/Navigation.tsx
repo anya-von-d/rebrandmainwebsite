@@ -106,8 +106,8 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Desktop left nav — Uses, How It Works */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop center — Links + Logo grouped together */}
+          <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2 gap-5">
             <a
               href="#experience"
               onClick={(e) => handleNavClick(e, '#experience')}
@@ -126,10 +126,6 @@ export default function Navigation() {
             >
               How It Works
             </a>
-          </div>
-
-          {/* Center — Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2">
             <a
               href="#hero"
               onClick={(e) => {
@@ -137,14 +133,10 @@ export default function Navigation() {
                 setIsMenuOpen(false);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="font-display italic text-2xl tracking-wide text-[#0A1A10]"
+              className="font-display italic text-3xl tracking-wide text-[#0A1A10] mx-2"
             >
               Vony
             </a>
-          </div>
-
-          {/* Desktop right nav — Features, FAQ + Get Started */}
-          <div className="hidden md:flex items-center gap-6">
             <a
               href="#features"
               onClick={(e) => handleNavClick(e, '#features')}
@@ -163,15 +155,25 @@ export default function Navigation() {
             >
               FAQ
             </a>
-            <button
-              className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#0A1A10] hover:bg-[#0A1A10]/85 text-white shadow-md shadow-black/10"
-            >
-              Get Started
-            </button>
           </div>
 
-          {/* Mobile right — Get Started only */}
-          <div className="flex md:hidden items-center">
+          {/* Mobile center — Logo only */}
+          <div className="flex md:hidden absolute left-1/2 -translate-x-1/2">
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="font-display italic text-3xl tracking-wide text-[#0A1A10]"
+            >
+              Vony
+            </a>
+          </div>
+
+          {/* Right — Get Started */}
+          <div className="flex items-center">
             <button
               className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#0A1A10] hover:bg-[#0A1A10]/85 text-white shadow-md shadow-black/10"
             >
