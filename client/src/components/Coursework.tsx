@@ -37,7 +37,7 @@ export default function Coursework() {
     <section
       id="coursework"
       ref={sectionRef}
-      className="bg-[#E5F0E8] py-16 md:py-20 lg:py-24 overflow-hidden"
+      className="bg-[#E5F0E8] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Two-column layout: Box left, Title right */}

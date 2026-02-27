@@ -79,7 +79,7 @@ export default function Education() {
     <section
       id="education"
       ref={sectionRef}
-      className="bg-[#0A120E] py-16 md:py-20 lg:py-24 overflow-hidden"
+      className="bg-[#0A120E] py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <motion.div
         style={{ opacity: contentOpacity }}
