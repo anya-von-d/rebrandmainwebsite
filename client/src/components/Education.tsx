@@ -188,31 +188,19 @@ export default function Education() {
             </PhoneMockup>
           </div>
 
-          {/* Right — Description panel */}
+          {/* Right — Description text */}
           <div className="flex items-center">
             <AnimatePresence mode="wait">
-              <motion.div
+              <motion.p
                 key={activeIndex}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="bg-[#0E1F14] rounded-2xl p-8 xl:p-10 border border-[#1E3326] w-full"
+                className="font-sans text-base lg:text-lg text-[#C8DCCE] leading-relaxed"
               >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-8 h-8 rounded-full bg-[#00A86B]/15 flex items-center justify-center">
-                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
-                      {steps[activeIndex].number}
-                    </span>
-                  </div>
-                  <h3 className="font-sans text-lg font-semibold text-[#E8F5ED]">
-                    {steps[activeIndex].label}
-                  </h3>
-                </div>
-                <p className="font-sans text-base lg:text-lg text-[#C8DCCE] leading-relaxed">
-                  {steps[activeIndex].description}
-                </p>
-              </motion.div>
+                {steps[activeIndex].description}
+              </motion.p>
             </AnimatePresence>
           </div>
         </div>
@@ -288,18 +276,16 @@ export default function Education() {
             </PhoneMockup>
 
             <AnimatePresence mode="wait">
-              <motion.div
+              <motion.p
                 key={activeIndex}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="bg-[#0E1F14] rounded-2xl p-8 border border-[#1E3326] w-full"
+                className="font-sans text-base text-[#C8DCCE] leading-relaxed w-full"
               >
-                <p className="font-sans text-base text-[#C8DCCE] leading-relaxed">
-                  {steps[activeIndex].description}
-                </p>
-              </motion.div>
+                {steps[activeIndex].description}
+              </motion.p>
             </AnimatePresence>
           </div>
         </div>
@@ -377,18 +363,16 @@ export default function Education() {
 
           {/* Description */}
           <AnimatePresence mode="wait">
-            <motion.div
+            <motion.p
               key={activeIndex}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="bg-[#0E1F14] rounded-xl p-6 border border-[#1E3326]"
+              className="font-sans text-base text-[#C8DCCE] leading-relaxed px-2"
             >
-              <p className="font-sans text-base text-[#C8DCCE] leading-relaxed">
-                {steps[activeIndex].description}
-              </p>
-            </motion.div>
+              {steps[activeIndex].description}
+            </motion.p>
           </AnimatePresence>
         </div>
       </motion.div>
