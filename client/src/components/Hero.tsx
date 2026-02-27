@@ -91,7 +91,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="h-[92vh] bg-[#36CE8E] relative overflow-hidden"
+      className="h-[88vh] bg-[#36CE8E] relative overflow-hidden"
     >
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
