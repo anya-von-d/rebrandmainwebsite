@@ -441,29 +441,6 @@ export default function Hero() {
           <PhoneOutline className="w-[32vw] max-w-[380px] lg:w-[26vw] lg:max-w-[420px] xl:max-w-[460px] h-auto" />
         </motion.div>
 
-        {/* ── Features marquee — moved up, behind the phone ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-[4%] md:bottom-[6%] left-0 right-0 z-10 pointer-events-none"
-        >
-          <div className="overflow-hidden">
-            <div className="animate-marquee flex whitespace-nowrap">
-              {marqueeFeatures.map((feature, i) => (
-                <span
-                  key={`${feature}-${i}`}
-                  className="inline-flex items-center mx-6 md:mx-10"
-                >
-                  <span className="font-mono text-xs md:text-sm lg:text-base text-[#0A1A10]/60 uppercase tracking-[0.2em]">
-                    {feature}
-                  </span>
-                </span>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
         {/* ── Mobile: phone outline visible below headline ── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}

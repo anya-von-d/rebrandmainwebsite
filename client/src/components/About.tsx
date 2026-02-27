@@ -48,6 +48,13 @@ export default function About() {
     setMaxProgress((prev) => Math.max(prev, latest));
   });
 
+  const marqueeFeatures = [
+    "Create Clear Agreements",
+    "Track Repayments",
+    "Set Custom Payment Plans",
+    "Manage Your Loans",
+  ];
+
   return (
     <section
       id="about"
@@ -55,7 +62,27 @@ export default function About() {
       className="bg-[#DBEEE3] py-20 md:py-28 lg:py-32"
       data-testid="section-about"
     >
+      {/* Scrolling marquee */}
+      <div className="overflow-hidden mb-12 md:mb-16">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {[...marqueeFeatures, ...marqueeFeatures].map((feature, i) => (
+            <span
+              key={`${feature}-${i}`}
+              className="inline-flex items-center mx-6 md:mx-10"
+            >
+              <span className="font-mono text-xs md:text-sm lg:text-base text-[#0A1A10]/40 uppercase tracking-[0.2em]">
+                {feature}
+              </span>
+              <span className="ml-6 md:ml-10 text-[#0A1A10]/20">&#x2022;</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 lg:px-16 text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
+          About
+        </p>
         <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight mb-8 md:mb-12">
           <span className="text-[#1B4332]">Designed for </span>
           <span className="text-[#0D9B76]">Everyday Lending</span>
