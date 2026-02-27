@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import CurvedDivider from '@/components/CurvedDivider';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
+import VonyBanner from '@/components/VonyBanner';
 import Education from '@/components/Education';
 import Coursework from '@/components/Coursework';
 import TechnicalSkills from '@/components/TechnicalSkills';
@@ -37,6 +38,7 @@ export default function Home() {
         <CurvedDivider />
         <About />
         <Experience />
+        <VonyBanner />
         <Education />
         <Coursework />
         <TechnicalSkills />
