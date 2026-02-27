@@ -121,8 +121,8 @@ export default function Navigation() {
                 setIsMenuOpen(false);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`font-display italic text-2xl tracking-wide transition-colors duration-300 ${
-                isOverHero && !isMenuOpen ? 'text-white' : 'text-[#0A1A10]'
+              className={`font-display font-bold text-2xl tracking-wide transition-colors duration-300 ${
+                isOverHero && !isMenuOpen ? 'text-[#DC143C]' : 'text-[#DC143C]'
               }`}
             >
               Vony
