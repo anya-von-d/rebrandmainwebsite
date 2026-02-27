@@ -31,30 +31,6 @@ const steps = [
 
 const CYCLE_INTERVAL = 5000;
 
-/* ── Phone outline SVG ── */
-function PhoneMockup({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative mx-auto w-[220px] lg:w-[260px]">
-      {/* Phone frame */}
-      <div className="relative rounded-[36px] border-[3px] border-[#2A4A35] bg-[#0A120E] p-2 shadow-2xl shadow-[#00A86B]/5">
-        {/* Notch */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-[#0A120E] rounded-b-2xl z-20 border-x-[3px] border-b-[3px] border-[#2A4A35]" />
-
-        {/* Screen area */}
-        <div className="relative rounded-[28px] bg-[#0E1F14] overflow-hidden aspect-[9/19]">
-          {/* Screen content — placeholder for future app screenshots */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-            {children}
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom bar indicator */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[100px] h-[4px] rounded-full bg-[#2A4A35]" />
-    </div>
-  );
-}
-
 export default function Education() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -123,8 +99,8 @@ export default function Education() {
           </ScrollHighlight>
         </div>
 
-        {/* Desktop: three-column — steps | phone | description */}
-        <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-10 xl:gap-16 items-center">
+        {/* Desktop: two-column — steps left, image box with overlapping card right */}
+        <div className="hidden lg:grid grid-cols-[1fr_1.4fr] gap-10 xl:gap-16 items-start">
           {/* Left — Step selectors */}
           <div className="flex flex-col gap-2">
             {steps.map((step, index) => {
@@ -165,53 +141,36 @@ export default function Education() {
             })}
           </div>
 
-          {/* Center — Phone mockup */}
-          <div className="flex items-center justify-center">
-            <PhoneMockup>
+          {/* Right — Image box with overlapping description card */}
+          <div className="relative">
+            {/* Image placeholder box */}
+            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+              <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
+                Image coming soon
+              </p>
+            </div>
+
+            {/* Overlapping description card */}
+            <div className="absolute -bottom-8 -left-6 max-w-[340px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="text-center"
+                  className="bg-[#0E1F14] rounded-xl border border-[#2A4A35] p-5 md:p-6 shadow-2xl shadow-black/30"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#00A86B]/15 flex items-center justify-center mx-auto mb-3">
-                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
-                      {steps[activeIndex].number}
-                    </span>
-                  </div>
-                  <p className="font-sans text-xs text-[#7A9A85] uppercase tracking-wider mb-2">
-                    {steps[activeIndex].label}
-                  </p>
-                  <div className="w-8 h-[1px] bg-[#2A4A35] mx-auto mb-3" />
-                  <p className="font-sans text-[11px] text-[#4A6B55] leading-relaxed">
-                    Screen preview coming soon
+                  <p className="font-sans text-sm lg:text-base text-[#C8DCCE] leading-relaxed">
+                    {steps[activeIndex].description}
                   </p>
                 </motion.div>
               </AnimatePresence>
-            </PhoneMockup>
-          </div>
-
-          {/* Right — Description text */}
-          <div className="flex items-center">
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="font-sans text-base lg:text-lg text-[#C8DCCE] leading-relaxed"
-              >
-                {steps[activeIndex].description}
-              </motion.p>
-            </AnimatePresence>
+            </div>
           </div>
         </div>
 
-        {/* Tablet: two-column — steps left, phone + description right */}
+        {/* Tablet: two-column — steps left, image box with overlapping card right */}
         <div className="hidden md:grid lg:hidden grid-cols-[1fr_1.3fr] gap-10 items-start">
           {/* Left — Steps */}
           <div className="flex flex-col gap-2">
@@ -253,50 +212,36 @@ export default function Education() {
             })}
           </div>
 
-          {/* Right — Phone + description stacked */}
-          <div className="flex flex-col items-center gap-8">
-            <PhoneMockup>
+          {/* Right — Image box with overlapping card */}
+          <div className="relative pb-10">
+            {/* Image placeholder box */}
+            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+              <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
+                Image coming soon
+              </p>
+            </div>
+
+            {/* Overlapping description card */}
+            <div className="absolute -bottom-2 -left-4 max-w-[300px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="text-center"
+                  className="bg-[#0E1F14] rounded-xl border border-[#2A4A35] p-5 shadow-2xl shadow-black/30"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#00A86B]/15 flex items-center justify-center mx-auto mb-3">
-                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
-                      {steps[activeIndex].number}
-                    </span>
-                  </div>
-                  <p className="font-sans text-xs text-[#7A9A85] uppercase tracking-wider mb-2">
-                    {steps[activeIndex].label}
-                  </p>
-                  <div className="w-8 h-[1px] bg-[#2A4A35] mx-auto mb-3" />
-                  <p className="font-sans text-[11px] text-[#4A6B55] leading-relaxed">
-                    Screen preview coming soon
+                  <p className="font-sans text-sm text-[#C8DCCE] leading-relaxed">
+                    {steps[activeIndex].description}
                   </p>
                 </motion.div>
               </AnimatePresence>
-            </PhoneMockup>
-
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={activeIndex}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="font-sans text-base text-[#C8DCCE] leading-relaxed w-full"
-              >
-                {steps[activeIndex].description}
-              </motion.p>
-            </AnimatePresence>
+            </div>
           </div>
         </div>
 
-        {/* Mobile: stacked — steps, phone, description */}
+        {/* Mobile: stacked — steps, image box with overlapping card */}
         <div className="md:hidden flex flex-col gap-8">
           {/* Steps */}
           <div className="flex flex-col gap-2">
@@ -338,48 +283,32 @@ export default function Education() {
             })}
           </div>
 
-          {/* Phone */}
-          <div className="flex justify-center">
-            <PhoneMockup>
+          {/* Image box with overlapping card */}
+          <div className="relative pb-12">
+            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+              <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
+                Image coming soon
+              </p>
+            </div>
+
+            {/* Overlapping description card */}
+            <div className="absolute -bottom-4 left-2 right-2">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="text-center"
+                  className="bg-[#0E1F14] rounded-xl border border-[#2A4A35] p-4 shadow-2xl shadow-black/30"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#00A86B]/15 flex items-center justify-center mx-auto mb-3">
-                    <span className="font-mono text-sm text-[#00A86B] font-semibold">
-                      {steps[activeIndex].number}
-                    </span>
-                  </div>
-                  <p className="font-sans text-xs text-[#7A9A85] uppercase tracking-wider mb-2">
-                    {steps[activeIndex].label}
-                  </p>
-                  <div className="w-8 h-[1px] bg-[#2A4A35] mx-auto mb-3" />
-                  <p className="font-sans text-[11px] text-[#4A6B55] leading-relaxed">
-                    Screen preview coming soon
+                  <p className="font-sans text-sm text-[#C8DCCE] leading-relaxed">
+                    {steps[activeIndex].description}
                   </p>
                 </motion.div>
               </AnimatePresence>
-            </PhoneMockup>
+            </div>
           </div>
-
-          {/* Description */}
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={activeIndex}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="font-sans text-base text-[#C8DCCE] leading-relaxed px-2"
-            >
-              {steps[activeIndex].description}
-            </motion.p>
-          </AnimatePresence>
         </div>
       </motion.div>
     </section>

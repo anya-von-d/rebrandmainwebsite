@@ -63,8 +63,8 @@ export default function Coursework() {
 
           {/* Right — Image box with scrolling feature cards below */}
           <div className="lg:sticky lg:top-32">
-            {/* Image placeholder box */}
-            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] aspect-[4/3] flex items-center justify-center">
+            {/* Image placeholder box — matches Experience section box size */}
+            <div className="bg-[#F5FAF6] rounded-2xl border border-[#C8DCCE] p-6 md:p-8 lg:p-10 min-h-[420px] flex items-center justify-center">
               <p className="font-mono text-xs text-[#7A9A85] uppercase tracking-wider">
                 Image coming soon
               </p>
