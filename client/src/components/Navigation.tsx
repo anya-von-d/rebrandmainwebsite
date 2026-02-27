@@ -61,9 +61,14 @@ export default function Navigation() {
     setTimeout(() => {
       const target = document.querySelector(href);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        const navHeight = 56; // h-14
+        const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - navHeight,
+          behavior: 'smooth',
+        });
       }
-    }, 100);
+    }, 150);
   };
 
   return (

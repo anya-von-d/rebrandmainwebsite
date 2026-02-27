@@ -65,7 +65,6 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="lg:sticky lg:top-32"
           >
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
               FAQ
