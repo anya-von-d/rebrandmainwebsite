@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import CurvedDivider from '@/components/CurvedDivider';
 import About from '@/components/About';
-import SocialProof from '@/components/SocialProof';
+import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import Coursework from '@/components/Coursework';
 import FAQ from '@/components/FAQ';
@@ -36,7 +36,7 @@ export default function Home() {
         <Hero />
         <CurvedDivider />
         <About />
-        <SocialProof />
+        <Experience />
         <Education />
         <Coursework />
         <FAQ />
