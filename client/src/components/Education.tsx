@@ -99,8 +99,8 @@ export default function Education() {
           </ScrollHighlight>
         </div>
 
-        {/* Desktop: two-column — steps left, image box with overlapping card right */}
-        <div className="hidden lg:grid grid-cols-[1fr_1.4fr] gap-10 xl:gap-16 items-start">
+        {/* Desktop: three-column — steps | image box | description */}
+        <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-10 xl:gap-16 items-center">
           {/* Left — Step selectors */}
           <div className="flex flex-col gap-2">
             {steps.map((step, index) => {
@@ -141,36 +141,33 @@ export default function Education() {
             })}
           </div>
 
-          {/* Right — Image box with overlapping description card */}
-          <div className="relative">
-            {/* Image placeholder box */}
-            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+          {/* Center — Image box */}
+          <div className="flex items-center justify-center">
+            <div className="w-[280px] xl:w-[320px] bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[3/4] flex items-center justify-center">
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
               </p>
             </div>
+          </div>
 
-            {/* Overlapping description card */}
-            <div className="absolute -bottom-8 -left-6 max-w-[340px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="bg-[#0E1F14] rounded-xl border border-[#2A4A35] p-5 md:p-6 shadow-2xl shadow-black/30"
-                >
-                  <p className="font-sans text-sm lg:text-base text-[#C8DCCE] leading-relaxed">
-                    {steps[activeIndex].description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          {/* Right — Description text */}
+          <div className="flex items-center">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="font-sans text-base lg:text-lg text-[#C8DCCE] leading-relaxed"
+              >
+                {steps[activeIndex].description}
+              </motion.p>
+            </AnimatePresence>
           </div>
         </div>
 
-        {/* Tablet: two-column — steps left, image box with overlapping card right */}
+        {/* Tablet: two-column — steps left, image box + description right */}
         <div className="hidden md:grid lg:hidden grid-cols-[1fr_1.3fr] gap-10 items-start">
           {/* Left — Steps */}
           <div className="flex flex-col gap-2">
@@ -212,36 +209,30 @@ export default function Education() {
             })}
           </div>
 
-          {/* Right — Image box with overlapping card */}
-          <div className="relative pb-10">
-            {/* Image placeholder box */}
-            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+          {/* Right — Image box + description stacked */}
+          <div className="flex flex-col items-center gap-8">
+            <div className="w-full bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
               <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
                 Image coming soon
               </p>
             </div>
 
-            {/* Overlapping description card */}
-            <div className="absolute -bottom-2 -left-4 max-w-[300px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="bg-[#0E1F14] rounded-xl border border-[#2A4A35] p-5 shadow-2xl shadow-black/30"
-                >
-                  <p className="font-sans text-sm text-[#C8DCCE] leading-relaxed">
-                    {steps[activeIndex].description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeIndex}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="font-sans text-base text-[#C8DCCE] leading-relaxed w-full"
+              >
+                {steps[activeIndex].description}
+              </motion.p>
+            </AnimatePresence>
           </div>
         </div>
 
-        {/* Mobile: stacked — steps, image box with overlapping card */}
+        {/* Mobile: stacked — steps, image box, description */}
         <div className="md:hidden flex flex-col gap-8">
           {/* Steps */}
           <div className="flex flex-col gap-2">
@@ -283,32 +274,26 @@ export default function Education() {
             })}
           </div>
 
-          {/* Image box with overlapping card */}
-          <div className="relative pb-12">
-            <div className="bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
-              <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
-                Image coming soon
-              </p>
-            </div>
-
-            {/* Overlapping description card */}
-            <div className="absolute -bottom-4 left-2 right-2">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="bg-[#0E1F14] rounded-xl border border-[#2A4A35] p-4 shadow-2xl shadow-black/30"
-                >
-                  <p className="font-sans text-sm text-[#C8DCCE] leading-relaxed">
-                    {steps[activeIndex].description}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          {/* Image box */}
+          <div className="w-full bg-[#0E1F14] rounded-2xl border border-[#2A4A35] aspect-[4/3] flex items-center justify-center">
+            <p className="font-mono text-xs text-[#4A6B55] uppercase tracking-wider">
+              Image coming soon
+            </p>
           </div>
+
+          {/* Description */}
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={activeIndex}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="font-sans text-base text-[#C8DCCE] leading-relaxed px-2"
+            >
+              {steps[activeIndex].description}
+            </motion.p>
+          </AnimatePresence>
         </div>
       </motion.div>
     </section>
