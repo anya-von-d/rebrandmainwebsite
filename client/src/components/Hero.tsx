@@ -1,6 +1,64 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import profileImage from "@assets/Screenshot_2026-01-08_at_10.44.47_AM_1767898127121.png";
+
+function PhoneOutline({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 280 560"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Phone body */}
+      <rect
+        x="6"
+        y="6"
+        width="268"
+        height="548"
+        rx="40"
+        ry="40"
+        stroke="#0A1A10"
+        strokeWidth="4"
+        fill="none"
+      />
+      {/* Inner screen border */}
+      <rect
+        x="18"
+        y="58"
+        width="244"
+        height="444"
+        rx="8"
+        ry="8"
+        stroke="#0A1A10"
+        strokeWidth="1.5"
+        fill="none"
+        opacity="0.3"
+      />
+      {/* Top notch / dynamic island */}
+      <rect
+        x="104"
+        y="22"
+        width="72"
+        height="24"
+        rx="12"
+        ry="12"
+        fill="#0A1A10"
+        opacity="0.15"
+      />
+      {/* Bottom home indicator */}
+      <rect
+        x="100"
+        y="524"
+        width="80"
+        height="5"
+        rx="2.5"
+        ry="2.5"
+        fill="#0A1A10"
+        opacity="0.2"
+      />
+    </svg>
+  );
+}
 
 const features = [
   "Create Clear Agreements",
@@ -69,18 +127,14 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Right — Image */}
+            {/* Right — Phone Outline */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
               className="hidden md:flex justify-center md:justify-end pointer-events-none"
             >
-              <img
-                src={profileImage}
-                alt="App preview"
-                className="w-[45vw] max-w-[440px] lg:w-[32vw] lg:max-w-[480px] xl:max-w-[520px] object-cover"
-              />
+              <PhoneOutline className="w-[28vw] max-w-[280px] lg:w-[22vw] lg:max-w-[320px] xl:max-w-[360px] h-auto" />
             </motion.div>
           </div>
         </div>
@@ -108,18 +162,14 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* ── Mobile: image visible below headline ── */}
+        {/* ── Mobile: phone outline visible below headline ── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           className="absolute inset-x-0 bottom-[15%] z-10 flex md:hidden justify-center pointer-events-none"
         >
-          <img
-            src={profileImage}
-            alt="App preview"
-            className="w-[50vw] max-w-[280px] object-cover opacity-40"
-          />
+          <PhoneOutline className="w-[40vw] max-w-[200px] h-auto opacity-40" />
         </motion.div>
       </motion.div>
     </section>
