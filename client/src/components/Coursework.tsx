@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
 const bannerItems = [
   "Custom Payment Plans",
@@ -8,27 +8,57 @@ const bannerItems = [
   "Digital Contracts",
 ];
 
+const cardBgColors = ["#D0ED6F", "#83F384", "#6EE8B5", "#D0ED6F"];
+
 const features = [
   {
     title: "Custom Payment Plans",
     description:
       "Set up flexible payment schedules that work for both parties. Weekly, bi-weekly, or monthly payments with customisable amounts.",
     svg: (
-      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
-        {/* Calendar grid */}
-        <rect x="10" y="10" width="80" height="60" rx="6" stroke="#50C878" strokeWidth="1.5" fill="#50C878" opacity="0.08" />
-        <line x1="10" y1="24" x2="90" y2="24" stroke="#50C878" strokeWidth="1" opacity="0.2" />
+      <svg viewBox="0 0 400 260" fill="none" className="w-full h-full">
+        {/* Calendar card */}
+        <rect x="40" y="20" width="320" height="220" rx="16" fill="#1B4332" opacity="0.3" />
+        <rect x="40" y="20" width="320" height="50" rx="16" fill="#50C878" opacity="0.15" />
+        <rect x="40" y="54" width="320" height="1" fill="#50C878" opacity="0.1" />
+        <text x="200" y="52" textAnchor="middle" fill="white" fontSize="16" fontWeight="600" opacity="0.7">Payment Schedule</text>
+        {/* Week rows */}
         {[0,1,2,3,4,5,6].map((i) => (
-          <rect key={i} x={16 + i * 10.5} y={30} width="7" height="7" rx="1.5" fill="#50C878" opacity={i < 3 ? 0.5 : 0.15} />
+          <rect key={i} x={60 + i * 42} y={82} width="30" height="30" rx="6" fill="#50C878" opacity={i < 4 ? 0.5 : 0.15} />
         ))}
         {[0,1,2,3,4,5,6].map((i) => (
-          <rect key={`b-${i}`} x={16 + i * 10.5} y={42} width="7" height="7" rx="1.5" fill="#50C878" opacity={i < 5 ? 0.5 : 0.15} />
+          <rect key={`b-${i}`} x={60 + i * 42} y={122} width="30" height="30" rx="6" fill="#50C878" opacity={i < 6 ? 0.5 : 0.15} />
         ))}
-        {[0,1,2].map((i) => (
-          <rect key={`c-${i}`} x={16 + i * 10.5} y={54} width="7" height="7" rx="1.5" fill="#50C878" opacity={0.5} />
+        {[0,1,2,3].map((i) => (
+          <rect key={`c-${i}`} x={60 + i * 42} y={162} width="30" height="30" rx="6" fill="#50C878" opacity={0.5} />
         ))}
-        <circle cx="72" cy="57" r="8" fill="#50C878" opacity="0.3" />
-        <text x="72" y="60" textAnchor="middle" fill="white" fontSize="8" fontWeight="700">$</text>
+        {/* Amount badge */}
+        <rect x="240" y="162" width="100" height="36" rx="18" fill="#50C878" opacity="0.4" />
+        <text x="290" y="185" textAnchor="middle" fill="white" fontSize="14" fontWeight="700">$250/mo</text>
+      </svg>
+    ),
+  },
+  {
+    title: "Smart Interest Options",
+    description:
+      "Choose to add interest or keep it at 0%. Vony lets you set custom rates and automatically calculates repayment schedules for both parties.",
+    svg: (
+      <svg viewBox="0 0 400 260" fill="none" className="w-full h-full">
+        {/* Interest calculator card */}
+        <rect x="40" y="20" width="320" height="220" rx="16" fill="#1B4332" opacity="0.3" />
+        <text x="200" y="60" textAnchor="middle" fill="white" fontSize="16" fontWeight="600" opacity="0.7">Interest Calculator</text>
+        {/* Gauge arc */}
+        <path d="M120 180 A80 80 0 0 1 280 180" stroke="#50C878" strokeWidth="8" opacity="0.2" fill="none" strokeLinecap="round" />
+        <path d="M120 180 A80 80 0 0 1 240 112" stroke="#50C878" strokeWidth="8" opacity="0.6" fill="none" strokeLinecap="round" />
+        <text x="200" y="165" textAnchor="middle" fill="white" fontSize="28" fontWeight="700" opacity="0.8">3.5%</text>
+        <text x="200" y="185" textAnchor="middle" fill="white" fontSize="12" opacity="0.4">APR</text>
+        {/* Rate chips */}
+        <rect x="80" y="205" width="60" height="24" rx="12" fill="#50C878" opacity="0.15" />
+        <text x="110" y="221" textAnchor="middle" fill="white" fontSize="10" opacity="0.5">0%</text>
+        <rect x="155" y="205" width="60" height="24" rx="12" fill="#50C878" opacity="0.4" />
+        <text x="185" y="221" textAnchor="middle" fill="white" fontSize="10" fontWeight="600">3.5%</text>
+        <rect x="230" y="205" width="60" height="24" rx="12" fill="#50C878" opacity="0.15" />
+        <text x="260" y="221" textAnchor="middle" fill="white" fontSize="10" opacity="0.5">5%</text>
       </svg>
     ),
   },
@@ -37,20 +67,59 @@ const features = [
     description:
       "Monitor every payment in real-time. See outstanding balances, payment history, and upcoming dues at a glance.",
     svg: (
-      <svg viewBox="0 0 100 80" fill="none" className="w-full h-full max-w-[160px]">
+      <svg viewBox="0 0 400 260" fill="none" className="w-full h-full">
+        {/* Dashboard card */}
+        <rect x="40" y="20" width="320" height="220" rx="16" fill="#1B4332" opacity="0.3" />
+        <text x="200" y="55" textAnchor="middle" fill="white" fontSize="16" fontWeight="600" opacity="0.7">Repayment Dashboard</text>
         {/* Progress bars */}
-        <rect x="10" y="20" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
-        <rect x="10" y="20" width="60" height="8" rx="4" fill="#00A86B" opacity="0.5" />
-        <text x="10" y="16" fill="white" fontSize="7" opacity="0.5">Sarah, 75%</text>
+        <rect x="70" y="80" width="260" height="14" rx="7" fill="#00A86B" opacity="0.15" />
+        <rect x="70" y="80" width="195" height="14" rx="7" fill="#00A86B" opacity="0.5" />
+        <text x="70" y="74" fill="white" fontSize="11" opacity="0.5">Sarah &middot; 75%</text>
+        <text x="275" y="74" fill="white" fontSize="11" opacity="0.3" textAnchor="end">$750 / $1,000</text>
 
-        <rect x="10" y="40" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
-        <rect x="10" y="40" width="32" height="8" rx="4" fill="#00A86B" opacity="0.5" />
-        <text x="10" y="36" fill="white" fontSize="7" opacity="0.5">Mike, 40%</text>
+        <rect x="70" y="125" width="260" height="14" rx="7" fill="#00A86B" opacity="0.15" />
+        <rect x="70" y="125" width="104" height="14" rx="7" fill="#00A86B" opacity="0.5" />
+        <text x="70" y="119" fill="white" fontSize="11" opacity="0.5">Mike &middot; 40%</text>
+        <text x="275" y="119" fill="white" fontSize="11" opacity="0.3" textAnchor="end">$200 / $500</text>
 
-        <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.15" />
-        <rect x="10" y="60" width="80" height="8" rx="4" fill="#00A86B" opacity="0.5" />
-        <text x="10" y="56" fill="white" fontSize="7" opacity="0.5">Jake, 100%</text>
-        <path d="M82 62 L85 65 L90 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+        <rect x="70" y="170" width="260" height="14" rx="7" fill="#00A86B" opacity="0.15" />
+        <rect x="70" y="170" width="260" height="14" rx="7" fill="#00A86B" opacity="0.5" />
+        <text x="70" y="164" fill="white" fontSize="11" opacity="0.5">Jake &middot; 100%</text>
+        <path d="M315 172 L320 177 L330 165" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
+
+        {/* Summary */}
+        <rect x="70" y="205" width="260" height="1" fill="white" opacity="0.1" />
+        <text x="70" y="228" fill="white" fontSize="11" opacity="0.4">Total Collected</text>
+        <text x="330" y="228" textAnchor="end" fill="#50C878" fontSize="14" fontWeight="700" opacity="0.7">$1,950</text>
+      </svg>
+    ),
+  },
+  {
+    title: "Digital Contracts",
+    description:
+      "Generate clear, legally-worded agreements automatically. Both parties review and accept terms before any money changes hands.",
+    svg: (
+      <svg viewBox="0 0 400 260" fill="none" className="w-full h-full">
+        {/* Contract document */}
+        <rect x="80" y="10" width="240" height="240" rx="12" fill="#1B4332" opacity="0.3" />
+        <rect x="80" y="10" width="240" height="40" rx="12" fill="#50C878" opacity="0.12" />
+        <text x="200" y="37" textAnchor="middle" fill="white" fontSize="14" fontWeight="600" opacity="0.7">Loan Agreement</text>
+        {/* Document lines */}
+        <rect x="110" y="68" width="180" height="6" rx="3" fill="white" opacity="0.12" />
+        <rect x="110" y="84" width="140" height="6" rx="3" fill="white" opacity="0.08" />
+        <rect x="110" y="100" width="160" height="6" rx="3" fill="white" opacity="0.08" />
+        {/* Terms section */}
+        <rect x="110" y="125" width="80" height="6" rx="3" fill="#50C878" opacity="0.3" />
+        <rect x="110" y="141" width="180" height="6" rx="3" fill="white" opacity="0.08" />
+        <rect x="110" y="157" width="150" height="6" rx="3" fill="white" opacity="0.08" />
+        {/* Signature lines */}
+        <line x1="110" y1="195" x2="185" y2="195" stroke="white" strokeWidth="1" opacity="0.2" />
+        <text x="147" y="210" textAnchor="middle" fill="white" fontSize="9" opacity="0.3">Lender</text>
+        <line x1="215" y1="195" x2="290" y2="195" stroke="white" strokeWidth="1" opacity="0.2" />
+        <text x="252" y="210" textAnchor="middle" fill="white" fontSize="9" opacity="0.3">Borrower</text>
+        {/* Checkmark badge */}
+        <circle cx="290" cy="70" r="14" fill="#50C878" opacity="0.3" />
+        <path d="M283 70 L288 75 L298 64" stroke="white" strokeWidth="2.5" strokeLinecap="round" opacity="0.8" />
       </svg>
     ),
   },
@@ -58,8 +127,9 @@ const features = [
 
 export default function Features() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(gridRef, { once: true, margin: "-80px" });
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -67,6 +137,45 @@ export default function Features() {
   });
 
   const contentOpacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
+
+  const startAutoplay = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setDirection(1);
+      setActiveIndex((prev) => (prev + 1) % features.length);
+    }, 4000);
+  }, []);
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [startAutoplay]);
+
+  const goTo = (index: number) => {
+    setDirection(index > activeIndex ? 1 : -1);
+    setActiveIndex(index);
+    startAutoplay();
+  };
+
+  const goNext = () => {
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % features.length);
+    startAutoplay();
+  };
+
+  const goPrev = () => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + features.length) % features.length);
+    startAutoplay();
+  };
+
+  const slideVariants = {
+    enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir > 0 ? -300 : 300, opacity: 0 }),
+  };
 
   return (
     <section
@@ -111,37 +220,83 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Two feature boxes */}
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.12,
-                ease: "easeOut",
-              }}
-              className="bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-sm rounded-2xl p-6 md:p-8 transition-all duration-300 group border border-white/[0.06]"
+        {/* Feature carousel */}
+        <div className="max-w-[700px]">
+          {/* Large display box */}
+          <div className="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/[0.06] overflow-hidden h-[280px] md:h-[340px]">
+            {/* Navigation arrows */}
+            <button
+              onClick={goPrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Previous feature"
             >
-              <div className="flex flex-col h-full">
-                {/* SVG illustration */}
-                <div className="mb-5 h-20 flex items-center">
-                  {feature.svg}
-                </div>
-                <h3 className="font-sans font-semibold text-lg md:text-xl text-white mb-2 group-hover:text-[#83F384] transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="font-sans text-sm text-white/50 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M10 4L6 8L10 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              onClick={goNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Next feature"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 4L10 8L6 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={activeIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute inset-0 flex items-center justify-center p-8 md:p-12"
+              >
+                {features[activeIndex].svg}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+              {features.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  className={`rounded-full transition-all duration-300 cursor-pointer ${
+                    i === activeIndex
+                      ? "w-6 h-2 bg-white/60"
+                      : "w-2 h-2 bg-white/20 hover:bg-white/30"
+                  }`}
+                  aria-label={`Go to feature ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Info box below - paired with display */}
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={activeIndex}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              style={{ backgroundColor: cardBgColors[activeIndex % cardBgColors.length] }}
+              className="rounded-2xl p-6 md:p-8 mt-4"
+            >
+              <h3 className="font-sans font-semibold text-lg md:text-xl text-[#0A1A10] mb-2">
+                {features[activeIndex].title}
+              </h3>
+              <p className="font-sans text-sm text-[#0A1A10]/70 leading-relaxed">
+                {features[activeIndex].description}
+              </p>
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
       </motion.div>
     </section>
