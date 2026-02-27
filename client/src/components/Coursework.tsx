@@ -204,46 +204,65 @@ export default function Features() {
         style={{ opacity: contentOpacity }}
         className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16 relative z-10"
       >
-        {/* Section header */}
-        <div className="mb-14 md:mb-18">
-          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#50C878]/60 mb-4">
-            Features
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95] text-white font-extrabold tracking-tight">
-            Everything You Need
-            <br />
-            <span className="text-[#50C878]">to Lend with Confidence</span>
-          </h2>
-          <p className="font-sans text-base md:text-lg text-white/50 mt-6 max-w-[520px] leading-relaxed">
-            Vony gives you the tools to create clear agreements, set fair terms,
-            and keep both sides informed every step of the way.
-          </p>
-        </div>
+        {/* Two-column layout: Carousel left, Title right */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-start">
+          {/* Left — Feature carousel */}
+          <div>
+            {/* Large display box */}
+            <div className="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/[0.06] overflow-hidden h-[280px] md:h-[340px]">
+              {/* Navigation arrows */}
+              <button
+                onClick={goPrev}
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Previous feature"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M10 4L6 8L10 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                onClick={goNext}
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Next feature"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 4L10 8L6 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
 
-        {/* Feature carousel */}
-        <div className="max-w-[700px]">
-          {/* Large display box */}
-          <div className="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/[0.06] overflow-hidden h-[280px] md:h-[340px]">
-            {/* Navigation arrows */}
-            <button
-              onClick={goPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
-              aria-label="Previous feature"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M10 4L6 8L10 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <button
-              onClick={goNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
-              aria-label="Next feature"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 4L10 8L6 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={activeIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0 flex items-center justify-center p-8 md:p-12"
+                >
+                  {features[activeIndex].svg}
+                </motion.div>
+              </AnimatePresence>
 
+              {/* Dot indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+                {features.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    className={`rounded-full transition-all duration-300 cursor-pointer ${
+                      i === activeIndex
+                        ? "w-6 h-2 bg-white/60"
+                        : "w-2 h-2 bg-white/20 hover:bg-white/30"
+                    }`}
+                    aria-label={`Go to feature ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Info box below - paired with display */}
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={activeIndex}
@@ -253,50 +272,34 @@ export default function Features() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 flex items-center justify-center p-8 md:p-12"
+                style={{ backgroundColor: cardBgColors[activeIndex % cardBgColors.length] }}
+                className="rounded-2xl p-6 md:p-8 mt-4"
               >
-                {features[activeIndex].svg}
+                <h3 className="font-sans font-semibold text-lg md:text-xl text-[#0A1A10] mb-2">
+                  {features[activeIndex].title}
+                </h3>
+                <p className="font-sans text-sm text-[#0A1A10]/70 leading-relaxed">
+                  {features[activeIndex].description}
+                </p>
               </motion.div>
             </AnimatePresence>
-
-            {/* Dot indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
-              {features.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i)}
-                  className={`rounded-full transition-all duration-300 cursor-pointer ${
-                    i === activeIndex
-                      ? "w-6 h-2 bg-white/60"
-                      : "w-2 h-2 bg-white/20 hover:bg-white/30"
-                  }`}
-                  aria-label={`Go to feature ${i + 1}`}
-                />
-              ))}
-            </div>
           </div>
 
-          {/* Info box below - paired with display */}
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={activeIndex}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              style={{ backgroundColor: cardBgColors[activeIndex % cardBgColors.length] }}
-              className="rounded-2xl p-6 md:p-8 mt-4"
-            >
-              <h3 className="font-sans font-semibold text-lg md:text-xl text-[#0A1A10] mb-2">
-                {features[activeIndex].title}
-              </h3>
-              <p className="font-sans text-sm text-[#0A1A10]/70 leading-relaxed">
-                {features[activeIndex].description}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+          {/* Right — Section header */}
+          <div className="lg:sticky lg:top-32">
+            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#50C878]/60 mb-4">
+              Features
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95] text-white font-extrabold tracking-tight">
+              Everything You Need
+              <br />
+              <span className="text-[#50C878]">to Lend with Confidence</span>
+            </h2>
+            <p className="font-sans text-base md:text-lg text-white/50 mt-6 max-w-[520px] leading-relaxed">
+              Vony gives you the tools to create clear agreements, set fair terms,
+              and keep both sides informed every step of the way.
+            </p>
+          </div>
         </div>
       </motion.div>
     </section>
