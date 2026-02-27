@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import CurvedDivider from '@/components/CurvedDivider';
+
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Education from '@/components/Education';
@@ -34,7 +34,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <CurvedDivider />
         <About />
         <Experience />
         <Education />
