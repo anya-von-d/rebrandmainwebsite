@@ -398,7 +398,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-center md:text-left md:max-w-[55%]"
             >
-              <h1 className="font-serif italic text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#0A1A10] tracking-tight font-bold">
+              <h1 className="font-display italic text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] text-[#0A1A10] font-bold">
                 Lending Money to Friends{" "}
                 <span className="text-[#83F384]">Made Simple</span>
               </h1>
