@@ -17,11 +17,6 @@ const faqItems = [
       "No. Vony is not a bank and does not hold or transfer money. We provide a platform for creating and managing loan agreements between friends and family. All payments are handled directly between parties.",
   },
   {
-    question: "How is my data protected?",
-    answer:
-      "We use bank-level encryption (AES-256) to protect all your personal and loan data. Your information is stored securely and is never shared with third parties. We're fully GDPR compliant.",
-  },
-  {
     question: "Is Vony free to use?",
     answer:
       "Yes! Creating loan agreements, tracking repayments, and managing your contracts is completely free. There are no hidden fees, no premium tiers, and no surprises.",

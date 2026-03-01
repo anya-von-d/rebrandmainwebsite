@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'About', href: '#about' },
+  { label: 'Uses', href: '#experience' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Features', href: '#features' },
   { label: 'FAQ', href: '#faq' },
@@ -179,16 +180,18 @@ export default function Navigation() {
 
           {/* Right — Login + Get Started */}
           <div className="flex items-center gap-3 ml-auto">
-            <button
+            <a
+              href="https://lend-with-vony.com/home"
               className="px-4 py-2 rounded-lg font-sans text-sm font-medium transition-colors cursor-pointer text-[#36CE8E] hover:text-[#2ab87a]"
             >
               Log In
-            </button>
-            <button
+            </a>
+            <a
+              href="https://lend-with-vony.com/home"
               className="px-5 py-2 rounded-lg font-sans text-sm font-semibold transition-all cursor-pointer bg-[#36CE8E] hover:bg-[#36CE8E]/85 text-[#0A1A10] shadow-md shadow-black/10"
             >
               Get Started
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -201,7 +204,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#DBEEE3]"
+            className="fixed inset-0 z-40 bg-[#83F384]"
           >
             {/* Menu content — centered navigation links */}
             <div className="flex flex-col items-center justify-center h-full pt-14">
@@ -224,10 +227,10 @@ export default function Navigation() {
                       <a
                         href={item.href}
                         onClick={(e) => handleNavClick(e, item.href)}
-                        className={`block font-display italic text-5xl md:text-6xl lg:text-7xl py-2 transition-colors duration-200 ${
+                        className={`block font-serif text-5xl md:text-6xl lg:text-7xl font-extrabold py-2 transition-colors duration-200 ${
                           isActive
-                            ? 'text-[#00A86B]'
-                            : 'text-[#0A1A10] hover:text-[#00A86B]'
+                            ? 'text-[#1B4332]'
+                            : 'text-[#0A1A10] hover:text-[#1B4332]'
                         }`}
                       >
                         {item.label}

@@ -187,7 +187,7 @@ export default function Education() {
                   key={step.label}
                   onClick={() => handleStepClick(index)}
                   className="relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group"
-                  style={{ backgroundColor: isActive ? cardBgColors[index % cardBgColors.length] : "transparent" }}
+                  style={{ backgroundColor: isActive ? "#83F384" : "transparent" }}
                 >
                   <div
                     className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300"
@@ -256,7 +256,7 @@ export default function Education() {
                   key={step.label}
                   onClick={() => handleStepClick(index)}
                   className="relative text-left py-5 px-5 rounded-xl transition-all duration-300 cursor-pointer group"
-                  style={{ backgroundColor: isActive ? cardBgColors[index % cardBgColors.length] : "transparent" }}
+                  style={{ backgroundColor: isActive ? "#83F384" : "transparent" }}
                 >
                   <div className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-all duration-300 ${
                     isActive ? "bg-[#0A1A10]" : "bg-transparent group-hover:bg-[#0A1A10]/30"
@@ -316,7 +316,7 @@ export default function Education() {
                     key={step.label}
                     onClick={() => handleStepClick(index)}
                     className="relative text-left py-3 px-3 pr-4 rounded-lg transition-all duration-300 cursor-pointer group"
-                    style={{ backgroundColor: isActive ? cardBgColors[index % cardBgColors.length] : "transparent" }}
+                    style={{ backgroundColor: isActive ? "#83F384" : "transparent" }}
                   >
                     <div className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full transition-all duration-300 ${
                       isActive ? "bg-[#0A1A10]" : "bg-transparent"

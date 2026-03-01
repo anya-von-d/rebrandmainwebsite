@@ -1,4 +1,3 @@
-import { Twitter, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,7 +14,7 @@ export default function Footer() {
               track repayments, and keep relationships strong.
             </p>
             <a
-              href="#contact"
+              href="/contact-us"
               className="inline-block mt-5 px-5 py-2.5 rounded-lg bg-[#36CE8E] text-[#0A1A10] font-sans text-sm font-semibold hover:bg-[#36CE8E]/85 transition-colors cursor-pointer"
             >
               Contact Us
@@ -75,40 +74,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social & Contact */}
+          {/* Contact */}
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4">
               Connect
             </p>
             <a
-              href="mailto:hello@vony.app"
-              className="font-mono text-sm text-white/50 hover:text-[#50C878] transition-colors block mb-5"
+              href="mailto:hello@vony-lending.com"
+              className="font-mono text-sm text-white/50 hover:text-[#50C878] transition-colors block"
             >
-              hello@vony.app
+              hello@vony-lending.com
             </a>
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="text-white/30 hover:text-[#50C878] transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} strokeWidth={1.5} />
-              </a>
-              <a
-                href="#"
-                className="text-white/30 hover:text-[#50C878] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} strokeWidth={1.5} />
-              </a>
-              <a
-                href="#"
-                className="text-white/30 hover:text-[#50C878] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} strokeWidth={1.5} />
-              </a>
-            </div>
           </div>
         </div>
 

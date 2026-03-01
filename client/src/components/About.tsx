@@ -80,6 +80,9 @@ export default function About() {
       </div>
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 lg:px-16 text-center">
+        <div className="flex justify-center mb-4">
+          <img src="/favicon.png" alt="Vony logo" className="w-12 h-12 md:w-14 md:h-14" />
+        </div>
         <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7A9A85] mb-4">
           About
         </p>
