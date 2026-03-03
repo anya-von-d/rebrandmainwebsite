@@ -8,6 +8,7 @@ import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import Coursework from '@/components/Coursework';
 import FAQ from '@/components/FAQ';
+import PreviewBanner from '@/components/PreviewBanner';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -39,6 +40,7 @@ export default function Home() {
         <Education />
         <Coursework />
         <FAQ />
+        <PreviewBanner />
         <Contact />
       </main>
       <Footer />
