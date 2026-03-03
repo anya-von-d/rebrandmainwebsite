@@ -7,430 +7,472 @@ import Footer from '@/components/Footer';
 const previews = [
   {
     title: "Dashboard",
-    description: "Your lending overview at a glance. Track active loans, net position, and recent activity.",
+    description: "Your lending hub — net worth style overview with spending-like breakdowns and friend insights.",
     color: "#36CE8E",
     svg: (
-      <svg viewBox="0 0 800 540" fill="none" className="w-full h-full">
+      <svg viewBox="0 0 800 560" fill="none" className="w-full h-full">
         {/* Background */}
-        <rect width="800" height="540" fill="#F4F5F0" />
+        <rect width="800" height="560" fill="#FAFBF8" />
 
-        {/* Top hero banner — bold green gradient */}
-        <rect width="800" height="200" fill="#1B4332" />
-        <rect width="800" height="200" fill="url(#dashGrad)" />
-        <defs>
-          <linearGradient id="dashGrad" x1="0" y1="0" x2="800" y2="200">
-            <stop offset="0%" stopColor="#1B4332" />
-            <stop offset="100%" stopColor="#2D6A4F" />
-          </linearGradient>
-        </defs>
+        {/* Top bar — white, minimal */}
+        <rect width="800" height="52" fill="white" />
+        <rect y="51" width="800" height="1" fill="#EAEEE6" />
+        <text x="400" y="34" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">Dashboard</text>
+        <circle cx="40" cy="26" r="14" fill="#36CE8E" opacity="0.12" />
+        <text x="40" y="31" textAnchor="middle" fill="#1B4332" fontSize="10" fontWeight="600">S</text>
+        <circle cx="760" cy="26" r="14" fill="#F4F5F0" />
 
-        {/* Top bar */}
-        <text x="36" y="40" fill="white" fontSize="22" fontWeight="700" fontFamily="serif" fontStyle="italic">Vony</text>
-        <circle cx="748" cy="30" r="16" fill="white" opacity="0.15" />
-        <text x="748" y="35" textAnchor="middle" fill="white" fontSize="11" fontWeight="600">S</text>
-        <circle cx="704" cy="30" r="16" fill="white" opacity="0.08" />
+        {/* Large balance hero — centered, bold */}
+        <rect x="0" y="52" width="800" height="148" fill="white" />
+        <rect x="0" y="199" width="800" height="1" fill="#EAEEE6" />
+        <text x="400" y="92" textAnchor="middle" fill="#7A9A85" fontSize="11" fontWeight="500" letterSpacing="1.5">YOUR LENDING BALANCE</text>
+        <text x="400" y="142" textAnchor="middle" fill="#1B4332" fontSize="44" fontWeight="700">$1,250.00</text>
+        <rect x="330" y="156" width="140" height="26" rx="13" fill="#36CE8E" opacity="0.08" />
+        <text x="400" y="174" textAnchor="middle" fill="#36CE8E" fontSize="11" fontWeight="600">↑ $100 this week</text>
 
-        {/* Greeting */}
-        <text x="36" y="82" fill="white" opacity="0.6" fontSize="13">Good morning</text>
-        <text x="36" y="108" fill="white" fontSize="26" fontWeight="700">Sarah's Overview</text>
+        {/* Horizontal breakdown bar */}
+        <rect x="40" y="216" width="720" height="60" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        {/* Segments */}
+        <rect x="56" y="234" width="280" height="12" rx="6" fill="#36CE8E" />
+        <rect x="336" y="234" width="180" height="12" rx="0" fill="#83F384" />
+        <rect x="516" y="234" width="100" height="12" rx="0" fill="#D0ED6F" />
+        <rect x="616" y="234" width="130" height="12" rx="6" fill="#DBEEE3" />
+        {/* Labels */}
+        <text x="56" y="262" fill="#36CE8E" fontSize="9" fontWeight="500">Collected $1,800</text>
+        <text x="336" y="262" fill="#4A6B55" fontSize="9" fontWeight="500">Outstanding $1,200</text>
+        <text x="616" y="262" fill="#7A9A85" fontSize="9">Pending</text>
 
-        {/* Net position card — overlapping banner */}
-        <rect x="36" y="132" width="728" height="120" rx="16" fill="white" />
-        <rect x="37" y="133" width="726" height="118" rx="15" fill="white" />
+        {/* Three metric tiles */}
+        <rect x="40" y="292" width="232" height="96" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="60" y="318" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">TOTAL LENT</text>
+        <text x="60" y="352" fill="#1B4332" fontSize="26" fontWeight="700">$2,450</text>
+        <text x="60" y="372" fill="#36CE8E" fontSize="10" fontWeight="500">3 friends</text>
 
-        <text x="64" y="166" fill="#4A6B55" fontSize="11" fontWeight="500">NET LENDING POSITION</text>
-        <text x="64" y="206" fill="#1B4332" fontSize="36" fontWeight="700">$1,250.00</text>
-        <text x="280" y="206" fill="#36CE8E" fontSize="13" fontWeight="600">+$100 this week</text>
+        <rect x="284" y="292" width="232" height="96" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="304" y="318" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">REPAYMENT RATE</text>
+        {/* Mini semi-circle gauge */}
+        <path d="M 370 374 A 40 40 0 0 1 450 374" stroke="#DBEEE3" strokeWidth="6" fill="none" strokeLinecap="round" />
+        <path d="M 370 374 A 40 40 0 0 1 438 344" stroke="#36CE8E" strokeWidth="6" fill="none" strokeLinecap="round" />
+        <text x="410" y="370" textAnchor="middle" fill="#1B4332" fontSize="18" fontWeight="700">73%</text>
 
-        {/* Mini donut / pie visual */}
-        <circle cx="660" cy="185" r="32" fill="none" stroke="#DBEEE3" strokeWidth="8" />
-        <circle cx="660" cy="185" r="32" fill="none" stroke="#36CE8E" strokeWidth="8" strokeDasharray="121 80" strokeLinecap="round" transform="rotate(-90 660 185)" />
-        <text x="660" y="182" textAnchor="middle" fill="#1B4332" fontSize="11" fontWeight="700">60%</text>
-        <text x="660" y="195" textAnchor="middle" fill="#4A6B55" fontSize="8">repaid</text>
+        <rect x="528" y="292" width="232" height="96" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="548" y="318" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">NEXT PAYMENT</text>
+        <text x="548" y="352" fill="#1B4332" fontSize="26" fontWeight="700">Apr 15</text>
+        <text x="548" y="372" fill="#7A9A85" fontSize="10">from Mike · $100</text>
 
-        {/* Quick action pills */}
-        <rect x="36" y="268" width="120" height="40" rx="20" fill="#36CE8E" />
-        <text x="96" y="293" textAnchor="middle" fill="#0A1A10" fontSize="12" fontWeight="600">+ New Loan</text>
-        <rect x="168" y="268" width="100" height="40" rx="20" fill="white" stroke="#DBEEE3" strokeWidth="1.2" />
-        <text x="218" y="293" textAnchor="middle" fill="#4A6B55" fontSize="12">Invite</text>
-        <rect x="280" y="268" width="100" height="40" rx="20" fill="white" stroke="#DBEEE3" strokeWidth="1.2" />
-        <text x="330" y="293" textAnchor="middle" fill="#4A6B55" fontSize="12">History</text>
+        {/* Friends list — NerdWallet "accounts" style */}
+        <rect x="40" y="404" width="720" height="140" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="64" y="432" fill="#1B4332" fontSize="13" fontWeight="700">Friends</text>
+        <text x="736" y="432" textAnchor="end" fill="#36CE8E" fontSize="11" fontWeight="500">See all</text>
 
-        {/* Stat cards — side by side */}
-        <rect x="36" y="324" width="230" height="88" rx="14" fill="white" />
-        <text x="56" y="352" fill="#4A6B55" fontSize="10" fontWeight="500">LENT OUT</text>
-        <text x="56" y="384" fill="#1B4332" fontSize="24" fontWeight="700">$2,450</text>
-        <text x="160" y="384" fill="#36CE8E" fontSize="10" fontWeight="600">3 active</text>
+        {/* Friend 1 */}
+        <circle cx="80" cy="468" r="14" fill="#36CE8E" opacity="0.1" />
+        <text x="80" y="473" textAnchor="middle" fill="#1B4332" fontSize="9" fontWeight="600">MJ</text>
+        <text x="104" y="464" fill="#1B4332" fontSize="12" fontWeight="500">Mike Johnson</text>
+        <text x="104" y="480" fill="#7A9A85" fontSize="10">Car repair · Monthly</text>
+        <text x="440" y="468" textAnchor="end" fill="#1B4332" fontSize="12" fontWeight="600">$200</text>
+        <text x="440" y="482" textAnchor="end" fill="#7A9A85" fontSize="9">remaining</text>
+        {/* Inline progress */}
+        <rect x="460" y="470" width="100" height="5" rx="2.5" fill="#DBEEE3" />
+        <rect x="460" y="470" width="60" height="5" rx="2.5" fill="#36CE8E" />
+        <text x="572" y="476" fill="#7A9A85" fontSize="9">60%</text>
 
-        <rect x="284" y="324" width="230" height="88" rx="14" fill="white" />
-        <text x="304" y="352" fill="#4A6B55" fontSize="10" fontWeight="500">COLLECTED</text>
-        <text x="304" y="384" fill="#1B4332" fontSize="24" fontWeight="700">$1,800</text>
-        <text x="420" y="384" fill="#4A6B55" fontSize="10">73% returned</text>
+        {/* Divider */}
+        <rect x="64" y="496" width="672" height="1" fill="#F2F3EE" />
 
-        <rect x="532" y="324" width="232" height="88" rx="14" fill="white" />
-        <text x="552" y="352" fill="#4A6B55" fontSize="10" fontWeight="500">OUTSTANDING</text>
-        <text x="552" y="384" fill="#1B4332" fontSize="24" fontWeight="700">$1,200</text>
-        <text x="680" y="384" fill="#D0ED6F" fontSize="10" fontWeight="600">on track</text>
-
-        {/* Recent activity list */}
-        <rect x="36" y="428" width="728" height="72" rx="14" fill="white" />
-        <text x="56" y="450" fill="#1B4332" fontSize="12" fontWeight="600">Recent Activity</text>
-
-        <circle cx="68" cy="478" r="12" fill="#36CE8E" opacity="0.12" />
-        <text x="68" y="482" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">M</text>
-        <text x="88" y="475" fill="#1B4332" fontSize="11" fontWeight="500">Mike paid $100</text>
-        <text x="88" y="490" fill="#7A9A85" fontSize="9">2h ago</text>
-
-        <circle cx="268" cy="478" r="12" fill="#D0ED6F" opacity="0.15" />
-        <text x="268" y="482" textAnchor="middle" fill="#4A6B55" fontSize="9" fontWeight="600">J</text>
-        <text x="288" y="475" fill="#1B4332" fontSize="11" fontWeight="500">New loan with Jake</text>
-        <text x="288" y="490" fill="#7A9A85" fontSize="9">Yesterday</text>
-
-        <circle cx="488" cy="478" r="12" fill="#83F384" opacity="0.12" />
-        <text x="488" y="482" textAnchor="middle" fill="#4A6B55" fontSize="9" fontWeight="600">A</text>
-        <text x="508" y="475" fill="#1B4332" fontSize="11" fontWeight="500">Amy fully repaid!</text>
-        <text x="508" y="490" fill="#36CE8E" fontSize="9" fontWeight="500">Complete</text>
-
-        {/* Bottom tab bar */}
-        <rect y="510" width="800" height="30" fill="white" />
-        <rect y="509" width="800" height="1" fill="#E8F0EB" />
-        <rect x="105" y="515" width="30" height="3" rx="1.5" fill="#36CE8E" />
-        <rect x="295" y="515" width="30" height="3" rx="1.5" fill="#DBEEE3" />
-        <rect x="385" y="515" width="30" height="3" rx="1.5" fill="#DBEEE3" />
-        <rect x="475" y="515" width="30" height="3" rx="1.5" fill="#DBEEE3" />
-        <rect x="665" y="515" width="30" height="3" rx="1.5" fill="#DBEEE3" />
+        {/* Friend 2 */}
+        <circle cx="80" cy="522" r="14" fill="#83F384" opacity="0.1" />
+        <text x="80" y="527" textAnchor="middle" fill="#1B4332" fontSize="9" fontWeight="600">JW</text>
+        <text x="104" y="518" fill="#1B4332" fontSize="12" fontWeight="500">Jake Wilson</text>
+        <text x="104" y="534" fill="#7A9A85" fontSize="10">Rent help · Bi-weekly</text>
+        <text x="440" y="522" textAnchor="end" fill="#1B4332" fontSize="12" fontWeight="600">$200</text>
+        <text x="440" y="536" textAnchor="end" fill="#7A9A85" fontSize="9">remaining</text>
+        <rect x="460" y="524" width="100" height="5" rx="2.5" fill="#DBEEE3" />
+        <rect x="460" y="524" width="80" height="5" rx="2.5" fill="#83F384" />
+        <text x="572" y="530" fill="#7A9A85" fontSize="9">80%</text>
       </svg>
     ),
   },
   {
     title: "Create a Loan",
-    description: "Set up a new loan with a friend in a clean, guided flow.",
+    description: "A streamlined two-panel flow — pick a friend, set terms, and preview before sending.",
     color: "#83F384",
     svg: (
-      <svg viewBox="0 0 800 540" fill="none" className="w-full h-full">
+      <svg viewBox="0 0 800 560" fill="none" className="w-full h-full">
         {/* Background */}
-        <rect width="800" height="540" fill="#F4F5F0" />
+        <rect width="800" height="560" fill="#FAFBF8" />
 
         {/* Top bar */}
-        <rect width="800" height="56" fill="white" />
-        <rect y="55" width="800" height="1" fill="#E8F0EB" />
-        <text x="400" y="36" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">New Loan</text>
-        <text x="36" y="36" fill="#36CE8E" fontSize="13" fontWeight="500">← Back</text>
-        <text x="764" y="36" textAnchor="end" fill="#7A9A85" fontSize="12">Cancel</text>
+        <rect width="800" height="52" fill="white" />
+        <rect y="51" width="800" height="1" fill="#EAEEE6" />
+        <text x="36" y="34" fill="#36CE8E" fontSize="13" fontWeight="500">← Cancel</text>
+        <text x="400" y="34" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">New Loan</text>
 
-        {/* Step indicator */}
-        <rect x="36" y="72" width="728" height="4" rx="2" fill="#DBEEE3" />
-        <rect x="36" y="72" width="243" height="4" rx="2" fill="#36CE8E" />
-        <text x="36" y="92" fill="#4A6B55" fontSize="10" fontWeight="500">STEP 1 OF 3</text>
-        <text x="36" y="108" fill="#1B4332" fontSize="20" fontWeight="700">Loan Details</text>
+        {/* Step dots */}
+        <circle cx="370" cy="74" r="5" fill="#36CE8E" />
+        <rect x="381" y="72" width="16" height="4" rx="2" fill="#36CE8E" />
+        <circle cx="403" cy="74" r="5" fill="#36CE8E" opacity="0.2" />
+        <rect x="414" y="72" width="16" height="4" rx="2" fill="#DBEEE3" />
+        <circle cx="436" cy="74" r="5" fill="#DBEEE3" />
+        <text x="400" y="96" textAnchor="middle" fill="#7A9A85" fontSize="10">Details</text>
 
-        {/* Form card */}
-        <rect x="36" y="124" width="728" height="370" rx="16" fill="white" />
+        {/* Two-panel layout */}
+        {/* Left panel — form */}
+        <rect x="40" y="112" width="430" height="420" rx="16" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="68" y="148" fill="#1B4332" fontSize="17" fontWeight="700">Loan Details</text>
 
-        {/* Borrower field */}
-        <text x="64" y="158" fill="#4A6B55" fontSize="11" fontWeight="600">WHO ARE YOU LENDING TO?</text>
-        <rect x="64" y="168" width="672" height="56" rx="12" fill="#F4F5F0" />
-        <circle cx="100" cy="196" r="16" fill="#36CE8E" opacity="0.12" />
-        <text x="100" y="201" textAnchor="middle" fill="#36CE8E" fontSize="11" fontWeight="600">M</text>
-        <text x="126" y="193" fill="#1B4332" fontSize="14" fontWeight="500">Mike Johnson</text>
-        <text x="126" y="208" fill="#7A9A85" fontSize="10">mike@email.com</text>
-        <text x="700" y="200" textAnchor="end" fill="#36CE8E" fontSize="11" fontWeight="500">Change</text>
+        {/* Friend selector */}
+        <text x="68" y="180" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">LENDING TO</text>
+        <rect x="68" y="190" width="374" height="52" rx="12" fill="#F4F5F0" />
+        <circle cx="100" cy="216" r="14" fill="#36CE8E" opacity="0.12" />
+        <text x="100" y="221" textAnchor="middle" fill="#36CE8E" fontSize="10" fontWeight="600">M</text>
+        <text x="124" y="212" fill="#1B4332" fontSize="13" fontWeight="500">Mike Johnson</text>
+        <text x="124" y="228" fill="#7A9A85" fontSize="10">Friend</text>
+        <text x="418" y="220" textAnchor="end" fill="#36CE8E" fontSize="10" fontWeight="500">Change</text>
 
-        {/* Amount field */}
-        <text x="64" y="250" fill="#4A6B55" fontSize="11" fontWeight="600">AMOUNT</text>
-        <rect x="64" y="260" width="672" height="64" rx="12" fill="#F4F5F0" />
-        <text x="88" y="300" fill="#7A9A85" fontSize="22">$</text>
-        <text x="110" y="302" fill="#1B4332" fontSize="32" fontWeight="700">500</text>
-        <text x="182" y="302" fill="#1B4332" fontSize="32" fontWeight="700" opacity="0.2">.00</text>
+        {/* Amount */}
+        <text x="68" y="270" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">AMOUNT</text>
+        <rect x="68" y="280" width="374" height="64" rx="12" fill="#F4F5F0" />
+        <text x="92" y="322" fill="#7A9A85" fontSize="24">$</text>
+        <text x="118" y="322" fill="#1B4332" fontSize="34" fontWeight="700">500</text>
 
-        {/* Purpose field */}
-        <text x="64" y="350" fill="#4A6B55" fontSize="11" fontWeight="600">WHAT'S IT FOR?</text>
-        <rect x="64" y="360" width="672" height="48" rx="12" fill="#F4F5F0" />
-        <text x="88" y="390" fill="#7A9A85" fontSize="13">Car repair</text>
+        {/* Purpose */}
+        <text x="68" y="372" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">PURPOSE</text>
+        <rect x="68" y="382" width="374" height="44" rx="12" fill="#F4F5F0" />
+        <text x="88" y="410" fill="#7A9A85" fontSize="12">Car repair</text>
 
-        {/* Options row */}
-        <rect x="64" y="424" width="320" height="48" rx="12" fill="#F4F5F0" />
-        <text x="84" y="453" fill="#4A6B55" fontSize="11">Interest-free</text>
-        <rect x="218" y="439" width="36" height="20" rx="10" fill="#36CE8E" />
-        <circle cx="244" cy="449" r="7" fill="white" />
+        {/* Options */}
+        <rect x="68" y="442" width="178" height="44" rx="12" fill="#F4F5F0" />
+        <text x="88" y="468" fill="#4A6B55" fontSize="10">Interest-free</text>
+        <rect x="208" y="455" width="28" height="16" rx="8" fill="#36CE8E" />
+        <circle cx="228" cy="463" r="5.5" fill="white" />
 
-        <rect x="400" y="424" width="336" height="48" rx="12" fill="#F4F5F0" />
-        <text x="420" y="453" fill="#4A6B55" fontSize="11">Send reminders</text>
-        <rect x="570" y="439" width="36" height="20" rx="10" fill="#36CE8E" />
-        <circle cx="596" cy="449" r="7" fill="white" />
+        <rect x="264" y="442" width="178" height="44" rx="12" fill="#F4F5F0" />
+        <text x="284" y="468" fill="#4A6B55" fontSize="10">Reminders</text>
+        <rect x="400" y="455" width="28" height="16" rx="8" fill="#36CE8E" />
+        <circle cx="420" cy="463" r="5.5" fill="white" />
 
         {/* CTA */}
-        <rect x="36" y="506" width="728" height="22" rx="0" fill="transparent" />
-        <rect x="200" y="502" width="400" height="30" rx="15" fill="#36CE8E" />
-        <text x="400" y="522" textAnchor="middle" fill="#0A1A10" fontSize="13" fontWeight="600">Continue to Terms →</text>
+        <rect x="68" y="500" width="374" height="18" rx="9" fill="#36CE8E" opacity="0.06" />
+        <text x="255" y="513" textAnchor="middle" fill="#4A6B55" fontSize="9">You can review everything before sending</text>
+
+        {/* Right panel — live preview */}
+        <rect x="490" y="112" width="270" height="420" rx="16" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="518" y="148" fill="#1B4332" fontSize="14" fontWeight="700">Preview</text>
+        <text x="518" y="168" fill="#7A9A85" fontSize="10">What Mike will see</text>
+
+        {/* Preview card */}
+        <rect x="510" y="186" width="230" height="200" rx="12" fill="#F4F5F0" />
+        <text x="625" y="218" textAnchor="middle" fill="#1B4332" fontSize="13" fontWeight="600">Loan Request</text>
+
+        <rect x="530" y="232" width="190" height="1" fill="#DBEEE3" />
+
+        <text x="540" y="256" fill="#7A9A85" fontSize="9">From</text>
+        <text x="710" y="256" textAnchor="end" fill="#1B4332" fontSize="10" fontWeight="500">Sarah (you)</text>
+        <text x="540" y="278" fill="#7A9A85" fontSize="9">Amount</text>
+        <text x="710" y="278" textAnchor="end" fill="#1B4332" fontSize="12" fontWeight="700">$500.00</text>
+        <text x="540" y="300" fill="#7A9A85" fontSize="9">For</text>
+        <text x="710" y="300" textAnchor="end" fill="#1B4332" fontSize="10" fontWeight="500">Car repair</text>
+        <text x="540" y="322" fill="#7A9A85" fontSize="9">Interest</text>
+        <text x="710" y="322" textAnchor="end" fill="#36CE8E" fontSize="10" fontWeight="500">None</text>
+        <text x="540" y="344" fill="#7A9A85" fontSize="9">Reminders</text>
+        <text x="710" y="344" textAnchor="end" fill="#1B4332" fontSize="10" fontWeight="500">Enabled</text>
+        <text x="540" y="366" fill="#7A9A85" fontSize="9">Schedule</text>
+        <text x="710" y="366" textAnchor="end" fill="#7A9A85" fontSize="10">Set in next step</text>
+
+        {/* Send button in preview */}
+        <rect x="510" y="402" width="230" height="42" rx="12" fill="#36CE8E" />
+        <text x="625" y="428" textAnchor="middle" fill="#0A1A10" fontSize="13" fontWeight="600">Send Request</text>
+
+        {/* Tip */}
+        <rect x="510" y="458" width="230" height="56" rx="10" fill="#36CE8E" opacity="0.05" />
+        <text x="530" y="480" fill="#4A6B55" fontSize="10" fontWeight="500">💡 Tip</text>
+        <text x="530" y="496" fill="#7A9A85" fontSize="9">Mike can accept or suggest changes</text>
       </svg>
     ),
   },
   {
     title: "Loan Overview",
-    description: "See exactly where a loan stands — progress, payments, and key details at a glance.",
+    description: "A detailed loan profile with visual progress tracking and payment history.",
     color: "#6EE8B5",
     svg: (
-      <svg viewBox="0 0 800 540" fill="none" className="w-full h-full">
+      <svg viewBox="0 0 800 560" fill="none" className="w-full h-full">
         {/* Background */}
-        <rect width="800" height="540" fill="#F4F5F0" />
-
-        {/* Top hero */}
-        <rect width="800" height="170" fill="url(#loanGrad)" />
-        <defs>
-          <linearGradient id="loanGrad" x1="0" y1="0" x2="800" y2="170">
-            <stop offset="0%" stopColor="#1B4332" />
-            <stop offset="100%" stopColor="#2D6A4F" />
-          </linearGradient>
-        </defs>
+        <rect width="800" height="560" fill="#FAFBF8" />
 
         {/* Top bar */}
-        <text x="36" y="36" fill="white" opacity="0.6" fontSize="13" fontWeight="500">← Loans</text>
-        <text x="400" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="700">Loan Details</text>
+        <rect width="800" height="52" fill="white" />
+        <rect y="51" width="800" height="1" fill="#EAEEE6" />
+        <text x="36" y="34" fill="#36CE8E" fontSize="13" fontWeight="500">← Loans</text>
+        <text x="400" y="34" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">Loan Details</text>
+        <text x="764" y="34" textAnchor="end" fill="#7A9A85" fontSize="12">Edit</text>
 
-        {/* Person info */}
-        <circle cx="64" cy="80" r="22" fill="white" opacity="0.15" />
-        <text x="64" y="86" textAnchor="middle" fill="white" fontSize="14" fontWeight="700">M</text>
-        <text x="96" y="74" fill="white" fontSize="18" fontWeight="700">Mike Johnson</text>
-        <text x="96" y="94" fill="white" opacity="0.6" fontSize="11">Car repair · Started Jan 15</text>
-        <rect x="260" y="66" width="52" height="22" rx="11" fill="white" opacity="0.15" />
-        <text x="286" y="81" textAnchor="middle" fill="white" fontSize="9" fontWeight="600">Active</text>
+        {/* Person header card */}
+        <rect x="40" y="68" width="720" height="80" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <circle cx="84" cy="108" r="24" fill="#36CE8E" opacity="0.1" />
+        <text x="84" y="114" textAnchor="middle" fill="#1B4332" fontSize="15" fontWeight="700">M</text>
+        <text x="120" y="100" fill="#1B4332" fontSize="16" fontWeight="700">Mike Johnson</text>
+        <rect x="246" y="90" width="52" height="20" rx="10" fill="#36CE8E" opacity="0.1" />
+        <text x="272" y="104" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Active</text>
+        <text x="120" y="120" fill="#7A9A85" fontSize="11">Car repair · Monthly · Interest-free</text>
+        <rect x="620" y="94" width="120" height="28" rx="14" fill="#F4F5F0" />
+        <text x="680" y="113" textAnchor="middle" fill="#4A6B55" fontSize="10">Send Reminder</text>
 
-        {/* Progress card — overlapping */}
-        <rect x="36" y="112" width="728" height="108" rx="16" fill="white" />
-        <text x="64" y="144" fill="#4A6B55" fontSize="10" fontWeight="500">REPAYMENT PROGRESS</text>
-        <text x="64" y="178" fill="#1B4332" fontSize="30" fontWeight="700">$300</text>
-        <text x="175" y="178" fill="#7A9A85" fontSize="14">of $500</text>
-        <rect x="64" y="192" width="672" height="8" rx="4" fill="#DBEEE3" />
-        <rect x="64" y="192" width="403" height="8" rx="4" fill="#36CE8E" />
-        <text x="736" y="144" textAnchor="end" fill="#1B4332" fontSize="28" fontWeight="700">60%</text>
+        {/* Progress section — large visual */}
+        <rect x="40" y="164" width="720" height="130" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
 
-        {/* Detail cards */}
-        <rect x="36" y="236" width="236" height="80" rx="14" fill="white" />
-        <text x="56" y="262" fill="#4A6B55" fontSize="10" fontWeight="500">MONTHLY</text>
-        <text x="56" y="294" fill="#1B4332" fontSize="22" fontWeight="700">$100</text>
+        {/* Circle progress */}
+        <circle cx="120" cy="230" r="38" fill="none" stroke="#EAEEE6" strokeWidth="7" />
+        <circle cx="120" cy="230" r="38" fill="none" stroke="#36CE8E" strokeWidth="7" strokeDasharray="143.4 95.6" strokeLinecap="round" transform="rotate(-90 120 230)" />
+        <text x="120" y="226" textAnchor="middle" fill="#1B4332" fontSize="18" fontWeight="700">60%</text>
+        <text x="120" y="244" textAnchor="middle" fill="#7A9A85" fontSize="9">complete</text>
 
-        <rect x="284" y="236" width="236" height="80" rx="14" fill="white" />
-        <text x="304" y="262" fill="#4A6B55" fontSize="10" fontWeight="500">INTEREST</text>
-        <text x="304" y="294" fill="#36CE8E" fontSize="22" fontWeight="700">0%</text>
+        {/* Stats beside circle */}
+        <text x="200" y="198" fill="#7A9A85" fontSize="10" fontWeight="500" letterSpacing="0.5">REPAID</text>
+        <text x="200" y="224" fill="#1B4332" fontSize="28" fontWeight="700">$300</text>
+        <text x="290" y="224" fill="#7A9A85" fontSize="13">of $500</text>
 
-        <rect x="532" y="236" width="232" height="80" rx="14" fill="white" />
-        <text x="552" y="262" fill="#4A6B55" fontSize="10" fontWeight="500">NEXT DUE</text>
-        <text x="552" y="294" fill="#1B4332" fontSize="22" fontWeight="700">Apr 15</text>
+        <rect x="200" y="240" width="540" height="8" rx="4" fill="#EAEEE6" />
+        <rect x="200" y="240" width="324" height="8" rx="4" fill="#36CE8E" />
 
-        {/* Payment timeline */}
-        <rect x="36" y="332" width="728" height="196" rx="16" fill="white" />
-        <text x="64" y="362" fill="#1B4332" fontSize="13" fontWeight="700">Payment History</text>
-        <text x="736" y="362" textAnchor="end" fill="#36CE8E" fontSize="11" fontWeight="500">See all</text>
+        <text x="200" y="268" fill="#7A9A85" fontSize="10">3 of 5 payments · 2 remaining · Est. completion May 15</text>
 
-        {/* Timeline entries */}
-        <circle cx="80" cy="400" r="10" fill="#36CE8E" />
-        <path d="M76 400 L78 402 L84 396" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-        <rect x="79" y="410" width="2" height="20" fill="#36CE8E" />
-        <text x="100" y="396" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="100" y="412" fill="#7A9A85" fontSize="10">January 15 · Paid on time</text>
+        {/* Key terms — horizontal */}
+        <rect x="40" y="310" width="175" height="76" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="60" y="336" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">MONTHLY</text>
+        <text x="60" y="366" fill="#1B4332" fontSize="22" fontWeight="700">$100</text>
 
-        <circle cx="80" cy="442" r="10" fill="#36CE8E" />
-        <path d="M76 442 L78 444 L84 438" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-        <rect x="79" y="452" width="2" height="20" fill="#36CE8E" />
-        <text x="100" y="438" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="100" y="454" fill="#7A9A85" fontSize="10">February 15 · Paid on time</text>
+        <rect x="225" y="310" width="175" height="76" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="245" y="336" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">INTEREST</text>
+        <text x="245" y="366" fill="#36CE8E" fontSize="22" fontWeight="700">0%</text>
 
-        <circle cx="80" cy="484" r="10" fill="#36CE8E" />
-        <path d="M76 484 L78 486 L84 480" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="100" y="480" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="100" y="496" fill="#7A9A85" fontSize="10">March 15 · Paid on time</text>
+        <rect x="410" y="310" width="175" height="76" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="430" y="336" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">NEXT DUE</text>
+        <text x="430" y="366" fill="#1B4332" fontSize="22" fontWeight="700">Apr 15</text>
 
-        {/* Status badges on right */}
-        <rect x="660" y="390" width="56" height="22" rx="11" fill="#36CE8E" opacity="0.08" />
-        <text x="688" y="405" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
-        <rect x="660" y="432" width="56" height="22" rx="11" fill="#36CE8E" opacity="0.08" />
-        <text x="688" y="447" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
-        <rect x="660" y="474" width="56" height="22" rx="11" fill="#36CE8E" opacity="0.08" />
-        <text x="688" y="489" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
+        <rect x="595" y="310" width="165" height="76" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="615" y="336" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">STARTED</text>
+        <text x="615" y="366" fill="#7A9A85" fontSize="22" fontWeight="700">Jan 15</text>
+
+        {/* Payments list */}
+        <rect x="40" y="402" width="720" height="146" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="64" y="430" fill="#1B4332" fontSize="13" fontWeight="700">Payments</text>
+        <text x="736" y="430" textAnchor="end" fill="#36CE8E" fontSize="11" fontWeight="500">See all</text>
+
+        {/* Row headers */}
+        <text x="64" y="456" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">DATE</text>
+        <text x="300" y="456" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">AMOUNT</text>
+        <text x="500" y="456" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">STATUS</text>
+        <rect x="64" y="462" width="672" height="1" fill="#F2F3EE" />
+
+        {/* Row 1 */}
+        <text x="64" y="484" fill="#1B4332" fontSize="11">Jan 15, 2026</text>
+        <text x="300" y="484" fill="#1B4332" fontSize="11" fontWeight="600">$100.00</text>
+        <rect x="500" y="472" width="44" height="18" rx="9" fill="#36CE8E" opacity="0.08" />
+        <text x="522" y="485" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
+
+        {/* Row 2 */}
+        <text x="64" y="508" fill="#1B4332" fontSize="11">Feb 15, 2026</text>
+        <text x="300" y="508" fill="#1B4332" fontSize="11" fontWeight="600">$100.00</text>
+        <rect x="500" y="496" width="44" height="18" rx="9" fill="#36CE8E" opacity="0.08" />
+        <text x="522" y="509" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
+
+        {/* Row 3 */}
+        <text x="64" y="532" fill="#1B4332" fontSize="11">Mar 15, 2026</text>
+        <text x="300" y="532" fill="#1B4332" fontSize="11" fontWeight="600">$100.00</text>
+        <rect x="500" y="520" width="44" height="18" rx="9" fill="#36CE8E" opacity="0.08" />
+        <text x="522" y="533" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
       </svg>
     ),
   },
   {
     title: "Contracts",
-    description: "Your loan agreements organised with clear status, progress, and quick actions.",
+    description: "Browse and manage all agreements with inline progress and quick filters.",
     color: "#D0ED6F",
     svg: (
-      <svg viewBox="0 0 800 540" fill="none" className="w-full h-full">
+      <svg viewBox="0 0 800 560" fill="none" className="w-full h-full">
         {/* Background */}
-        <rect width="800" height="540" fill="#F4F5F0" />
+        <rect width="800" height="560" fill="#FAFBF8" />
 
         {/* Top bar */}
-        <rect width="800" height="56" fill="white" />
-        <rect y="55" width="800" height="1" fill="#E8F0EB" />
-        <text x="400" y="36" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">Contracts</text>
-        <circle cx="748" cy="28" r="16" fill="#36CE8E" opacity="0.12" />
-        <text x="748" y="33" textAnchor="middle" fill="#1B4332" fontSize="11" fontWeight="600">S</text>
+        <rect width="800" height="52" fill="white" />
+        <rect y="51" width="800" height="1" fill="#EAEEE6" />
+        <text x="400" y="34" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">Contracts</text>
+        <circle cx="760" cy="26" r="14" fill="#F4F5F0" />
 
-        {/* Search bar */}
-        <rect x="36" y="72" width="728" height="44" rx="22" fill="white" stroke="#DBEEE3" strokeWidth="1" />
-        <text x="66" y="98" fill="#7A9A85" fontSize="12">Search contracts...</text>
+        {/* Stats header bar */}
+        <rect x="0" y="52" width="800" height="64" fill="white" />
+        <rect x="0" y="115" width="800" height="1" fill="#EAEEE6" />
+
+        <text x="120" y="78" textAnchor="middle" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">TOTAL</text>
+        <text x="120" y="100" textAnchor="middle" fill="#1B4332" fontSize="18" fontWeight="700">5</text>
+
+        <rect x="220" y="68" width="1" height="36" fill="#EAEEE6" />
+
+        <text x="320" y="78" textAnchor="middle" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">ACTIVE</text>
+        <text x="320" y="100" textAnchor="middle" fill="#36CE8E" fontSize="18" fontWeight="700">2</text>
+
+        <rect x="420" y="68" width="1" height="36" fill="#EAEEE6" />
+
+        <text x="520" y="78" textAnchor="middle" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">COMPLETE</text>
+        <text x="520" y="100" textAnchor="middle" fill="#1B4332" fontSize="18" fontWeight="700">3</text>
+
+        <rect x="620" y="68" width="1" height="36" fill="#EAEEE6" />
+
+        <text x="720" y="78" textAnchor="middle" fill="#7A9A85" fontSize="9" fontWeight="500" letterSpacing="0.5">VALUE</text>
+        <text x="720" y="100" textAnchor="middle" fill="#1B4332" fontSize="18" fontWeight="700">$4,250</text>
 
         {/* Filter tabs */}
-        <rect x="36" y="130" width="52" height="32" rx="16" fill="#1B4332" />
-        <text x="62" y="150" textAnchor="middle" fill="white" fontSize="11" fontWeight="500">All</text>
-        <rect x="96" y="130" width="66" height="32" rx="16" fill="white" stroke="#DBEEE3" strokeWidth="1" />
-        <text x="129" y="150" textAnchor="middle" fill="#4A6B55" fontSize="11">Active</text>
-        <rect x="170" y="130" width="80" height="32" rx="16" fill="white" stroke="#DBEEE3" strokeWidth="1" />
-        <text x="210" y="150" textAnchor="middle" fill="#4A6B55" fontSize="11">Complete</text>
+        <rect x="40" y="132" width="52" height="30" rx="15" fill="#1B4332" />
+        <text x="66" y="151" textAnchor="middle" fill="white" fontSize="11" fontWeight="500">All</text>
+        <rect x="100" y="132" width="66" height="30" rx="15" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="133" y="151" textAnchor="middle" fill="#4A6B55" fontSize="11">Active</text>
+        <rect x="174" y="132" width="80" height="30" rx="15" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <text x="214" y="151" textAnchor="middle" fill="#4A6B55" fontSize="11">Complete</text>
 
         {/* Contract card 1 */}
-        <rect x="36" y="178" width="728" height="108" rx="16" fill="white" />
-        <circle cx="72" cy="224" r="22" fill="#36CE8E" opacity="0.1" />
-        <text x="72" y="230" textAnchor="middle" fill="#1B4332" fontSize="14" fontWeight="700">MJ</text>
-        <text x="106" y="210" fill="#1B4332" fontSize="15" fontWeight="600">Mike Johnson</text>
-        <rect x="222" y="200" width="52" height="20" rx="10" fill="#36CE8E" opacity="0.1" />
-        <text x="248" y="214" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Active</text>
-        <text x="106" y="232" fill="#7A9A85" fontSize="11">$500 · Monthly · Car repair</text>
-        <text x="106" y="252" fill="#7A9A85" fontSize="10">Jan 15, 2026 — May 15, 2026</text>
-
-        <rect x="540" y="218" width="140" height="6" rx="3" fill="#DBEEE3" />
-        <rect x="540" y="218" width="84" height="6" rx="3" fill="#36CE8E" />
-        <text x="540" y="242" fill="#7A9A85" fontSize="9">60% repaid</text>
-        <rect x="660" y="260" width="80" height="16" rx="8" fill="#F4F5F0" />
-        <text x="700" y="272" textAnchor="middle" fill="#4A6B55" fontSize="9">View →</text>
+        <rect x="40" y="178" width="720" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <rect x="40" y="178" width="4" height="110" rx="2" fill="#36CE8E" />
+        <circle cx="76" cy="228" r="20" fill="#36CE8E" opacity="0.08" />
+        <text x="76" y="234" textAnchor="middle" fill="#1B4332" fontSize="13" fontWeight="700">M</text>
+        <text x="108" y="216" fill="#1B4332" fontSize="14" fontWeight="600">Mike Johnson</text>
+        <text x="108" y="236" fill="#7A9A85" fontSize="10">$500 · Car repair · Monthly</text>
+        <text x="108" y="256" fill="#7A9A85" fontSize="10">Jan 15 — May 15, 2026</text>
+        <rect x="500" y="212" width="160" height="6" rx="3" fill="#EAEEE6" />
+        <rect x="500" y="212" width="96" height="6" rx="3" fill="#36CE8E" />
+        <text x="500" y="234" fill="#7A9A85" fontSize="9">$300 of $500 · 60%</text>
+        <rect x="500" y="250" width="50" height="20" rx="10" fill="#36CE8E" opacity="0.08" />
+        <text x="525" y="264" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Active</text>
+        <text x="680" y="264" textAnchor="end" fill="#4A6B55" fontSize="10">View →</text>
 
         {/* Contract card 2 */}
-        <rect x="36" y="298" width="728" height="108" rx="16" fill="white" />
-        <circle cx="72" cy="344" r="22" fill="#83F384" opacity="0.1" />
-        <text x="72" y="350" textAnchor="middle" fill="#1B4332" fontSize="14" fontWeight="700">JW</text>
-        <text x="106" y="330" fill="#1B4332" fontSize="15" fontWeight="600">Jake Wilson</text>
-        <rect x="210" y="320" width="52" height="20" rx="10" fill="#36CE8E" opacity="0.1" />
-        <text x="236" y="334" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Active</text>
-        <text x="106" y="352" fill="#7A9A85" fontSize="11">$1,000 · Bi-weekly · Rent help</text>
-        <text x="106" y="372" fill="#7A9A85" fontSize="10">Dec 1, 2025 — Mar 1, 2026</text>
-
-        <rect x="540" y="338" width="140" height="6" rx="3" fill="#DBEEE3" />
-        <rect x="540" y="338" width="112" height="6" rx="3" fill="#83F384" />
-        <text x="540" y="362" fill="#7A9A85" fontSize="9">80% repaid</text>
-        <rect x="660" y="380" width="80" height="16" rx="8" fill="#F4F5F0" />
-        <text x="700" y="392" textAnchor="middle" fill="#4A6B55" fontSize="9">View →</text>
+        <rect x="40" y="300" width="720" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <rect x="40" y="300" width="4" height="110" rx="2" fill="#83F384" />
+        <circle cx="76" cy="350" r="20" fill="#83F384" opacity="0.08" />
+        <text x="76" y="356" textAnchor="middle" fill="#1B4332" fontSize="13" fontWeight="700">J</text>
+        <text x="108" y="338" fill="#1B4332" fontSize="14" fontWeight="600">Jake Wilson</text>
+        <text x="108" y="358" fill="#7A9A85" fontSize="10">$1,000 · Rent help · Bi-weekly</text>
+        <text x="108" y="378" fill="#7A9A85" fontSize="10">Dec 1, 2025 — Mar 1, 2026</text>
+        <rect x="500" y="334" width="160" height="6" rx="3" fill="#EAEEE6" />
+        <rect x="500" y="334" width="128" height="6" rx="3" fill="#83F384" />
+        <text x="500" y="356" fill="#7A9A85" fontSize="9">$800 of $1,000 · 80%</text>
+        <rect x="500" y="372" width="50" height="20" rx="10" fill="#36CE8E" opacity="0.08" />
+        <text x="525" y="386" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Active</text>
+        <text x="680" y="386" textAnchor="end" fill="#4A6B55" fontSize="10">View →</text>
 
         {/* Contract card 3 — Complete */}
-        <rect x="36" y="418" width="728" height="108" rx="16" fill="white" />
-        <circle cx="72" cy="464" r="22" fill="#DBEEE3" opacity="0.3" />
-        <text x="72" y="470" textAnchor="middle" fill="#7A9A85" fontSize="14" fontWeight="700">AC</text>
-        <text x="106" y="450" fill="#1B4332" fontSize="15" fontWeight="600">Amy Chen</text>
-        <rect x="186" y="440" width="66" height="20" rx="10" fill="#4A6B55" opacity="0.06" />
-        <text x="219" y="454" textAnchor="middle" fill="#4A6B55" fontSize="9" fontWeight="600">Complete</text>
-        <text x="106" y="472" fill="#7A9A85" fontSize="11">$750 · Monthly · Medical bill</text>
-        <text x="106" y="492" fill="#7A9A85" fontSize="10">Oct 1, 2025 — Mar 1, 2026</text>
-
-        <rect x="540" y="458" width="140" height="6" rx="3" fill="#36CE8E" opacity="0.3" />
-        <text x="540" y="482" fill="#36CE8E" fontSize="9" fontWeight="500">All settled!</text>
-        <rect x="660" y="500" width="80" height="16" rx="8" fill="#F4F5F0" />
-        <text x="700" y="512" textAnchor="middle" fill="#4A6B55" fontSize="9">View →</text>
+        <rect x="40" y="422" width="720" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <rect x="40" y="422" width="4" height="110" rx="2" fill="#DBEEE3" />
+        <circle cx="76" cy="472" r="20" fill="#EAEEE6" opacity="0.5" />
+        <text x="76" y="478" textAnchor="middle" fill="#7A9A85" fontSize="13" fontWeight="700">A</text>
+        <text x="108" y="460" fill="#1B4332" fontSize="14" fontWeight="600">Amy Chen</text>
+        <text x="108" y="480" fill="#7A9A85" fontSize="10">$750 · Medical bill · Monthly</text>
+        <text x="108" y="500" fill="#7A9A85" fontSize="10">Oct 1, 2025 — Mar 1, 2026</text>
+        <rect x="500" y="456" width="160" height="6" rx="3" fill="#36CE8E" opacity="0.25" />
+        <text x="500" y="478" fill="#36CE8E" fontSize="9" fontWeight="500">$750 of $750 · Complete</text>
+        <rect x="500" y="494" width="66" height="20" rx="10" fill="#4A6B55" opacity="0.06" />
+        <text x="533" y="508" textAnchor="middle" fill="#4A6B55" fontSize="9" fontWeight="600">Complete</text>
+        <text x="680" y="508" textAnchor="end" fill="#4A6B55" fontSize="10">View →</text>
       </svg>
     ),
   },
   {
     title: "Payment Schedule",
-    description: "Track upcoming and past payments with a clear, visual timeline.",
+    description: "A calendar-like view of all payments with visual status and summary stats.",
     color: "#36CE8E",
     svg: (
-      <svg viewBox="0 0 800 540" fill="none" className="w-full h-full">
+      <svg viewBox="0 0 800 560" fill="none" className="w-full h-full">
         {/* Background */}
-        <rect width="800" height="540" fill="#F4F5F0" />
-
-        {/* Top hero */}
-        <rect width="800" height="160" fill="url(#payGrad)" />
-        <defs>
-          <linearGradient id="payGrad" x1="0" y1="0" x2="800" y2="160">
-            <stop offset="0%" stopColor="#1B4332" />
-            <stop offset="100%" stopColor="#2D6A4F" />
-          </linearGradient>
-        </defs>
+        <rect width="800" height="560" fill="#FAFBF8" />
 
         {/* Top bar */}
-        <text x="36" y="36" fill="white" opacity="0.6" fontSize="13" fontWeight="500">← Back</text>
-        <text x="400" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="700">Payments</text>
+        <rect width="800" height="52" fill="white" />
+        <rect y="51" width="800" height="1" fill="#EAEEE6" />
+        <text x="36" y="34" fill="#36CE8E" fontSize="13" fontWeight="500">← Back</text>
+        <text x="400" y="34" textAnchor="middle" fill="#1B4332" fontSize="16" fontWeight="700">Payment Schedule</text>
 
-        {/* Header */}
-        <text x="36" y="76" fill="white" fontSize="20" fontWeight="700">Payment Schedule</text>
-        <text x="36" y="98" fill="white" opacity="0.6" fontSize="12">$500 loan with Mike · 5 monthly payments</text>
+        {/* Loan context */}
+        <rect x="40" y="68" width="720" height="52" rx="12" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <circle cx="76" cy="94" r="14" fill="#36CE8E" opacity="0.1" />
+        <text x="76" y="99" textAnchor="middle" fill="#1B4332" fontSize="9" fontWeight="600">MJ</text>
+        <text x="100" y="91" fill="#1B4332" fontSize="13" fontWeight="600">Mike Johnson</text>
+        <text x="100" y="106" fill="#7A9A85" fontSize="10">$500.00 · 5 payments of $100</text>
+        <rect x="630" y="82" width="110" height="24" rx="12" fill="#F4F5F0" />
+        <text x="685" y="99" textAnchor="middle" fill="#4A6B55" fontSize="10">View Contract</text>
 
-        {/* Summary card — overlapping */}
-        <rect x="36" y="116" width="728" height="80" rx="16" fill="white" />
+        {/* Progress bar — full width */}
+        <rect x="40" y="136" width="720" height="36" rx="12" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <rect x="52" y="148" width="696" height="10" rx="5" fill="#EAEEE6" />
+        <rect x="52" y="148" width="418" height="10" rx="5" fill="#36CE8E" />
+        <text x="480" y="157" fill="white" fontSize="8" fontWeight="600">60%</text>
 
-        <text x="64" y="142" fill="#4A6B55" fontSize="10" fontWeight="500">PAID</text>
-        <text x="64" y="168" fill="#36CE8E" fontSize="22" fontWeight="700">$300</text>
+        {/* Payment cards — calendar grid style */}
+        {/* Row 1 */}
+        <rect x="40" y="188" width="345" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <circle cx="68" cy="214" r="12" fill="#36CE8E" />
+        <path d="M63 214 L66 217 L73 210" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="90" y="210" fill="#1B4332" fontSize="13" fontWeight="600">Payment 1</text>
+        <text x="90" y="228" fill="#7A9A85" fontSize="10">January 15, 2026</text>
+        <text x="350" y="214" textAnchor="end" fill="#1B4332" fontSize="16" fontWeight="700">$100</text>
+        <rect x="60" y="248" width="310" height="1" fill="#F2F3EE" />
+        <text x="68" y="272" fill="#7A9A85" fontSize="10">Received on Jan 15</text>
+        <rect x="290" y="260" width="44" height="18" rx="9" fill="#36CE8E" opacity="0.08" />
+        <text x="312" y="273" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
 
-        <rect x="210" y="130" width="1" height="50" fill="#DBEEE3" />
+        <rect x="415" y="188" width="345" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <circle cx="443" cy="214" r="12" fill="#36CE8E" />
+        <path d="M438 214 L441 217 L448 210" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="465" y="210" fill="#1B4332" fontSize="13" fontWeight="600">Payment 2</text>
+        <text x="465" y="228" fill="#7A9A85" fontSize="10">February 15, 2026</text>
+        <text x="725" y="214" textAnchor="end" fill="#1B4332" fontSize="16" fontWeight="700">$100</text>
+        <rect x="435" y="248" width="310" height="1" fill="#F2F3EE" />
+        <text x="443" y="272" fill="#7A9A85" fontSize="10">Received on Feb 15</text>
+        <rect x="665" y="260" width="44" height="18" rx="9" fill="#36CE8E" opacity="0.08" />
+        <text x="687" y="273" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
 
-        <text x="234" y="142" fill="#4A6B55" fontSize="10" fontWeight="500">REMAINING</text>
-        <text x="234" y="168" fill="#1B4332" fontSize="22" fontWeight="700">$200</text>
+        {/* Row 2 */}
+        <rect x="40" y="312" width="345" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <circle cx="68" cy="338" r="12" fill="#36CE8E" />
+        <path d="M63 338 L66 341 L73 334" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="90" y="334" fill="#1B4332" fontSize="13" fontWeight="600">Payment 3</text>
+        <text x="90" y="352" fill="#7A9A85" fontSize="10">March 15, 2026</text>
+        <text x="350" y="338" textAnchor="end" fill="#1B4332" fontSize="16" fontWeight="700">$100</text>
+        <rect x="60" y="372" width="310" height="1" fill="#F2F3EE" />
+        <text x="68" y="396" fill="#7A9A85" fontSize="10">Received on Mar 15</text>
+        <rect x="290" y="384" width="44" height="18" rx="9" fill="#36CE8E" opacity="0.08" />
+        <text x="312" y="397" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
 
-        <rect x="400" y="130" width="1" height="50" fill="#DBEEE3" />
+        <rect x="415" y="312" width="345" height="110" rx="14" fill="white" stroke="#D0ED6F" strokeWidth="1.5" />
+        <circle cx="443" cy="338" r="12" fill="white" stroke="#D0ED6F" strokeWidth="2" />
+        <text x="443" y="342" textAnchor="middle" fill="#D0ED6F" fontSize="10" fontWeight="700">4</text>
+        <text x="465" y="334" fill="#1B4332" fontSize="13" fontWeight="600">Payment 4</text>
+        <text x="465" y="352" fill="#D0ED6F" fontSize="10" fontWeight="500">April 15, 2026</text>
+        <text x="725" y="338" textAnchor="end" fill="#1B4332" fontSize="16" fontWeight="700">$100</text>
+        <rect x="435" y="372" width="310" height="1" fill="#F2F3EE" />
+        <text x="443" y="396" fill="#D0ED6F" fontSize="10" fontWeight="500">Due in 2 weeks</text>
+        <rect x="665" y="384" width="44" height="18" rx="9" fill="#D0ED6F" opacity="0.1" />
+        <text x="687" y="397" textAnchor="middle" fill="#4A6B55" fontSize="9" fontWeight="600">Due</text>
 
-        <text x="424" y="142" fill="#4A6B55" fontSize="10" fontWeight="500">NEXT DUE</text>
-        <text x="424" y="168" fill="#1B4332" fontSize="22" fontWeight="700">Apr 15</text>
+        {/* Row 3 — single */}
+        <rect x="40" y="436" width="345" height="110" rx="14" fill="white" stroke="#EAEEE6" strokeWidth="1" />
+        <circle cx="68" cy="462" r="12" fill="white" stroke="#DBEEE3" strokeWidth="2" />
+        <text x="68" y="466" textAnchor="middle" fill="#DBEEE3" fontSize="10" fontWeight="700">5</text>
+        <text x="90" y="458" fill="#7A9A85" fontSize="13" fontWeight="600">Payment 5</text>
+        <text x="90" y="476" fill="#7A9A85" fontSize="10">May 15, 2026</text>
+        <text x="350" y="462" textAnchor="end" fill="#7A9A85" fontSize="16" fontWeight="700">$100</text>
+        <rect x="60" y="496" width="310" height="1" fill="#F2F3EE" />
+        <text x="68" y="520" fill="#7A9A85" fontSize="10">Final payment</text>
+        <rect x="274" y="508" width="60" height="18" rx="9" fill="#EAEEE6" opacity="0.3" />
+        <text x="304" y="521" textAnchor="middle" fill="#7A9A85" fontSize="9" fontWeight="600">Pending</text>
 
-        <rect x="580" y="130" width="1" height="50" fill="#DBEEE3" />
-
-        <text x="604" y="142" fill="#4A6B55" fontSize="10" fontWeight="500">COMPLETION</text>
-        <text x="604" y="168" fill="#7A9A85" fontSize="22" fontWeight="700">May 15</text>
-
-        {/* Timeline card */}
-        <rect x="36" y="212" width="728" height="316" rx="16" fill="white" />
-        <text x="64" y="244" fill="#1B4332" fontSize="13" fontWeight="700">Timeline</text>
-
-        {/* Payment 1 */}
-        <circle cx="80" cy="282" r="12" fill="#36CE8E" />
-        <path d="M75 282 L78 285 L85 278" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-        <text x="106" y="278" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="200" y="278" fill="#7A9A85" fontSize="11">January 15</text>
-        <rect x="660" y="272" width="56" height="22" rx="11" fill="#36CE8E" opacity="0.08" />
-        <text x="688" y="287" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
-        <text x="106" y="296" fill="#7A9A85" fontSize="10">On time</text>
-        <rect x="79" y="294" width="2" height="24" fill="#36CE8E" />
-
-        {/* Payment 2 */}
-        <circle cx="80" cy="330" r="12" fill="#36CE8E" />
-        <path d="M75 330 L78 333 L85 326" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-        <text x="106" y="326" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="200" y="326" fill="#7A9A85" fontSize="11">February 15</text>
-        <rect x="660" y="320" width="56" height="22" rx="11" fill="#36CE8E" opacity="0.08" />
-        <text x="688" y="335" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
-        <text x="106" y="344" fill="#7A9A85" fontSize="10">On time</text>
-        <rect x="79" y="342" width="2" height="24" fill="#36CE8E" />
-
-        {/* Payment 3 */}
-        <circle cx="80" cy="378" r="12" fill="#36CE8E" />
-        <path d="M75 378 L78 381 L85 374" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-        <text x="106" y="374" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="200" y="374" fill="#7A9A85" fontSize="11">March 15</text>
-        <rect x="660" y="368" width="56" height="22" rx="11" fill="#36CE8E" opacity="0.08" />
-        <text x="688" y="383" textAnchor="middle" fill="#36CE8E" fontSize="9" fontWeight="600">Paid</text>
-        <text x="106" y="392" fill="#7A9A85" fontSize="10">On time</text>
-        <rect x="79" y="390" width="2" height="24" fill="#DBEEE3" />
-
-        {/* Payment 4 — upcoming */}
-        <circle cx="80" cy="426" r="12" fill="white" stroke="#D0ED6F" strokeWidth="2.5" />
-        <text x="80" y="430" textAnchor="middle" fill="#D0ED6F" fontSize="10" fontWeight="700">4</text>
-        <text x="106" y="422" fill="#1B4332" fontSize="12" fontWeight="600">$100.00</text>
-        <text x="200" y="422" fill="#7A9A85" fontSize="11">April 15</text>
-        <rect x="660" y="416" width="56" height="22" rx="11" fill="#D0ED6F" opacity="0.1" />
-        <text x="688" y="431" textAnchor="middle" fill="#4A6B55" fontSize="9" fontWeight="600">Due</text>
-        <text x="106" y="440" fill="#D0ED6F" fontSize="10" fontWeight="500">Coming up next</text>
-        <rect x="79" y="438" width="2" height="24" fill="#DBEEE3" />
-
-        {/* Payment 5 — future */}
-        <circle cx="80" cy="474" r="12" fill="white" stroke="#DBEEE3" strokeWidth="2" />
-        <text x="80" y="478" textAnchor="middle" fill="#DBEEE3" fontSize="10" fontWeight="700">5</text>
-        <text x="106" y="470" fill="#7A9A85" fontSize="12">$100.00</text>
-        <text x="200" y="470" fill="#7A9A85" fontSize="11">May 15</text>
-        <rect x="652" y="464" width="70" height="22" rx="11" fill="#DBEEE3" opacity="0.2" />
-        <text x="687" y="479" textAnchor="middle" fill="#7A9A85" fontSize="9" fontWeight="600">Pending</text>
-        <text x="106" y="488" fill="#7A9A85" fontSize="10">Final payment</text>
-
-        {/* Progress summary */}
-        <rect x="64" y="504" width="672" height="8" rx="4" fill="#DBEEE3" />
-        <rect x="64" y="504" width="403" height="8" rx="4" fill="#36CE8E" />
+        {/* Summary */}
+        <rect x="415" y="436" width="345" height="110" rx="14" fill="#1B4332" />
+        <text x="445" y="468" fill="white" opacity="0.5" fontSize="10" fontWeight="500" letterSpacing="0.5">SUMMARY</text>
+        <text x="445" y="498" fill="white" fontSize="13" fontWeight="500">3 of 5 payments complete</text>
+        <text x="445" y="520" fill="white" opacity="0.6" fontSize="11">Est. completion: May 15, 2026</text>
+        <rect x="660" y="476" width="76" height="46" rx="12" fill="white" opacity="0.1" />
+        <text x="698" y="500" textAnchor="middle" fill="white" fontSize="20" fontWeight="700">60%</text>
+        <text x="698" y="516" textAnchor="middle" fill="white" opacity="0.5" fontSize="8">done</text>
       </svg>
     ),
   },
