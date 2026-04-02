@@ -1132,6 +1132,31 @@ body {
 }
 
 /* ─── Notification Ticker Section ─── */
+/* Feature sections (Payments at a Glance, Track Loan Progress) */
+.feature-section {
+  padding: 80px 40px;
+}
+
+.feature-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .notif-section {
   padding: 60px 40px 80px;
 }
@@ -1147,8 +1172,7 @@ body {
 
 .notif-left {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: flex-start;
 }
 
 .notif-title {
@@ -1171,7 +1195,8 @@ body {
 
 .notif-right {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .notif-card {
@@ -3364,14 +3389,25 @@ a.help-card {
   .contact-right {
     justify-content: flex-start;
   }
+  .feature-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .feature-text {
+    text-align: center;
+    align-items: center;
+  }
+  .feature-image {
+    justify-content: center;
+  }
   .notif-inner {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .notif-right {
+  .notif-left {
     justify-content: center;
   }
-  .notif-left {
+  .notif-right {
     text-align: center;
     align-items: center;
   }
