@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Vony</title>
+  <title>Suggest a Feature — Vony</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -137,36 +137,31 @@
     </div>
   </header>
 
-  <!-- About Hero -->
-  <section class="about-hero" id="aboutHero">
-    <h1 class="about-hero-title">
-      <span class="anim-word" style="animation-delay: 0s">Our</span>
-      <span class="anim-word anim-word--special" style="opacity:1;transform:none;animation:none"><span class="anim-letter" style="animation-delay: 0.225s">S</span><span class="anim-letter" style="animation-delay: 0.3s">t</span><span class="anim-letter" style="animation-delay: 0.375s">o</span><span class="anim-letter" style="animation-delay: 0.45s">r</span><span class="anim-letter" style="animation-delay: 0.525s">y</span></span>
-    </h1>
-    <p class="about-hero-subtitle anim-word" style="animation-delay: 0.7s">How a simple idea about trust, transparency, and friendship became Vony.</p>
-  </section>
-
-  <!-- About Content -->
-  <section class="about-content">
-    <div class="about-block">
-      <h2 class="about-heading">It started with an awkward conversation.</h2>
-      <p class="about-text">A friend needed help covering rent. We wanted to help — no question. But weeks turned into months, memory got fuzzy, and suddenly a simple favor became a source of tension. The friendship survived, but barely.</p>
-      <p class="about-text">That experience stuck with us. Not because of the money, but because of how quickly trust can erode when expectations aren't clear. We realized this wasn't a unique problem — it was happening everywhere, between roommates, siblings, coworkers, and close friends.</p>
+  <!-- Suggest a Feature Section -->
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h1 class="contact-title">Help Shape<br>the Future<br>of Vony</h1>
+        <p class="contact-subtitle">Have an idea for a feature you'd love to see? We're always listening. Share your suggestion and help us build something even better.</p>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" placeholder="jane@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="feature">Feature Suggestion</label>
+            <textarea class="form-input form-textarea" id="feature" placeholder="Describe the feature you'd like to see..." rows="5"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Submit Suggestion</button>
+        </form>
+      </div>
     </div>
-
-    <div class="about-block">
-      <h2 class="about-heading">So we built Vony.</h2>
-      <p class="about-text">Vony is a peer-to-peer lending platform designed for the relationships that matter most. We believe that lending between people who care about each other should be simple, transparent, and respectful — not something that requires a bank or a lawyer.</p>
-      <p class="about-text">With Vony, you can create clear loan agreements, set repayment schedules, add fair interest, and track everything in one place. Both lender and borrower get full visibility, automatic reminders, and a digital contract they both sign.</p>
-    </div>
-
-  </section>
-
-  <!-- CTA Section -->
-  <section class="about-cta-section">
-    <h2 class="about-cta-title">Ready to lend without the mess?</h2>
-    <p class="about-cta-subtitle">Join thousands of people who are already using Vony to keep their finances clear and their relationships strong.</p>
-    <a href="https://lend-with-vony.com" class="about-cta-btn">Get Started &nbsp;&rarr;</a>
   </section>
 
   <!-- Footer -->
@@ -194,10 +189,5 @@
     </div>
   </footer>
   <script src="nav-dropdown.js"></script>
-  <script>
-    window.addEventListener('load', function() {
-      document.getElementById('aboutHero').classList.add('imagesLoaded');
-    });
-  </script>
 </body>
 </html>

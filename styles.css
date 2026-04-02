@@ -185,8 +185,10 @@ body {
   flex-direction: column;
 }
 
-.dropdown-layout-product {
-  gap: 16px;
+.dropdown-layout-product,
+.dropdown-layout-using-vony {
+  gap: 20px;
+  align-items: stretch;
 }
 
 .dropdown-layout-company {
@@ -1378,6 +1380,21 @@ body {
   max-width: 420px;
 }
 
+.contracts-learn-more {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #5EC47E;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.contracts-learn-more:hover {
+  color: #3a9956;
+}
+
 .contracts-right {
   display: flex;
   justify-content: flex-end;
@@ -1930,6 +1947,10 @@ body {
 }
 
 .about-hero-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.16em;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(48px, 6vw, 72px);
   font-weight: 600;
@@ -1945,6 +1966,51 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #787776;
+}
+
+/* ─── About Hero Animation ─── */
+@keyframes fadeInAndUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeInAndUpHalf {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.anim-word {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+  animation: fadeInAndUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-play-state: paused;
+}
+
+.anim-letter {
+  opacity: 0;
+  display: inline-block;
+  margin-right: -0.5px;
+  transform: translateY(10px) scale(1.15);
+  animation: fadeInAndUpHalf 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-play-state: paused;
+}
+
+.about-hero.imagesLoaded .anim-word,
+.about-hero.imagesLoaded .anim-letter {
+  animation-play-state: running;
 }
 
 .about-content {
@@ -2338,12 +2404,61 @@ body {
   color: #787776;
 }
 
+.faq-help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  background: transparent;
+  color: #1A1918;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1.5px solid rgba(26, 25, 24, 0.15);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.faq-help-btn:hover {
+  border-color: rgba(26, 25, 24, 0.3);
+  background: rgba(26, 25, 24, 0.03);
+}
+
 /* ─── Help & Support Page ─── */
-.help-hero {
-  padding: 120px 40px 40px;
-  text-align: center;
-  max-width: 720px;
+/* ─── Loan Help Screenshot ─── */
+.lh-screenshot-section {
+  padding: 120px 40px 0;
+  max-width: 960px;
   margin: 0 auto;
+}
+
+.lh-screenshot-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.lh-screenshot-frame svg {
+  display: block;
+}
+
+.help-hero {
+  padding: 60px 40px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.help-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.help-hero-text {
+  flex: 1;
 }
 
 .help-hero-title {
@@ -2362,6 +2477,233 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #787776;
+  max-width: 480px;
+}
+
+.help-hero .apps-coming-soon-badge {
+  position: relative;
+  top: auto;
+  right: auto;
+  flex-shrink: 0;
+}
+
+/* ─── Loan Help Feature Sections ─── */
+.lh-feature-section {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lh-feature-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.lh-feature-reversed .lh-feature-inner {
+  direction: rtl;
+}
+
+.lh-feature-reversed .lh-feature-inner > * {
+  direction: ltr;
+}
+
+.lh-feature-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.2;
+  color: #1A1918;
+  margin-bottom: 16px;
+}
+
+.lh-feature-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(26, 25, 24, 0.55);
+}
+
+.lh-feature-visual {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.lh-feature-visual svg {
+  display: block;
+}
+
+/* ─── Loan Help Horizontal Cards ─── */
+.lh-card-horizontal {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.lh-card-horizontal .loan-scenario-icon {
+  flex-shrink: 0;
+}
+
+.lh-card-horizontal h3 {
+  margin-bottom: 6px;
+}
+
+.lh-card-content h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1918;
+  margin-bottom: 6px;
+}
+
+.lh-card-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(26, 25, 24, 0.55);
+}
+
+/* ─── Loan Help Responsive ─── */
+@media (max-width: 900px) {
+  .lh-feature-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .lh-feature-reversed .lh-feature-inner {
+    direction: ltr;
+  }
+  .help-hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .help-hero-subtitle {
+    max-width: 100%;
+  }
+  .apps-coming-soon-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .lh-screenshot-section {
+    padding: 100px 20px 0;
+  }
+  .help-hero {
+    padding: 40px 20px 20px;
+  }
+  .lh-feature-section {
+    padding: 40px 20px;
+  }
+}
+
+/* ─── Learn Page — Coming Soon Badge ─── */
+.learn-coming-soon-badge {
+  font-family: 'Kristi', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  color: rgba(40, 40, 40, 0.92);
+  transform: rotate(-20deg);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* ─── Learn Page — Articles ─── */
+.learn-articles-section {
+  text-align: center;
+  padding: 80px 0 40px;
+}
+
+.learn-articles-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.2;
+  color: #1A1918;
+  margin-bottom: 12px;
+}
+
+.learn-articles-subtitle {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(26, 25, 24, 0.55);
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+.learn-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.learn-article-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learn-article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.learn-article-img {
+  width: 100%;
+}
+
+.learn-article-img svg {
+  display: block;
+  width: 100%;
+}
+
+.learn-article-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5EC47E;
+  padding: 16px 20px 0;
+}
+
+.learn-article-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1A1918;
+  line-height: 1.4;
+  padding: 8px 20px 0;
+}
+
+.learn-article-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(26, 25, 24, 0.55);
+  padding: 6px 20px 20px;
+}
+
+@media (max-width: 900px) {
+  .learn-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .learn-articles-grid {
+    grid-template-columns: 1fr;
+  }
+  .learn-coming-soon-badge {
+    font-size: 38px;
+  }
 }
 
 .help-content {
