@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Documents — Vony</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="index.html" class="logo">
+        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" fill="#5EC47E" stroke="#ffffff" stroke-width="2"/>
+          <path d="M12 14L20 26L28 14" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="45" y="16" fill="#1a1a1a" font-family="Inter, sans-serif" font-size="18" font-weight="700">Vony</text>
+          <text x="45" y="30" fill="#666666" font-family="Inter, sans-serif" font-size="10" font-weight="400">P2P LENDING</text>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="glass-nav" id="mainNav">
+      <div class="nav-item has-dropdown" data-panel="product">
+        <button class="nav-link nav-btn">Product</button>
+      </div>
+      <div class="nav-item has-dropdown" data-panel="company">
+        <button class="nav-link nav-btn">Company</button>
+      </div>
+      <div class="nav-item has-dropdown" data-panel="releases">
+        <button class="nav-link nav-btn">Releases</button>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="dropdown-panels">
+        <div class="dropdown-panel" data-panel="product">
+          <div class="dropdown-layout dropdown-layout-product">
+            <div class="dropdown-col">
+              <a href="#" class="dropdown-link"><span class="dropdown-title">Creating a Loan</span></a>
+              <a href="#" class="dropdown-link"><span class="dropdown-title">Tracking Your Loan</span></a>
+              <a href="loan-documents.html" class="dropdown-link"><span class="dropdown-title">Loan Documents</span></a>
+            </div>
+            <div class="dropdown-col">
+              <a href="faq.html" class="dropdown-link"><span class="dropdown-title">FAQ</span></a>
+              <a href="help.html" class="dropdown-link"><span class="dropdown-title">Help and Support</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-panel" data-panel="company">
+          <div class="dropdown-layout dropdown-layout-company">
+            <div class="dropdown-img">
+              <svg width="100%" height="100%" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="120" rx="12" fill="#EBF5EE"/>
+                <circle cx="60" cy="50" r="18" fill="#C8E6D0"/>
+                <circle cx="100" cy="50" r="14" fill="#A8D8B4"/>
+                <rect x="30" y="82" width="100" height="6" rx="3" fill="#C8E6D0"/>
+                <rect x="50" y="94" width="60" height="4" rx="2" fill="#D8ECD8"/>
+              </svg>
+            </div>
+            <div class="dropdown-col">
+              <a href="about.html" class="dropdown-link">
+                <div class="dropdown-text">
+                  <span class="dropdown-title">About Vony</span>
+                  <span class="dropdown-desc">Our story and mission</span>
+                </div>
+              </a>
+              <a href="stories.html" class="dropdown-link">
+                <div class="dropdown-text">
+                  <span class="dropdown-title">Stories</span>
+                  <span class="dropdown-desc">Real experiences from our users</span>
+                </div>
+              </a>
+              <a href="founder-memo.html" class="dropdown-link">
+                <div class="dropdown-text">
+                  <span class="dropdown-title">Founder Memo</span>
+                  <span class="dropdown-desc">A letter from our founder</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-panel" data-panel="releases">
+          <div class="dropdown-layout dropdown-layout-releases">
+            <div class="dropdown-img">
+              <svg width="100%" height="100%" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="140" rx="12" fill="#EEF2FA"/>
+                <rect x="24" y="24" width="52" height="36" rx="6" fill="#D4DEF0"/>
+                <rect x="84" y="24" width="52" height="36" rx="6" fill="#C4D2E8"/>
+                <rect x="24" y="72" width="112" height="8" rx="4" fill="#D4DEF0"/>
+                <rect x="24" y="90" width="80" height="6" rx="3" fill="#DDE6F2"/>
+                <rect x="24" y="106" width="60" height="6" rx="3" fill="#E4EAF4"/>
+              </svg>
+            </div>
+            <div class="dropdown-col">
+              <a href="apps.html" class="dropdown-link"><span class="dropdown-title">Apps</span></a>
+              <a href="learn.html" class="dropdown-link"><span class="dropdown-title">Learn</span></a>
+              <a href="loan-help.html" class="dropdown-link"><span class="dropdown-title">Loan Help</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="top-bar-right">
+      <a href="https://lend-with-vony.com" class="btn-signin">Sign In</a>
+      <a href="https://lend-with-vony.com" class="btn-getstarted">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <h1 class="about-hero-title">Loan Documents</h1>
+    <p class="about-hero-subtitle">Every Vony loan comes with real documentation you can download, share, and keep forever.</p>
+  </section>
+
+  <!-- Promissory Note Section — text left, mockup right -->
+  <section class="doc-feature-section">
+    <div class="doc-feature-inner">
+      <div class="doc-feature-text">
+        <span class="doc-feature-label">DOCUMENT 01</span>
+        <h2 class="doc-feature-heading">The Promissory Note</h2>
+        <p class="doc-feature-desc">A promissory note is a legally recognized written promise from one person to pay another. It's the foundation of every Vony loan — a clear, signed agreement that outlines who owes what, by when, and under what terms.</p>
+        <p class="doc-feature-desc">Vony auto-generates your promissory note the moment both parties agree to the loan. It includes the principal amount, interest rate (if any), repayment schedule, start and end dates, and signatures from both lender and borrower. No legal jargon, no confusion — just a plain-language document that protects both sides.</p>
+        <div class="doc-feature-highlights">
+          <div class="doc-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#5EC47E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#5EC47E" stroke-width="1.5"/></svg>
+            <span>Legally recognized in all 50 states</span>
+          </div>
+          <div class="doc-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#5EC47E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#5EC47E" stroke-width="1.5"/></svg>
+            <span>Digital signatures from both parties</span>
+          </div>
+          <div class="doc-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#5EC47E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#5EC47E" stroke-width="1.5"/></svg>
+            <span>Download as PDF anytime</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-feature-visual">
+        <div class="doc-accent doc-accent-green"></div>
+        <div class="doc-glass-card">
+          <!-- Promissory Note Mockup -->
+          <svg width="100%" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Header -->
+            <rect x="0" y="0" width="400" height="480" rx="8" fill="white"/>
+            <rect x="28" y="28" width="48" height="48" rx="24" fill="#EBF5EE"/>
+            <path d="M46 46L52 58L58 46" stroke="#5EC47E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="88" y="48" fill="#1A1918" font-family="Inter, sans-serif" font-size="14" font-weight="700">Vony</text>
+            <text x="88" y="64" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="400">PROMISSORY NOTE</text>
+            <line x1="28" y1="92" x2="372" y2="92" stroke="#F0F0F0" stroke-width="1"/>
+
+            <!-- Title -->
+            <text x="28" y="124" fill="#1A1918" font-family="Georgia, serif" font-size="18" font-weight="700">Promissory Note</text>
+            <text x="28" y="146" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="10">Effective Date: March 15, 2026</text>
+
+            <!-- Parties -->
+            <rect x="28" y="168" width="344" height="68" rx="8" fill="#FAFAFA" stroke="#F0F0F0" stroke-width="1"/>
+            <text x="42" y="188" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">LENDER</text>
+            <text x="42" y="204" fill="#1A1918" font-family="Inter, sans-serif" font-size="12" font-weight="500">Marcus Thompson</text>
+            <text x="220" y="188" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">BORROWER</text>
+            <text x="220" y="204" fill="#1A1918" font-family="Inter, sans-serif" font-size="12" font-weight="500">Deja Thompson</text>
+            <text x="42" y="226" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Loan ID: VNY-2026-04821</text>
+
+            <!-- Terms -->
+            <text x="28" y="262" fill="#1A1918" font-family="Inter, sans-serif" font-size="11" font-weight="600">Loan Terms</text>
+            <rect x="28" y="274" width="105" height="52" rx="6" fill="#F8F8F6"/>
+            <text x="40" y="292" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Principal</text>
+            <text x="40" y="312" fill="#1A1918" font-family="Inter, sans-serif" font-size="16" font-weight="700">$2,000</text>
+            <rect x="147" y="274" width="105" height="52" rx="6" fill="#F8F8F6"/>
+            <text x="159" y="292" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Interest Rate</text>
+            <text x="159" y="312" fill="#1A1918" font-family="Inter, sans-serif" font-size="16" font-weight="700">0%</text>
+            <rect x="266" y="274" width="106" height="52" rx="6" fill="#F8F8F6"/>
+            <text x="278" y="292" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Monthly Payment</text>
+            <text x="278" y="312" fill="#1A1918" font-family="Inter, sans-serif" font-size="16" font-weight="700">$250</text>
+
+            <!-- Schedule -->
+            <text x="28" y="354" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">REPAYMENT SCHEDULE</text>
+            <text x="28" y="374" fill="#787776" font-family="Inter, sans-serif" font-size="10">8 monthly payments of $250.00, beginning April 15, 2026</text>
+            <text x="28" y="392" fill="#787776" font-family="Inter, sans-serif" font-size="10">Final payment due: November 15, 2026</text>
+
+            <!-- Signatures -->
+            <line x1="28" y1="414" x2="372" y2="414" stroke="#F0F0F0" stroke-width="1"/>
+            <text x="28" y="440" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">SIGNATURES</text>
+            <rect x="28" y="450" width="12" height="12" rx="3" fill="#5EC47E"/>
+            <path d="M31 455L33 457L37 453" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="46" y="461" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">Marcus Thompson</text>
+            <text x="160" y="461" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Signed Mar 15, 2026</text>
+            <rect x="28" y="466" width="12" height="12" rx="3" fill="#5EC47E"/>
+            <path d="M31 471L33 473L37 469" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="46" y="477" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">Deja Thompson</text>
+            <text x="160" y="477" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Signed Mar 15, 2026</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amortization Schedule Section — mockup left, text right -->
+  <section class="doc-feature-section doc-feature-reversed">
+    <div class="doc-feature-inner">
+      <div class="doc-feature-text">
+        <span class="doc-feature-label">DOCUMENT 02</span>
+        <h2 class="doc-feature-heading">Amortisation Schedule</h2>
+        <p class="doc-feature-desc">An amortisation schedule is a complete table showing every payment across the life of a loan. Each row breaks down exactly how much of that payment goes toward the principal and how much covers interest — so both parties always know where the money goes.</p>
+        <p class="doc-feature-desc">Vony generates this schedule automatically based on the terms you set. It updates in real time as payments are made, so you always have an accurate picture of what's been paid, what's outstanding, and when the final payment is due. You can download it as a PDF or CSV at any time.</p>
+        <div class="doc-feature-highlights">
+          <div class="doc-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#E8913A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#E8913A" stroke-width="1.5"/></svg>
+            <span>Updates in real time with each payment</span>
+          </div>
+          <div class="doc-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#E8913A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#E8913A" stroke-width="1.5"/></svg>
+            <span>Download as PDF or CSV</span>
+          </div>
+          <div class="doc-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#E8913A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#E8913A" stroke-width="1.5"/></svg>
+            <span>Principal vs. interest breakdown per payment</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-feature-visual">
+        <div class="doc-accent doc-accent-orange"></div>
+        <div class="doc-glass-card">
+          <!-- Amortisation Schedule Mockup -->
+          <svg width="100%" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="400" height="480" rx="8" fill="white"/>
+            <!-- Header -->
+            <rect x="28" y="28" width="48" height="48" rx="24" fill="#FFF3E8"/>
+            <path d="M46 46L52 58L58 46" stroke="#E8913A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="88" y="48" fill="#1A1918" font-family="Inter, sans-serif" font-size="14" font-weight="700">Vony</text>
+            <text x="88" y="64" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="400">AMORTISATION SCHEDULE</text>
+            <line x1="28" y1="92" x2="372" y2="92" stroke="#F0F0F0" stroke-width="1"/>
+
+            <!-- Loan info -->
+            <text x="28" y="120" fill="#1A1918" font-family="Georgia, serif" font-size="18" font-weight="700">Amortisation Schedule</text>
+            <text x="28" y="140" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="10">Marcus Thompson → Deja Thompson · $2,000 at 0% · 8 months</text>
+
+            <!-- Summary cards -->
+            <rect x="28" y="158" width="110" height="48" rx="6" fill="#F8F8F6"/>
+            <text x="40" y="176" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Total Paid</text>
+            <text x="40" y="196" fill="#5EC47E" font-family="Inter, sans-serif" font-size="14" font-weight="700">$750.00</text>
+            <rect x="148" y="158" width="110" height="48" rx="6" fill="#F8F8F6"/>
+            <text x="160" y="176" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Remaining</text>
+            <text x="160" y="196" fill="#1A1918" font-family="Inter, sans-serif" font-size="14" font-weight="700">$1,250.00</text>
+            <rect x="268" y="158" width="104" height="48" rx="6" fill="#F8F8F6"/>
+            <text x="280" y="176" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9">Progress</text>
+            <text x="280" y="196" fill="#1A1918" font-family="Inter, sans-serif" font-size="14" font-weight="700">37.5%</text>
+
+            <!-- Progress bar -->
+            <rect x="28" y="222" width="344" height="6" rx="3" fill="#F0F0F0"/>
+            <rect x="28" y="222" width="129" height="6" rx="3" fill="#5EC47E"/>
+
+            <!-- Table header -->
+            <text x="28" y="252" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">#</text>
+            <text x="52" y="252" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">DATE</text>
+            <text x="148" y="252" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">PAYMENT</text>
+            <text x="228" y="252" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">PRINCIPAL</text>
+            <text x="310" y="252" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="0.5">BALANCE</text>
+            <line x1="28" y1="260" x2="372" y2="260" stroke="#F0F0F0" stroke-width="1"/>
+
+            <!-- Row 1 — paid -->
+            <rect x="28" y="264" width="344" height="36" rx="0" fill="#F0FAF2"/>
+            <text x="32" y="286" fill="#787776" font-family="Inter, sans-serif" font-size="10">1</text>
+            <text x="52" y="286" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">Apr 15, 2026</text>
+            <text x="148" y="286" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="228" y="286" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="310" y="286" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$1,750.00</text>
+            <rect x="358" y="278" width="10" height="10" rx="2.5" fill="#5EC47E"/>
+            <path d="M360 283L362 285L366 281" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+
+            <!-- Row 2 — paid -->
+            <rect x="28" y="304" width="344" height="36" rx="0" fill="#F0FAF2"/>
+            <text x="32" y="326" fill="#787776" font-family="Inter, sans-serif" font-size="10">2</text>
+            <text x="52" y="326" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">May 15, 2026</text>
+            <text x="148" y="326" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="228" y="326" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="310" y="326" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$1,500.00</text>
+            <rect x="358" y="318" width="10" height="10" rx="2.5" fill="#5EC47E"/>
+            <path d="M360 323L362 325L366 321" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+
+            <!-- Row 3 — paid -->
+            <rect x="28" y="344" width="344" height="36" rx="0" fill="#F0FAF2"/>
+            <text x="32" y="366" fill="#787776" font-family="Inter, sans-serif" font-size="10">3</text>
+            <text x="52" y="366" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">Jun 15, 2026</text>
+            <text x="148" y="366" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="228" y="366" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="310" y="366" fill="#1A1918" font-family="Inter, sans-serif" font-size="10">$1,250.00</text>
+            <rect x="358" y="358" width="10" height="10" rx="2.5" fill="#5EC47E"/>
+            <path d="M360 363L362 365L366 361" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+
+            <!-- Row 4 — upcoming -->
+            <text x="32" y="404" fill="#787776" font-family="Inter, sans-serif" font-size="10">4</text>
+            <text x="52" y="404" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">Jul 15, 2026</text>
+            <text x="148" y="404" fill="#787776" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="228" y="404" fill="#787776" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="310" y="404" fill="#787776" font-family="Inter, sans-serif" font-size="10">$1,000.00</text>
+            <rect x="358" y="396" width="10" height="10" rx="2.5" fill="none" stroke="#D9D9D7" stroke-width="1"/>
+
+            <!-- Row 5 — upcoming -->
+            <line x1="28" y1="416" x2="372" y2="416" stroke="#F8F8F6" stroke-width="1"/>
+            <text x="32" y="438" fill="#787776" font-family="Inter, sans-serif" font-size="10">5</text>
+            <text x="52" y="438" fill="#1A1918" font-family="Inter, sans-serif" font-size="10" font-weight="500">Aug 15, 2026</text>
+            <text x="148" y="438" fill="#787776" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="228" y="438" fill="#787776" font-family="Inter, sans-serif" font-size="10">$250.00</text>
+            <text x="310" y="438" fill="#787776" font-family="Inter, sans-serif" font-size="10">$750.00</text>
+            <rect x="358" y="430" width="10" height="10" rx="2.5" fill="none" stroke="#D9D9D7" stroke-width="1"/>
+
+            <!-- Fade hint for more rows -->
+            <rect x="0" y="450" width="400" height="30" fill="url(#fadeOut)"/>
+            <defs>
+              <linearGradient id="fadeOut" x1="0" y1="450" x2="0" y2="480">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="100%" stop-color="white" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Info Section -->
+  <section class="doc-info-section">
+    <h2 class="doc-info-title">Everything You Need to Know</h2>
+    <div class="doc-info-grid">
+      <div class="doc-info-card">
+        <div class="doc-info-icon" style="background: #EBF5EE;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5EC47E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3 class="doc-info-card-title">Download Anytime</h3>
+        <p class="doc-info-card-desc">Both parties can download the promissory note and amortisation schedule as a PDF from the Vony dashboard at any point during or after the loan.</p>
+      </div>
+      <div class="doc-info-card">
+        <div class="doc-info-icon" style="background: #EEF2FA;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3 class="doc-info-card-title">Secure & Private</h3>
+        <p class="doc-info-card-desc">Documents are encrypted and stored securely. Only the lender and borrower can access them. We never share your financial information with third parties.</p>
+      </div>
+      <div class="doc-info-card">
+        <div class="doc-info-icon" style="background: #FFF3E8;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8913A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <h3 class="doc-info-card-title">Always Up to Date</h3>
+        <p class="doc-info-card-desc">When a payment is made, the amortisation schedule updates automatically. You always see the most current state of the loan without manual tracking.</p>
+      </div>
+      <div class="doc-info-card">
+        <div class="doc-info-icon" style="background: #F5EEF7;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D96BA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 class="doc-info-card-title">Plain Language</h3>
+        <p class="doc-info-card-desc">No legal jargon. Every document is written in clear, simple language that both parties can understand — because transparency is the point.</p>
+      </div>
+      <div class="doc-info-card">
+        <div class="doc-info-icon" style="background: #EBF5EE;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5EC47E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="doc-info-card-title">Shared Access</h3>
+        <p class="doc-info-card-desc">Both lender and borrower see the exact same documents with the exact same numbers. No asymmetry, no hidden terms — equal visibility for both sides.</p>
+      </div>
+      <div class="doc-info-card">
+        <div class="doc-info-icon" style="background: #EEF2FA;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+        </div>
+        <h3 class="doc-info-card-title">Interest Handling</h3>
+        <p class="doc-info-card-desc">If you add interest, the amortisation schedule automatically calculates the principal and interest portions of each payment so nothing is ambiguous.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="doc-cta-section">
+    <h2 class="doc-cta-heading">Ready to lend the right way?</h2>
+    <p class="doc-cta-desc">Every Vony loan comes with professional documentation. No setup, no fees — just create a loan and your documents are generated instantly.</p>
+    <a href="https://lend-with-vony.com" class="founder-btn">Get Started &nbsp;&rarr;</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">
+        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" fill="#5EC47E" stroke="#F5F4F0" stroke-width="2"/>
+          <path d="M12 14L20 26L28 14" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="45" y="16" fill="#1A1918" font-family="Inter, sans-serif" font-size="18" font-weight="700">Vony</text>
+          <text x="45" y="30" fill="#A8A7A5" font-family="Inter, sans-serif" font-size="10" font-weight="400">P2P LENDING</text>
+        </svg>
+      </a>
+      <div class="footer-legal-links">
+        <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="privacy.html" class="footer-legal-link">Privacy Center</a>
+        <span class="footer-divider">|</span>
+        <a href="do-not-sell.html" class="footer-legal-link">Do not sell or share my personal information</a>
+      </div>
+      <p class="footer-statement">All users of our online services are subject to our Privacy Statement and agree to be bound by the Terms of Service. Please review.</p>
+      <p class="footer-copyright">&copy; 2026 Vony Lending All rights reserved</p>
+    </div>
+  </footer>
+  <script src="nav-dropdown.js"></script>
+</body>
+</html>
