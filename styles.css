@@ -2434,36 +2434,79 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
 }
 
-.faq-cta-text {
+.faq-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #1A1918;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.faq-cta-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #4A4A48;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.faq-cta-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.faq-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 24px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.faq-cta-card-icon {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.faq-cta-card-title {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  color: #1A1918;
+}
+
+.faq-cta-card-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
   color: #787776;
 }
 
-.faq-help-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  padding: 0 24px;
-  background: transparent;
-  color: #1A1918;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  border: 1.5px solid rgba(26, 25, 24, 0.15);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: border-color 0.15s ease, background 0.15s ease;
-}
-
-.faq-help-btn:hover {
-  border-color: rgba(26, 25, 24, 0.3);
-  background: rgba(26, 25, 24, 0.03);
+@media (max-width: 500px) {
+  .faq-cta-buttons {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─── Help & Support Page ─── */
@@ -4602,9 +4645,13 @@ a.help-card {
 .doc-feature-desc,
 .doc-cta-desc,
 .apps-detail-subtitle,
-.browser-subtitle {
+.browser-subtitle,
+.faq-cta-subtitle {
+  font-family: 'DM Sans', sans-serif;
   font-size: 20px;
   line-height: 24px;
+  font-weight: 400;
+  color: #4A4A48;
 }
 
 /* ─── Gap between title and subtitle: 24px ─── */
@@ -4686,7 +4733,8 @@ a.help-card {
   .doc-info-title,
   .doc-cta-heading,
   .apps-detail-heading,
-  .memo-principles-title {
+  .memo-principles-title,
+  .faq-cta-title {
     font-size: 44px;
   }
 
@@ -4708,7 +4756,8 @@ a.help-card {
   .doc-feature-desc,
   .doc-cta-desc,
   .apps-detail-subtitle,
-  .browser-subtitle {
+  .browser-subtitle,
+  .faq-cta-subtitle {
     font-size: 16px;
     line-height: 20px;
   }
@@ -4764,7 +4813,8 @@ a.help-card {
   .doc-info-title,
   .doc-cta-heading,
   .apps-detail-heading,
-  .memo-principles-title {
+  .memo-principles-title,
+  .faq-cta-title {
     font-size: 11vw;
   }
 }
