@@ -5711,6 +5711,98 @@ a.help-card {
   }
 }
 
+/* ─── Loan Help — Fan Cards ─── */
+
+/* Container: relative, tall enough for fan + overflow visible */
+.lh-fan-grid {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 56px;
+  overflow: visible;
+}
+
+/* All 4 cards stacked at center initially */
+/* Container inner width ~1020px (1100px - 2×40px padding) */
+/* Card width 220px, spread: 0, 267, 534, 801 */
+/* Stack offset so all sit at ~400px from left */
+.lh-fan-card {
+  position: absolute;
+  width: 220px;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  border: 1px solid rgba(26, 25, 24, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Initial stacked state (all near center) */
+.lh-fan-card[data-fan="1"] { left: 0px;   z-index: 10; transform: translateX(400px) translateY(0px) rotate(0deg); transition: transform 0.8s cubic-bezier(0.34,1.3,0.64,1) 0s; }
+.lh-fan-card[data-fan="2"] { left: 267px;  z-index: 8;  transform: translateX(133px) translateY(0px) rotate(0deg); transition: transform 0.6s cubic-bezier(0.34,1.2,0.64,1) 0s; }
+.lh-fan-card[data-fan="3"] { left: 534px;  z-index: 9;  transform: translateX(-134px) translateY(0px) rotate(0deg); transition: transform 0.6s cubic-bezier(0.34,1.2,0.64,1) 0s; }
+.lh-fan-card[data-fan="4"] { left: 801px;  z-index: 7;  transform: translateX(-401px) translateY(0px) rotate(0deg); transition: transform 0.8s cubic-bezier(0.34,1.3,0.64,1) 0s; }
+
+/* Fanned-out state — outer cards travel more, rotate more */
+.lh-fan-grid.is-fanned .lh-fan-card[data-fan="1"] { transform: translateX(0px) translateY(28px) rotate(-6deg); transition-delay: 0s; }
+.lh-fan-grid.is-fanned .lh-fan-card[data-fan="2"] { transform: translateX(0px) translateY(8px)  rotate(2deg);  transition-delay: 0.05s; }
+.lh-fan-grid.is-fanned .lh-fan-card[data-fan="3"] { transform: translateX(0px) translateY(8px)  rotate(-2deg); transition-delay: 0.05s; }
+.lh-fan-grid.is-fanned .lh-fan-card[data-fan="4"] { transform: translateX(0px) translateY(26px) rotate(6deg);  transition-delay: 0s; }
+
+/* Inner card content */
+.lh-fan-card-inner {
+  padding: 22px 20px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lh-fan-card:hover .lh-fan-card-inner {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon + title row */
+.lh-fan-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.lh-fan-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1918;
+  line-height: 1.3;
+}
+
+.lh-fan-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(26, 25, 24, 0.55);
+}
+
+/* Mobile: simple vertical stack */
+@media (max-width: 900px) {
+  .lh-fan-grid {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: visible;
+  }
+  .lh-fan-card {
+    position: static;
+    width: 100%;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* ─── Loan Help — Centered Hero Variant ─── */
 .help-hero--centered {
   text-align: center;
