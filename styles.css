@@ -333,26 +333,26 @@ body {
   }
 }
 
-/* Individual item positions — pushed to edges, clearing center hero text */
-/* Top-left */
+/* Individual item positions — pushed to edges, clearing center hero text and top bar */
+/* Top-left — below nav */
 .float-imessage {
-  top: -1%;
+  top: 14%;
   left: -1%;
   transform: rotate(-4deg);
 }
 .float-imessage .float-item-inner { animation-delay: 0.2s; }
 
-/* Top-center-right */
+/* Top-center — below nav, away from right-side buttons */
 .float-notification {
-  top: -1%;
-  right: 14%;
+  top: 10%;
+  left: 30%;
   transform: rotate(-2deg);
 }
 .float-notification .float-item-inner { animation-delay: 0.4s; }
 
-/* Top-right */
+/* Top-right — pushed down enough to clear Sign In / Get Started */
 .float-postit {
-  top: -2%;
+  top: 16%;
   right: -1%;
   transform: rotate(5deg);
 }
@@ -360,7 +360,7 @@ body {
 
 /* Mid-left */
 .float-reminder1 {
-  top: 38%;
+  top: 42%;
   left: -2%;
   transform: rotate(-3deg);
 }
@@ -368,7 +368,7 @@ body {
 
 /* Mid-right */
 .float-calculator {
-  top: 28%;
+  top: 34%;
   right: 1%;
   transform: rotate(6deg);
 }
@@ -376,7 +376,7 @@ body {
 
 /* Right side, below postit */
 .float-whatsapp {
-  top: 14%;
+  top: 22%;
   right: -2%;
   transform: rotate(2deg);
 }
@@ -482,7 +482,7 @@ body {
 .typewriter-cursor {
   font-style: normal;
   font-weight: 400;
-  color: #7EC0EA;
+  color: #1A1918;
   animation: cursorBlink 1.06s step-end infinite;
   margin-left: 2px;
 }
