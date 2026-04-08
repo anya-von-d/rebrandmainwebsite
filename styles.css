@@ -2411,7 +2411,7 @@ body {
 }
 
 .faq-content {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 48px 40px 100px;
 }
@@ -2655,26 +2655,38 @@ body {
 }
 
 .faq-section-block .faq-context-link {
-  background: #54A6CF;
-  border-color: #54A6CF;
-  color: #fff;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #54A6CF;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
   margin-top: 16px;
   display: inline-flex;
+  align-items: center;
+  gap: 6px;
   width: auto;
+  justify-content: flex-start;
 }
 
 .faq-section-block .faq-context-link:hover {
-  background: #3a8ab5;
-  border-color: #3a8ab5;
-  color: #fff;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #3a8ab5;
+  transform: none;
 }
 
 .faq-section-block .faq-context-link svg {
-  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+  color: currentColor;
 }
 
 .faq-section-block .faq-context-link:hover svg {
-  color: #fff;
+  opacity: 1;
+  color: currentColor;
+  transform: translateX(2px);
 }
 
 .faq-questions-box .faq-question:hover {
@@ -3904,6 +3916,12 @@ a.help-card {
     font-size: 11px;
     padding: 8px 14px;
     letter-spacing: 0.5px;
+  }
+
+  .memo-cta .btn-getstarted {
+    font-size: 15px;
+    padding: 13px 28px;
+    letter-spacing: normal;
   }
 
   /* Hamburger toggle */
@@ -5145,6 +5163,11 @@ a.help-card {
   color: #6B6965;
   line-height: 1.6;
   margin-bottom: 32px;
+}
+
+.memo-cta .btn-getstarted {
+  font-size: 16px;
+  padding: 14px 32px;
 }
 
 .memo-card-wrapper {

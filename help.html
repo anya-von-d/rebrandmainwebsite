@@ -125,8 +125,48 @@
     <div class="top-bar-right">
       <a href="https://lend-with-vony.com" class="btn-signin">Sign In</a>
       <a href="https://lend-with-vony.com" class="btn-getstarted">Get Started</a>
+      <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Menu">
+        <svg width="44" height="26" viewBox="0 0 44 26" fill="none">
+          <line class="ham-top" x1="16" y1="7.5" x2="28" y2="7.5"/>
+          <line class="ham-mid" x1="14.5" y1="13" x2="29.5" y2="13"/>
+          <line class="ham-bot" x1="16" y1="18.5" x2="28" y2="18.5"/>
+        </svg>
+      </button>
     </div>
   </header>
+  <!-- Mobile Navigation Panel -->
+  <div class="mobile-nav-panel" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-group">
+        <button class="mobile-nav-btn">Using Vony</button>
+        <div class="mobile-submenu">
+          <a href="loan-documents.html">Digital Records</a>
+          <a href="faq.html">FAQ</a>
+          <a href="help.html">Help and Support</a>
+        </div>
+      </li>
+      <li class="mobile-nav-group">
+        <button class="mobile-nav-btn">Company</button>
+        <div class="mobile-submenu">
+          <a href="about.html">About Vony</a>
+          <a href="stories.html">Stories</a>
+          <a href="founder-memo.html">Founder Memo</a>
+        </div>
+      </li>
+      <li class="mobile-nav-group">
+        <button class="mobile-nav-btn">Releases</button>
+        <div class="mobile-submenu">
+          <a href="apps.html">Apps</a>
+          <a href="learn.html">Learn</a>
+          <a href="loan-help.html">Loan Help</a>
+        </div>
+      </li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li class="mobile-nav-cta">
+        <a href="https://lend-with-vony.com">Get Started →</a>
+      </li>
+    </ul>
+  </div>
 
   <!-- Help Hero -->
   <section class="help-hero">
@@ -410,5 +450,6 @@
       });
     });
   </script>
+  <script src="mobile-nav.js"></script>
 </body>
 </html>
