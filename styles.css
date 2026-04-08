@@ -342,26 +342,26 @@ body {
 }
 .float-imessage .float-item-inner { animation-delay: 0.2s; }
 
-/* Top-center — below nav, away from right-side buttons */
+/* Mid-right — between reminder1 (top-right) and whatsapp (bottom-right) */
 .float-notification {
-  top: 10%;
-  left: 30%;
+  top: 52%;
+  right: -1%;
   transform: rotate(-2deg);
 }
 .float-notification .float-item-inner { animation-delay: 0.4s; }
 
-/* Top-right — pushed down enough to clear Sign In / Get Started */
+/* Mid-left */
 .float-postit {
-  top: 16%;
-  right: -1%;
+  top: 42%;
+  left: 2%;
   transform: rotate(5deg);
 }
 .float-postit .float-item-inner { animation-delay: 0.35s; }
 
 /* Mid-left */
 .float-reminder1 {
-  top: 42%;
-  left: -2%;
+  top: 16%;
+  right: -1%;
   transform: rotate(-3deg);
 }
 .float-reminder1 .float-item-inner { animation-delay: 0.6s; }
@@ -374,10 +374,10 @@ body {
 }
 .float-calculator .float-item-inner { animation-delay: 0.7s; }
 
-/* Right side, below postit */
+/* Bottom-right corner */
 .float-whatsapp {
-  top: 22%;
-  right: -2%;
+  bottom: -1%;
+  right: -1%;
   transform: rotate(2deg);
 }
 .float-whatsapp .float-item-inner { animation-delay: 0.3s; }
@@ -398,13 +398,21 @@ body {
 }
 .float-notes .float-item-inner { animation-delay: 0.5s; }
 
-/* Bottom-right */
+/* Bottom-center */
 .float-reminder2 {
-  bottom: -1%;
-  right: -1%;
+  bottom: 6%;
+  left: 38%;
   transform: rotate(2deg);
 }
 .float-reminder2 .float-item-inner { animation-delay: 0.65s; }
+
+/* Bottom, between reminder2 and whatsapp */
+.float-postit2 {
+  bottom: 3%;
+  right: 20%;
+  transform: rotate(-3deg);
+}
+.float-postit2 .float-item-inner { animation-delay: 0.58s; }
 
 /* Dashboard card pile in hero */
 .hero-card-pile {
