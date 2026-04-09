@@ -2673,6 +2673,9 @@ body {
 
 .founder-signature {
   margin-bottom: 40px;
+  margin-top: 20px;
+  width: 160px;
+  height: 80px;
 }
 
 .founder-quote {
