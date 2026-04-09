@@ -9327,19 +9327,20 @@ a.help-card {
 
 /* ── Digital Records: hero image fan stack ── */
 .ldd-hero-wide {
-  max-width: 900px;
+  max-width: 1000px;
   padding-bottom: 0;
 }
 
 .ldd-hero-stack {
   position: relative;
-  height: 260px;
-  margin-top: 48px;
+  height: 300px;
+  margin-top: 56px;
 }
 
+/* Base item — center (narrow portrait) */
 .ldd-stack-item {
   position: absolute;
-  width: 190px;
+  width: 170px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0,0,0,0.16);
@@ -9351,9 +9352,15 @@ a.help-card {
   display: block;
 }
 
+/* Left and right are wider long rectangles */
+.ldd-stack-left,
+.ldd-stack-right {
+  width: 260px;
+}
+
 .ldd-stack-left {
-  transform: translateX(calc(-50% - 150px)) rotate(-11deg) translateY(28px);
-  z-index: 1;
+  transform: translateX(calc(-50% - 210px)) rotate(-10deg) translateY(36px);
+  z-index: 2;
 }
 
 .ldd-stack-center {
@@ -9361,9 +9368,38 @@ a.help-card {
   z-index: 3;
 }
 
+/* Activity: z-index 1 so it can slide under the promissory note */
 .ldd-stack-right {
-  transform: translateX(calc(-50% + 150px)) rotate(9deg) translateY(16px);
-  z-index: 2;
+  transform: translateX(calc(-50% + 130px)) rotate(9deg) translateY(20px);
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Restore border-radius on the inner activity card */
+.ldd-stack-right .ldd-mini-activity {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Large screens: slightly bigger fan */
+@media (min-width: 1100px) {
+  .ldd-hero-stack {
+    height: 340px;
+    margin-top: 64px;
+  }
+  .ldd-stack-item {
+    width: 200px;
+  }
+  .ldd-stack-left,
+  .ldd-stack-right {
+    width: 300px;
+  }
+  .ldd-stack-left {
+    transform: translateX(calc(-50% - 250px)) rotate(-10deg) translateY(44px);
+  }
+  .ldd-stack-right {
+    transform: translateX(calc(-50% + 150px)) rotate(9deg) translateY(26px);
+  }
 }
 
 /* Mini activity card (third stack item) */
@@ -9411,20 +9447,38 @@ a.help-card {
   justify-content: center;
 }
 
-/* Mobile: stack fan smaller, centered */
+/* Mobile: stack fan smaller */
 @media (max-width: 700px) {
   .ldd-hero-stack {
-    height: 180px;
-    margin-top: 32px;
+    height: 200px;
+    margin-top: 36px;
   }
   .ldd-stack-item {
-    width: 130px;
+    width: 120px;
+  }
+  .ldd-stack-left,
+  .ldd-stack-right {
+    width: 170px;
   }
   .ldd-stack-left {
-    transform: translateX(calc(-50% - 100px)) rotate(-11deg) translateY(18px);
+    transform: translateX(calc(-50% - 130px)) rotate(-11deg) translateY(22px);
   }
+  /* Activity shifted slightly right on mobile */
   .ldd-stack-right {
-    transform: translateX(calc(-50% + 100px)) rotate(9deg) translateY(10px);
+    transform: translateX(calc(-50% + 115px)) rotate(9deg) translateY(12px);
+  }
+  /* Left-side gradient fades the activity card into the background */
+  .ldd-stack-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 100%;
+    background: linear-gradient(to right, #F5F4F0 0%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+    border-radius: 12px 0 0 12px;
   }
 }
 
