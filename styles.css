@@ -8611,6 +8611,41 @@ a.help-card {
   padding: 3px 10px;
 }
 
+/* ── Track Your Loan Progress — bottom-edge notification floaters ── */
+.ldd-bottom-floater {
+  position: absolute;
+  bottom: 3%;
+  z-index: 10;
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.9vw, 12px);
+  padding: clamp(9px, 1vw, 14px) clamp(13px, 1.5vw, 20px);
+  border-radius: clamp(8px, 0.9vw, 13px);
+  font-size: clamp(11px, 1.25vw, 15px);
+}
+.ldd-bottom-floater .ldd-floater-icon {
+  width: clamp(28px, 3.2vw, 40px);
+  height: clamp(28px, 3.2vw, 40px);
+  border-radius: clamp(7px, 0.8vw, 10px);
+}
+.ldd-bottom-floater .ldd-floater-text {
+  font-size: clamp(11px, 1.25vw, 15px);
+  white-space: nowrap;
+}
+.ldd-bottom-floater--1 {
+  left: 25%;
+  transform: translateX(-50%);
+}
+.ldd-bottom-floater--2 {
+  left: 75%;
+  transform: translateX(-50%);
+}
+.ldd-bottom-floater--3 {
+  right: 1.5%;
+}
+
 /* ── Loan Help: screenshot section — fade + shadow + overlay cards ── */
 .lh-screenshot-wrap {
   position: relative;
