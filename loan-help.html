@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600;700&family=Kristi&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=29">
   <link rel="icon" type="image/png" href="Images/favicon.png">
 </head>
 <body>
@@ -158,16 +158,87 @@
   <!-- Loan Help Hero -->
   <!-- Screenshot first -->
   <section class="lh-screenshot-section">
-    <div class="lh-screenshot-frame">
-      <img src="Images/loanhelp.png" alt="Vony Loan Help dashboard" style="width:100%;display:block;border-radius:12px;box-shadow:0 12px 48px rgba(0,0,0,0.10),0 2px 8px rgba(0,0,0,0.06);">
-    </div>
+    <div class="lh-screenshot-wrap">
+      <div class="ldd-browser-chrome">
+        <!-- Chrome-style browser bar -->
+        <div class="ldd-browser-bar lh-chrome-bar">
+          <!-- Traffic lights -->
+          <div class="ldd-browser-dots">
+            <span class="ldd-dot" style="background:#FF5F57;"></span>
+            <span class="ldd-dot" style="background:#FEBC2E;"></span>
+            <span class="ldd-dot" style="background:#28C840;"></span>
+          </div>
+          <!-- Back / Forward / Reload -->
+          <div class="ldd-browser-nav lh-chrome-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          </div>
+          <!-- URL bar -->
+          <div class="ldd-browser-url-bar lh-chrome-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.45;"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            <span class="ldd-browser-url-text">lend-with-vony.com</span>
+          </div>
+          <!-- Right actions -->
+          <div class="ldd-browser-actions lh-chrome-actions">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.5 2.5 0 0 1 0 5H2V20a2 2 0 0 0 2 2h3.8v-1.5a2.5 2.5 0 0 1 5 0V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
+            <div class="ldd-browser-avatar"></div>
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+          </div>
+        </div>
+        <!-- Dashboard screenshot -->
+        <img src="Images/loanhelp.png?v=2" alt="Vony Loan Help dashboard" style="width:100%;display:block;">
+      </div>
+
+      <!-- Overlay card 1: Credit Cards — 1/4 down right -->
+      <div class="lh-overlay-card lh-overlay-card--1">
+        <div class="lh-ov-header lh-ov-header--grey">
+          <span class="lh-ov-label lh-ov-label--grey">Credit Cards</span>
+        </div>
+        <div class="lh-ov-inner">
+          <div class="lh-ov-name">Chase Sapphire</div>
+          <div class="lh-ov-tagline lh-ov-tagline--blue">Best for travel rewards</div>
+          <div class="lh-ov-details">
+            <div class="lh-ov-detail"><span class="lh-ov-dot lh-ov-dot--blue"></span>3x points on dining and travel</div>
+            <div class="lh-ov-detail"><span class="lh-ov-dot lh-ov-dot--blue"></span>No foreign transaction fees</div>
+            <div class="lh-ov-detail"><span class="lh-ov-dot lh-ov-dot--blue"></span>0% intro APR for 15 months</div>
+          </div>
+          <div class="lh-ov-footer">
+            <button class="lh-ov-btn lh-ov-btn--blue">View</button>
+            <div class="lh-ov-compare"><span>Compare</span><div class="lh-ov-checkbox"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay card 2: Personal Loans — bottom right -->
+      <div class="lh-overlay-card lh-overlay-card--2">
+        <div class="lh-ov-header lh-ov-header--blue">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="lh-ov-label lh-ov-label--blue">Personal Loans</span>
+        </div>
+        <div class="lh-ov-inner">
+          <div class="lh-ov-name">LightStream</div>
+          <div class="lh-ov-tagline lh-ov-tagline--grey">Best for large amounts</div>
+          <div class="lh-ov-details">
+            <div class="lh-ov-detail"><span class="lh-ov-dot"></span>$5k–$100k with no fees</div>
+            <div class="lh-ov-detail"><span class="lh-ov-dot"></span>Same-day funding available</div>
+            <div class="lh-ov-detail"><span class="lh-ov-dot"></span>Rates from 6.99% APR</div>
+          </div>
+          <div class="lh-ov-footer">
+            <button class="lh-ov-btn lh-ov-btn--grey">View</button>
+            <div class="lh-ov-compare"><span>Compare</span><div class="lh-ov-checkbox"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /lh-screenshot-wrap -->
   </section>
 
   <!-- Hero below image -->
   <section class="help-hero help-hero--centered">
     <h1 class="help-hero-title">Find the Right Loan for Your Situation</h1>
     <p class="help-hero-subtitle">Not sure whether to borrow from a friend or a bank? We break down your options in plain language so you can decide with confidence.</p>
-    <span class="apps-coming-soon-badge">Coming soon!</span>
   </section>
 
   <!-- Content -->
@@ -175,10 +246,11 @@
 
     <!-- Lending Between Friends or Getting a Loan? -->
     <section class="lh-feature-section lh-compare-section">
-      <div class="lh-compare-heading-wrap">
-        <h2 class="lh-feature-heading">Lending Between Friends or Getting a Loan?</h2>
-        <p class="lh-feature-desc">Lending between people you trust should be simple and fair. But borrowing from a friend isn't always the right move, and that's okay.</p>
-      </div>
+      <div class="lh-compare-inner">
+        <div class="lh-compare-heading-wrap">
+          <h2 class="lh-feature-heading">Lending Between Friends or Getting a Loan?</h2>
+          <p class="lh-feature-desc">Lending between people you trust should be simple and fair. But borrowing from a friend isn't always the right move, and that's okay.</p>
+        </div>
         <div class="lh-pros-cons-wrap">
           <div class="lh-pros-card lh-pros-card--friends">
             <h3 class="lh-pros-title">Lending Between Friends</h3>
@@ -213,12 +285,13 @@
             </ul>
           </div>
         </div>
+      </div>
     </section>
 
     <!-- When Traditional Loans Make Sense -->
     <div class="learn-section learn-section--centered">
       <h2 class="learn-section-title">When Traditional Loans Make Sense</h2>
-      <p class="learn-section-subtitle">Sometimes peer lending isn't the right fit. Here's when to consider other options.</p>
+      <p class="learn-section-subtitle">Sometimes peer lending isn't the right fit.<br>Here's when to consider other options.</p>
 
       <div class="lh-fan-grid" id="lhFanGrid">
         <div class="lh-fan-card" data-fan="1">
