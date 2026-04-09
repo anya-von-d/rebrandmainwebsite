@@ -1094,6 +1094,51 @@ body {
   .ldd-stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ─── Loan Details floating notification badges ─── */
+.ldd-float-wrap {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+.ldd-floater {
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
+  max-width: 220px;
+  z-index: 6;
+  pointer-events: none;
+}
+.ldd-floater-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ldd-floater-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1A1918;
+  line-height: 1.35;
+}
+.ldd-floater--bl { bottom: -18px; left: -18px; }
+.ldd-floater--tr { top: -18px; right: 60px; }
+.ldd-floater--br { bottom: -18px; right: -18px; }
+@media (max-width: 960px) {
+  .ldd-floater--bl { left: 0; bottom: -18px; }
+  .ldd-floater--br { right: 0; bottom: -18px; }
+  .ldd-floater--tr { right: 0; top: -18px; }
+}
+
 /* ─── Everyday Lending Section ─── */
 .everyday-section {
   padding: 80px 40px 80px;
@@ -1954,6 +1999,8 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 24px 20px;
+  overflow: visible;
 }
 
 .notif-section {
@@ -1999,7 +2046,7 @@ body {
 }
 
 .notif-card {
-  background: #fff;
+  background: #F4F4F5;
   border-radius: 20px;
   padding: 32px 32px 0;
   width: 400px;
@@ -2045,15 +2092,15 @@ body {
 
 .notification-item {
   background: #fff;
-  border: 1px solid #e8e8e8;
   border-radius: 8px;
   padding: 10px;
   display: flex;
   gap: 12px;
   align-items: center;
-  height: 62px;
+  height: 50px;
   flex-shrink: 0;
   width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .notif-avatar {
@@ -2101,11 +2148,12 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: rgba(61, 71, 83, 0.08) 0px 2.2px 4.2px;
+  background: #FEF2C3;
+  box-shadow: rgba(61, 71, 83, 0.12) 0px 4px 12px;
   position: absolute;
-  bottom: 45px;
-  right: 32px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;

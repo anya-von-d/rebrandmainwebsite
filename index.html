@@ -759,7 +759,33 @@
       <h2 class="contracts-title" style="text-align:center;">Track Your Loan Progress</h2>
       <p class="contracts-subtitle" style="text-align:center; margin: 0 auto;">See every loan's status at a glance: payments made, upcoming milestones, and how close you are to being fully repaid.</p>
       <div class="feature-stacked-image">
-        <div class="ldd-box" style="max-width:900px; width:100%; margin:0 auto;">
+        <div class="ldd-float-wrap">
+
+          <!-- Floating notification: bottom left — sending payment -->
+          <div class="ldd-floater ldd-floater--bl">
+            <div class="ldd-floater-icon" style="background:rgba(84,166,207,0.12); color:#54A6CF;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><line x1="12" y1="18" x2="12" y2="6"/></svg>
+            </div>
+            <span class="ldd-floater-text">You sent Alex $150.00</span>
+          </div>
+
+          <!-- Floating notification: top right — confirming payment -->
+          <div class="ldd-floater ldd-floater--tr">
+            <div class="ldd-floater-icon" style="background:rgba(22,163,74,0.12); color:#16A34A;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="ldd-floater-text">Jordan confirmed your $80 payment</span>
+          </div>
+
+          <!-- Floating notification: bottom right — upcoming due -->
+          <div class="ldd-floater ldd-floater--br">
+            <div class="ldd-floater-icon" style="background:rgba(3,172,234,0.12); color:#03ACEA;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="ldd-floater-text">You have a payment due today to Alex</span>
+          </div>
+
+        <div class="ldd-box" style="width:100%;">
           <div class="ldd-layout">
 
             <!-- Nav Sidebar -->
@@ -974,6 +1000,7 @@
             </div><!-- /ldd-main -->
           </div><!-- /ldd-layout -->
         </div><!-- /ldd-box -->
+        </div><!-- /ldd-float-wrap -->
       </div>
     </div>
   </section>
@@ -1114,7 +1141,7 @@
   <script src="mobile-nav.js"></script>
   <script src="typewriter.js"></script>
   <script src="scroll-animation.js"></script>
-  <script src="notification-ticker.js?v=2"></script>
+  <script src="notification-ticker.js?v=3"></script>
   <script src="testimonial-carousel.js"></script>
   <script>
     // Splash screen + hero spring animation
