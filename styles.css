@@ -9397,6 +9397,8 @@ a.help-card {
   font-size: 10px;
   font-weight: 500;
   color: #1A1918;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .ldd-mini-act-dot {
