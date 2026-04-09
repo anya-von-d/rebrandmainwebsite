@@ -1313,7 +1313,7 @@ body {
 .ef-icon {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2228,7 +2228,10 @@ body {
   height: 50px;
   flex-shrink: 0;
   width: 100%;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.04),
+    0 0 18px rgba(0,0,0,0.13),
+    0 2px 8px rgba(0,0,0,0.09);
 }
 
 .notif-avatar {
@@ -2276,8 +2279,13 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #FEF2C3;
-  box-shadow: rgba(61, 71, 83, 0.12) 0px 4px 12px;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1.5px rgba(3, 172, 234, 0.85),
+    0 0 0 3.5px rgba(3, 172, 234, 0.35),
+    0 0 0 6px rgba(3, 172, 234, 0.12),
+    0 0 0 10px rgba(3, 172, 234, 0.04),
+    rgba(61, 71, 83, 0.10) 0px 4px 14px;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -8816,4 +8824,154 @@ a.help-card {
 .lh-compare-section .lh-feature-heading,
 .lh-compare-section .lh-feature-desc {
   text-align: left;
+}
+
+/* ── Activity box: match Vony portal structure ── */
+
+/* Grey outer box — tighter padding */
+.vony-activity-box {
+  padding: 0;
+}
+
+/* Label sits inside the card now, not between box and card */
+.vony-activity-card .vony-activity-label {
+  padding: 6px 14px 5px;
+}
+
+/* White inner card (new layer inside the rgb(244,244,245) card) */
+.vony-activity-white {
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 0 5px 5px;
+  overflow: hidden;
+}
+
+/* 3-column grid: date / category / status — all inside white card */
+.vony-activity-header,
+.vony-activity-row {
+  grid-template-columns: 100px 1fr 160px;
+}
+
+/* ── Apps: mobile image — shadow via filter so it respects the fade mask ── */
+.apps-mobile-notif-wrap {
+  filter:
+    drop-shadow(0 0 22px rgba(0,0,0,0.18))
+    drop-shadow(0 8px 30px rgba(0,0,0,0.14));
+}
+
+/* ── Apps: desktop badge icons — bigger ── */
+.apps-desktop-badge {
+  width: 72px;
+  height: 72px;
+}
+.apps-desktop-badge-os {
+  bottom: -32px;
+  left: -32px;
+}
+.apps-desktop-badge-windows {
+  top: 50%;
+  right: -32px;
+  transform: translateY(-50%);
+}
+
+/* ── Apps: coming soon badge — darker ── */
+.apps-coming-soon {
+  background: #B0B0B0;
+  color: #3A3A3A;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* ── Apps: desktop notification floater — top left corner ── */
+.apps-desktop-notif-floater {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 10px 14px 10px 10px;
+  max-width: 280px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+/* ── Learn: border — thin solid (2px), thick gradient (20 rings) ── */
+.learn-preview-card-1,
+.learn-preview-card-2 {
+  border: 2px solid #03ACEA;
+  box-shadow:
+    0 0 0 1px  #0FB0EA,
+    0 0 0 2px  #1BB3EB,
+    0 0 0 3px  #27B7EB,
+    0 0 0 4px  #33BAEB,
+    0 0 0 5px  #40BEEB,
+    0 0 0 6px  #4CC2EB,
+    0 0 0 7px  #58C5EC,
+    0 0 0 8px  #64C9EC,
+    0 0 0 9px  #70CCEC,
+    0 0 0 10px #7CD0ED,
+    0 0 0 11px #88D3ED,
+    0 0 0 12px #94D7ED,
+    0 0 0 13px #A0DBEE,
+    0 0 0 14px #ACDEEE,
+    0 0 0 15px #B8E2EF,
+    0 0 0 16px #C5E6EF,
+    0 0 0 17px #D1E9EF,
+    0 0 0 18px #DDEDEF,
+    0 0 0 19px #E9F0F0,
+    0 0 0 20px #F5F4F0;
+}
+
+/* ── Loan Help: learn-help image — shadow on all sides ── */
+.lh-screenshot-section .ldd-browser-chrome {
+  box-shadow:
+    -50px 0 80px rgba(0,0,0,0.16),
+     50px 0 80px rgba(0,0,0,0.16),
+     0 -20px 60px rgba(0,0,0,0.08),
+     0 16px 70px rgba(0,0,0,0.20),
+     0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* ── Loan Help: card--2 — bottom right corner of image ── */
+.lh-overlay-card--2 {
+  bottom: 6%;
+  right: -18px;
+  transform: rotate(-2.5deg);
+}
+
+/* ── Notifications: beige bg extending past sides, fading to white ── */
+.notif-card {
+  width: 520px;
+  padding: 32px 60px 0;
+  background: linear-gradient(to right, white 0%, #F5F4F0 12%, #F5F4F0 88%, white 100%);
+  border-radius: 20px;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* ── Bell: remove blue ring, move down to straddle bottom edge ── */
+.bell-container {
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
+  bottom: -32px;
+}
+
+/* ── Founder quote: signature now between quote and name ── */
+.founder-signature {
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+.founder-quote {
+  margin-bottom: 0;
+}
+
+/* ── Founder section: move up ── */
+.founder-section {
+  padding-top: 20px;
 }

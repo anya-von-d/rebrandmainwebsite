@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600;700&family=Kristi&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=35">
   <link rel="icon" type="image/png" href="Images/favicon.png">
 </head>
 <body>
@@ -162,12 +162,23 @@
       <img src="Images/desktop.png" alt="Vony desktop dashboard" class="apps-desktop-main-img">
       <img src="Images/icons/os.png" alt="macOS" class="apps-desktop-badge apps-desktop-badge-os">
       <img src="Images/icons/windows.png" alt="Windows" class="apps-desktop-badge apps-desktop-badge-windows">
+      <!-- Desktop notification floater — top left corner -->
+      <div class="apps-desktop-notif-floater">
+        <img src="Images/favicon.png" alt="Vony" class="apps-notif-icon">
+        <div class="apps-notif-body">
+          <div class="apps-notif-header">
+            <span class="apps-notif-app">Vony</span>
+            <span class="apps-notif-time">2min ago</span>
+          </div>
+          <span class="apps-notif-msg">Jordan accepted your loan offer</span>
+        </div>
+      </div>
     </div>
     <!-- Text below -->
     <div class="apps-desktop-stacked-text">
+      <span class="apps-coming-soon">Coming Soon</span>
       <h2 class="apps-detail-heading"><em>Vony</em> for Desktop</h2>
       <p class="apps-detail-subtitle">Full dashboard experience with loan management, payment tracking, and detailed analytics. Everything you need, on a bigger screen.</p>
-      <span class="apps-coming-soon">Coming Soon</span>
     </div>
   </section>
 
@@ -175,9 +186,9 @@
   <section class="apps-detail-section">
     <div class="apps-detail-inner">
       <div class="apps-detail-text">
+        <span class="apps-coming-soon">Coming Soon</span>
         <h2 class="apps-detail-heading"><em>Vony</em> for Mobile</h2>
         <p class="apps-detail-subtitle">Quick access to loans, payments, and friends on the go. Push notifications keep you on track without the awkward reminders.</p>
-        <span class="apps-coming-soon">Coming Soon</span>
       </div>
       <div class="apps-detail-visual">
         <div class="doc-accent doc-accent-green"></div>
