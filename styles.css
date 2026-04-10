@@ -5138,7 +5138,7 @@ a.help-card {
       rgba(0,0,0,0.03) 0px 8px 16px -8px,
       rgba(255,255,255,0.1) 0px -2px 3px 0px inset,
       rgba(255,255,255,0.06) 0px -4px 12px 0px inset;
-    z-index: 11;
+    z-index: 201;
     flex-shrink: 0;
   }
   .hamburger-toggle::before {
@@ -5181,7 +5181,7 @@ a.help-card {
     height: 100%;
     border-radius: 0;
     overflow: auto;
-    z-index: 10;
+    z-index: 200;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.08s ease-in-out;
