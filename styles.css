@@ -10019,3 +10019,26 @@ a.help-card {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Late-cascade mobile overrides: fix sections that defined base styles after earlier media queries */
+@media (max-width: 900px) {
+  .feature-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .feature-text {
+    text-align: center;
+    align-items: center;
+  }
+  .feature-image {
+    justify-content: center;
+    order: -1;
+    transform: scale(0.72);
+    transform-origin: top center;
+    margin-bottom: -90px;
+  }
+  .feature-section {
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+}
