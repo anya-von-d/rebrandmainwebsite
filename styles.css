@@ -10102,6 +10102,7 @@ a.help-card {
 /* Base item — center (narrow portrait) */
 .ldd-stack-item {
   position: absolute;
+  top: 0;
   width: 190px;
   border-radius: 12px;
   overflow: hidden;
