@@ -10373,6 +10373,11 @@ a.help-card {
     transform: scale(0.42);
     transform-origin: top left;
   }
+  /* Scale promissory note to fit 120px mobile card width (345 × 0.35 ≈ 120px) */
+  .ldd-stack-center .lap-doc {
+    transform: scale(0.35);
+    transform-origin: top left;
+  }
 }
 
 /* Digital Records mobile: visuals go under text */
