@@ -10261,7 +10261,7 @@ a.help-card {
 /* When inside the fan stack, scale to fit */
 .ldd-stack-center .lap-doc {
   transform: scale(0.55);
-  transform-origin: top center;
+  transform-origin: top left;
   width: 345px;
 }
 .ldd-stack-center {
