@@ -10137,7 +10137,7 @@ a.help-card {
 
 /* Amortization schedule on right: normal image card */
 .ldd-stack-right {
-  transform: translateX(calc(-50% + 140px)) rotate(9deg) translateY(20px);
+  transform: translateX(calc(-50% + 140px)) rotate(9deg) translateY(0px);
   z-index: 1;
 }
 
