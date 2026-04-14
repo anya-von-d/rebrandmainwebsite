@@ -8150,14 +8150,6 @@ a.help-card {
   margin-bottom: 20px;
 }
 
-.about-story-card p:first-child,
-.about-story-card p:nth-child(4) {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #1A1918;
-  line-height: 1.4;
-}
 
 .about-story-card p:last-child {
   margin-bottom: 0;
@@ -10249,6 +10241,21 @@ a.help-card {
   margin-top: 4px;
 }
 .lap-doc-btn:hover { background: #4596C0; }
+
+/* Amortization image clip — hides header bar and original download button */
+.ldd-amort-clip {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  height: 0;
+  padding-bottom: 59%;
+}
+.ldd-amort-clip-img {
+  position: absolute;
+  width: 100%;
+  top: -10%;
+  left: 0;
+}
 
 /* When inside the fan stack, scale to fit */
 .ldd-stack-center .lap-doc {
