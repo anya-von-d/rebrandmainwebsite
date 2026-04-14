@@ -10095,7 +10095,7 @@ a.help-card {
 
 .ldd-hero-stack {
   position: relative;
-  height: 340px;
+  height: 420px;
   margin-top: 56px;
 }
 
@@ -10103,7 +10103,7 @@ a.help-card {
 .ldd-stack-item {
   position: absolute;
   top: 0;
-  width: 190px;
+  width: 230px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0,0,0,0.16);
@@ -10117,15 +10117,15 @@ a.help-card {
 
 /* Left (activity) wider, right (amortization schedule) narrower */
 .ldd-stack-left {
-  width: 220px;
+  width: 265px;
 }
 .ldd-stack-right {
-  width: 220px;
+  width: 265px;
 }
 
 /* Activity on left: overflow visible so card content shows, no box-shadow (card has its own) */
 .ldd-stack-left {
-  transform: translateX(calc(-50% - 230px)) rotate(-10deg) translateY(36px);
+  transform: translateX(calc(-50% - 280px)) rotate(-10deg) translateY(40px);
   z-index: 2;
   overflow: visible;
   box-shadow: none;
@@ -10138,7 +10138,7 @@ a.help-card {
 
 /* Amortization schedule on right: normal image card */
 .ldd-stack-right {
-  transform: translateX(calc(-50% + 140px)) rotate(9deg) translateY(0px);
+  transform: translateX(calc(-50% + 170px)) rotate(9deg) translateY(0px);
   z-index: 1;
 }
 
@@ -10260,7 +10260,7 @@ a.help-card {
 
 /* When inside the fan stack, scale to fit */
 .ldd-stack-center .lap-doc {
-  transform: scale(0.55);
+  transform: scale(0.667);
   transform-origin: top left;
   width: 345px;
 }
@@ -10271,7 +10271,7 @@ a.help-card {
 
 /* Fan activity: scale the full activity card down to fit */
 .ldd-fan-activity-wrap {
-  transform: scale(0.58);
+  transform: scale(0.70);
   transform-origin: top left;
   width: max-content;
   border-radius: 18px;
@@ -10281,23 +10281,30 @@ a.help-card {
 /* Large screens: slightly bigger fan */
 @media (min-width: 1100px) {
   .ldd-hero-stack {
-    height: 380px;
+    height: 460px;
     margin-top: 64px;
   }
   .ldd-stack-item {
-    width: 210px;
+    width: 260px;
   }
   .ldd-stack-left {
-    width: 250px;
+    width: 300px;
   }
   .ldd-stack-right {
-    width: 250px;
+    width: 300px;
   }
   .ldd-stack-left {
-    transform: translateX(calc(-50% - 270px)) rotate(-10deg) translateY(44px);
+    transform: translateX(calc(-50% - 320px)) rotate(-10deg) translateY(44px);
   }
   .ldd-stack-right {
-    transform: translateX(calc(-50% + 160px)) rotate(9deg) translateY(26px);
+    transform: translateX(calc(-50% + 200px)) rotate(9deg) translateY(0px);
+  }
+  .ldd-stack-center .lap-doc {
+    transform: scale(0.753);
+    transform-origin: top left;
+  }
+  .ldd-fan-activity-wrap {
+    transform: scale(0.80);
   }
 }
 
