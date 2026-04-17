@@ -817,11 +817,13 @@
       <div class="pd-slide-wrap">
         <div class="pd-slide">
 
-          <div class="pd-eyebrow">Structure Without the Awkwardness</div>
-          <h2 class="pd-title" style="font-size:42px; margin-bottom:24px;">The Solution</h2>
+          <!-- Two-col fills from top edge — eyebrow + title live inside left col -->
+          <div class="pd-two-col" style="flex:1; margin:0;">
 
-          <div class="pd-two-col">
+            <!-- Left: eyebrow, title, body, bullets -->
             <div class="pd-col">
+              <div class="pd-eyebrow" style="margin-bottom:6px;">Structure Without the Awkwardness</div>
+              <h2 class="pd-title" style="font-size:42px; margin-bottom:20px;">The Solution</h2>
               <p class="pd-body" style="margin-bottom:20px;">
                 Vony handles everything after a handshake &mdash; the agreement, the schedule, the reminders, and the payments. Both sides stay protected. No awkward texts required.
               </p>
@@ -834,10 +836,34 @@
               </ul>
             </div>
 
-            <!-- Right: promissory note filling column, 2 notification pills overlaid at corners -->
-            <div class="pd-col-45" style="position:relative; display:flex; flex-direction:column;">
+            <!-- Right: Payments card (top-right), note (flex:1), Payment Progress (absolute peek-left) -->
+            <div class="pd-col-45" style="position:relative; display:flex; flex-direction:column; gap:10px;">
 
-              <!-- Promissory note — fills the column -->
+              <!-- PAYMENTS card: top, right-aligned under note's right corner -->
+              <div style="align-self:flex-end; width:218px; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(0,0,0,0.09),0 1px 3px rgba(0,0,0,0.05); overflow:hidden; font-family:'DM Sans',sans-serif;">
+                <div style="padding:10px 14px 8px; border-bottom:1px solid rgba(0,0,0,0.06);">
+                  <span style="font-size:11px; font-weight:700; color:#1A1918; letter-spacing:0.01em;">Payments</span>
+                </div>
+                <div style="padding:4px 14px;">
+                  <div style="display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <svg width="26" height="26" viewBox="0 0 32 32" style="flex-shrink:0;"><circle cx="16" cy="16" r="13" fill="none" stroke="#E5E4E2" stroke-width="4"/><circle cx="16" cy="16" r="13" fill="none" stroke="#03ACEA" stroke-width="4" stroke-dasharray="81.68 0.01" stroke-linecap="round" transform="rotate(-90 16 16)"/><text x="16" y="16" text-anchor="middle" dominant-baseline="central" fill="#1A1918" font-size="11" font-weight="bold" font-family="'DM Sans',sans-serif">1</text></svg>
+                    <div style="flex:1;"><p style="font-size:10.5px;color:#1A1918;margin:0;font-weight:600;line-height:1.3;">Payment 1: $150.00</p><p style="font-size:9px;color:#787776;margin:0;">Paid: $150.00</p></div>
+                    <span style="font-size:9px;background:rgba(3,172,234,0.10);color:#03ACEA;border-radius:6px;padding:2px 8px;white-space:nowrap;font-weight:600;">Done</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <svg width="26" height="26" viewBox="0 0 32 32" style="flex-shrink:0;"><circle cx="16" cy="16" r="13" fill="none" stroke="#E5E4E2" stroke-width="4"/><circle cx="16" cy="16" r="13" fill="none" stroke="#03ACEA" stroke-width="4" stroke-dasharray="81.68 0.01" stroke-linecap="round" transform="rotate(-90 16 16)"/><text x="16" y="16" text-anchor="middle" dominant-baseline="central" fill="#1A1918" font-size="11" font-weight="bold" font-family="'DM Sans',sans-serif">2</text></svg>
+                    <div style="flex:1;"><p style="font-size:10.5px;color:#1A1918;margin:0;font-weight:600;line-height:1.3;">Payment 2: $150.00</p><p style="font-size:9px;color:#787776;margin:0;">Paid: $150.00</p></div>
+                    <span style="font-size:9px;background:rgba(3,172,234,0.10);color:#03ACEA;border-radius:6px;padding:2px 8px;white-space:nowrap;font-weight:600;">Done</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px; padding:7px 0;">
+                    <svg width="26" height="26" viewBox="0 0 32 32" style="flex-shrink:0;"><circle cx="16" cy="16" r="13" fill="none" stroke="#E5E4E2" stroke-width="4"/><circle cx="16" cy="16" r="13" fill="none" stroke="#03ACEA" stroke-width="4" stroke-dasharray="49.01 32.67" stroke-linecap="round" transform="rotate(-90 16 16)"/><text x="16" y="16" text-anchor="middle" dominant-baseline="central" fill="#1A1918" font-size="11" font-weight="bold" font-family="'DM Sans',sans-serif">3</text></svg>
+                    <div style="flex:1;"><p style="font-size:10.5px;color:#1A1918;margin:0;font-weight:600;line-height:1.3;">Payment 3: $150.00</p><p style="font-size:9px;color:#787776;margin:0;">Paid: $90.00 &bull; Remaining: $60.00</p></div>
+                    <span style="font-size:9px;background:rgba(234,179,8,0.10);color:#B45309;border-radius:6px;padding:2px 8px;white-space:nowrap;font-weight:600;">Partial</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PROMISSORY NOTE: fills remaining height, z-index:1 -->
               <div style="flex:1; position:relative; overflow:hidden; border-radius:14px; box-shadow:0 6px 24px rgba(0,0,0,0.10),0 1px 4px rgba(0,0,0,0.06); z-index:1;">
                 <div class="lap-doc" style="border-radius:0;">
                   <div class="lap-doc-amount">$300.00</div>
@@ -871,8 +897,22 @@
                 <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,rgba(245,244,240,0.97));pointer-events:none;"></div>
               </div>
 
-              <!-- Top-right notification pill -->
-              <div style="position:absolute; top:10px; right:-6px; z-index:2; transform:rotate(5deg); transform-origin:top right; width:196px; background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:12px; padding:8px 11px; display:flex; align-items:center; gap:9px; box-shadow:0 6px 20px rgba(0,0,0,0.13),0 1px 4px rgba(0,0,0,0.07);">
+              <!-- PAYMENT PROGRESS: behind note, peeking from its left side, anticlockwise -->
+              <div style="position:absolute; top:148px; left:-62px; z-index:0; transform:rotate(-9deg); transform-origin:right center; width:178px; background:#fff; border-radius:14px; box-shadow:0 6px 22px rgba(0,0,0,0.10),0 1px 4px rgba(0,0,0,0.06); padding:12px 14px; font-family:'DM Sans',sans-serif;">
+                <span style="font-size:11px; font-weight:700; color:#1A1918; display:block; margin-bottom:8px; letter-spacing:0.01em;">Payment Progress</span>
+                <div style="display:flex; justify-content:center; margin-bottom:6px;">
+                  <svg width="90" height="90" viewBox="0 0 140 140">
+                    <circle cx="70" cy="70" r="54" fill="none" stroke="#E5E4E2" stroke-width="9" stroke-linecap="round"/>
+                    <circle cx="70" cy="70" r="54" fill="none" stroke="#03ACEA" stroke-width="9" stroke-dasharray="220.35 118.65" stroke-linecap="round" transform="rotate(-90 70 70)"/>
+                    <text x="70" y="64" text-anchor="middle" dominant-baseline="middle" style="font-size:20px;font-weight:700;fill:#1A1918;font-family:'DM Sans',sans-serif;">65%</text>
+                    <text x="70" y="82" text-anchor="middle" dominant-baseline="middle" style="font-size:11px;font-weight:500;fill:#787776;font-family:'DM Sans',sans-serif;">repaid</text>
+                  </svg>
+                </div>
+                <p style="text-align:center;font-size:11px;margin:0;"><span style="font-weight:700;color:#1A1918;">$390.00</span> <span style="color:#787776;">of $600.00</span></p>
+              </div>
+
+              <!-- Top-right notification pill (relative to note top) -->
+              <div style="position:absolute; top:168px; right:-6px; z-index:2; transform:rotate(5deg); transform-origin:top right; width:196px; background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:12px; padding:8px 11px; display:flex; align-items:center; gap:9px; box-shadow:0 6px 20px rgba(0,0,0,0.13),0 1px 4px rgba(0,0,0,0.07);">
                 <div style="width:26px;height:26px;border-radius:7px;background:rgba(22,163,74,0.10);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
