@@ -524,96 +524,165 @@
            SLIDE 1 &mdash; Cover
       ══════════════════════════════════════ -->
       <div class="pd-slide-wrap">
-        <div class="pd-slide pd-cover">
-          <div class="pd-cover-glow"></div>
+        <div class="pd-slide" style="justify-content:center; align-items:center; text-align:center; overflow:hidden;">
 
-          <!-- Floating cards: top-left -->
-          <div style="position:absolute; top:52px; left:38px; transform:rotate(-5deg); opacity:0.82; z-index:0; pointer-events:none;">
-            <svg width="200" height="64" viewBox="0 0 200 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="64" rx="13" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
-              <rect x="10" y="14" width="30" height="30" rx="7" fill="#34C759"/>
-              <rect x="14" y="18" width="20" height="14" rx="4" fill="white"/>
-              <path d="M16 32 L11 38 L20 32 Z" fill="white"/>
-              <text x="47" y="26" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#1C1C1E">Em</text>
-              <text x="47" y="40" font-family="'DM Sans', sans-serif" font-size="9" fill="#555">How much do I owe from the trip?</text>
-              <text x="47" y="52" font-family="'DM Sans', sans-serif" font-size="9" fill="#555">Kind of lost track...</text>
-            </svg>
+          <!-- ① iMessage "Alex" — top-left -->
+          <div style="position:absolute; top:14px; left:14px; transform:rotate(-4deg); z-index:0; pointer-events:none; width:198px; background:#fff; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.10),0 1px 4px rgba(0,0,0,0.05); overflow:hidden; font-family:'DM Sans',sans-serif; opacity:0.92;">
+            <div style="background:#F2F2F7; padding:6px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.06);">
+              <span style="font-size:10px; font-weight:600; color:#1C1C1E;">Alex</span>
+            </div>
+            <div style="padding:8px 10px; display:flex; flex-direction:column; gap:5px;">
+              <div style="background:#E5E5EA; border-radius:10px 10px 10px 2px; padding:6px 9px; max-width:88%; align-self:flex-start;">
+                <p style="font-size:9.5px; color:#1C1C1E; margin:0; line-height:1.4;">hey, just a reminder about $120 from last weekend</p>
+              </div>
+              <div style="background:#007AFF; border-radius:10px 10px 2px 10px; padding:6px 9px; max-width:78%; align-self:flex-end;">
+                <p style="font-size:9.5px; color:#fff; margin:0; line-height:1.4;">So sorry, I completely forgot</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Floating cards: top-right -->
-          <div style="position:absolute; top:44px; right:44px; transform:rotate(4deg); opacity:0.78; z-index:0; pointer-events:none;">
-            <svg width="188" height="70" viewBox="0 0 188 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="188" height="70" rx="11" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
-              <rect width="188" height="24" fill="#F8F8F8" rx="11"/>
-              <rect y="12" width="188" height="12" fill="#F8F8F8"/>
-              <circle cx="12" cy="12" r="4" fill="#007AFF"/>
-              <text x="80" y="17" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#1C1C1E">Reminders</text>
-              <circle cx="20" cy="48" r="7" fill="none" stroke="#007AFF" stroke-width="1.5"/>
-              <text x="34" y="44" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">Ask Edward when he needs</text>
-              <text x="34" y="58" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">the $40 back</text>
-            </svg>
+          <!-- ② Reminders widget — top-right -->
+          <div style="position:absolute; top:18px; right:150px; transform:rotate(3deg); z-index:0; pointer-events:none; width:186px; opacity:0.88;">
+            <div style="background:#fff; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.09),0 1px 3px rgba(0,0,0,0.05); overflow:hidden; font-family:'DM Sans',sans-serif;">
+              <div style="background:#F8F8F8; padding:7px 10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(0,0,0,0.06);">
+                <div style="width:8px;height:8px;border-radius:50%;background:#007AFF;flex-shrink:0;"></div>
+                <span style="font-size:10px; font-weight:600; color:#1C1C1E;">Reminders</span>
+              </div>
+              <div style="padding:8px 10px; display:flex; align-items:flex-start; gap:7px;">
+                <div style="width:14px;height:14px;border-radius:50%;border:1.5px solid #007AFF;flex-shrink:0;margin-top:1px;"></div>
+                <p style="font-size:10px; color:#1C1C1E; margin:0; line-height:1.5;">Ask Edward when he needs the $40 by</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Floating cards: bottom-left -->
-          <div style="position:absolute; bottom:58px; left:32px; transform:rotate(4deg); opacity:0.75; z-index:0; pointer-events:none;">
-            <svg width="160" height="78" viewBox="0 0 160 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="160" height="78" fill="#FFE082" rx="3"/>
-              <path d="M124 78L160 42V78Z" fill="#FFC107"/>
-              <text x="13" y="32" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Remember to pay</text>
-              <text x="13" y="52" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Oliver back for gas</text>
-            </svg>
-          </div>
-
-          <!-- Floating cards: bottom-right -->
-          <div style="position:absolute; bottom:48px; right:36px; transform:rotate(-3deg); opacity:0.78; z-index:0; pointer-events:none;">
-            <svg width="210" height="70" viewBox="0 0 210 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="210" height="70" rx="11" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
-              <rect width="210" height="24" fill="#F8F8F8" rx="11"/>
-              <rect y="12" width="210" height="12" fill="#F8F8F8"/>
-              <circle cx="12" cy="12" r="4" fill="#FF9500"/>
-              <text x="92" y="17" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#1C1C1E">Reminders</text>
-              <circle cx="20" cy="48" r="7" fill="none" stroke="#FF9500" stroke-width="1.5"/>
-              <text x="34" y="44" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">Remind Saoirse about concert</text>
-              <text x="34" y="58" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">tickets (think it was $180?)</text>
-            </svg>
-          </div>
-
-          <!-- Floating cards: mid-left -->
-          <div style="position:absolute; top:50%; left:28px; transform:translateY(-50%) rotate(-3deg); opacity:0.72; z-index:0; pointer-events:none;">
-            <svg width="148" height="76" viewBox="0 0 148 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="148" height="76" fill="#AECFF5" rx="3"/>
-              <path d="M112 76L148 40V76Z" fill="#7DB3EE"/>
-              <text x="12" y="30" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#1A3A5C">Remind Rohan about</text>
-              <text x="12" y="50" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#1A3A5C">the $40 he owes</text>
-            </svg>
-          </div>
-
-          <!-- Floating cards: mid-right -->
-          <div style="position:absolute; top:50%; right:28px; transform:translateY(-50%) rotate(5deg); opacity:0.70; z-index:0; pointer-events:none;">
+          <!-- ③ Calculator — mid-right top -->
+          <div style="position:absolute; top:36%; right:20px; transform:translateY(-50%) rotate(5deg); z-index:0; pointer-events:none; opacity:0.82;">
             <svg width="96" height="118" viewBox="0 0 96 118" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="96" height="118" rx="10" fill="#1C1C1E"/>
               <rect x="6" y="6" width="84" height="30" rx="5" fill="#333"/>
-              <text x="82" y="22" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="14" font-weight="300" fill="#fff">53.33</text>
+              <text x="82" y="22" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="13" font-weight="300" fill="#fff">53.3333</text>
               <text x="82" y="32" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="7" fill="#8E8E93">160 / 3</text>
-              <circle cx="20" cy="56" r="11" fill="#505050"/>
-              <circle cx="48" cy="56" r="11" fill="#505050"/>
-              <circle cx="76" cy="56" r="11" fill="#FF9500"/>
-              <circle cx="20" cy="80" r="11" fill="#505050"/>
-              <circle cx="48" cy="80" r="11" fill="#505050"/>
-              <circle cx="76" cy="80" r="11" fill="#FF9500"/>
-              <rect x="9" y="95" width="39" height="22" rx="11" fill="#505050"/>
-              <circle cx="76" cy="106" r="11" fill="#FF9500"/>
+              <circle cx="20" cy="56" r="11" fill="#505050"/><circle cx="48" cy="56" r="11" fill="#505050"/><circle cx="76" cy="56" r="11" fill="#FF9500"/>
+              <circle cx="20" cy="80" r="11" fill="#505050"/><circle cx="48" cy="80" r="11" fill="#505050"/><circle cx="76" cy="80" r="11" fill="#FF9500"/>
+              <rect x="9" y="95" width="39" height="22" rx="11" fill="#505050"/><circle cx="76" cy="106" r="11" fill="#FF9500"/>
             </svg>
           </div>
 
-          <p class="pd-cover-wordmark">Vony</p>
-          <p class="pd-cover-tagline">Make lending with friends less messy</p>
-          <div class="pd-cover-rule"></div>
-          <p class="pd-cover-contact">
-            www.vony-lending.com<br>
-            anya@vony-lending.com
-          </p>
-          <span class="pd-num">1 / 11</span>
+          <!-- ④ iMessage "Em" — mid-right lower -->
+          <div style="position:absolute; top:62%; right:16px; transform:rotate(-3deg); z-index:0; pointer-events:none; width:190px; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(0,0,0,0.09); overflow:hidden; font-family:'DM Sans',sans-serif; opacity:0.84;">
+            <div style="background:#F2F2F7; padding:6px 10px; display:flex; align-items:center; gap:7px; border-bottom:1px solid rgba(0,0,0,0.06);">
+              <div style="width:20px;height:20px;border-radius:50%;background:#34C759;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-size:8px;color:#fff;font-weight:700;">Em</span></div>
+              <span style="font-size:10px;font-weight:600;color:#1C1C1E;">Em</span>
+              <span style="font-size:9px;color:#8E8E93;margin-left:auto;">nov</span>
+            </div>
+            <div style="padding:8px 10px;">
+              <p style="font-size:9.5px;color:#1C1C1E;margin:0;line-height:1.4;">How much do I still owe you from the Europe trip? Kind of lost track</p>
+            </div>
+          </div>
+
+          <!-- ⑤ Yellow sticky — mid-left -->
+          <div style="position:absolute; top:46%; left:16px; transform:translateY(-50%) rotate(3deg); z-index:0; pointer-events:none; opacity:0.85;">
+            <svg width="155" height="80" viewBox="0 0 155 80" fill="none">
+              <rect width="155" height="80" fill="#FFE082" rx="3"/>
+              <path d="M120 80L155 45V80Z" fill="#FFC107"/>
+              <text x="12" y="30" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Remember to pay</text>
+              <text x="12" y="52" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Oliver back for gas</text>
+            </svg>
+          </div>
+
+          <!-- ⑥ Excel spreadsheet — bottom-left (partially off) -->
+          <div style="position:absolute; bottom:-32px; left:-6px; transform:rotate(-3deg); z-index:0; pointer-events:none; width:232px; font-family:'DM Sans',sans-serif; opacity:0.90;">
+            <div style="background:#fff; border-radius:8px 8px 0 0; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.12);">
+              <div style="background:#1D6F42; padding:5px 8px;">
+                <span style="font-size:8.5px; font-weight:600; color:#fff;">owesWhatFromLondonTrip.xlsx</span>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 52px 52px; font-size:9px; color:#1A1918;">
+                <div style="padding:4px 8px;background:#E8F5E9;font-weight:700;border-right:1px solid rgba(0,0,0,0.08);">Paid For</div>
+                <div style="padding:4px 6px;background:#E8F5E9;font-weight:700;border-right:1px solid rgba(0,0,0,0.08);">Amount</div>
+                <div style="padding:4px 6px;background:#E8F5E9;font-weight:700;">Settled?</div>
+                <div style="padding:4px 8px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);">Hotel</div>
+                <div style="padding:4px 6px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);">$420</div>
+                <div style="padding:4px 6px;color:#FF9500;font-weight:600;border-top:1px solid rgba(0,0,0,0.06);">Partial</div>
+                <div style="padding:4px 8px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);background:#fafafa;">Flights</div>
+                <div style="padding:4px 6px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);background:#fafafa;">$310</div>
+                <div style="padding:4px 6px;color:#E53E3E;font-weight:600;border-top:1px solid rgba(0,0,0,0.06);background:#fafafa;">No</div>
+                <div style="padding:4px 8px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);">Dinners</div>
+                <div style="padding:4px 6px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);">$185</div>
+                <div style="padding:4px 6px;color:#E53E3E;font-weight:600;border-top:1px solid rgba(0,0,0,0.06);">No</div>
+                <div style="padding:4px 8px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);background:#fafafa;">Tickets</div>
+                <div style="padding:4px 6px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);background:#fafafa;">$95</div>
+                <div style="padding:4px 6px;color:#22C55E;font-weight:600;border-top:1px solid rgba(0,0,0,0.06);background:#fafafa;">Yes</div>
+                <div style="padding:4px 8px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.05);font-weight:700;">Total</div>
+                <div style="padding:4px 6px;border-right:1px solid rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.05);font-weight:700;">$1,010</div>
+                <div style="padding:4px 6px;border-top:1px solid rgba(0,0,0,0.05);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ⑦ Notes card — bottom-center-left -->
+          <div style="position:absolute; bottom:18px; left:232px; transform:rotate(1deg); z-index:0; pointer-events:none; width:182px; opacity:0.88;">
+            <div style="background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.09); padding:10px 12px; font-family:'DM Sans',sans-serif;">
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:7px;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#FF9500;flex-shrink:0;"></div>
+                <span style="font-size:10px;font-weight:600;color:#1C1C1E;">Notes</span>
+              </div>
+              <p style="font-size:11px;font-weight:600;color:#1A1918;margin:0 0 5px;">Need to repay:</p>
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #FF9500;flex-shrink:0;"></div><span style="font-size:9.5px;color:#5C5B5A;">Em (tickets)</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #FF9500;flex-shrink:0;"></div><span style="font-size:9.5px;color:#5C5B5A;">Priyanka (rent)</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #FF9500;flex-shrink:0;"></div><span style="font-size:9.5px;color:#5C5B5A;">Alex (dinner)</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ⑧ Reminders "Saoirse" — bottom-center -->
+          <div style="position:absolute; bottom:18px; left:424px; transform:rotate(-2deg); z-index:0; pointer-events:none; width:182px; opacity:0.88;">
+            <div style="background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.09); overflow:hidden; font-family:'DM Sans',sans-serif;">
+              <div style="background:#F8F8F8; padding:7px 10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(0,0,0,0.06);">
+                <div style="width:8px;height:8px;border-radius:50%;background:#FF9500;flex-shrink:0;"></div>
+                <span style="font-size:10px;font-weight:600;color:#1C1C1E;">Reminders</span>
+              </div>
+              <div style="padding:8px 10px; display:flex; align-items:flex-start; gap:7px;">
+                <div style="width:14px;height:14px;border-radius:50%;border:1.5px solid #FF9500;flex-shrink:0;margin-top:1px;"></div>
+                <p style="font-size:9.5px;color:#1C1C1E;margin:0;line-height:1.5;">Remind Saoirse to repay concert tickets (think it was $180?)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ⑨ Blue sticky — bottom-center-right -->
+          <div style="position:absolute; bottom:24px; right:208px; transform:rotate(2deg); z-index:0; pointer-events:none; opacity:0.85;">
+            <svg width="148" height="76" viewBox="0 0 148 76" fill="none">
+              <rect width="148" height="76" fill="#AECFF5" rx="3"/>
+              <path d="M112 76L148 40V76Z" fill="#7DB3EE"/>
+              <text x="12" y="28" font-family="Georgia, serif" font-size="11.5" font-style="italic" fill="#1A3A5C">Remind Rohan about</text>
+              <text x="12" y="48" font-family="Georgia, serif" font-size="11.5" font-style="italic" fill="#1A3A5C">the $40 he still owes</text>
+            </svg>
+          </div>
+
+          <!-- ⑩ WhatsApp "Henry" — bottom-right -->
+          <div style="position:absolute; bottom:-20px; right:10px; transform:rotate(-2deg); z-index:0; pointer-events:none; width:204px; opacity:0.90; font-family:'DM Sans',sans-serif;">
+            <div style="background:#fff; border-radius:14px 14px 0 0; box-shadow:0 6px 22px rgba(0,0,0,0.11); overflow:hidden;">
+              <div style="background:#075E54; padding:8px 12px;">
+                <span style="font-size:11px;font-weight:600;color:#fff;">Henry</span>
+              </div>
+              <div style="background:#ECE5DD; padding:8px 10px; display:flex; flex-direction:column; gap:5px;">
+                <div style="background:#fff; border-radius:0 8px 8px 8px; padding:5px 8px; max-width:85%; align-self:flex-start;"><p style="font-size:9px;color:#1A1918;margin:0;line-height:1.4;">How much do I owe you again?</p></div>
+                <div style="background:#DCF8C6; border-radius:8px 0 8px 8px; padding:5px 8px; max-width:60%; align-self:flex-end;"><p style="font-size:9px;color:#1A1918;margin:0;">I think $200</p></div>
+                <div style="background:#fff; border-radius:0 8px 8px 8px; padding:5px 8px; max-width:88%; align-self:flex-start;"><p style="font-size:9px;color:#1A1918;margin:0;line-height:1.4;">Wait, I thought it was $180</p></div>
+                <div style="background:#DCF8C6; border-radius:8px 0 8px 8px; padding:5px 8px; max-width:92%; align-self:flex-end;"><p style="font-size:9px;color:#1A1918;margin:0;line-height:1.4;">You're right, my bad forgot you gave me that $20</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CENTER CONTENT -->
+          <div style="position:relative; z-index:1; text-align:center;">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:96px; font-weight:700; font-style:italic; color:#1A1918; margin:0 0 10px; line-height:1; letter-spacing:-0.02em;">Vony</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:34px; font-weight:600; color:#1A1918; margin:0 0 28px; line-height:1.2; letter-spacing:-0.01em;">Make Lending with Friends Less <em>Messy</em></p>
+            <div style="width:44px; height:1px; background:rgba(126,192,234,0.65); margin:0 auto 22px;"></div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#787776; line-height:2.1; margin:0;">www.vony-lending.com<br>anya@vony-lending.com</p>
+          </div>
+
+          <span class="pd-num" style="color:rgba(26,25,24,0.18);">1 / 11</span>
         </div>
       </div>
 
@@ -945,13 +1014,13 @@
           <div class="pd-eyebrow">Product</div>
           <h2 class="pd-title" style="font-size:42px; margin-bottom:20px;">Where We Are &amp; Where We&rsquo;re Going</h2>
 
-          <!-- Amortization table: bigger, moved up, bottom-left -->
-          <div style="position:absolute; bottom:-10px; left:16px; z-index:0; transform:rotate(-2deg); transform-origin:bottom left; width:290px; border-radius:12px 12px 0 0; overflow:hidden; box-shadow:0 10px 32px rgba(0,0,0,0.14),0 1px 4px rgba(0,0,0,0.07);">
+          <!-- Amortization table: bottom-left -->
+          <div style="position:absolute; bottom:-110px; left:16px; z-index:0; transform:rotate(-2deg); transform-origin:bottom left; width:340px; border-radius:12px 12px 0 0; overflow:hidden; box-shadow:0 10px 32px rgba(0,0,0,0.14),0 1px 4px rgba(0,0,0,0.07);">
             <img src="Images/amortizationSchedule.png" alt="Amortization schedule" style="width:100%; display:block; margin-top:-3%;">
           </div>
 
           <!-- Payment History card: center bottom -->
-          <div style="position:absolute; bottom:-24px; left:50%; transform:translateX(-50%) rotate(2deg); transform-origin:bottom center; z-index:0; width:230px; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 10px 32px rgba(0,0,0,0.13),0 1px 4px rgba(0,0,0,0.07); padding:14px 16px; overflow:hidden; font-family:'DM Sans',sans-serif;">
+          <div style="position:absolute; bottom:-110px; left:50%; transform:translateX(-50%) rotate(2deg); transform-origin:bottom center; z-index:0; width:230px; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 10px 32px rgba(0,0,0,0.13),0 1px 4px rgba(0,0,0,0.07); padding:14px 16px; overflow:hidden; font-family:'DM Sans',sans-serif;">
             <span style="font-size:11px; font-weight:700; color:#1A1918; display:block; margin-bottom:10px; letter-spacing:0.01em;">Payment History</span>
             <div style="display:flex; gap:7px; height:72px; align-items:flex-end; margin-bottom:6px;">
               <div style="flex:1; height:100%; background:#03ACEA; border-radius:3px 3px 0 0;"></div>
@@ -975,7 +1044,7 @@
           </div>
 
           <!-- Recent Activity card: bottom-right corner -->
-          <div style="position:absolute; bottom:-20px; right:16px; z-index:0; transform:rotate(-2.5deg); transform-origin:bottom right; width:208px; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 10px 32px rgba(0,0,0,0.13),0 1px 4px rgba(0,0,0,0.07); overflow:hidden; font-family:'DM Sans',sans-serif;">
+          <div style="position:absolute; bottom:-100px; right:16px; z-index:0; transform:rotate(-2.5deg); transform-origin:bottom right; width:208px; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 10px 32px rgba(0,0,0,0.13),0 1px 4px rgba(0,0,0,0.07); overflow:hidden; font-family:'DM Sans',sans-serif;">
             <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px 8px; border-bottom:1px solid rgba(0,0,0,0.05);">
               <span style="font-size:11px; font-weight:700; color:#1A1918; letter-spacing:0.01em;">Recent Activity</span>
               <span style="font-size:9.5px; color:#54A6CF;">View all &rarr;</span>
