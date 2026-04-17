@@ -692,119 +692,125 @@
       <div class="pd-slide-wrap">
         <div class="pd-slide">
 
-          <div class="pd-eyebrow">The Product</div>
-          <div class="pd-two-col" style="margin-top:0;">
+          <!-- 3-col: left cards | center text | right cards -->
+          <div style="display:flex; gap:18px; flex:1; align-items:center; margin-top:0;">
 
-            <div class="pd-col-55">
-              <h2 class="pd-title" style="font-size:42px; margin-bottom:18px;">What is Vony?</h2>
-              <p class="pd-body" style="margin-bottom:20px;">
-                Vony is a micro-lending platform that makes it safe and simple to lend or borrow money with people you know. Create a loan, set the terms, sign digitally, and let Vony handle the rest.
-              </p>
-              <p class="pd-eyebrow" style="margin-bottom:8px;">Our Mission</p>
-              <p class="pd-body">
-                To make peer lending feel as easy as sending a text &mdash; while giving both sides the structure and protection they deserve.
-              </p>
-            </div>
+            <!-- LEFT CARDS -->
+            <div style="display:flex; flex-direction:column; gap:10px; width:196px; flex-shrink:0;">
 
-            <div class="pd-col-45" style="display:flex; flex-direction:column; gap:8px;">
-
-              <!-- TOP ROW: Next Payment Due + Next Payment Incoming -->
-              <div style="display:flex; gap:7px;">
-
-                <!-- Next Payment Due -->
-                <div style="flex:1; background:#EFF6FF; border:1px solid rgba(29,91,148,0.14); border-radius:12px; padding:13px 14px; position:relative; overflow:hidden;">
-                  <div style="position:absolute;top:-18px;right:-18px;width:72px;height:72px;border-radius:50%;background:radial-gradient(rgba(29,91,148,0.08),transparent 70%);pointer-events:none;"></div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
-                    <div style="width:18px;height:18px;border-radius:5px;background:rgba(29,91,148,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5B94" stroke-width="2.5" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><line x1="12" y1="18" x2="12" y2="6"/></svg>
-                    </div>
-                    <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Payment Due</span>
+              <!-- Next Payment Due -->
+              <div style="background:#EFF6FF; border:1px solid rgba(29,91,148,0.14); border-radius:12px; padding:14px 15px; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:-18px;right:-18px;width:72px;height:72px;border-radius:50%;background:radial-gradient(rgba(29,91,148,0.08),transparent 70%);pointer-events:none;"></div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
+                  <div style="width:18px;height:18px;border-radius:5px;background:rgba(29,91,148,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5B94" stroke-width="2.5" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><line x1="12" y1="18" x2="12" y2="6"/></svg>
                   </div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 15</span>
-                    <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;">7d</span>
-                  </div>
-                  <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$150 to Alex</span>
+                  <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Payment Due</span>
                 </div>
-
-                <!-- Next Payment Incoming -->
-                <div style="flex:1; background:#EFF9FF; border:1px solid rgba(3,172,234,0.14); border-radius:12px; padding:13px 14px; position:relative; overflow:hidden;">
-                  <div style="position:absolute;top:-18px;right:-18px;width:72px;height:72px;border-radius:50%;background:radial-gradient(rgba(3,172,234,0.08),transparent 70%);pointer-events:none;"></div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
-                    <div style="width:18px;height:18px;border-radius:5px;background:rgba(3,172,234,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#03ACEA" stroke-width="2.5" stroke-linecap="round"><polyline points="17 11 12 6 7 11"/><line x1="12" y1="6" x2="12" y2="18"/></svg>
-                    </div>
-                    <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Incoming</span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 20</span>
-                    <span style="background:rgba(3,172,234,0.12);border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#03ACEA;white-space:nowrap;">12d</span>
-                  </div>
-                  <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$200 from Sam</span>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                  <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 15</span>
+                  <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;">7d</span>
                 </div>
-
+                <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$150 to Alex</span>
               </div>
 
-              <!-- BOTTOM ROW: Upcoming + Active Lending side by side -->
-              <div style="display:flex; gap:7px; flex:1;">
-
-                <!-- Upcoming card -->
-                <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:12px; padding:12px 13px; display:flex; flex-direction:column;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:#1A1918;">Upcoming</span>
-                    <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;color:#9B9A98;">Schedule &rarr;</span>
+              <!-- Upcoming card -->
+              <div style="background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:12px; padding:13px 14px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                  <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:#1A1918;">Upcoming</span>
+                  <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;color:#9B9A98;">Schedule &rarr;</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:9px;">
+                  <div style="display:flex;align-items:center;gap:7px;">
+                    <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;flex-shrink:0;">7d</span>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Pay Alex <span style="color:#9B9A98;">&middot; rent</span></span>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1D5B94;font-weight:500;">-$150</span>
                   </div>
-                  <div style="display:flex;flex-direction:column;gap:9px;">
-                    <div style="display:flex;align-items:center;gap:7px;">
-                      <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;flex-shrink:0;">7d</span>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Pay Alex <span style="color:#9B9A98;">&middot; rent</span></span>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1D5B94;font-weight:500;">-$150</span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:7px;">
-                      <span style="background:rgba(232,114,110,0.12);color:#E8726E;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;white-space:nowrap;flex-shrink:0;">2d late</span>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Jordan pays you</span>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#03ACEA;font-weight:500;">+$80</span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:7px;">
-                      <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;flex-shrink:0;">12d</span>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Sam pays you <span style="color:#9B9A98;">&middot; travel</span></span>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#03ACEA;font-weight:500;">+$200</span>
-                    </div>
+                  <div style="display:flex;align-items:center;gap:7px;">
+                    <span style="background:rgba(232,114,110,0.12);color:#E8726E;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;white-space:nowrap;flex-shrink:0;">2d late</span>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Jordan pays you</span>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#03ACEA;font-weight:500;">+$80</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:7px;">
+                    <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;flex-shrink:0;">12d</span>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Sam pays you <span style="color:#9B9A98;">&middot; travel</span></span>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#03ACEA;font-weight:500;">+$200</span>
                   </div>
                 </div>
+              </div>
 
-                <!-- Active Lending card -->
-                <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:12px; padding:12px 13px; display:flex; flex-direction:column;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:#1A1918;">Active Lending</span>
-                    <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;color:#9B9A98;">View all &rarr;</span>
+            </div>
+
+            <!-- CENTER: eyebrow + title + description box + mission box -->
+            <div style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:14px;">
+
+              <div>
+                <div class="pd-eyebrow" style="margin-bottom:10px;">The Product</div>
+                <h2 class="pd-title" style="font-size:42px;">What is Vony?</h2>
+              </div>
+
+              <!-- Description box -->
+              <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:14px; padding:16px 22px; width:100%; box-shadow:0 2px 12px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.03);">
+                <p class="pd-body" style="margin:0;">Vony is a micro-lending platform that makes it safe and simple to lend or borrow money with people you know. Create a loan, set the terms, sign digitally, and let Vony handle the rest.</p>
+              </div>
+
+              <!-- Mission box -->
+              <div style="background:rgba(126,192,234,0.07); border:1px solid rgba(126,192,234,0.22); border-radius:14px; padding:14px 22px; width:100%;">
+                <p class="pd-eyebrow" style="margin-bottom:8px; color:#787776;">Our Mission</p>
+                <p class="pd-body" style="margin:0;">To make peer lending feel as easy as sending a text &mdash; while giving both sides the structure and protection they deserve.</p>
+              </div>
+
+            </div>
+
+            <!-- RIGHT CARDS -->
+            <div style="display:flex; flex-direction:column; gap:10px; width:196px; flex-shrink:0;">
+
+              <!-- Next Payment Incoming -->
+              <div style="background:#EFF9FF; border:1px solid rgba(3,172,234,0.14); border-radius:12px; padding:14px 15px; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:-18px;right:-18px;width:72px;height:72px;border-radius:50%;background:radial-gradient(rgba(3,172,234,0.08),transparent 70%);pointer-events:none;"></div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
+                  <div style="width:18px;height:18px;border-radius:5px;background:rgba(3,172,234,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#03ACEA" stroke-width="2.5" stroke-linecap="round"><polyline points="17 11 12 6 7 11"/><line x1="12" y1="6" x2="12" y2="18"/></svg>
                   </div>
-                  <div style="display:flex;flex-direction:column;gap:11px;">
-                    <div>
-                      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
-                        <span style="width:20px;height:20px;border-radius:50%;background:rgba(29,91,148,0.14);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;color:#1D5B94;flex-shrink:0;">A</span>
-                        <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Alex &mdash; $600 rent</span>
-                        <span style="font-family:'DM Sans',sans-serif;font-size:10px;color:#5C5B5A;font-weight:600;">75%</span>
-                      </div>
-                      <div style="height:4px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;">
-                        <div style="height:100%;width:75%;background:#7EC0EA;border-radius:2px;"></div>
-                      </div>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9B9A98;margin-top:3px;display:block;">$450 of $600 paid back</span>
+                  <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Incoming</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                  <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 20</span>
+                  <span style="background:rgba(3,172,234,0.12);border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#03ACEA;white-space:nowrap;">12d</span>
+                </div>
+                <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$200 from Sam</span>
+              </div>
+
+              <!-- Active Lending card -->
+              <div style="background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:12px; padding:13px 14px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                  <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:#1A1918;">Active Lending</span>
+                  <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;color:#9B9A98;">View all &rarr;</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:11px;">
+                  <div>
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+                      <span style="width:20px;height:20px;border-radius:50%;background:rgba(29,91,148,0.14);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;color:#1D5B94;flex-shrink:0;">A</span>
+                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Alex &mdash; $600 rent</span>
+                      <span style="font-family:'DM Sans',sans-serif;font-size:10px;color:#5C5B5A;font-weight:600;">75%</span>
                     </div>
-                    <div>
-                      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
-                        <span style="width:20px;height:20px;border-radius:50%;background:rgba(22,163,74,0.12);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;color:#16A34A;flex-shrink:0;">S</span>
-                        <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Sam &mdash; $200 travel</span>
-                        <span style="font-family:'DM Sans',sans-serif;font-size:10px;color:#5C5B5A;font-weight:600;">0%</span>
-                      </div>
-                      <div style="height:4px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;">
-                        <div style="height:100%;width:0%;background:#7EC0EA;border-radius:2px;"></div>
-                      </div>
-                      <span style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9B9A98;margin-top:3px;display:block;">$0 of $200 paid back</span>
+                    <div style="height:4px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;">
+                      <div style="height:100%;width:75%;background:#7EC0EA;border-radius:2px;"></div>
                     </div>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9B9A98;margin-top:3px;display:block;">$450 of $600 paid back</span>
+                  </div>
+                  <div>
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+                      <span style="width:20px;height:20px;border-radius:50%;background:rgba(22,163,74,0.12);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;color:#16A34A;flex-shrink:0;">S</span>
+                      <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#1A1918;flex:1;">Sam &mdash; $200 travel</span>
+                      <span style="font-family:'DM Sans',sans-serif;font-size:10px;color:#5C5B5A;font-weight:600;">0%</span>
+                    </div>
+                    <div style="height:4px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;">
+                      <div style="height:100%;width:0%;background:#7EC0EA;border-radius:2px;"></div>
+                    </div>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9B9A98;margin-top:3px;display:block;">$0 of $200 paid back</span>
                   </div>
                 </div>
-
               </div>
 
             </div>
@@ -1212,7 +1218,77 @@
       </div>
 
       <!-- ══════════════════════════════════════
-           SLIDE 7 &mdash; Market Size
+           SLIDE 7 &mdash; Business Model
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Revenue</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:16px;">How We Make Money</h2>
+
+          <!-- Angled revenue cards + bottom summary -->
+          <div style="display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+
+            <div style="display:flex; gap:20px; align-items:flex-end; padding:6px 2px 0;">
+
+              <!-- Card 1: Instant Transfers -->
+              <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:18px; padding:22px 20px 20px; box-shadow:0 6px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; transform:rotate(-3deg); transform-origin:center bottom;">
+                <div style="width:40px;height:40px;border-radius:12px;background:rgba(126,192,234,0.14);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 3v14M10 3l-4 5M10 3l4 5" stroke="#54A6CF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 14h12" stroke="#54A6CF" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <p style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9B9A98;margin:0 0 6px;">Instant Transfers</p>
+                <p style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;letter-spacing:-0.02em;color:#1A1918;line-height:1;margin:0 0 10px;">~1<span style="font-size:26px;">%</span></p>
+                <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:#787776;line-height:1.55;margin:0;">Fee for instant bank withdrawal. Standard transfers are free, creating a natural upgrade path &mdash; the Venmo model.</p>
+              </div>
+
+              <!-- Card 2: Card-Funded Payments -->
+              <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:18px; padding:22px 20px 20px; box-shadow:0 6px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; transform:rotate(2.5deg); transform-origin:center bottom;">
+                <div style="width:40px;height:40px;border-radius:12px;background:rgba(147,112,219,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <rect x="2" y="5" width="16" height="12" rx="2.5" stroke="#9370DB" stroke-width="1.5"/>
+                    <line x1="2" y1="9" x2="18" y2="9" stroke="#9370DB" stroke-width="1.5"/>
+                    <rect x="4" y="11.5" width="4" height="2" rx="0.5" fill="#9370DB"/>
+                  </svg>
+                </div>
+                <p style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9B9A98;margin:0 0 6px;">Card Payments</p>
+                <p style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;letter-spacing:-0.02em;color:#1A1918;line-height:1;margin:0 0 10px;">2<span style="font-size:26px;">–3%</span></p>
+                <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:#787776;line-height:1.55;margin:0;">Processing margin on card-funded repayments. High-frequency, recurring revenue tied directly to loan volume.</p>
+              </div>
+
+              <!-- Card 3: Affiliate Revenue -->
+              <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:18px; padding:22px 20px 20px; box-shadow:0 6px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; transform:rotate(-1deg); transform-origin:center bottom;">
+                <div style="width:40px;height:40px;border-radius:12px;background:rgba(249,115,22,0.11);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="15" cy="5" r="2.5" stroke="#F97316" stroke-width="1.4"/>
+                    <circle cx="15" cy="15" r="2.5" stroke="#F97316" stroke-width="1.4"/>
+                    <circle cx="5" cy="10" r="2.5" stroke="#F97316" stroke-width="1.4"/>
+                    <line x1="7.3" y1="8.8" x2="12.7" y2="6.2" stroke="#F97316" stroke-width="1.3" stroke-linecap="round"/>
+                    <line x1="7.3" y1="11.2" x2="12.7" y2="13.8" stroke="#F97316" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <p style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9B9A98;margin:0 0 6px;">Affiliate Revenue</p>
+                <p style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;letter-spacing:-0.02em;color:#1A1918;line-height:1;margin:0 0 10px;font-style:italic;">Variable</p>
+                <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:#787776;line-height:1.55;margin:0;">Credit card referrals for users needing larger lines of credit. The NerdWallet model &mdash; high margin, zero overhead.</p>
+              </div>
+
+            </div>
+
+            <!-- Bottom flywheel paragraph -->
+            <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#787776; line-height:1.65; text-align:center; padding:0 32px; margin:0;">
+              Revenue scales with loan volume, not headcount. <strong style="color:#1A1918; font-weight:600;">Each new loan creates compounding transaction revenue, repeat engagement, and referral growth</strong> &mdash; a flywheel that accelerates as the user base grows.
+            </p>
+
+          </div>
+
+          <span class="pd-num">7 / 11</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 8 &mdash; Market Size
       ══════════════════════════════════════ -->
       <div class="pd-slide-wrap">
         <div class="pd-slide">
@@ -1277,12 +1353,12 @@
             <a href="https://www.imarcgroup.com/united-states-peer-to-peer-lending-platforms-market" target="_blank" style="color:rgba(84,166,207,0.65); text-decoration:none;">IMARC Group: US P2P Lending Market Report 2024 (SAM basis)</a>
           </p>
 
-          <span class="pd-num">7 / 11</span>
+          <span class="pd-num">8 / 11</span>
         </div>
       </div>
 
       <!-- ══════════════════════════════════════
-           SLIDE 8 &mdash; Competition
+           SLIDE 9 &mdash; Competition
       ══════════════════════════════════════ -->
       <div class="pd-slide-wrap">
         <div class="pd-slide">
@@ -1355,76 +1431,6 @@
             <!-- Bottom competitive advantage paragraph -->
             <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#787776; line-height:1.65; text-align:center; padding:0 32px; margin:0;">
               Our competitors optimise for payments or expense splitting. <strong style="color:#1A1918; font-weight:600;">Vony is the only platform designed around the full lending workflow</strong> &mdash; contracts, repayment plans, interest, automated enforcement, and dispute documentation built in. We solve the relationship problem, not just the transaction.
-            </p>
-
-          </div>
-
-          <span class="pd-num">8 / 11</span>
-        </div>
-      </div>
-
-      <!-- ══════════════════════════════════════
-           SLIDE 9 &mdash; Business Model
-      ══════════════════════════════════════ -->
-      <div class="pd-slide-wrap">
-        <div class="pd-slide">
-
-          <div class="pd-eyebrow">Revenue</div>
-          <h2 class="pd-title" style="font-size:42px; margin-bottom:16px;">How We Make Money</h2>
-
-          <!-- Angled revenue cards + bottom summary -->
-          <div style="display:flex; flex-direction:column; flex:1; justify-content:space-between;">
-
-            <div style="display:flex; gap:20px; align-items:flex-end; padding:6px 2px 0;">
-
-              <!-- Card 1: Instant Transfers -->
-              <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:18px; padding:22px 20px 20px; box-shadow:0 6px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; transform:rotate(-3deg); transform-origin:center bottom;">
-                <div style="width:40px;height:40px;border-radius:12px;background:rgba(126,192,234,0.14);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 3v14M10 3l-4 5M10 3l4 5" stroke="#54A6CF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 14h12" stroke="#54A6CF" stroke-width="1.4" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <p style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9B9A98;margin:0 0 6px;">Instant Transfers</p>
-                <p style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;letter-spacing:-0.02em;color:#1A1918;line-height:1;margin:0 0 10px;">~1<span style="font-size:26px;">%</span></p>
-                <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:#787776;line-height:1.55;margin:0;">Fee for instant bank withdrawal. Standard transfers are free, creating a natural upgrade path &mdash; the Venmo model.</p>
-              </div>
-
-              <!-- Card 2: Card-Funded Payments -->
-              <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:18px; padding:22px 20px 20px; box-shadow:0 6px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; transform:rotate(2.5deg); transform-origin:center bottom;">
-                <div style="width:40px;height:40px;border-radius:12px;background:rgba(147,112,219,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <rect x="2" y="5" width="16" height="12" rx="2.5" stroke="#9370DB" stroke-width="1.5"/>
-                    <line x1="2" y1="9" x2="18" y2="9" stroke="#9370DB" stroke-width="1.5"/>
-                    <rect x="4" y="11.5" width="4" height="2" rx="0.5" fill="#9370DB"/>
-                  </svg>
-                </div>
-                <p style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9B9A98;margin:0 0 6px;">Card Payments</p>
-                <p style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;letter-spacing:-0.02em;color:#1A1918;line-height:1;margin:0 0 10px;">2<span style="font-size:26px;">–3%</span></p>
-                <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:#787776;line-height:1.55;margin:0;">Processing margin on card-funded repayments. High-frequency, recurring revenue tied directly to loan volume.</p>
-              </div>
-
-              <!-- Card 3: Affiliate Revenue -->
-              <div style="flex:1; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:18px; padding:22px 20px 20px; box-shadow:0 6px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; transform:rotate(-1deg); transform-origin:center bottom;">
-                <div style="width:40px;height:40px;border-radius:12px;background:rgba(249,115,22,0.11);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <circle cx="15" cy="5" r="2.5" stroke="#F97316" stroke-width="1.4"/>
-                    <circle cx="15" cy="15" r="2.5" stroke="#F97316" stroke-width="1.4"/>
-                    <circle cx="5" cy="10" r="2.5" stroke="#F97316" stroke-width="1.4"/>
-                    <line x1="7.3" y1="8.8" x2="12.7" y2="6.2" stroke="#F97316" stroke-width="1.3" stroke-linecap="round"/>
-                    <line x1="7.3" y1="11.2" x2="12.7" y2="13.8" stroke="#F97316" stroke-width="1.3" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <p style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9B9A98;margin:0 0 6px;">Affiliate Revenue</p>
-                <p style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;letter-spacing:-0.02em;color:#1A1918;line-height:1;margin:0 0 10px;font-style:italic;">Variable</p>
-                <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:#787776;line-height:1.55;margin:0;">Credit card referrals for users needing larger lines of credit. The NerdWallet model &mdash; high margin, zero overhead.</p>
-              </div>
-
-            </div>
-
-            <!-- Bottom flywheel paragraph -->
-            <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#787776; line-height:1.65; text-align:center; padding:0 32px; margin:0;">
-              Revenue scales with loan volume, not headcount. <strong style="color:#1A1918; font-weight:600;">Each new loan creates compounding transaction revenue, repeat engagement, and referral growth</strong> &mdash; a flywheel that accelerates as the user base grows.
             </p>
 
           </div>
