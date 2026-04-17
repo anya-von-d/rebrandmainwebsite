@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investor Pitch Deck &mdash; Vony</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=60">
+  <link rel="icon" type="image/png" href="Images/favicon.png">
+  <style>
+    /* ════════════════════════════════════
+       PITCH DECK — Vony website style
+    ════════════════════════════════════ */
+
+    /* ─── Page wrapper ─── */
+    .pd-page {
+      padding-top: 100px;
+      padding-bottom: 120px;
+      min-height: 100vh;
+    }
+    .pd-main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .pd-page-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .pd-page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 600;
+      font-style: italic;
+      color: #1A1918;
+      margin: 0 0 8px;
+      line-height: 1;
+    }
+    .pd-page-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #9B9A98;
+      margin: 0;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Slide wrapper ─── */
+    .pd-slide-wrap {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto 48px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.06),
+        0 2px 16px rgba(0,0,0,0.07),
+        0 16px 48px rgba(0,0,0,0.08);
+    }
+
+    /* ─── Slide canvas (960×540, scaled by JS) ─── */
+    .pd-slide {
+      width: 960px;
+      height: 540px;
+      background-color: #F5F4F0;
+      background-image: url('Images/tile.png.jpeg');
+      background-size: 50px 50px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      padding: 48px 56px 42px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Thin blue bar at top */
+    .pd-slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7EC0EA 0%, #54A6CF 100%);
+      z-index: 10;
+    }
+    /* Vony watermark */
+    .pd-slide::after {
+      content: 'Vony';
+      position: absolute;
+      top: 18px; right: 26px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(26,25,24,0.08);
+      pointer-events: none;
+      z-index: 10;
+    }
+    /* Slide number */
+    .pd-num {
+      position: absolute;
+      bottom: 15px; right: 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      color: rgba(26,25,24,0.22);
+      letter-spacing: 0.10em;
+      z-index: 10;
+    }
+
+    /* ─── Typography ─── */
+    .pd-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9B9A98;
+      margin: 0 0 10px;
+      line-height: 1;
+    }
+    .pd-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: #1A1918;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .pd-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #5C5B5A;
+      line-height: 1.72;
+      margin: 0;
+    }
+    .pd-body-sm {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px;
+      color: #9B9A98;
+      line-height: 1.58;
+      margin: 0;
+    }
+    .pd-accent { color: #54A6CF; }
+
+    /* ─── Cards ─── */
+    .pd-card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .pd-card-warm {
+      background: rgba(126,192,234,0.07);
+      border: 1px solid rgba(126,192,234,0.22);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .pd-rule {
+      border: none;
+      border-top: 1px solid rgba(26,25,24,0.08);
+      margin: 0;
+    }
+
+    /* ─── Layout ─── */
+    .pd-two-col { display: flex; gap: 36px; flex: 1; }
+    .pd-col { flex: 1; display: flex; flex-direction: column; }
+    .pd-col-45 { flex: 0 0 43%; display: flex; flex-direction: column; }
+    .pd-col-55 { flex: 1; display: flex; flex-direction: column; }
+
+    /* ─── Bullet list ─── */
+    .pd-list {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .pd-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px; color: #5C5B5A; line-height: 1.55;
+    }
+    .pd-dot {
+      flex-shrink: 0; width: 5px; height: 5px;
+      border-radius: 50%; background: #7EC0EA; margin-top: 6px;
+    }
+
+    /* ════ SLIDE 1: Cover — dark for impact ════ */
+    .pd-cover {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #1A1918 !important;
+      background-image: none !important;
+    }
+    .pd-cover::before { background: linear-gradient(90deg, #7EC0EA 0%, #54A6CF 100%); }
+    .pd-cover::after  { color: rgba(245,244,240,0.06); }
+    .pd-cover .pd-num { color: rgba(245,244,240,0.18); }
+    .pd-cover-glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 640px; height: 640px;
+      background: radial-gradient(ellipse at center,
+        rgba(126,192,234,0.12) 0%, rgba(84,166,207,0.07) 40%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .pd-cover > * { position: relative; z-index: 1; }
+    .pd-cover-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 102px; font-weight: 700; font-style: italic;
+      color: #F5F4F0; letter-spacing: -0.02em; line-height: 1; margin: 0 0 10px;
+    }
+    .pd-cover-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px; font-weight: 300;
+      color: rgba(245,244,240,0.55); letter-spacing: 0.01em; margin: 0 0 36px;
+    }
+    .pd-cover-rule {
+      width: 44px; height: 1px;
+      background: rgba(126,192,234,0.50); margin: 0 auto 36px;
+    }
+    .pd-cover-contact {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px; color: rgba(245,244,240,0.32);
+      letter-spacing: 0.05em; line-height: 2; margin: 0;
+    }
+
+    /* ════ SLIDE 3: Problem stats ════ */
+    .pd-stat-row { display: flex; gap: 14px; }
+    .pd-stat-box {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px;
+      padding: 16px 18px 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .pd-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px; font-weight: 700; letter-spacing: -0.02em;
+      color: #1A1918; line-height: 1; margin: 0 0 5px;
+    }
+    .pd-stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; color: #787776; line-height: 1.5; margin: 0;
+    }
+
+    /* ════ SLIDE 5: Feature grid ════ */
+    .pd-feat-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+    }
+    .pd-feat-item {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px; padding: 14px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .pd-feat-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #7EC0EA; margin-bottom: 10px;
+    }
+    .pd-feat-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 600; color: #1A1918; margin: 0 0 4px;
+    }
+    .pd-feat-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; color: #787776; line-height: 1.5; margin: 0;
+    }
+
+    /* ════ SLIDE 8: Market size ════ */
+    .pd-mkt-row { display: flex; gap: 14px; margin-bottom: 16px; }
+    .pd-mkt-box {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px; padding: 18px 16px 14px; text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .pd-mkt-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #9B9A98; margin: 0 0 8px;
+    }
+    .pd-mkt-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 700; letter-spacing: -0.02em;
+      color: #1A1918; line-height: 1; margin: 0 0 6px;
+    }
+    .pd-mkt-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; color: #787776; line-height: 1.45; margin: 0;
+    }
+
+    /* ════ SLIDE 9: Competition ════ */
+    .pd-comp-row { display: flex; gap: 10px; margin-bottom: 14px; }
+    .pd-comp-card {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px; padding: 16px 14px 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .pd-comp-card-vony {
+      background: rgba(126,192,234,0.08);
+      border-color: rgba(126,192,234,0.36);
+    }
+    .pd-comp-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 13px;
+      font-weight: 700; color: #fff; margin-bottom: 9px;
+    }
+    .pd-comp-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 600; color: #1A1918; margin: 0 0 5px;
+    }
+    .pd-comp-miss {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px; color: #787776; line-height: 1.48; margin: 0;
+    }
+    .pd-comp-win {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px; color: #54A6CF; line-height: 1.48; margin: 0;
+    }
+
+    /* ════ SLIDE 10: Revenue ════ */
+    .pd-rev-row { display: flex; gap: 12px; margin-bottom: 16px; }
+    .pd-rev-card {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px; padding: 16px 16px 14px;
+      display: flex; flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .pd-rev-stream {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 600; color: #1A1918; margin: 0 0 4px;
+    }
+    .pd-rev-rate {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px; font-weight: 700; letter-spacing: -0.02em;
+      color: #1A1918; line-height: 1; margin: 0 0 6px;
+    }
+    .pd-rev-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px; color: #787776; line-height: 1.5; margin: 0; flex: 1;
+    }
+
+    /* ════ SLIDE 11: Team ════ */
+    .pd-team-wrap {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 16px; padding: 24px 28px;
+      display: flex; gap: 28px; align-items: flex-start; flex: 1;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .pd-team-avatar {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: linear-gradient(135deg, #7EC0EA 0%, #54A6CF 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 600; font-style: italic;
+      color: #fff; flex-shrink: 0;
+    }
+    .pd-team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 600; color: #1A1918; margin: 0 0 2px; line-height: 1;
+    }
+    .pd-team-role {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #9B9A98; margin: 0 0 14px;
+    }
+    .pd-cred-list {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .pd-cred-list li {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; color: #5C5B5A; line-height: 1.45;
+    }
+    .pd-team-links { margin-top: 14px; display: flex; gap: 18px; }
+    .pd-team-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px; color: #54A6CF;
+      text-decoration: none; letter-spacing: 0.03em;
+    }
+    .pd-team-insight {
+      flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 12px;
+    }
+
+    /* ════ SLIDE 12: Thank you — dark for bookend symmetry ════ */
+    .pd-thanks {
+      justify-content: center; align-items: center; text-align: center;
+      background-color: #1A1918 !important;
+      background-image: none !important;
+    }
+    .pd-thanks::before { background: linear-gradient(90deg, #7EC0EA 0%, #54A6CF 100%); }
+    .pd-thanks::after  { color: rgba(245,244,240,0.06); }
+    .pd-thanks .pd-num { color: rgba(245,244,240,0.18); }
+    .pd-thanks-glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(ellipse at center,
+        rgba(126,192,234,0.14) 0%, rgba(84,166,207,0.08) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .pd-thanks > * { position: relative; z-index: 1; }
+    .pd-thanks-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 70px; font-weight: 600; font-style: italic;
+      color: #F5F4F0; line-height: 1; margin: 0 0 14px;
+    }
+    .pd-thanks-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 300;
+      color: rgba(245,244,240,0.54); margin: 0 0 36px;
+      max-width: 480px; line-height: 1.65;
+    }
+    .pd-thanks-rule {
+      width: 44px; height: 1px;
+      background: rgba(126,192,234,0.45); margin: 0 auto 36px;
+    }
+    .pd-thanks-contact {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; color: rgba(245,244,240,0.30);
+      letter-spacing: 0.05em; line-height: 2; margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="index.html" class="logo">
+        <span class="logo-wordmark">Vony</span>
+      </a>
+    </div>
+    <nav class="glass-nav" id="mainNav">
+      <div class="nav-item has-dropdown" data-panel="using-vony"><button class="nav-link nav-btn">Using Vony</button></div>
+      <div class="nav-item has-dropdown" data-panel="company"><button class="nav-link nav-btn">Company</button></div>
+      <div class="nav-item has-dropdown" data-panel="releases"><button class="nav-link nav-btn">Releases</button></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+      <div class="dropdown-panels">
+        <div class="dropdown-panel" data-panel="using-vony">
+          <div class="dropdown-layout dropdown-layout-using-vony">
+            <div class="dropdown-img">
+              <svg width="100%" height="100%" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="120" rx="12" fill="#54A6CF"/>
+                <text x="80" y="56" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="600" font-style="italic" fill="#fff">Vony</text>
+                <path d="M100 68L100 84L105 80L109 88L112 87L108 79L114 78Z" fill="#fff" opacity="0.9"/>
+              </svg>
+            </div>
+            <div class="dropdown-col">
+              <a href="loan-documents.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Digital Records</span><span class="dropdown-desc">Promissory notes and schedules</span></div></a>
+              <a href="faq.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">FAQ</span><span class="dropdown-desc">Common questions answered</span></div></a>
+              <a href="help.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Help and Support</span><span class="dropdown-desc">Get in touch with our team</span></div></a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-panel" data-panel="company">
+          <div class="dropdown-layout dropdown-layout-company">
+            <div class="dropdown-img">
+              <svg width="100%" height="100%" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="120" rx="12" fill="#DBEDFE"/>
+                <g transform="translate(52, 36) rotate(-12, 20, 20)"><rect width="40" height="40" rx="10" fill="#7EC0EA"/><path d="M14 14L20 26L26 14" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+                <g transform="translate(72, 40) rotate(8, 20, 20)"><rect width="40" height="40" rx="10" fill="#7EC0EA"/><path d="M14 14L20 26L26 14" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+              </svg>
+            </div>
+            <div class="dropdown-col">
+              <a href="about.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">About Vony</span><span class="dropdown-desc">Our story and mission</span></div></a>
+              <a href="stories.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Stories</span><span class="dropdown-desc">Real experiences from our users</span></div></a>
+              <a href="founder-memo.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Founder Memo</span><span class="dropdown-desc">A letter from our founder</span></div></a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-panel" data-panel="releases">
+          <div class="dropdown-layout dropdown-layout-releases">
+            <div class="dropdown-img">
+              <svg width="100%" height="100%" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="140" rx="12" fill="#B0DCF4"/>
+                <text x="80" y="78" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="22" font-weight="500" font-style="italic" fill="#fff" transform="rotate(-15, 80, 70)">Coming Soon</text>
+              </svg>
+            </div>
+            <div class="dropdown-col">
+              <a href="apps.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Apps</span><span class="dropdown-desc">Vony on your devices</span></div></a>
+              <a href="learn.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Learn</span><span class="dropdown-desc">Financial tools and advice</span></div></a>
+              <a href="loan-help.html" class="dropdown-link"><div class="dropdown-text"><span class="dropdown-title">Loan Help</span><span class="dropdown-desc">Explore traditional alternatives</span></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="top-bar-right">
+      <a href="https://lend-with-vony.com" class="btn-signin">Sign In</a>
+      <a href="https://lend-with-vony.com" class="btn-getstarted">Get Started</a>
+      <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Menu">
+        <svg width="44" height="26" viewBox="0 0 44 26" fill="none">
+          <line class="ham-top" x1="16" y1="7.5" x2="28" y2="7.5"/>
+          <line class="ham-mid" x1="14.5" y1="13" x2="29.5" y2="13"/>
+          <line class="ham-bot" x1="16" y1="18.5" x2="28" y2="18.5"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  PITCH DECK                                -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="pd-page">
+    <div class="pd-main">
+
+      <div class="pd-page-header">
+        <h1 class="pd-page-title">Investor Pitch Deck</h1>
+        <p class="pd-page-sub">Vony Lending &mdash; 2026</p>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 1 &mdash; Cover
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide pd-cover">
+          <div class="pd-cover-glow"></div>
+
+          <!-- Floating cards: top-left -->
+          <div style="position:absolute; top:52px; left:38px; transform:rotate(-5deg); opacity:0.82; z-index:0; pointer-events:none;">
+            <svg width="200" height="64" viewBox="0 0 200 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="64" rx="13" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
+              <rect x="10" y="14" width="30" height="30" rx="7" fill="#34C759"/>
+              <rect x="14" y="18" width="20" height="14" rx="4" fill="white"/>
+              <path d="M16 32 L11 38 L20 32 Z" fill="white"/>
+              <text x="47" y="26" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#1C1C1E">Em</text>
+              <text x="47" y="40" font-family="'DM Sans', sans-serif" font-size="9" fill="#555">How much do I owe from the trip?</text>
+              <text x="47" y="52" font-family="'DM Sans', sans-serif" font-size="9" fill="#555">Kind of lost track...</text>
+            </svg>
+          </div>
+
+          <!-- Floating cards: top-right -->
+          <div style="position:absolute; top:44px; right:44px; transform:rotate(4deg); opacity:0.78; z-index:0; pointer-events:none;">
+            <svg width="188" height="70" viewBox="0 0 188 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="188" height="70" rx="11" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
+              <rect width="188" height="24" fill="#F8F8F8" rx="11"/>
+              <rect y="12" width="188" height="12" fill="#F8F8F8"/>
+              <circle cx="12" cy="12" r="4" fill="#007AFF"/>
+              <text x="80" y="17" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#1C1C1E">Reminders</text>
+              <circle cx="20" cy="48" r="7" fill="none" stroke="#007AFF" stroke-width="1.5"/>
+              <text x="34" y="44" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">Ask Edward when he needs</text>
+              <text x="34" y="58" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">the $40 back</text>
+            </svg>
+          </div>
+
+          <!-- Floating cards: bottom-left -->
+          <div style="position:absolute; bottom:58px; left:32px; transform:rotate(4deg); opacity:0.75; z-index:0; pointer-events:none;">
+            <svg width="160" height="78" viewBox="0 0 160 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="160" height="78" fill="#FFE082" rx="3"/>
+              <path d="M124 78L160 42V78Z" fill="#FFC107"/>
+              <text x="13" y="32" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Remember to pay</text>
+              <text x="13" y="52" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Oliver back for gas</text>
+            </svg>
+          </div>
+
+          <!-- Floating cards: bottom-right -->
+          <div style="position:absolute; bottom:48px; right:36px; transform:rotate(-3deg); opacity:0.78; z-index:0; pointer-events:none;">
+            <svg width="210" height="70" viewBox="0 0 210 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="210" height="70" rx="11" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
+              <rect width="210" height="24" fill="#F8F8F8" rx="11"/>
+              <rect y="12" width="210" height="12" fill="#F8F8F8"/>
+              <circle cx="12" cy="12" r="4" fill="#FF9500"/>
+              <text x="92" y="17" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#1C1C1E">Reminders</text>
+              <circle cx="20" cy="48" r="7" fill="none" stroke="#FF9500" stroke-width="1.5"/>
+              <text x="34" y="44" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">Remind Saoirse about concert</text>
+              <text x="34" y="58" font-family="'DM Sans', sans-serif" font-size="10" fill="#1C1C1E">tickets (think it was $180?)</text>
+            </svg>
+          </div>
+
+          <!-- Floating cards: mid-left -->
+          <div style="position:absolute; top:50%; left:28px; transform:translateY(-50%) rotate(-3deg); opacity:0.72; z-index:0; pointer-events:none;">
+            <svg width="148" height="76" viewBox="0 0 148 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="148" height="76" fill="#AECFF5" rx="3"/>
+              <path d="M112 76L148 40V76Z" fill="#7DB3EE"/>
+              <text x="12" y="30" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#1A3A5C">Remind Rohan about</text>
+              <text x="12" y="50" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#1A3A5C">the $40 he owes</text>
+            </svg>
+          </div>
+
+          <!-- Floating cards: mid-right -->
+          <div style="position:absolute; top:50%; right:28px; transform:translateY(-50%) rotate(5deg); opacity:0.70; z-index:0; pointer-events:none;">
+            <svg width="96" height="118" viewBox="0 0 96 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="96" height="118" rx="10" fill="#1C1C1E"/>
+              <rect x="6" y="6" width="84" height="30" rx="5" fill="#333"/>
+              <text x="82" y="22" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="14" font-weight="300" fill="#fff">53.33</text>
+              <text x="82" y="32" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="7" fill="#8E8E93">160 / 3</text>
+              <circle cx="20" cy="56" r="11" fill="#505050"/>
+              <circle cx="48" cy="56" r="11" fill="#505050"/>
+              <circle cx="76" cy="56" r="11" fill="#FF9500"/>
+              <circle cx="20" cy="80" r="11" fill="#505050"/>
+              <circle cx="48" cy="80" r="11" fill="#505050"/>
+              <circle cx="76" cy="80" r="11" fill="#FF9500"/>
+              <rect x="9" y="95" width="39" height="22" rx="11" fill="#505050"/>
+              <circle cx="76" cy="106" r="11" fill="#FF9500"/>
+            </svg>
+          </div>
+
+          <p class="pd-cover-wordmark">Vony</p>
+          <p class="pd-cover-tagline">Make lending with friends less messy</p>
+          <div class="pd-cover-rule"></div>
+          <p class="pd-cover-contact">
+            www.vony-lending.com<br>
+            anya@vony-lending.com
+          </p>
+          <span class="pd-num">1 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 2 &mdash; What is Vony?
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">The Product</div>
+          <div class="pd-two-col" style="margin-top:0;">
+
+            <div class="pd-col-55">
+              <h2 class="pd-title" style="font-size:42px; margin-bottom:18px;">What is Vony?</h2>
+              <p class="pd-body" style="margin-bottom:20px;">
+                Vony is a micro-lending platform that makes it safe and simple to lend or borrow money with people you know. Create a loan, set the terms, sign digitally, and let Vony handle the rest.
+              </p>
+              <div class="pd-rule" style="margin-bottom:20px;"></div>
+              <p class="pd-eyebrow" style="margin-bottom:8px;">Our Mission</p>
+              <p class="pd-body">
+                To make peer lending feel as easy as sending a text &mdash; while giving both sides the structure and protection they deserve. Vony formalizes trust, so people can help each other without risking the relationship.
+              </p>
+              <div style="margin-top:24px;">
+                <div class="pd-card-warm">
+                  <p class="pd-body-sm" style="color:#5C5B5A; font-style:italic;">&ldquo;The only platform built around the emotional bottleneck of lending &mdash; enforcing repayment without social damage.&rdquo;</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pd-col-45" style="align-items:center; justify-content:center;">
+              <div style="width:100%; height:100%; border-radius:10px; overflow:hidden; background:#1A2535; position:relative;">
+                <img src="Images/mobile.png" alt="Vony mobile app" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block; opacity:0.90;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,#1A1918 100%);"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <span class="pd-num">2 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 3 &mdash; Problem
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">The Problem</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:24px;">Lending to Friends is Broken</h2>
+
+          <div class="pd-stat-row" style="margin-bottom:22px;">
+            <div class="pd-stat-box">
+              <p class="pd-stat-num">$184<span style="font-size:28px;">B</span></p>
+              <p class="pd-stat-label">in informal loans between Americans each year &mdash; completely untracked</p>
+            </div>
+            <div class="pd-stat-box">
+              <p class="pd-stat-num">75<span style="font-size:28px;">%</span></p>
+              <p class="pd-stat-label">of people who lend or borrow with friends say they are no longer as close afterward</p>
+            </div>
+            <div class="pd-stat-box">
+              <p class="pd-stat-num">37<span style="font-size:28px;">%</span></p>
+              <p class="pd-stat-label">of Americans can&rsquo;t cover a $400 emergency expense with cash or its equivalent</p>
+            </div>
+          </div>
+
+          <div class="pd-rule" style="margin-bottom:20px;"></div>
+
+          <div class="pd-two-col">
+            <div class="pd-col">
+              <p class="pd-body">
+                Banks ignore small personal loans. Lawyers are overkill. Handshake deals vanish. The result: good people stop helping friends in need &mdash; or lose both the money and the relationship.
+              </p>
+            </div>
+            <div class="pd-col">
+              <ul class="pd-list">
+                <li><span class="pd-dot"></span>No written agreement means no accountability</li>
+                <li><span class="pd-dot"></span>Asking for repayment feels deeply uncomfortable</li>
+                <li><span class="pd-dot"></span>Rising cost of living is making informal lending more common, and riskier</li>
+                <li><span class="pd-dot"></span>No existing tool is built for lending &mdash; only splitting or payments</li>
+              </ul>
+            </div>
+          </div>
+
+          <p style="font-family:'DM Sans',sans-serif; font-size:9.5px; color:#9B9A98; margin:14px 0 0; line-height:1.7; letter-spacing:0.02em;">
+            Sources: <a href="https://www.finder.com/personal-loans/americans-borrow-friends-and-family-household-debt" target="_blank" style="color:rgba(84,166,207,0.65); text-decoration:none;">Finder.com Household Debt Survey ($184B stat)</a>
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.jgwentworth.com/resources/shadow-debt-family-and-friends-debt-survey" target="_blank" style="color:rgba(84,166,207,0.65); text-decoration:none;">JG Wentworth Shadow Debt Survey 2025 (75% stat)</a>
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.federalreserve.gov/consumerscommunities/sheddataviz/unexpectedexpenses-table.html" target="_blank" style="color:rgba(84,166,207,0.65); text-decoration:none;">Federal Reserve SHED Report 2024 (37% stat)</a>
+          </p>
+
+          <span class="pd-num">3 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 4 &mdash; Solution
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">The Solution</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:24px;">Structure Without the Awkwardness</h2>
+
+          <div class="pd-two-col">
+            <div class="pd-col">
+              <p class="pd-body" style="margin-bottom:20px;">
+                Vony handles everything after a handshake &mdash; the agreement, the schedule, the reminders, and the payments. Both sides stay protected. No awkward texts required.
+              </p>
+              <ul class="pd-list">
+                <li><span class="pd-dot" style="margin-top:4px;"></span><span><strong style="color:#1A1918; font-weight:600; display:block; line-height:1.3;">Digital agreements</strong><span style="color:#9B9A98; font-size:12.5px; line-height:1.4; display:block;">Legally exportable promissory notes signed by both parties</span></span></li>
+                <li><span class="pd-dot" style="margin-top:4px;"></span><span><strong style="color:#1A1918; font-weight:600; display:block; line-height:1.3;">Custom repayment schedules</strong><span style="color:#9B9A98; font-size:12.5px; line-height:1.4; display:block;">Flexible terms, optional interest, set once and forget</span></span></li>
+                <li><span class="pd-dot" style="margin-top:4px;"></span><span><strong style="color:#1A1918; font-weight:600; display:block; line-height:1.3;">Automated reminders</strong><span style="color:#9B9A98; font-size:12.5px; line-height:1.4; display:block;">Vony sends the nudge, not you</span></span></li>
+                <li><span class="pd-dot" style="margin-top:4px;"></span><span><strong style="color:#1A1918; font-weight:600; display:block; line-height:1.3;">Integrated payments</strong><span style="color:#9B9A98; font-size:12.5px; line-height:1.4; display:block;">Repay directly in the platform, tracked in real time</span></span></li>
+                <li><span class="pd-dot" style="margin-top:4px;"></span><span><strong style="color:#1A1918; font-weight:600; display:block; line-height:1.3;">Dispute protection</strong><span style="color:#9B9A98; font-size:12.5px; line-height:1.4; display:block;">Full paper trail if things go wrong</span></span></li>
+              </ul>
+            </div>
+
+            <div class="pd-col-45" style="position:relative; align-items:center; justify-content:center;">
+              <div style="width:100%; height:100%; border-radius:10px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08); position:relative;">
+                <div style="overflow:hidden; border-radius:10px; width:100%; height:100%;">
+                  <img src="Images/promissoryNote.png" alt="Vony Promissory Note" style="width:100%; display:block; margin-top:-4%; margin-bottom:-8%; border-radius:10px;">
+                </div>
+                <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(245,244,240,0.85) 100%);border-radius:10px;pointer-events:none;"></div>
+              </div>
+            </div>
+          </div>
+
+          <span class="pd-num">4 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 5 &mdash; Features
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">How It Works</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:24px;">Everything You Need. Nothing You Don&rsquo;t.</h2>
+
+          <div class="pd-feat-grid">
+            <div class="pd-feat-item">
+              <div class="pd-feat-dot"></div>
+              <p class="pd-feat-name">Digital Loan Agreements</p>
+              <p class="pd-feat-desc">Legally exportable promissory notes. Both parties sign digitally before any money moves.</p>
+            </div>
+            <div class="pd-feat-item">
+              <div class="pd-feat-dot"></div>
+              <p class="pd-feat-name">Flexible Repayment Terms</p>
+              <p class="pd-feat-desc">Custom amounts, schedules, and optional interest. Built for real life, not rigid bank timelines.</p>
+            </div>
+            <div class="pd-feat-item">
+              <div class="pd-feat-dot"></div>
+              <p class="pd-feat-name">Automated Reminders</p>
+              <p class="pd-feat-desc">Vony sends the nudge when payment is due. You never have to ask awkwardly again.</p>
+            </div>
+            <div class="pd-feat-item">
+              <div class="pd-feat-dot"></div>
+              <p class="pd-feat-name">Integrated Payments</p>
+              <p class="pd-feat-desc">PayPal-powered transfers built into the platform. Repay in one tap, tracked automatically.</p>
+            </div>
+            <div class="pd-feat-item">
+              <div class="pd-feat-dot"></div>
+              <p class="pd-feat-name">Real-Time Tracking</p>
+              <p class="pd-feat-desc">Both parties see every payment and balance update. Full transparency at all times.</p>
+            </div>
+            <div class="pd-feat-item">
+              <div class="pd-feat-dot"></div>
+              <p class="pd-feat-name">Dispute Protection</p>
+              <p class="pd-feat-desc">Exportable records and amortization schedules provide a full paper trail if needed.</p>
+            </div>
+          </div>
+
+          <span class="pd-num">5 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 6 &mdash; Product Roadmap
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Product</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:20px;">Where We Are &amp; Where We&rsquo;re Going</h2>
+
+          <div class="pd-two-col" style="gap:28px;">
+
+            <!-- LEFT: Live Now -->
+            <div class="pd-col">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                <div style="width:7px; height:7px; border-radius:50%; background:#22C55E; box-shadow:0 0 6px rgba(34,197,94,0.7); flex-shrink:0;"></div>
+                <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#22C55E; margin:0;">Live Now</p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:7px;">
+                <div class="pd-card" style="padding:10px 14px; border-radius:12px; display:flex; align-items:center; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#22C55E; flex-shrink:0;"></div>
+                  <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918;">Main website &amp; borrower portal</span>
+                </div>
+                <div class="pd-card" style="padding:10px 14px; border-radius:12px; display:flex; align-items:center; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#22C55E; flex-shrink:0;"></div>
+                  <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918;">Digital promissory notes &amp; e-signing</span>
+                </div>
+                <div class="pd-card" style="padding:10px 14px; border-radius:12px; display:flex; align-items:center; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#22C55E; flex-shrink:0;"></div>
+                  <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918;">Amortization tables &amp; repayment schedules</span>
+                </div>
+                <div class="pd-card" style="padding:10px 14px; border-radius:12px; display:flex; align-items:center; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#22C55E; flex-shrink:0;"></div>
+                  <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918;">Automated payment reminders</span>
+                </div>
+                <div class="pd-card" style="padding:10px 14px; border-radius:12px; display:flex; align-items:center; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#22C55E; flex-shrink:0;"></div>
+                  <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918;">Loan tracking &amp; record payments</span>
+                </div>
+                <div class="pd-card" style="padding:10px 14px; border-radius:12px; display:flex; align-items:center; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#22C55E; flex-shrink:0;"></div>
+                  <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918;">Exportable loan records &amp; dispute documentation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: Coming Soon -->
+            <div class="pd-col">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                <div style="width:7px; height:7px; border-radius:50%; background:#7EC0EA; box-shadow:0 0 6px rgba(126,192,234,0.6); flex-shrink:0;"></div>
+                <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#7EC0EA; margin:0;">Coming Soon</p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:7px;">
+                <div style="background:rgba(126,192,234,0.07); border:1px solid rgba(126,192,234,0.22); border-radius:12px; padding:10px 14px; display:flex; align-items:flex-start; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#7EC0EA; flex-shrink:0; margin-top:5px;"></div>
+                  <div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918; margin:0 0 2px; font-weight:600;">iOS &amp; Android Apps <span style="font-weight:400; color:#7EC0EA; font-size:11px;">&mdash; targeting May 2025</span></p>
+                    <a href="https://www.vony-lending.com/apps" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:10.5px; color:#54A6CF; text-decoration:none; letter-spacing:0.02em;">vony-lending.com/apps</a>
+                  </div>
+                </div>
+                <div style="background:rgba(126,192,234,0.07); border:1px solid rgba(126,192,234,0.22); border-radius:12px; padding:10px 14px; display:flex; align-items:flex-start; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#7EC0EA; flex-shrink:0; margin-top:5px;"></div>
+                  <div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918; margin:0 0 2px; font-weight:600;">In-platform payment processing</p>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9B9A98; margin:0;">Send &amp; receive loan repayments directly in Vony</p>
+                  </div>
+                </div>
+                <div style="background:rgba(126,192,234,0.07); border:1px solid rgba(126,192,234,0.22); border-radius:12px; padding:10px 14px; display:flex; align-items:flex-start; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#7EC0EA; flex-shrink:0; margin-top:5px;"></div>
+                  <div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918; margin:0 0 2px; font-weight:600;">Loan recommendations</p>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9B9A98; margin:0 0 2px;">For when lending with friends isn&rsquo;t the right fit</p>
+                    <a href="https://www.vony-lending.com/loan-help" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:10.5px; color:#54A6CF; text-decoration:none;">vony-lending.com/loan-help</a>
+                  </div>
+                </div>
+                <div style="background:rgba(126,192,234,0.07); border:1px solid rgba(126,192,234,0.22); border-radius:12px; padding:10px 14px; display:flex; align-items:flex-start; gap:10px;">
+                  <div style="width:5px; height:5px; border-radius:50%; background:#7EC0EA; flex-shrink:0; margin-top:5px;"></div>
+                  <div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918; margin:0 0 2px; font-weight:600;">Financial advice &amp; education</p>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9B9A98; margin:0 0 2px;">Tools and guidance for healthy financial habits</p>
+                    <a href="https://www.vony-lending.com/learn" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:10.5px; color:#54A6CF; text-decoration:none;">vony-lending.com/learn</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <span class="pd-num">6 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 7 &mdash; Market Validation
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Traction &amp; Validation</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:24px;">The Demand is Real</h2>
+
+          <div class="pd-two-col">
+            <div class="pd-col">
+              <ul class="pd-list">
+                <li><span class="pd-dot"></span>Live product at vony-lending.com with active users</li>
+                <li><span class="pd-dot"></span>Problem validated through structured user research interviews across income levels</li>
+                <li><span class="pd-dot"></span>Two high-frequency, high-pain use cases identified and confirmed</li>
+                <li><span class="pd-dot"></span>Rising cost of living is expanding the informal lending market year over year</li>
+                <li><span class="pd-dot"></span>No existing platform addresses the full lending workflow end to end</li>
+              </ul>
+            </div>
+
+            <div class="pd-col" style="gap:10px;">
+              <p class="pd-eyebrow" style="margin-bottom:2px;">From PMF Interviews</p>
+
+              <div class="pd-card" style="flex:1; padding:14px 16px;">
+                <p class="pd-body-sm" style="color:rgba(26,25,24,0.76); font-style:italic; margin-bottom:6px;">&ldquo;I lent my roommate $800 for rent. I never brought it up again because I didn&rsquo;t want to make things weird. I just wrote it off.&rdquo;</p>
+                <p class="pd-body-sm" style="color:#54A6CF;">Female, 26, San Francisco</p>
+              </div>
+
+              <div class="pd-card" style="flex:1; padding:14px 16px;">
+                <p class="pd-body-sm" style="color:rgba(26,25,24,0.76); font-style:italic; margin-bottom:6px;">&ldquo;I would absolutely use something like this. A written record takes all the awkwardness out of it &mdash; it&rsquo;s just the agreement, not a judgement.&rdquo;</p>
+                <p class="pd-body-sm" style="color:#54A6CF;">Male, 34, New York</p>
+              </div>
+
+              <div class="pd-card" style="flex:1; padding:14px 16px;">
+                <p class="pd-body-sm" style="color:rgba(26,25,24,0.76); font-style:italic; margin-bottom:6px;">&ldquo;I feel guilty asking for my money back. If the app sent the reminder, I could pretend it wasn&rsquo;t me.&rdquo;</p>
+                <p class="pd-body-sm" style="color:#54A6CF;">Female, 29, Los Angeles</p>
+              </div>
+            </div>
+          </div>
+
+          <span class="pd-num">7 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 7 &mdash; Market Size
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Market Opportunity</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:22px;">A $184 Billion Problem, Barely Touched</h2>
+
+          <div class="pd-mkt-row">
+            <div class="pd-mkt-box">
+              <p class="pd-mkt-tag">TAM</p>
+              <p class="pd-mkt-num">$184<span style="font-size:26px;">B</span></p>
+              <p class="pd-mkt-desc">Annual informal lending between friends and family in the US &mdash; undocumented and untracked</p>
+            </div>
+            <div class="pd-mkt-box">
+              <p class="pd-mkt-tag">SAM</p>
+              <p class="pd-mkt-num">$50<span style="font-size:26px;">B</span></p>
+              <p class="pd-mkt-desc">Transactions where both parties would benefit from a formal agreement &mdash; larger and emergency loans</p>
+            </div>
+            <div class="pd-mkt-box">
+              <p class="pd-mkt-tag">SOM</p>
+              <p class="pd-mkt-num">$500<span style="font-size:26px;">M</span></p>
+              <p class="pd-mkt-desc">Capturing 1% of SAM &mdash; a conservative, early-stage target</p>
+            </div>
+          </div>
+
+          <div class="pd-card-warm">
+            <div style="display:flex; align-items:center; gap:40px;">
+              <div>
+                <p class="pd-eyebrow" style="margin-bottom:4px;">Revenue Projection</p>
+                <p class="pd-body-sm" style="color:#787776;">$1.8B annual volume &times; ~1% take rate</p>
+              </div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:700; letter-spacing:-0.02em; color:#1A1918; white-space:nowrap;">= $18M ARR</div>
+              <div style="width:1px; height:36px; background:rgba(255,255,255,0.10);"></div>
+              <div>
+                <p class="pd-body-sm" style="color:#787776;">10% of SAM captured (full scale)</p>
+              </div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:700; letter-spacing:-0.02em; color:#1A1918; white-space:nowrap;">= $50M+ ARR</div>
+            </div>
+          </div>
+
+          <p style="font-family:'DM Sans',sans-serif; font-size:9.5px; color:#9B9A98; margin:14px 0 0; line-height:1.7; letter-spacing:0.02em;">
+            Sources: <a href="https://www.finder.com/personal-loans/americans-borrow-friends-and-family-household-debt" target="_blank" style="color:rgba(84,166,207,0.65); text-decoration:none;">Finder.com Household Debt Survey — $184B annual informal lending (TAM)</a>
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.imarcgroup.com/united-states-peer-to-peer-lending-platforms-market" target="_blank" style="color:rgba(84,166,207,0.65); text-decoration:none;">IMARC Group: US P2P Lending Market Report 2024 (SAM basis)</a>
+          </p>
+
+          <span class="pd-num">8 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 8 &mdash; Competition
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Competitive Landscape</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:22px;">Built for What No One Else Does</h2>
+
+          <div class="pd-comp-row" style="margin-bottom:16px;">
+            <div class="pd-comp-card">
+              <div class="pd-comp-badge" style="background:#6B7280;">IOU</div>
+              <p class="pd-comp-name">Informal IOUs</p>
+              <p class="pd-comp-miss">No tracking. No reminders. No legal standing. Disappears the moment it&rsquo;s needed most.</p>
+            </div>
+            <div class="pd-comp-card">
+              <div class="pd-comp-badge" style="background:#1DC67C;">S</div>
+              <p class="pd-comp-name">Splitwise</p>
+              <p class="pd-comp-miss">Expense splitting only. No loan agreements, no repayment schedules, no payment processing.</p>
+            </div>
+            <div class="pd-comp-card">
+              <div class="pd-comp-badge" style="background:#4A6FA5;">N</div>
+              <p class="pd-comp-name">Namma</p>
+              <p class="pd-comp-miss">Contracts, schedules &amp; reminders &mdash; but no actual payment processing. Monthly subscription required. Documentation without execution.</p>
+            </div>
+            <div class="pd-comp-card pd-comp-card-vony">
+              <div class="pd-comp-badge" style="background:linear-gradient(135deg,#7EC0EA,#54A6CF);font-style:italic;font-family:'Cormorant Garamond',serif;">V</div>
+              <p class="pd-comp-name pd-accent">Vony</p>
+              <p class="pd-comp-win">Contracts + schedules + reminders + integrated payments &mdash; all in one. No subscription. Pay only when money moves.</p>
+            </div>
+          </div>
+
+          <div class="pd-card-warm">
+            <p class="pd-body-sm" style="color:rgba(26,25,24,0.80);">
+              <strong style="color:#1A1918;">Our competitors optimize for payments and splitting. Vony is the only platform designed around lending</strong> &mdash; with contracts, repayment plans, interest, automated enforcement, and dispute documentation. We solve the relationship problem, not just the transaction problem.
+            </p>
+          </div>
+
+          <span class="pd-num">9 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 9 &mdash; Business Model
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Revenue</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:22px;">How We Make Money</h2>
+
+          <div class="pd-rev-row" style="margin-bottom:16px;">
+            <div class="pd-rev-card">
+              <p class="pd-rev-stream">Instant Transfers</p>
+              <p class="pd-rev-rate">~1%</p>
+              <p class="pd-rev-desc">Fee for instant bank withdrawal. Standard transfers are free (2&ndash;3 days), creating a natural upgrade path &mdash; the Venmo model.</p>
+            </div>
+            <div class="pd-rev-card">
+              <p class="pd-rev-stream">Card-Funded Payments</p>
+              <p class="pd-rev-rate">2&ndash;3%</p>
+              <p class="pd-rev-desc">Processing margin on credit or debit card-funded loan repayments. High-frequency, recurring revenue tied directly to loan volume.</p>
+            </div>
+            <div class="pd-rev-card">
+              <p class="pd-rev-stream">Affiliate Revenue</p>
+              <p class="pd-rev-rate">Variable</p>
+              <p class="pd-rev-desc">Credit card recommendations for users who need larger credit lines (NerdWallet model). Positions Vony as a holistic financial wellness tool, not just a lending app.</p>
+            </div>
+          </div>
+
+          <div class="pd-card">
+            <p class="pd-body-sm" style="color:#787776;">
+              Revenue scales with loan volume, not headcount. Each new loan creates compounding transaction revenue, repeat engagement, and referral growth &mdash; a flywheel that accelerates as the user base grows.
+            </p>
+          </div>
+
+          <span class="pd-num">10 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 10 &mdash; Founding Team
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide">
+
+          <div class="pd-eyebrow">Founding Team</div>
+          <h2 class="pd-title" style="font-size:42px; margin-bottom:22px;">Built by Someone Who Gets Both Sides</h2>
+
+          <div class="pd-two-col">
+            <div class="pd-col-55">
+              <div class="pd-team-wrap">
+                <div class="pd-team-avatar">A</div>
+                <div style="flex:1;">
+                  <p class="pd-team-name">Anya Von Diessl</p>
+                  <p class="pd-team-role">Founder &amp; CEO</p>
+                  <ul class="pd-cred-list">
+                    <li>BS Mathematics &mdash; Stanford University, 2021&ndash;2025</li>
+                    <li>MS Computer Science &mdash; Stanford University, 2025&ndash;2026</li>
+                    <li>Built entire product solo: frontend, backend, design, payments</li>
+                  </ul>
+                  <div class="pd-team-links">
+                    <a href="https://www.linkedin.com/in/anya-von-diessl/" class="pd-team-link">LinkedIn &rarr;</a>
+                    <a href="https://www.anyavondiessl.com/" class="pd-team-link">Portfolio &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pd-col-45" style="justify-content:space-between; gap:14px;">
+              <div class="pd-card-warm" style="flex:1;">
+                <p class="pd-eyebrow" style="margin-bottom:8px;">Domain Expertise</p>
+                <p class="pd-body" style="font-size:13.5px; color:#5C5B5A;">
+                  This idea came from lived experience &mdash; watching people lend meaningful sums with no protection, then lose both money and friendships. Validated through structured user research across income levels. Proven ability to move fast: live product from zero in months.
+                </p>
+              </div>
+              <div class="pd-card" style="flex:1;">
+                <p class="pd-eyebrow" style="margin-bottom:8px;">Technical Depth</p>
+                <p class="pd-body" style="font-size:13.5px; color:#5C5B5A;">
+                  React 18, TypeScript, Tailwind, PayPal Payouts API, PostgreSQL. No external engineering. Full ownership of the product roadmap &mdash; decisions made in hours, not weeks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <span class="pd-num">11 / 12</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SLIDE 11 &mdash; Thank You
+      ══════════════════════════════════════ -->
+      <div class="pd-slide-wrap">
+        <div class="pd-slide pd-thanks">
+          <div class="pd-thanks-glow"></div>
+          <p class="pd-thanks-heading">Thank You</p>
+          <p class="pd-thanks-sub">Vony is building the infrastructure for trusted peer-to-peer lending. A trillion-dollar problem that no one has solved yet &mdash; until now.</p>
+          <div class="pd-thanks-rule"></div>
+          <p class="pd-thanks-contact">
+            www.vony-lending.com<br>
+            anya@vony-lending.com
+          </p>
+          <span class="pd-num">12 / 12</span>
+        </div>
+      </div>
+
+    </div><!-- /.pd-main -->
+  </div><!-- /.pd-page -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">
+        <span class="logo-wordmark">Vony</span>
+      </a>
+      <div class="footer-legal-links">
+        <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="privacy.html" class="footer-legal-link">Privacy Center</a>
+        <span class="footer-divider">|</span>
+        <a href="do-not-sell.html" class="footer-legal-link">Do not sell or share my personal information</a>
+        <span class="footer-divider">|</span>
+        <a href="help.html" class="footer-legal-link">Help and Support</a>
+        <span class="footer-divider">|</span>
+        <a href="pitchdeck.html" class="footer-legal-link">Pitch Deck</a>
+      </div>
+      <p class="footer-statement">All users of our online services are subject to our Privacy Statement and agree to be bound by the Terms of Service. Please review.</p>
+      <p class="footer-copyright">&copy; 2026 Vony Lending All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Scale slides to fit viewport width -->
+  <script>
+    function scaleSlides() {
+      document.querySelectorAll('.pd-slide-wrap').forEach(function(wrap) {
+        var slide = wrap.querySelector('.pd-slide');
+        if (!slide) return;
+        var scale = Math.min(1, wrap.clientWidth / 960);
+        slide.style.transform = 'scale(' + scale + ')';
+        slide.style.transformOrigin = 'top left';
+        wrap.style.height = Math.ceil(540 * scale) + 'px';
+      });
+    }
+    window.addEventListener('resize', scaleSlides);
+    document.addEventListener('DOMContentLoaded', scaleSlides);
+  </script>
+  <script src="nav-dropdown.js"></script>
+  <script src="mobile-nav.js"></script>
+</body>
+</html>
