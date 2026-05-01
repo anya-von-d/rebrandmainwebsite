@@ -78,12 +78,7 @@
 
     /* Thin blue bar at top */
     .pd-slide::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #7EC0EA 0%, #54A6CF 100%);
-      z-index: 10;
+      content: none;
     }
     /* Vony watermark */
     .pd-slide::after {
@@ -568,8 +563,8 @@
             </svg>
           </div>
 
-          <!-- ④ iMessage "Em" — mid-right lower -->
-          <div style="position:absolute; top:62%; right:16px; transform:rotate(-3deg); z-index:0; pointer-events:none; width:190px; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(0,0,0,0.09); overflow:hidden; font-family:'DM Sans',sans-serif; opacity:0.84;">
+          <!-- ④ iMessage "Em" — mid-left (replaced yellow sticky) -->
+          <div style="position:absolute; top:46%; left:16px; transform:translateY(-50%) rotate(3deg); z-index:0; pointer-events:none; width:190px; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(0,0,0,0.09); overflow:hidden; font-family:'DM Sans',sans-serif; opacity:0.84;">
             <div style="background:#F2F2F7; padding:6px 10px; display:flex; align-items:center; gap:7px; border-bottom:1px solid rgba(0,0,0,0.06);">
               <div style="width:20px;height:20px;border-radius:50%;background:#34C759;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-size:8px;color:#fff;font-weight:700;">Em</span></div>
               <span style="font-size:10px;font-weight:600;color:#1C1C1E;">Em</span>
@@ -578,16 +573,6 @@
             <div style="padding:8px 10px;">
               <p style="font-size:9.5px;color:#1C1C1E;margin:0;line-height:1.4;">How much do I still owe you from the Europe trip? Kind of lost track</p>
             </div>
-          </div>
-
-          <!-- ⑤ Yellow sticky — mid-left -->
-          <div style="position:absolute; top:46%; left:16px; transform:translateY(-50%) rotate(3deg); z-index:0; pointer-events:none; opacity:0.85;">
-            <svg width="155" height="80" viewBox="0 0 155 80" fill="none">
-              <rect width="155" height="80" fill="#FFE082" rx="3"/>
-              <path d="M120 80L155 45V80Z" fill="#FFC107"/>
-              <text x="12" y="30" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Remember to pay</text>
-              <text x="12" y="52" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5D4037">Oliver back for gas</text>
-            </svg>
           </div>
 
           <!-- ⑥ Excel spreadsheet — bottom-left (partially off) -->
@@ -649,16 +634,6 @@
             </div>
           </div>
 
-          <!-- ⑨ Blue sticky — bottom-center-right -->
-          <div style="position:absolute; bottom:24px; right:208px; transform:rotate(2deg); z-index:0; pointer-events:none; opacity:0.85;">
-            <svg width="148" height="76" viewBox="0 0 148 76" fill="none">
-              <rect width="148" height="76" fill="#AECFF5" rx="3"/>
-              <path d="M112 76L148 40V76Z" fill="#7DB3EE"/>
-              <text x="12" y="28" font-family="Georgia, serif" font-size="11.5" font-style="italic" fill="#1A3A5C">Remind Rohan about</text>
-              <text x="12" y="48" font-family="Georgia, serif" font-size="11.5" font-style="italic" fill="#1A3A5C">the $40 he still owes</text>
-            </svg>
-          </div>
-
           <!-- ⑩ WhatsApp "Henry" — bottom-right -->
           <div style="position:absolute; bottom:-20px; right:10px; transform:rotate(-2deg); z-index:0; pointer-events:none; width:204px; opacity:0.90; font-family:'DM Sans',sans-serif;">
             <div style="background:#fff; border-radius:14px 14px 0 0; box-shadow:0 6px 22px rgba(0,0,0,0.11); overflow:hidden;">
@@ -713,36 +688,40 @@
               <!-- TOP ROW: Next Payment Due + Next Payment Incoming -->
               <div style="display:flex; gap:7px;">
 
-                <!-- Next Payment Due -->
-                <div style="flex:1; background:#EFF6FF; border:1px solid rgba(29,91,148,0.14); border-radius:12px; padding:13px 14px; position:relative; overflow:hidden;">
-                  <div style="position:absolute;top:-18px;right:-18px;width:72px;height:72px;border-radius:50%;background:radial-gradient(rgba(29,91,148,0.08),transparent 70%);pointer-events:none;"></div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
-                    <div style="width:18px;height:18px;border-radius:5px;background:rgba(29,91,148,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5B94" stroke-width="2.5" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><line x1="12" y1="18" x2="12" y2="6"/></svg>
+                <!-- Next Payment Due — aurora lavender -->
+                <div style="flex:1; position:relative; overflow:visible;">
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% + 2px);height:calc(100% + 2px);filter:blur(1.5px) saturate(1.1);opacity:0.9;border-radius:14px;z-index:0;pointer-events:none;background:linear-gradient(135deg,rgb(196,213,255) 0%,rgb(220,210,255) 35%,rgb(230,205,245) 70%,rgb(200,215,245) 100%);"></div>
+                  <div style="position:relative;z-index:1;padding:12px 13px;border-radius:13px;background:linear-gradient(160deg,rgba(255,255,255,0.97) 0%,rgba(245,251,255,0.93) 100%);border:1.5px solid rgba(255,255,255,0.9);box-shadow:0 2px 16px rgba(29,91,148,0.10),inset 0 1px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(200,220,240,0.3);">
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
+                      <div style="width:18px;height:18px;border-radius:5px;background:rgba(29,91,148,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5B94" stroke-width="2.5" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><line x1="12" y1="18" x2="12" y2="6"/></svg>
+                      </div>
+                      <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Payment Due</span>
                     </div>
-                    <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Payment Due</span>
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                      <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 15</span>
+                      <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;">7d</span>
+                    </div>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$150 to Alex</span>
                   </div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 15</span>
-                    <span style="background:#E5E7EB;border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#5C5B5A;white-space:nowrap;">7d</span>
-                  </div>
-                  <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$150 to Alex</span>
                 </div>
 
-                <!-- Next Payment Incoming -->
-                <div style="flex:1; background:#EFF9FF; border:1px solid rgba(3,172,234,0.14); border-radius:12px; padding:13px 14px; position:relative; overflow:hidden;">
-                  <div style="position:absolute;top:-18px;right:-18px;width:72px;height:72px;border-radius:50%;background:radial-gradient(rgba(3,172,234,0.08),transparent 70%);pointer-events:none;"></div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
-                    <div style="width:18px;height:18px;border-radius:5px;background:rgba(3,172,234,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#03ACEA" stroke-width="2.5" stroke-linecap="round"><polyline points="17 11 12 6 7 11"/><line x1="12" y1="6" x2="12" y2="18"/></svg>
+                <!-- Next Payment Incoming — aurora cyan/mint -->
+                <div style="flex:1; position:relative; overflow:visible;">
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% + 2px);height:calc(100% + 2px);filter:blur(1.5px) saturate(1.1);opacity:0.9;border-radius:14px;z-index:0;pointer-events:none;background:linear-gradient(135deg,rgb(200,238,252) 0%,rgb(205,240,240) 40%,rgb(210,242,235) 70%,rgb(200,238,252) 100%);"></div>
+                  <div style="position:relative;z-index:1;padding:12px 13px;border-radius:13px;background:linear-gradient(160deg,rgba(255,255,255,0.97) 0%,rgba(240,252,255,0.93) 100%);border:1.5px solid rgba(255,255,255,0.9);box-shadow:0 2px 16px rgba(3,172,234,0.10),inset 0 1px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(180,230,245,0.3);">
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:9px;">
+                      <div style="width:18px;height:18px;border-radius:5px;background:rgba(3,172,234,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#03ACEA" stroke-width="2.5" stroke-linecap="round"><polyline points="17 11 12 6 7 11"/><line x1="12" y1="6" x2="12" y2="18"/></svg>
+                      </div>
+                      <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Incoming</span>
                     </div>
-                    <span style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A98;">Incoming</span>
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                      <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 20</span>
+                      <span style="background:rgba(3,172,234,0.12);border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#03ACEA;white-space:nowrap;">12d</span>
+                    </div>
+                    <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$200 from Sam</span>
                   </div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1918;line-height:1;">Apr 20</span>
-                    <span style="background:rgba(3,172,234,0.12);border-radius:5px;padding:2px 6px;font-family:'DM Sans',sans-serif;font-size:9px;color:#03ACEA;white-space:nowrap;">12d</span>
-                  </div>
-                  <span style="font-family:'DM Sans',sans-serif;font-size:10.5px;color:#9B9A98;">$200 from Sam</span>
                 </div>
 
               </div>
@@ -832,7 +811,7 @@
               <ul class="pd-list" style="margin:0;">
                 <li><span class="pd-dot"></span>No written agreement means no accountability</li>
                 <li><span class="pd-dot"></span>Asking for repayment feels deeply uncomfortable</li>
-                <li><span class="pd-dot"></span>Rising cost of living is making informal lending more common, and riskier</li>
+                <li><span class="pd-dot"></span>Rising cost of living is driving record levels of informal lending, with no safety net when it goes wrong</li>
                 <li><span class="pd-dot"></span>No existing tool is built for lending &mdash; only splitting or payments</li>
               </ul>
               <p class="pd-body" style="margin:0;">
@@ -1108,7 +1087,7 @@
                 <div style="background:rgba(126,192,234,0.07); border:1px solid rgba(126,192,234,0.22); border-radius:12px; padding:10px 14px; display:flex; align-items:flex-start; gap:10px;">
                   <div style="width:5px; height:5px; border-radius:50%; background:#7EC0EA; flex-shrink:0; margin-top:5px;"></div>
                   <div>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918; margin:0 0 2px; font-weight:600;">iOS &amp; Android Apps <span style="font-weight:400; color:#7EC0EA; font-size:11px;">&mdash; targeting May 2025</span></p>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#1A1918; margin:0 0 2px; font-weight:600;">iOS &amp; Android Apps <span style="font-weight:400; color:#7EC0EA; font-size:11px;">&mdash; targeting Q3 2026</span></p>
                     <a href="https://www.vony-lending.com/apps" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:10.5px; color:#54A6CF; text-decoration:none; letter-spacing:0.02em;">vony-lending.com/apps</a>
                   </div>
                 </div>
@@ -1264,7 +1243,7 @@
 
             <!-- Bottom flywheel paragraph -->
             <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#787776; line-height:1.65; text-align:center; padding:0 32px; margin:0;">
-              Revenue scales with loan volume, not headcount. <strong style="color:#1A1918; font-weight:600;">Each new loan creates compounding transaction revenue, repeat engagement, and referral growth</strong> &mdash; a flywheel that accelerates as the user base grows.
+              Every loan pulls in at least two users and generates multiple repayments. <strong style="color:#1A1918; font-weight:600;">Transaction revenue compounds with each repayment, each new borrower, and each referred lender</strong> &mdash; the business grows with usage, not with hiring.
             </p>
 
           </div>
@@ -1300,7 +1279,7 @@
           </div>
 
           <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#787776; line-height:1.65; margin:0; padding:0 4px;">
-            The business scales with volume, not headcount. If Vony processes just $1.8B of that $184B &mdash; under 4% of our SAM &mdash; at a ~1% take rate, that&rsquo;s <strong style="color:#1A1918; font-weight:600;">$18M in ARR.</strong> At $5B processed, we&rsquo;re at <strong style="color:#1A1918; font-weight:600;">$50M+.</strong> We are not creating this market &mdash; we are formalizing what already exists. And the macro tailwinds are pushing hard in our direction: cost of living is at historic highs, personal savings are at historic lows, and peer lending between friends and family is already exploding &mdash; just with no product behind it.
+            We are not creating this market &mdash; we are formalizing what already exists. Capturing just 3.6% of our SAM means $1.8B in processed volume, which at a ~1% take rate is <strong style="color:#1A1918; font-weight:600;">$18M in ARR.</strong> At 10% of SAM, <strong style="color:#1A1918; font-weight:600;">$50M+.</strong> And every macro trend pushes in our direction: cost of living at historic highs, savings at historic lows, and peer lending between friends and family already exploding &mdash; with no product behind it.
           </p>
 
           <span class="pd-num">8 / 11</span>
@@ -1402,11 +1381,11 @@
             <div style="flex:0 0 38%; display:flex; flex-direction:column; align-items:center; gap:8px;">
 
               <div style="width:88px; height:88px; border-radius:50%; overflow:hidden; border:2px solid rgba(126,192,234,0.35); flex-shrink:0;">
-                <img src="Images/headshot.png" alt="Anya von Diessl" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img src="Images/headshot.png" alt="Anya" style="width:100%; height:100%; object-fit:cover; display:block;">
               </div>
 
               <div style="text-align:center;">
-                <p style="font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:#1A1918; margin:0 0 3px; letter-spacing:-0.01em;">Anya von Diessl</p>
+                <p style="font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:#1A1918; margin:0 0 3px; letter-spacing:-0.01em;">Anya</p>
                 <p style="font-family:'DM Sans',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#9B9A98; margin:0;">Founder</p>
               </div>
 
@@ -1468,7 +1447,7 @@
         <div class="pd-slide pd-thanks">
           <div class="pd-thanks-glow"></div>
           <p class="pd-thanks-heading">Thank You</p>
-          <p class="pd-thanks-sub">Vony is building the infrastructure for trusted peer-to-peer lending. A trillion-dollar problem that no one has solved yet &mdash; until now.</p>
+          <p class="pd-thanks-sub">Vony is building the infrastructure for trusted peer-to-peer lending &mdash; a $184B market that no one has formalized. We&rsquo;d love to tell you more.</p>
           <div class="pd-thanks-rule"></div>
           <p class="pd-thanks-contact">
             www.vony-lending.com<br>
