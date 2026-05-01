@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600;700&family=Kristi&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=52">
+  <link rel="stylesheet" href="styles.css?v=60">
   <link rel="icon" type="image/png" href="Images/favicon.png">
 </head>
 <body>
@@ -201,9 +201,39 @@
       </div>
       <div class="apps-detail-visual">
         <div class="apps-mobile-visual-wrap">
-          <!-- Phone + floating icons wrapper -->
+          <!-- Aura glow behind phone -->
+          <div class="apps-mobile-aura"></div>
+
+          <!-- Left floating transaction cards -->
+          <div class="apps-mobile-side-cards apps-mobile-side-cards--left">
+            <div class="apps-mobile-side-card">
+              <div class="apps-side-card-avatar" style="background:#4A90D9;">J</div>
+              <div class="apps-side-card-info">
+                <span class="apps-side-card-name">Jordan</span>
+                <span class="apps-side-card-type">Sent</span>
+              </div>
+              <span class="apps-side-card-amount">$500</span>
+            </div>
+            <div class="apps-mobile-side-card">
+              <div class="apps-side-card-avatar" style="background:#E8913A;">E</div>
+              <div class="apps-side-card-info">
+                <span class="apps-side-card-name">Emma</span>
+                <span class="apps-side-card-type">Received</span>
+              </div>
+              <span class="apps-side-card-amount">$150</span>
+            </div>
+            <div class="apps-mobile-side-card">
+              <div class="apps-side-card-avatar" style="background:#22C55E;">A</div>
+              <div class="apps-side-card-info">
+                <span class="apps-side-card-name">Alex</span>
+                <span class="apps-side-card-type">Sent</span>
+              </div>
+              <span class="apps-side-card-amount">$75</span>
+            </div>
+          </div>
+
+          <!-- Phone + floating icons wrapper (unchanged) -->
           <div class="apps-phone-with-icons">
-            <!-- iPhone frame -->
             <div class="apps-iphone-frame">
               <div class="apps-iphone-screen">
                 <img src="Images/mobile.png" alt="Vony mobile app dashboard">
@@ -222,15 +252,32 @@
               <img src="Images/icons/googleplaystore.png" alt="Google Play" class="apps-phone-icon-img">
             </div>
           </div>
-          <!-- Notification floater -->
-          <div class="apps-notif-floater apps-notif-floater--phone apps-notif-push">
-            <img src="Images/favicon.png" alt="Vony" class="apps-notif-push-logo">
-            <div class="apps-notif-push-body">
-              <div class="apps-notif-push-header">
-                <span class="apps-notif-push-app">Vony</span>
-                <span class="apps-notif-push-time">now</span>
+
+          <!-- Right floating transaction cards -->
+          <div class="apps-mobile-side-cards apps-mobile-side-cards--right">
+            <div class="apps-mobile-side-card">
+              <div class="apps-side-card-avatar" style="background:#D96BA0;">S</div>
+              <div class="apps-side-card-info">
+                <span class="apps-side-card-name">Sam</span>
+                <span class="apps-side-card-type">Received</span>
               </div>
-              <span class="apps-notif-push-msg">You have a payment due today</span>
+              <span class="apps-side-card-amount">$200</span>
+            </div>
+            <div class="apps-mobile-side-card">
+              <div class="apps-side-card-avatar" style="background:#54A6CF;">L</div>
+              <div class="apps-side-card-info">
+                <span class="apps-side-card-name">Lewis</span>
+                <span class="apps-side-card-type">Sent</span>
+              </div>
+              <span class="apps-side-card-amount">$1,200</span>
+            </div>
+            <div class="apps-mobile-side-card">
+              <div class="apps-side-card-avatar" style="background:#7EC0EA;">N</div>
+              <div class="apps-side-card-info">
+                <span class="apps-side-card-name">Nico</span>
+                <span class="apps-side-card-type">Received</span>
+              </div>
+              <span class="apps-side-card-amount">$80</span>
             </div>
           </div>
         </div>
