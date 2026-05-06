@@ -1536,14 +1536,13 @@
 
           // Temporarily render at native 960×540 for capture
           const savedTransform = slide.style.transform;
-          const savedOrigin = slide.style.transformOrigin;
-          const savedWrapH = wrap.style.height;
-          const savedWrapOv = wrap.style.overflow;
+          const savedOrigin    = slide.style.transformOrigin;
+          const savedWrapH     = wrap.style.height;
 
           slide.style.transform = 'none';
           slide.style.transformOrigin = 'top left';
           wrap.style.height = '540px';
-          wrap.style.overflow = 'visible';
+          // keep overflow:hidden so adjacent slide shadows don't bleed in
 
           const canvas = await html2canvas(slide, {
             scale: 3,
@@ -1557,7 +1556,6 @@
           slide.style.transform = savedTransform;
           slide.style.transformOrigin = savedOrigin;
           wrap.style.height = savedWrapH;
-          wrap.style.overflow = savedWrapOv;
 
           const imgData = canvas.toDataURL('image/png');
           if (i > 0) pdf.addPage([960, 540], 'landscape');
