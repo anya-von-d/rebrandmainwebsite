@@ -1538,6 +1538,23 @@
             logging: false
           });
 
+          // Collect link positions while transform is still reset (native 960×540 coords)
+          const linkAnnotations = [];
+          const slideRect = slide.getBoundingClientRect();
+          slide.querySelectorAll('a[href]').forEach(anchor => {
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+            const url = /^https?:\/\//.test(href) ? href : new URL(href, window.location.href).href;
+            const r = anchor.getBoundingClientRect();
+            const x = r.left - slideRect.left;
+            const y = r.top  - slideRect.top;
+            const w = r.width;
+            const h = r.height;
+            if (w > 0 && h > 0 && x < 960 && y < 540) {
+              linkAnnotations.push({ url, x, y, w, h });
+            }
+          });
+
           slide.style.transform = savedTransform;
           slide.style.transformOrigin = savedOrigin;
           wrap.style.height = savedWrapH;
@@ -1545,6 +1562,11 @@
           const imgData = canvas.toDataURL('image/png');
           if (i > 0) pdf.addPage([960, 540], 'landscape');
           pdf.addImage(imgData, 'PNG', 0, 0, 960, 540);
+
+          // Overlay clickable link regions
+          linkAnnotations.forEach(({ url, x, y, w, h }) => {
+            pdf.link(x, y, w, h, { url });
+          });
         }
 
         pdf.save('Vony-Pitch-Deck.pdf');
