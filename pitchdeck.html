@@ -392,39 +392,33 @@
     /* ════ SLIDE 12: Thank you — dark for bookend symmetry ════ */
     .pd-thanks {
       justify-content: center; align-items: center; text-align: center;
-      background-color: #1A1918 !important;
-      background-image: none !important;
     }
-    .pd-thanks::before { background: linear-gradient(90deg, #7EC0EA 0%, #54A6CF 100%); }
-    .pd-thanks::after  { color: rgba(245,244,240,0.06); }
-    .pd-thanks .pd-num { color: rgba(245,244,240,0.18); }
     .pd-thanks-glow {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: 700px; height: 500px;
       background: radial-gradient(ellipse at center,
-        rgba(126,192,234,0.14) 0%, rgba(84,166,207,0.08) 40%, transparent 70%);
+        rgba(126,192,234,0.10) 0%, rgba(84,166,207,0.05) 40%, transparent 70%);
       pointer-events: none;
     }
     .pd-thanks > * { position: relative; z-index: 1; }
     .pd-thanks-heading {
       font-family: 'Cormorant Garamond', serif;
       font-size: 70px; font-weight: 600; font-style: italic;
-      color: #F5F4F0; line-height: 1; margin: 0 0 14px;
+      color: #1A1918; line-height: 1; margin: 0 0 14px;
     }
     .pd-thanks-sub {
       font-family: 'DM Sans', sans-serif;
       font-size: 15px; font-weight: 300;
-      color: rgba(245,244,240,0.54); margin: 0 0 36px;
+      color: #787776; margin: 0 0 36px;
       max-width: 480px; line-height: 1.65;
     }
     .pd-thanks-rule {
-      width: 44px; height: 1px;
-      background: rgba(126,192,234,0.45); margin: 0 auto 36px;
+      display: none;
     }
     .pd-thanks-contact {
       font-family: 'DM Sans', sans-serif;
-      font-size: 13px; color: rgba(245,244,240,0.30);
+      font-size: 13px; color: #9B9A98;
       letter-spacing: 0.05em; line-height: 2; margin: 0;
     }
   </style>
@@ -1508,8 +1502,6 @@
         <a href="do-not-sell.html" class="footer-legal-link">Do not sell or share my personal information</a>
         <span class="footer-divider">|</span>
         <a href="help.html" class="footer-legal-link">Help and Support</a>
-        <span class="footer-divider">|</span>
-        <a href="pitchdeck.html" class="footer-legal-link">Pitch Deck</a>
       </div>
       <p class="footer-statement">All users of our online services are subject to our Privacy Statement and agree to be bound by the Terms of Service. Please review.</p>
       <p class="footer-copyright">&copy; 2026 Vony Lending All rights reserved</p>
