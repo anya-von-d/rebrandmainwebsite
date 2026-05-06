@@ -10433,9 +10433,107 @@ a.help-card {
 /* ── Apps page: mobile iPhone frame ── */
 .apps-mobile-visual-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   position: relative;
+  gap: 16px;
+}
+
+/* Aura glow behind phone */
+.apps-mobile-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 120, 100, 0.28) 0%,
+    rgba(255, 80, 120, 0.18) 35%,
+    rgba(200, 100, 255, 0.10) 60%,
+    transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Side card columns */
+.apps-mobile-side-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+  flex-shrink: 0;
+}
+.apps-mobile-side-cards--left {
+  align-items: flex-end;
+}
+.apps-mobile-side-cards--right {
+  align-items: flex-start;
+}
+
+/* Individual side card */
+.apps-mobile-side-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.60);
+  -webkit-backdrop-filter: blur(14px) saturate(1.6);
+  backdrop-filter: blur(14px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+  padding: 8px 12px 8px 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  min-width: 140px;
+  max-width: 160px;
+}
+
+/* Avatar circle */
+.apps-side-card-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Name / type text block */
+.apps-side-card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.apps-side-card-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1A1918;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.apps-side-card-type {
+  font-size: 10.5px;
+  font-weight: 400;
+  color: #7A7872;
+  line-height: 1.2;
+}
+
+/* Dollar amount */
+.apps-side-card-amount {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1918;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .apps-phone-with-icons {
@@ -10590,12 +10688,33 @@ a.help-card {
   }
   .apps-detail-visual {
     order: -1;
+    justify-content: center;
+  }
+  /* Mobile: center image and stack text underneath */
+  .apps-detail-section .apps-detail-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .apps-detail-section .apps-detail-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media (max-width: 768px) {
   .apps-mobile-visual-wrap {
+    flex-direction: column;
     align-items: center;
+  }
+  .apps-mobile-side-cards {
+    display: none;
+  }
+  .apps-mobile-aura {
+    width: 280px;
+    height: 280px;
   }
   .apps-phone-with-icons {
     margin: 0 auto;
